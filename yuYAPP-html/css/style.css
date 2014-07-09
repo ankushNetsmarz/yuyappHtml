@@ -1,0 +1,63 @@
+html{width:100%; height:100%; margin:0; padding:0;}
+
+@font-face {
+    font-family: 'Open Sans';
+    
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+    font-weight: normal;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+body{ background: #dbff9a; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #dbff9a 0%, #428a00 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#dbff9a), color-stop(100%,#428a00)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #dbff9a 0%,#428a00 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #dbff9a 0%,#428a00 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #dbff9a 0%,#428a00 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #dbff9a 0%,#428a00 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbff9a', endColorstr='#428a00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+width:100%; height:100%; margin:0; padding:0; display:table; font-family: 'Open Sans'; font-size:13px;}
+
+.main_div{text-align:center; margin:0 2%; width:96.1%; padding:0 0 20px;}
+
+.fl{float:left;}
+.fr{float:right;}
+.clr{clear:both;}
+
+.logo{margin:15% 0 10%;}
+.login_inputs .user_input{width:72%; background:url(../images/user-icons.png) no-repeat rgba(0, 0, 0, 0); border:1px solid #333; padding:6px 10px 6px 25px; margin:0 0 15px; background-position:3px 5px; border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
+.login_inputs .pass_input{width:72%; background:url(../images/user-icons.png) no-repeat rgba(0, 0, 0, 0); border:1px solid #333; padding:6px 10px 6px 25px; margin:0 0 15px; background-position:3px -45px; border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
+
+.forgot{width:50%;}
+.forgot a{text-decoration:none; color:#333;}
+.forgot a:hover{text-decoration:none; color:#fff;}
+
+.loginpage_btns{width:92%; margin:50px auto 0;}
+
+
+.login_btn_div{width:45%; height:36px; }
+.login_btn{background:url(../images/login-icon.png), url(../images/login-btn-bg1.png); background-position:5px 10px, 0 0; background-repeat:no-repeat, repeat-x; width:100%; height:36px; border:none; cursor:pointer; color:#FFF; text-shadow:0 0 0 #000; font-size:16px; margin-left:14px;}
+.but{background:none; border:0; line-height:33px; color:#fff; font-size:17px; text-align:center; width:100%;}
+
+.login_btn_div .left_btn{ width:88%; background:url(../images/login-btn-bg1.png); height:36px; background-repeat:repeat-x; background-position:0 0;}
+.login_btn_div .right_btn{ width:14px; background:url(../images/login-btn-bg2.png) no-repeat; height:36px;}
+
+.signup_btn_div{width:45%; height:36px;}
+.signup_btn_div .left_btn{ width:88%; background:url(../images/signup-btn-bg1.png); height:36px; background-repeat:repeat-x; background-position:0 0;}
+.signup_btn_div .right_btn{ width:14px; background:url(../images/signup-btn-bg2.png) 1px 0px no-repeat; height:36px;}
+.signup-icon{background:url(../images/signup-icon.png) no-repeat 0px 0px; width:20px; height:19px; float:right;}
+
+.signup_btn{background:url(../images/signup-btn-bg1.png) repeat-x right center; width:112px; height:36px; border:none; cursor:pointer; color:#000; text-shadow:0 0 0 #fff; font-size:16px;}
+
+.need_help{margin: 20px 0px 0px;}
+.need_help a{line-height: 27px; text-decoration: none; color:#333;}
+
+
+
