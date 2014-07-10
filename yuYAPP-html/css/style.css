@@ -36,8 +36,8 @@ input[placeholder], [placeholder], *[placeholder] {
 }
 
 .logo{margin:15% 0 10%;}
-.login_inputs .user_input{width:72%; background:url(../images/user-icons.png) no-repeat rgba(0, 0, 0, 0); border:1px solid #333; padding:6px 10px 6px 25px; margin:0 0 15px; background-position:3px 5px; border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
-.login_inputs .pass_input{width:72%; background:url(../images/user-icons.png) no-repeat rgba(0, 0, 0, 0); border:1px solid #333; padding:6px 10px 6px 25px; margin:0 0 15px; background-position:3px -45px; border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
+.login_inputs .user_input{width:72%; background:url(../images/user-icons.png) no-repeat rgba(255, 255, 255, 0.7); border:none; padding:6px 10px 6px 25px; margin:0 0 15px; background-position:3px 5px; border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
+.login_inputs .pass_input{width:72%; background:url(../images/user-icons.png) no-repeat rgba(255, 255, 255, 0.7); border:none; padding:6px 10px 6px 25px; margin:0 0 15px; background-position:3px -45px; border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
 
 .forgot{width:50%;}
 .forgot a{text-decoration:none; color:#333;}
@@ -63,7 +63,7 @@ input[placeholder], [placeholder], *[placeholder] {
 .signup_btn{background:url(../images/signup-btn-bg1.png) repeat-x right center; width:112px; height:36px; border:none; cursor:pointer; color:#000; text-shadow:0 0 0 #fff; font-size:16px;}
 
 .need_help{margin: 20px 0px 0px;}
-.need_help a{line-height: 27px; text-decoration: none; color:#333;}
+.need_help a{line-height: 27px; text-decoration: none; color:#fff;}
 
 /*-- Signup page --*/
 
@@ -75,6 +75,17 @@ input[placeholder], [placeholder], *[placeholder] {
 .gender{margin: 0px auto; border: 1px solid rgb(51, 51, 51); border-radius: 4px; text-align: left; padding: 5px 7px; width: 82%; color: rgb(51, 51, 51);}
 
 .registerpage_btns{width:92%; margin:30px auto 0;}
+
+/*-- home page --*/
+
+interest-topbar{background:rgba(0, 0, 0, 0.3); height:60px; width:100%;}
+ .left-top-btn{ position:absolute; left:0; top:0;}
+ .right-top-btn{ position:absolute; right:0; top:0;}
+ .menu_btn_top{ background:url(../images/menu-icon.png) no-repeat 0px 0px rgba(0, 0, 0, 0); height:25px; width:34px; margin:0; padding:0; border:none;}
+ .map_btn_top{ background:url(../img/top_tick_icons.png) no-repeat -39px 9px rgba(0, 0, 0, 0); height:59px; width:59px; margin:0; padding:0; border:none;}
+ 
+ .top_head_bg{width:65%; padding: 17px 0 0; margin:0 auto;}
+ .top_heading{text-align:center; color:#FFF; font-family:'Open Sans', sans-serif; font-weight:normal; font-size:16px;}
 
 
 
