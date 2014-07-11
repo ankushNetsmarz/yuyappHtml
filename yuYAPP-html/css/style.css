@@ -88,6 +88,13 @@ input[placeholder], [placeholder], *[placeholder] {
  
  .top_head_bg{padding: 17px 0 0; margin:0 auto; text-align:center;}
  .top_heading{text-align:center; color:#FFF; font-family:'Open Sans', sans-serif; font-weight:normal; font-size:14px;}
+ 
+ .unselect{background:url(../images/unselect-ctgry.png) no-repeat center; width:100px; height:100px; margin:0 auto; text-align:center; color:#76b923; font-size:14px; line-height:100px; cursor:pointer;}
+ 
+ .ctgry-row{width:100%; margin:16% auto 0; position: relative;}
+  .ctgry-row-2{width:100%; margin:16% auto 0; position: relative;}
+ .left_category{margin: 0px; position: absolute; top: 75px; left: 30px;}
+ .right_category{margin: 0px; position: absolute; top: 75px; right: 30px;}
 
 
 
