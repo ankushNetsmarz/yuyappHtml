@@ -26,7 +26,7 @@ background: -ms-radial-gradient(center, ellipse cover,  #dbff9a 0%,#428a00 100%)
 background: radial-gradient(ellipse at center,  #dbff9a 0%,#428a00 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbff9a', endColorstr='#428a00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */}
 
-.main_div{text-align:center; margin:0 2%; width:96.1%; padding:0 0 20px;}
+.main_div{text-align:center; margin:0 2%; width:96.1%; padding:0;}
 
 .fl{float:left;}
 .fr{float:right;}
@@ -95,11 +95,25 @@ input[placeholder], [placeholder], *[placeholder] {
   .ctgry-row-2{width:100%; margin:16% auto 0; position: relative;}
  .left_category{margin: 0px; position: absolute; top: 75px; left: 30px;}
  .right_category{margin: 0px; position: absolute; top: 75px; right: 30px;}
+<<<<<<< HEAD
  
- .white-strip{background:url(../images/ctgry-list-head.png) repeat-x; height:53px; float:left; width:33.7%;}
-  .list-head-box{background:url(../images/ctgry-list-head-2.png) no-repeat; height:53px; width:100px; margin:0 auto; float:left;}
+ .white-strip{background:url(../images/ctgry-list-head-3.png) repeat-x center; height:53px; width:100%; text-align:center; color:#FFF; font-size:16px; font-family:'Open Sans', sans-serif; line-height:75px;}
+ 
+   /*.list-head-box{background:url(../images/ctgry-list-head-2.png) no-repeat; height:53px; width:100px; margin:0 auto; float:left;}*/
 
 .ctgry-list-main{background:url(../images/ctgry-list-bg.jpg) no-repeat; background-size:cover; margin:12% 0 0;}
+=======
+>>>>>>> parent of 1d2f32b... working on second phase of home page
+
+.list-area{padding:10px 10px 0; width:93.491%; height:330px; overflow-y:scroll;}
+
+.single-user{ width:100%; margin:0 0 10px;}
+.user-list-pic{ width:49px; height:49px; border:2px solid #76b923; overflow:hidden;}
+.user-list-pic img{width:49px;}
+.user-title{background:rgba(255, 255, 255, 0.6); padding:10px 0 10px 5px; margin:15px 0 0; text-align:left; width:79.8%;}
+
+
+
 
 
 
