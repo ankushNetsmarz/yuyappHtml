@@ -70,6 +70,7 @@ input[placeholder], [placeholder], *[placeholder] {
 /*-- Signup page --*/
 
 .signup-logo{margin:10% 0;}
+.signup-logo img{width:53%;}
 
 .signup_inputs .signup_box{width:80%; background:rgba(0, 0, 0, 0); border:1px solid #333; padding:6px 10px; margin:0 0 3px; border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px; color:#333;}
 .signup_inputs .select_box{width:87%; background: rgba(0, 0, 0, 0); border:1px solid #333; padding:6px 3px; margin:0 0 15px; border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
