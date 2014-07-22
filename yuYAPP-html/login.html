@@ -58,7 +58,6 @@
 <div><input  id="SignUpEmail" type="email" placeholder="Email Address" class="signup_box"></div>
 <div><input id="SignUpPassword" type="password" placeholder="Pasword" class="signup_box"></div>
 <div><input id="SignUpDOB" placeholder="DOB" class="signup_box"></div>
-
 <div><input id="SignUpgender"  placeholder="gender" class="gender signup_box"></div>
 
 </form>
@@ -93,40 +92,59 @@
     <script src="js/signUp.js"></script>
     <script>
         $(document).ready(function () {
+
             $("#loginButton").on("click", function () {
+
+
+
                 var userLoginEmailId = $("#userLoginEmailId").val();
-              var loginPassword= $("#userLoginPassword").val();
-              SignIn(userLoginEmailId, loginPassword);
+                var loginPassword = $("#userLoginPassword").val();
+
+                if (userLoginEmailId != '' || loginPassword != '') {
+                    SignIn(userLoginEmailId, loginPassword);
+                }
+                else {
+                    alert("fields cant be empty");
+                }
+            });
+
+            $('#SignUpEmail').blur(function () {
+
+                if ($(this).val() == "") {
+
+                }
+                else {
+
+                    ValidateEmail();
+                }
             });
 
             $("#signUpButton").on("click", function () {
-               //  $(".signup_inputs, .registerpage_btns, .signup-logo").css("display", "block");
-               $(".login_inputs,#loginButtonDiv,#signUpButtonDiv,.need_help,.logo").css("display", "none");
+                //  $(".signup_inputs, .registerpage_btns, .signup-logo").css("display", "block");
+                $(".login_inputs,#loginButtonDiv,#signUpButtonDiv,.need_help,.logo").css("display", "none");
                 $("#signUpDiv").css("display", "block");
                 $("#signUpDiv").animate({ top: '1px' });
             });
 
             $("#backButtonRegister").on("click", function () {
                 $("#signUpDiv").css("display", "none");
-                $(".login_inputs,#loginButtonDiv,#signUpButtonDiv,.need_help,.logo").css("display", "block");           
-               $("#LoginDiv").animate({ bottom: '1px' });
-                
+                $(".login_inputs,#loginButtonDiv,#signUpButtonDiv,.need_help,.logo").css("display", "block");
+                $("#LoginDiv").animate({ bottom: '1px' });
+
             });
 
 
             $("#RegisterButton").on("click", function () {
                 var SignUpFullName = $("#SignUpFullName").val();
                 var res = SignUpFullName.split(" ");
-                var SignUpFirstName= res[0];
-                var SignUpLastName= res[1];
+                var SignUpFirstName = res[0];
+                var SignUpLastName = res[1];
                 var SignUpUserName = $("#SignUpUserName").val();
                 var SignUpEmail = $("#SignUpEmail").val();
                 var SignUpPassword = $("#SignUpPassword").val();
                 var SignUpDOB = $("#SignUpDOB").val();
                 var SignUpgender = $("#SignUpgender").val();
-               
-                var d = new Date();
-                d.getTime();
+
                 Signup(SignUpFirstName, SignUpLastName, SignUpUserName, SignUpUserName, SignUpEmail, SignUpPassword, SignUpgender, SignUpgender);
             });
         });

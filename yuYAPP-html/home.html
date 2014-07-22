@@ -20,7 +20,7 @@
 
 
 <!-- after the login page display this page (in this page firstly show these menu buttons) -->
-<div style="display:block;">
+<div class="navigation" style="display:none;">
 
 <div class="ctgry-row">
 <div class="unselect left_category">yu Cam</div>
@@ -64,5 +64,27 @@
 
 <div class="clr"></div>
 </div>
+    <script src="js/jquery-2.0.2.js"></script>
+    <script>
+        var flag = 0;
+        $(document).ready(function () {
+            $(".menu_btn_top").on("click", function () {
+                if (flag == 0) {
+                    $(".navigation").css("display", "block");
+                    //  $(".navigation").animate({ bottom: '10px' });
+                    flag = 1;
+                }
+                else {
+
+                    $(".navigation").css("display", "none");
+                    // $(".ctgry-list-main").animate({ bottom: '1px' });
+                    flag = 0;
+                }
+
+            });
+        });
+
+    </script>
+
 </body>
 </html>
