@@ -124,9 +124,9 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .profile-setting{}
 
-.profile-menu{background:#787878;}
+.profile-menu{background:#787878; margin:-4px 0 0; text-align:center;}
 .profile-menu ul{margin:0; padding:0;}
-.profile-menu ul li{margin:0; padding:0; list-style:none; color:#FFF;}
+.profile-menu ul li{margin:0; padding:5px 14px; list-style:none; color:#FFF; border-bottom:1px solid #FFF;}
 
 
 
