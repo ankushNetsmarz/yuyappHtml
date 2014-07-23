@@ -9,7 +9,7 @@
 
 <body class="green-gredient">
 
-<div class="loader-bg">
+<div class="loader-bg" style="display:none">
 <div class="loader-area"><img src="images/482.GIF"></div>
 </div>
 
@@ -92,67 +92,19 @@
 <!-- register page -->
 
 
-
+    <script src="js/ajaxWebService.js"></script>
     <script src="js/jquery-2.0.2.js"></script>
     <script src="js/SignIn.js"></script>
     <script src="js/signUp.js"></script>
     <script>
         $(document).ready(function () {
 
-            $("#loginButton").on("click", function () {
+            var LoginName = localStorage.getItem("LoginName");
+            var loginPassword = localStorage.getItem("loginPassword");
 
-
-
-                var userLoginEmailId = $("#userLoginEmailId").val();
-                var loginPassword = $("#userLoginPassword").val();
-
-                if (userLoginEmailId != '' || loginPassword != '') {
-                    SignIn(userLoginEmailId, loginPassword);
-                }
-                else {
-                    alert("fields cant be empty");
-                }
-            });
-
-            $('#SignUpEmail').blur(function () {
-
-                if ($(this).val() == "") {
-
-                }
-                else {
-
-                    ValidateEmail();
-                }
-            });
-
-            $("#signUpButton").on("click", function () {
-                //  $(".signup_inputs, .registerpage_btns, .signup-logo").css("display", "block");
-                $(".login_inputs,#loginButtonDiv,#signUpButtonDiv,.need_help,.logo").css("display", "none");
-                $("#signUpDiv").css("display", "block");
-                $("#signUpDiv").animate({ top: '1px' });
-            });
-
-            $("#backButtonRegister").on("click", function () {
-                $("#signUpDiv").css("display", "none");
-                $(".login_inputs,#loginButtonDiv,#signUpButtonDiv,.need_help,.logo").css("display", "block");
-                $("#LoginDiv").animate({ bottom: '1px' });
-
-            });
-
-
-            $("#RegisterButton").on("click", function () {
-                var SignUpFullName = $("#SignUpFullName").val();
-                var res = SignUpFullName.split(" ");
-                var SignUpFirstName = res[0];
-                var SignUpLastName = res[1];
-                var SignUpUserName = $("#SignUpUserName").val();
-                var SignUpEmail = $("#SignUpEmail").val();
-                var SignUpPassword = $("#SignUpPassword").val();
-                var SignUpDOB = $("#SignUpDOB").val();
-                var SignUpgender = $("#SignUpgender").val();
-
-                Signup(SignUpFirstName, SignUpLastName, SignUpUserName, SignUpUserName, SignUpEmail, SignUpPassword, SignUpgender, SignUpgender);
-            });
+            if (LoginName && loginPassword != null) {
+                SignIn(LoginName, loginPassword);
+            }
         });
 
     </script>
