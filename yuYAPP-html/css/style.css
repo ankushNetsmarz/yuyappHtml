@@ -87,8 +87,8 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .interest-topbar{background:#76b923; height:50px; width:100%;}
  .left-top-btn{ position:absolute; left:0; top:0;}
- .right-top-btn{ position:absolute; right:10px; top:7px;}
- .right-top-btn img{}
+ .right-top-btn{ position:absolute; right:0; top:0;}
+ .right-top-btn img{margin:5px 10px 0 0px;}
  .menu_btn_top{ background:url(../images/menu-icon.png) no-repeat 0px 0px rgba(0, 0, 0, 0); height:25px; width:34px; margin:15px 0 0 10px; padding:0; border:none; background-size:28px;}
  .map_btn_top{ background:url(../img/top_tick_icons.png) no-repeat -39px 9px rgba(0, 0, 0, 0); height:59px; width:59px; margin:0; padding:0; border:none;}
  
@@ -121,12 +121,6 @@ input[placeholder], [placeholder], *[placeholder] {
 .single-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#76b923; font-weight: bold; width:48%; line-height:50px; float: left; margin: 15px 0px 0px 5px; background:#f3f3f3; border-top-left-radius:100%; border-bottom-left-radius:100%;}
 .single-frnd-imgarea{width:55px; height: 55px; border-radius: 50%; overflow: hidden; box-shadow:2px 2px 2px -1px rgba(0, 0, 0, 0.8);}
 .single-frnd-imgarea img{width:100%;}
-
-.profile-setting{}
-
-.profile-menu{background:#787878;}
-.profile-menu ul{margin:0; padding:0;}
-.profile-menu ul li{margin:0; padding:0; list-style:none; color:#FFF;}
 
 
 
