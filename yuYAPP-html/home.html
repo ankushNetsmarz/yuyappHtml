@@ -12,7 +12,17 @@
 <div class="interest-topbar">
 <div class="left-top-btn"><button type="button" class="menu_btn_top"></button></div>
 <div class="top_head_bg"><label class="top_heading">SELECT INTEREST</label></div>
-<div class="right-top-btn"><img src="images/profile-pic.jpg" width="39" height="39"></div>
+<div class="right-top-btn">
+<div class="fr"><a href="#" class="profile-setting"><img src="images/profile-pic.jpg" width="36" height="36"></a></div>
+<div class="profile-menu fr">
+<ul>
+<li>See Profile</li>
+<li>Edit Profile</li>
+<li>Logout</li>
+</ul>
+</div>
+<div class="clr"></div>
+</div>
 
 </div>
 
@@ -81,12 +91,6 @@
                     flag = 0;
                 }
 
-            });
-
-
-            $(".right-top-btn").on("click", function () {
-                localStorage.clear();
-                window.location.replace("login.html");
             });
         });
 
