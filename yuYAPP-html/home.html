@@ -5,6 +5,10 @@
 <title>Untitled Document</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, user-scalable=no">
+
+<script src="js/SpryTabbedPanels.js" type="text/javascript"></script>
+<link href="css/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
@@ -74,13 +78,13 @@
 
 <!-- the edit profile or see profile divs start from below -->
 
-<div id="edit_profile" style="display:block;">
+<div id="edit_profile" style="display:none;">
 <div class="profile-pic"> <img src="images/user-profile-pic.png"><div class="change-pic">Change Your Pic</div> </div>
 <div class="edit_prof_inputs">
 <form>
-<div><input  id=""  type="text" placeholder="Full Name" class="edit_prof_box"></div>
+<div><input  id=""  type="text" placeholder="First Name" class="edit_prof_box"></div>
+<div><input  id="" type="text" placeholder="Last Name" class="edit_prof_box"></div>
 <div><input  id="" type="text" placeholder="User Name" class="edit_prof_box"></div>
-<div><input  id="" type="email" placeholder="Email Address" class="edit_prof_box"></div>
 <div><input id="" placeholder="DOB" class="edit_prof_box"></div>
 <div><input id=""  placeholder="Gender" class="edit_prof_box"></div>
 
@@ -104,6 +108,110 @@
 </div>
 </div>
 <!-- the edit profile or see profile divs ends here -->
+
+<!-- add new frends screen start here -->
+
+<div class="add-frnd" style="display:block;">
+
+<div id="TabbedPanels2" class="TabbedPanels">
+    <ul class="TabbedPanelsTabGroup">
+      <li class="TabbedPanelsTab" tabindex="0">Plug List</li>
+      <li class="TabbedPanelsTab" tabindex="0">People Map</li>
+    </ul>
+    <div class="TabbedPanelsContentGroup">
+      <div class="TabbedPanelsContent">
+      <div class="add-frnd-list">
+        <div class="plug-frnd-main">
+        <div class="plug-frnd">
+        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+        <div>Syra Yousaf</div>
+        </div>
+        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
+        </div>
+        
+         <div class="plug-frnd-main">
+        <div class="plug-frnd">
+        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+        <div>Syra Yousaf</div>
+        </div>
+        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
+        </div>
+        
+        <div class="plug-frnd-main">
+        <div class="plug-frnd">
+        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+        <div>Syra Yousaf</div>
+        </div>
+        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
+        </div>
+        
+        <div class="plug-frnd-main">
+        <div class="plug-frnd">
+        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+        <div>Syra Yousaf</div>
+        </div>
+        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
+        </div>
+        
+        <div class="plug-frnd-main">
+        <div class="plug-frnd">
+        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+        <div>Syra Yousaf</div>
+        </div>
+        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
+        </div>
+        
+        <div class="plug-frnd-main">
+        <div class="plug-frnd">
+        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+        <div>Syra Yousaf</div>
+        </div>
+        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
+        </div>
+        
+        <div class="plug-frnd-main">
+        <div class="plug-frnd">
+        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+        <div>Syra Yousaf</div>
+        </div>
+        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
+        </div>
+        
+        <div class="plug-frnd-main">
+        <div class="plug-frnd">
+        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+        <div>Syra Yousaf</div>
+        </div>
+        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
+        </div>
+        
+        <div class="plug-frnd-main">
+        <div class="plug-frnd">
+        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+        <div>Syra Yousaf</div>
+        </div>
+        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
+        </div>
+        
+        <div class="plug-frnd-main">
+        <div class="plug-frnd">
+        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+        <div>Syra Yousaf</div>
+        </div>
+        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
+        </div>
+                
+        </div>
+      </div>
+      <div class="TabbedPanelsContent">
+      add map here
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- add new frends screen ends here -->
+
 
 <div class="clr"></div>
 </div>
@@ -134,6 +242,14 @@
         });
 
     </script>
+<script type="text/javascript">
+var TabbedPanels2 = new Spry.Widget.TabbedPanels("TabbedPanels2");
+</script>
 
+<script type="text/javascript">
+var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+</script>
 </body>
+
+<script src="js/jquery.min.js"></script>
 </html>

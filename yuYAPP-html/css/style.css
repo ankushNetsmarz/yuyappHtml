@@ -86,8 +86,8 @@ input[placeholder], [placeholder], *[placeholder] {
 /*-- home page --*/
 
 .interest-topbar{background:#76b923; height:50px; width:100%;}
- .left-top-btn{ position:absolute; left:0; top:0;}
- .right-top-btn{ position:absolute; right:10px; top:7px;}
+ .left-top-btn{ position:absolute; left:0; top:0; z-index:1;}
+ .right-top-btn{ position:absolute; right:10px; top:7px; z-index:1;}
  .right-top-btn img{}
  .menu_btn_top{ background:url(../images/menu-icon.png) no-repeat 0px 0px rgba(0, 0, 0, 0); height:25px; width:34px; margin:15px 0 0 10px; padding:0; border:none; background-size:28px;}
  .map_btn_top{ background:url(../img/top_tick_icons.png) no-repeat -39px 9px rgba(0, 0, 0, 0); height:59px; width:59px; margin:0; padding:0; border:none;}
@@ -124,7 +124,7 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .profile-setting{}
 
-.profile-menu{background:#787878; margin:-4px 0 0; text-align:center;}
+.profile-menu{background:#00afbf; margin:-4px 0 0; text-align:center;}
 .profile-menu ul{margin:0; padding:0;}
 .profile-menu ul li{margin:0; padding:5px 14px; list-style:none; color:#FFF; border-bottom:1px solid #FFF;}
 
@@ -146,6 +146,13 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .see-status{margin:5% 0; font-size:14px; color:#76b923;}
 .see-status-title{color:#222222;}
+
+.add-frnd-list{width: 100%; margin: 0px auto 10px; height:369px; overflow-y:scroll;}
+.plug-frnd-main{width:48%; float: left; margin: 15px 0px 0px 5px; border-bottom:1px dotted;}
+.plug-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#76b923; font-weight: bold; width:100%; line-height:50px; background:#f3f3f3; border-top-left-radius:100%; border-bottom-left-radius:100%;}
+
+.plug-btn-div{width:100%;}
+.plug-btn{float:right;background:url(../images/plug.png) no-repeat left 3px center / 11px auto rgba(118, 185, 35, 1); border: medium none; color: rgb(255, 255, 255); margin:0px; padding:3% 4% 3% 12%; cursor:pointer;}
 
 
 
