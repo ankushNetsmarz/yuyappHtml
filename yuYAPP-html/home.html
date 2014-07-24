@@ -78,31 +78,36 @@
 
 <!-- the edit profile or see profile divs start from below -->
 
-<div id="edit_profile" style="display:none;">
+<div id="edit_profile" style="display:block;">
 <div class="profile-pic"> <img src="images/user-profile-pic.png"><div class="change-pic">Change Your Pic</div> </div>
 <div class="edit_prof_inputs">
 <form>
-<div><input  id=""  type="text" placeholder="First Name" class="edit_prof_box"></div>
-<div><input  id="" type="text" placeholder="Last Name" class="edit_prof_box"></div>
-<div><input  id="" type="text" placeholder="User Name" class="edit_prof_box"></div>
-<div><input id="" placeholder="DOB" class="edit_prof_box"></div>
-<div><input id=""  placeholder="Gender" class="edit_prof_box"></div>
 
-<div><button type="submit" class="edit-prof-btn">UPDATE</button></div>
+<div><input  id="editFirstname"  type="text" placeholder="First Name" class="edit_prof_box"></div>
+<div><input  id="editLastname" type="text" placeholder="Last Name" class="edit_prof_box"></div>
+<div><input  id="editUserName" type="text" placeholder="User Name" class="edit_prof_box"></div>
+<div><input id="editDOB" placeholder="DOB" class="edit_prof_box"></div>
+<div><input id="editGender"  placeholder="Gender" class="edit_prof_box"></div>
+<div><input type="button" id="updateButton" class="edit-prof-btn" value="UPDATE" />
+
+    
+
+</div>
 </form>
 </div>
 </div>
 
+
 <div id="see_profile" style="display:none;">
 <div class="profile-pic"> <img src="images/user-profile-pic.png"></div>
-<div class="see-status"><span class="see-status-title">Status&rArr; </span>&nbsp;Smiles are like sunshine</div>
+<div class="see-status">Smiles are like sunshine</div>
 <div class="see_prof">
 <form>
-<div><input  id=""  type="text" placeholder="Full Name" class="edit_prof_box" disabled></div>
-<div><input  id="" type="text" placeholder="User Name" class="edit_prof_box" disabled></div>
-<div><input  id="" type="email" placeholder="Email Address" class="edit_prof_box" disabled></div>
-<div><input id="" placeholder="DOB" class="edit_prof_box" disabled></div>
-<div><input id=""  placeholder="Gender" class="edit_prof_box" disabled></div>
+<div><input  id="SeefullName"  type="text" placeholder="Full Name" class="edit_prof_box" disabled></div>
+<div><input  id="SeeUserName" type="text" placeholder="User Name" class="edit_prof_box" disabled></div>
+<div><input  id="SeeEmail" type="email" placeholder="Email Address" class="edit_prof_box" disabled></div>
+<div><input id="SeeDOB" placeholder="DOB" class="edit_prof_box" disabled></div>
+<div><input id="SeeGender"  placeholder="Gender" class="edit_prof_box" disabled></div>
 
 </form>
 </div>
@@ -111,7 +116,7 @@
 
 <!-- add new frends screen start here -->
 
-<div class="add-frnd" style="display:block;">
+<div class="add-frnd" style="display:none;">
 
 <div id="TabbedPanels2" class="TabbedPanels">
     <ul class="TabbedPanelsTabGroup">
@@ -215,10 +220,27 @@
 
 <div class="clr"></div>
 </div>
+    <script src="js/updateProfile.js"></script>
+    <script src="js/UserProfile.js"></script>
     <script src="js/jquery-2.0.2.js"></script>
     <script>
-        var flag = 0;
-        $(document).ready(function () {
+       var flag = 0;
+       $(document).ready(function () {
+
+           GetUserProfile();
+
+           $("#updateButton").on("click", function ()
+           {
+               var editFirstname=  $("#editFirstname").val();
+               var editLastname = $("#editLastname").val();
+               var editUserName = $("#editUserName").val();
+               var editDOB = $("#editDOB").val();
+               var editGender = $("#editGender").val();
+              
+               UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editGender);
+            //   return false;
+           });
+
             $("#logout").on("click", function () {
                 localStorage.clear();
                 window.location.replace("login.html");
