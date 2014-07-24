@@ -4,10 +4,14 @@
 <meta charset="utf-8">
 <title>Untitled Document</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 
 <body>
+
+<div class="loader-bg" style="display:none">
+<div class="loader-area"><img src="images/482.GIF"></div>
+</div>
 
 <div class="interest-topbar">
 <div class="left-top-btn"><button type="button" class="menu_btn_top"></button></div>
@@ -26,53 +30,9 @@
 
 </div>
 
+
+<!-- register page -->
 <div class="main_div">
-
-
-<!-- after the login page display this page (in this page firstly show these menu buttons) -->
-<div class="navigation" style="display:none;">
-
-<div class="ctgry-row">
-<div class="unselect left_category">yu Cam</div>
-<div class="unselect">Word</div>
-<div class="unselect right_category">YAPP Live</div>
-</div>
-
-<div class="ctgry-row-2">
-<div class="unselect left_category">Request</div>
-<div class="unselect">Notification</div>
-<div class="unselect right_category">YAPP</div>
-</div>
-
-</div>
-
-
-<!-- after the click on single menu show this div -->
-<div class="ctgry-list-main" style="display:none;">
-<div class="white-strip">YAPP Live</div>
-
-<div class="list-area">
-
-<div class="single-user">
-<div class="fl user-list-pic"><img src="images/user-pic-list.jpg" /></div>
-<div class="fl user-title"> Yea, People makes me ...</div>
-<div class="clr"></div>
-</div>
-
-<div class="single-user">
-<div class="fl user-list-pic"><img src="images/user-pic-list.jpg" /></div>
-<div class="fl user-title"> Yea, People makes me ...</div>
-<div class="clr"></div>
-</div>
-
-
-<div class="clr"></div>
-</div>
-
-<div class="clr"></div>
-</div>
-
-<!-- the edit profile or see profile divs start from below -->
 
 <div id="edit_profile" style="display:block;">
 <div class="profile-pic"> <img src="images/user-profile-pic.png"><div class="change-pic">Change Your Pic</div> </div>
@@ -103,37 +63,26 @@
 </form>
 </div>
 </div>
-<!-- the edit profile or see profile divs ends here -->
 
-<div class="clr"></div>
 </div>
+<!-- register page -->
+
+
+    <script src="js/ajaxWebService.js"></script>
     <script src="js/jquery-2.0.2.js"></script>
+    <script src="js/SignIn.js"></script>
+    <script src="js/signUp.js"></script>
     <script>
-        var flag = 0;
         $(document).ready(function () {
-            $(".menu_btn_top").on("click", function () {
-                if (flag == 0) {
-                    $(".navigation").css("display", "block");
-                    //  $(".navigation").animate({ bottom: '10px' });
-                    flag = 1;
-                }
-                else {
 
-                    $(".navigation").css("display", "none");
-                    // $(".ctgry-list-main").animate({ bottom: '1px' });
-                    flag = 0;
-                }
+            var LoginName = localStorage.getItem("LoginName");
+            var loginPassword = localStorage.getItem("loginPassword");
 
-            });
-
-
-            $(".right-top-btn").on("click", function () {
-                localStorage.clear();
-                window.location.replace("login.html");
-            });
+            if (LoginName && loginPassword != null) {
+                SignIn(LoginName, loginPassword);
+            }
         });
 
     </script>
-
 </body>
 </html>
