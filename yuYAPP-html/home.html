@@ -22,7 +22,7 @@
 <ul>
 <li>See Profile</li>
 <li>Edit Profile</li>
-<li>Logout</li>
+<li id="logout">Logout</li>
 </ul>
 </div>
 <div class="clr"></div>
@@ -34,7 +34,7 @@
 
 
 <!-- after the login page display this page (in this page firstly show these menu buttons) -->
-<div class="navigation" style="display:none;">
+<div class="navigation" style="display:none;z-index:10">
 
 <div class="ctgry-row">
 <div class="unselect left_category">yu Cam</div>
@@ -219,6 +219,12 @@
     <script>
         var flag = 0;
         $(document).ready(function () {
+            $("#logout").on("click", function () {
+                localStorage.clear();
+                window.location.replace("login.html");
+            });
+         
+
             $(".menu_btn_top").on("click", function () {
                 if (flag == 0) {
                     $(".navigation").css("display", "block");
@@ -236,8 +242,14 @@
 
 
             $(".right-top-btn").on("click", function () {
-                localStorage.clear();
-                window.location.replace("login.html");
+                if (flag == 0) {
+                    $(".profile-menu").css("display", "block");
+                    flag = 1;
+                }
+                else {
+                    $(".profile-menu").css("display", "none");
+                    flag = 0;
+                }
             });
         });
 
