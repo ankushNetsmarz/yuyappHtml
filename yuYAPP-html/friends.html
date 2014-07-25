@@ -30,8 +30,8 @@
 <div>
 <div id="TabbedPanels1" class="TabbedPanels">
     <ul class="TabbedPanelsTabGroup">
-      <li class="TabbedPanelsTab" tabindex="0">Your Followers</li>
-      <li class="TabbedPanelsTab" tabindex="0">Who You Following</li>
+      <li id="getFollowers" class="TabbedPanelsTab" tabindex="0">Your Followers</li>
+      <li  id="GetFollowingList" class="TabbedPanelsTab" tabindex="0">Who You Following</li>
     </ul>
     <div class="TabbedPanelsContentGroup">
       <div class="TabbedPanelsContent">
@@ -42,31 +42,29 @@
 			<div class="swiper-slide"><span>You may Know</span></div>
 		</div>
 	</div>
-    <div class="frnd-list-main">
-        <div class="single-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="single-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="single-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="single-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="single-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        </div>
+    <div id="getfollowingList" class="frnd-list-main">
+
+     
+      
+       
+         </div>
+          <div><input type="button" id="updateButton" class="load-more" value="Load More" /></div>
       </div>
       <div class="TabbedPanelsContent">
-      add map here
+   <div class="swiper-nav swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><span>Recent</span></div>
+			<div class="swiper-slide"><span>All</span></div>
+			<div class="swiper-slide"><span>You may Know</span></div>
+		</div>
+	</div>
+    <div  id="getfollowerList" class="frnd-list-main">
+
+     
+      
+       
+         </div>
+          <div><input type="button" id="Button1" class="load-more" value="Load More" /></div>
       </div>
     </div>
   </div>
@@ -79,11 +77,33 @@ var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
 </script>
 </body>
 
-<script src="js/jquery.min.js"></script>
+
+<script src="js/jquery-2.0.2.js"></script>
 	<!-- Don't forget to get the latest Swiper and scrollbar version here-->
 	<script src="js/idangerous.swiper-2.0.min.js"></script>
 	<script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
-	<script src="js/simple-app.js"></script>
+	
+    <script src="js/getFollower.js"></script>
+    <script>
 
+        $(document).ready(function () {
+         
+            GetFollowerList();
+
+       
+        $("#getFollowers").on("click", function () {
+
+            GetFollowerList();
+        });
+
+        $("#GetFollowingList").on("click", function ()
+        {
+            
+            GetFollowingList();
+
+        });
+        });
+    </script>
+    <script src="js/simple-app.js"></script>
 
 </html>
