@@ -1,7 +1,6 @@
 ﻿
 
-function GetAllFollowerList()
-{
+function GetAllFollowing() {
     var inputdata = {
         "userId": 4,
         "start": 1,
@@ -9,19 +8,19 @@ function GetAllFollowerList()
     };
     $.ajax({
         type: "GET",
-       // url: "http://localhost:6269/Users/GetFollower",
-        url: "http://174.141.233.6/YuY/Users/GetAllFollower",
+        //url: "http://localhost:6269/Users/GetFollowing",
+        url: "http://174.141.233.6/YuY/Users/GetAllFollowing",
         data: inputdata,
         dataType: "json",
 
         success: function (data) {
-            var HTML="";
-          
+
+
+            var HTML = "";
+
             if (data.ResponseData.length > 0) {
-               
+
                 for (var i = 0; i < data.ResponseData.length; i++) {
-
-
                     HTML += "<div class='single-frnd'>"
                     HTML += "<div class='fl single-frnd-imgarea'><img src='images/Syra-yousaf-profile-pictures.jpg'></div>"
                     HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
@@ -29,18 +28,19 @@ function GetAllFollowerList()
 
                     //console.log(data.ResponseData.length);
                 }
-                $("#getfollowerList").html(HTML);
+                $("#getfollowingList").html(HTML);
             }
-          
-            },
+
+            //console.log(data.ResponseData.length);
+        },
         error: function (xhr) {
             alert(xhr.responseText);
         }
     });
 }
 
-
-function GetRecentFollowerList() {
+//Get Recent following users
+function GetRecentFollowingList() {
     var inputdata = {
         "userId": 4,
         "start": 1,
@@ -48,8 +48,8 @@ function GetRecentFollowerList() {
     };
     $.ajax({
         type: "GET",
-       // url: "http://localhost:6269/Users/GetRecentFollower",
-        url: "http://174.141.233.6/YuY/Users/GetRecentFollower",
+        //url: "http://localhost:6269/Users/GetRecentFollowing",
+        url: "http://174.141.233.6/YuY/Users/GetRecentFollowing",
         data: inputdata,
         dataType: "json",
 
@@ -59,8 +59,6 @@ function GetRecentFollowerList() {
             if (data.ResponseData.length > 0) {
 
                 for (var i = 0; i < data.ResponseData.length; i++) {
-
-
                     HTML += "<div class='single-frnd'>"
                     HTML += "<div class='fl single-frnd-imgarea'><img src='images/Syra-yousaf-profile-pictures.jpg'></div>"
                     HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
@@ -68,15 +66,14 @@ function GetRecentFollowerList() {
 
                     //console.log(data.ResponseData.length);
                 }
-                $("#getfollowerList").html(HTML);
+                $("#getfollowingList").html(HTML);
             }
 
-            console.log(data);
             //console.log(data.ResponseData.length);
+
         },
         error: function (xhr) {
             alert(xhr.responseText);
         }
     });
 }
-

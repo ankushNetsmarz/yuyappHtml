@@ -52,8 +52,6 @@
 
 
 
-
-
 <!-- after the click on single menu show this div -->
 <div class="ctgry-list-main" style="display:none;">
 <div class="white-strip">YAPP Live</div>
@@ -119,7 +117,7 @@
 
 <!-- add new frends screen start here -->
 
-<div class="add-frnd" style="display:none;">
+<div class="add-frnd" style="display:block;">
 
 <div id="TabbedPanels2" class="TabbedPanels">
     <ul class="TabbedPanelsTabGroup">
@@ -129,85 +127,8 @@
     <div class="TabbedPanelsContentGroup">
       <div class="TabbedPanelsContent">
       <div class="add-frnd-list">
-        <div class="plug-frnd-main">
-        <div class="plug-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
-        </div>
+      
         
-         <div class="plug-frnd-main">
-        <div class="plug-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
-        </div>
-        
-        <div class="plug-frnd-main">
-        <div class="plug-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
-        </div>
-        
-        <div class="plug-frnd-main">
-        <div class="plug-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
-        </div>
-        
-        <div class="plug-frnd-main">
-        <div class="plug-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
-        </div>
-        
-        <div class="plug-frnd-main">
-        <div class="plug-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
-        </div>
-        
-        <div class="plug-frnd-main">
-        <div class="plug-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
-        </div>
-        
-        <div class="plug-frnd-main">
-        <div class="plug-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
-        </div>
-        
-        <div class="plug-frnd-main">
-        <div class="plug-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
-        </div>
-        
-        <div class="plug-frnd-main">
-        <div class="plug-frnd">
-        <div class="fl single-frnd-imgarea"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
-        <div>Syra Yousaf</div>
-        </div>
-        <div class="plug-btn-div"><button type="button" class="plug-btn">PLUG</button></div>
-        </div>
                 
         </div>
       </div>
@@ -223,6 +144,7 @@
 
 <div class="clr"></div>
 </div>
+    <script src="js/findPeople.js"></script>
     <script src="js/updateProfile.js"></script>
     <script src="js/UserProfile.js"></script>
     <script src="js/jquery-2.0.2.js"></script>
@@ -230,8 +152,8 @@
        var flag = 0;
        $(document).ready(function () {
 
-           GetUserProfile();
-
+          // GetUserProfile();
+           GetPeopleRandom();
            $("#updateButton").on("click", function ()
            {
                var editFirstname=  $("#editFirstname").val();
@@ -266,6 +188,9 @@
             });
 
 
+        
+
+
             $(".right-top-btn").on("click", function () {
                 if (flag == 0) {
                     $(".profile-menu").css("display", "block");
@@ -276,7 +201,14 @@
                     flag = 0;
                 }
             });
-        });
+       });
+
+
+                   $(document).on("click", "#plug", function () {
+       
+                      AddFriend();
+
+                   });
 
     </script>
 <script type="text/javascript">

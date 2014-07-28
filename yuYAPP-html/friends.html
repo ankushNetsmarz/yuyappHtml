@@ -28,6 +28,7 @@
 <div class="main_div">
 
 <div>
+
 <div id="TabbedPanels1" class="TabbedPanels">
     <ul class="TabbedPanelsTabGroup">
       <li id="getFollowers" class="TabbedPanelsTab" tabindex="0">Your Followers</li>
@@ -37,12 +38,12 @@
       <div class="TabbedPanelsContent">
       <div class="swiper-nav swiper-container">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide"><span>Recent</span></div>
-			<div class="swiper-slide"><span>All</span></div>
-			<div class="swiper-slide"><span>You may Know</span></div>
+			<div class="swiper-slide" id="recentFollower"><span>Recent</span></div>
+			<div class="swiper-slide" id="allFollower"><span>All</span></div>
+		
 		</div>
 	</div>
-    <div id="getfollowingList" class="frnd-list-main">
+    <div id="getfollowerList" class="frnd-list-main">
 
      
       
@@ -53,12 +54,12 @@
       <div class="TabbedPanelsContent">
    <div class="swiper-nav swiper-container">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide"><span>Recent</span></div>
-			<div class="swiper-slide"><span>All</span></div>
-			<div class="swiper-slide"><span>You may Know</span></div>
+			<div class="swiper-slide" id="recentFollowing"><span>Recent</span></div>
+			<div class="swiper-slide" id="allFollowing"><span>All</span></div>
+		
 		</div>
 	</div>
-    <div  id="getfollowerList" class="frnd-list-main">
+    <div  id="getfollowingList" class="frnd-list-main">
 
      
       
@@ -78,28 +79,44 @@ var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
 </body>
 
 
-<script src="js/jquery-2.0.2.js"></script>
+    <script src="js/jquery-2.0.2.js"></script>
 	<!-- Don't forget to get the latest Swiper and scrollbar version here-->
 	<script src="js/idangerous.swiper-2.0.min.js"></script>
 	<script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
-	
+    <script src="js/getFollowing.js"></script>
     <script src="js/getFollower.js"></script>
     <script>
 
+
         $(document).ready(function () {
          
-            GetFollowerList();
+        GetAllFollowerList();
 
-       
+            $("#recentFollower").on("click", function () {
+                GetRecentFollowerList();
+            });
+            $("#allFollower").on("click", function () {
+                GetAllFollowerList();
+            });
+      
+
+            $("#recentFollowing").on("click", function () {
+                GetRecentFollowingList();
+            });
+            $("#allFollowing").on("click", function () {
+                GetAllFollowing();
+            });
+        
+
         $("#getFollowers").on("click", function () {
 
-            GetFollowerList();
+            GetAllFollowerList();
         });
 
         $("#GetFollowingList").on("click", function ()
         {
             
-            GetFollowingList();
+            GetAllFollowing();
 
         });
         });
