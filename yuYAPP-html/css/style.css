@@ -151,7 +151,7 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .add-frnd-list{width: 100%; margin: 0px auto 10px; height:369px; overflow-y:scroll;}
 .plug-frnd-main{width:48%; float: left; margin: 15px 0px 0px 5px; border-bottom:1px dotted;}
-.plug-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#76b923; font-weight: bold; width:100%; line-height:50px; background:#f3f3f3; border-top-left-radius:100%; border-bottom-left-radius:100%;}
+.plug-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#555; font-weight: bold; width:100%; line-height:50px; background:#f3f3f3; border-top-left-radius:100%; border-bottom-left-radius:100%;}
 
 .plug-btn-div{width:100%;}
 .plug-btn{float:right;background:url(../images/plug.png) no-repeat left 3px center / 11px auto rgba(118, 185, 35, 1); border: medium none; color: rgb(255, 255, 255); margin:0px; padding:3% 4% 3% 12%; cursor:pointer;}
