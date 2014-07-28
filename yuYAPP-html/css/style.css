@@ -105,6 +105,8 @@ input[placeholder], [placeholder], *[placeholder] {
   .mid_box{margin: 0px auto; width:100%; position: absolute; top:55px;}
  .right_box{margin:0 15px 0 0; float:right;}
  
+ .navigation{}
+ 
 
  
  .white-strip{background:url(../images/ctgry-list-head-3.png) repeat-x center; height:53px; width:100%; text-align:center; color:#FFF; font-size:16px; font-family:'Open Sans', sans-serif; line-height:75px;}
@@ -121,7 +123,7 @@ input[placeholder], [placeholder], *[placeholder] {
 .user-list-pic img{width:49px;}
 .user-title{background:rgba(255, 255, 255, 0.6); padding:10px 0 10px 5px; margin:15px 0 0; text-align:left; width:79.8%;}
 
-.frnd-list-main{width: 100%; margin: 0px auto 10px; height:300px; overflow-y:scroll;}
+.frnd-list-main{width: 100%; margin: 0px auto 10px; height:300px; overflow-y:scroll; background:#FFF;}
 .single-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#76b923; font-weight: bold; width:48%; line-height:50px; float: left; margin: 15px 0px 0px 5px; background:#f3f3f3; border-top-left-radius:100%; border-bottom-left-radius:100%;}
 .single-frnd-imgarea{width:55px; height: 55px; border-radius: 50%; overflow: hidden; box-shadow:2px 2px 2px -1px rgba(0, 0, 0, 0.8);}
 .single-frnd-imgarea img{width:100%;}
