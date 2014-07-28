@@ -28,7 +28,7 @@ function GetAllFollowing() {
 
                     //console.log(data.ResponseData.length);
                 }
-                $("#getfollowingList").html(HTML);
+                $("#getfollowingLists").html(HTML);
             }
 
             //console.log(data.ResponseData.length);
@@ -66,7 +66,7 @@ function GetRecentFollowingList() {
 
                     //console.log(data.ResponseData.length);
                 }
-                $("#getfollowingList").html(HTML);
+                $("#getfollowingLists").html(HTML);
             }
 
             //console.log(data.ResponseData.length);
