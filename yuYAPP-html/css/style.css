@@ -95,12 +95,16 @@ input[placeholder], [placeholder], *[placeholder] {
  .top_head_bg{padding: 17px 0 0; margin:0 auto; text-align:center;}
  .top_heading{text-align:center; color:#FFF; font-family:'Open Sans', sans-serif; font-weight:normal; font-size:14px;}
  
- .unselect{background:url(../images/unselect-ctgry.png) no-repeat center; width:100px; height:100px; margin:0 auto; text-align:center; color:#76b923; font-size:14px; line-height:100px; cursor:pointer;}
+ .unselect{background:url(../images/unselect-ctgry-3.png) no-repeat center; width:86px; height:86px; margin:0 auto; text-align:center; color:#fff; font-size:12px; line-height:86px; cursor:pointer; text-shadow:0 1px 0 rgba(0, 0, 0, 0.7); font-weight:bold;}
  
- .ctgry-row{width:100%; margin:16% auto 0; position: relative;}
-  .ctgry-row-2{width:100%; margin:16% auto 0; position: relative;}
- .left_category{margin: 0px; position: absolute; top: 75px; left: 30px;}
- .right_category{margin: 0px; position: absolute; top: 75px; right: 30px;}
+ .ctgry-row{width:100%; margin:5% auto 0; position: relative; display:table;}
+ .ctgry-row-2{width:100%; margin:7% auto 0; position: relative; display:table;}
+ .ctgry-row-3{width:100%; margin:7% auto 0; position: relative; display:table;}
+  
+ .left_box{margin:0 0 0 15px; float:left;}
+  .mid_box{margin: 0px auto; width:100%; position: absolute; top:55px;}
+ .right_box{margin:0 15px 0 0; float:right;}
+ 
 
  
  .white-strip{background:url(../images/ctgry-list-head-3.png) repeat-x center; height:53px; width:100%; text-align:center; color:#FFF; font-size:16px; font-family:'Open Sans', sans-serif; line-height:75px;}
