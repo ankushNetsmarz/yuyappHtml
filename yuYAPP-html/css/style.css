@@ -165,9 +165,7 @@ input[placeholder], [placeholder], *[placeholder] {
 .menu-shadow{margin:15px 0 0 0; width:100%;}
 .menu-shadow img{width:100%; opacity:0.4;}
 
-.inner-pages {
-position: absolute; background: none repeat scroll 0% 0% rgb(255, 255, 255); top: 0px; width: 96%; margin: 0px 2%;
-}
+
 
 
 
