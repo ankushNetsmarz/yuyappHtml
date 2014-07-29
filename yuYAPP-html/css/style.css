@@ -31,7 +31,7 @@ background: -ms-radial-gradient(center, ellipse cover,  #dbff9a 0%,#428a00 100%)
 background: radial-gradient(ellipse at center,  #dbff9a 0%,#428a00 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbff9a', endColorstr='#428a00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */}
 
-.main_div{text-align:center; margin:0; width:96.1%; padding:0 2%; height:430px; overflow-y:scroll;}
+.main_div{text-align:center; margin:0; width:100%; padding:0; height:430px; overflow-y:scroll; position:relative;}
 .login_main_div{text-align:center; margin:0; width:96.1%; padding:0 2%;}
 .fl{float:left;}
 .fr{float:right;}
@@ -164,6 +164,11 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .menu-shadow{margin:15px 0 0 0; width:100%;}
 .menu-shadow img{width:100%; opacity:0.4;}
+
+.inner-pages {
+position: absolute; background: none repeat scroll 0% 0% rgb(255, 255, 255); top: 0px; width: 96%; margin: 0px 2%;
+}
+
 
 
 

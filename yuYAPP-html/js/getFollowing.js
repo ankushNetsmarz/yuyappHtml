@@ -8,6 +8,7 @@ function GetAllFollowing() {
     };
     $.ajax({
         type: "GET",
+        beforeSend: showLoader(),
         //url: "http://localhost:6269/Users/GetFollowing",
         url: "http://174.141.233.6/YuY/Users/GetAllFollowing",
         data: inputdata,
@@ -36,6 +37,8 @@ function GetAllFollowing() {
         error: function (xhr) {
             alert(xhr.responseText);
         }
+    }).done(function () {
+        hideLoader();
     });
 }
 
@@ -48,6 +51,7 @@ function GetRecentFollowingList() {
     };
     $.ajax({
         type: "GET",
+        beforeSend: showLoader(),
         //url: "http://localhost:6269/Users/GetRecentFollowing",
         url: "http://174.141.233.6/YuY/Users/GetRecentFollowing",
         data: inputdata,
@@ -75,5 +79,7 @@ function GetRecentFollowingList() {
         error: function (xhr) {
             alert(xhr.responseText);
         }
+    }).done(function () {
+        hideLoader();
     });
 }

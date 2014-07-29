@@ -16,6 +16,9 @@
 </head>
 
 <body>
+<div class="loader-bg" style="display:none;z-index:50">
+<div class="loader-area"><img src="images/482.GIF"></div>
+</div>
 
 <div class="interest-topbar">
 <div class="left-top-btn"><button type="button" class="menu_btn_top"></button></div>
@@ -199,6 +202,7 @@
 </div>
 <div class="clr"></div>
 </div>
+    <script src="js/ajaxWebService.js"></script>
     <script src="js/idangerous.swiper-2.0.min.js"></script>
 	<script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
     <script src="js/findPeople.js"></script>
@@ -230,18 +234,24 @@
            GetUserProfile();
 
            $("#RequestOption").on("click", function () {
-               $("#edit_profile,#see_profile,#TabbedPanels1").css("display", "none");   
+               $('.inner-pages').animate({
+                   'top': "0px" //moves up
+               });
+               $("#edit_profile,#see_profile").css("display", "none");   
                 GetPeopleRandom();          
-               $(".navigation").css("display", "none");
+           
                $(".add-frnd").css("display", "block");
                $(".top_heading").text("FIND-FRIENDS");
 
            });
 
            $("#FriendsOption").on("click", function () {
+               $('.inner-pages').animate({
+                   'top': "0px" //moves up
+               });
                $("#edit_profile,#see_profile").css("display", "none");       
                 GetAllFollowerList();           
-               $(".navigation,.add-frnd").css("display", "none");
+               $(".add-frnd").css("display", "none");
                $(".follow-friend").css("display", "block");
                $(".top_heading").text("FRIENDS");
 

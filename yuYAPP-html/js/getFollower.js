@@ -9,8 +9,10 @@ function GetAllFollowerList()
     };
     $.ajax({
         type: "GET",
-       // url: "http://localhost:6269/Users/GetFollower",
+        // url: "http://localhost:6269/Users/GetFollower",
+        beforeSend: showLoader(),
         url: "http://174.141.233.6/YuY/Users/GetAllFollower",
+       
         data: inputdata,
         dataType: "json",
 
@@ -36,8 +38,11 @@ function GetAllFollowerList()
         error: function (xhr) {
             alert(xhr.responseText);
         }
+    }).done(function () {
+        hideLoader();
     });
 }
+
 
 
 function GetRecentFollowerList() {
@@ -48,8 +53,10 @@ function GetRecentFollowerList() {
     };
     $.ajax({
         type: "GET",
-       // url: "http://localhost:6269/Users/GetRecentFollower",
+        // url: "http://localhost:6269/Users/GetRecentFollower",
+        beforeSend: showLoader(),
         url: "http://174.141.233.6/YuY/Users/GetRecentFollower",
+        
         data: inputdata,
         dataType: "json",
 
@@ -77,6 +84,9 @@ function GetRecentFollowerList() {
         error: function (xhr) {
             alert(xhr.responseText);
         }
+    }).done(function () {
+        hideLoader();
     });
 }
+
 

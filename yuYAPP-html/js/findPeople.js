@@ -7,7 +7,8 @@
     $.ajax({
         type: "GET",
      //   url: "http://localhost:6269/Users/GetPeopleRandom",
-         url: "http://174.141.233.6/YuY/Users/GetPeopleRandom",
+        url: "http://174.141.233.6/YuY/Users/GetPeopleRandom",
+        beforeSend: showLoader(),
         data: inputdata,
         dataType: "json",
 
@@ -35,6 +36,8 @@
         error: function (xhr) {
             alert(xhr.responseText);
         }
+    }).done(function () {
+        hideLoader();
     });
 }
 
@@ -46,6 +49,7 @@ function AddFriend() {
     };
     $.ajax({
         type: "POST",
+        beforeSend: showLoader(),
        // url: "http://localhost:6269/users/AddFriend",
        url: "http://174.141.233.6/YuY/users/AddFriend",
         data: postData,
@@ -59,5 +63,7 @@ function AddFriend() {
          
             alert(xhr.responseText);
         }
+    }).done(function () {
+        hideLoader();
     });
 }
