@@ -34,11 +34,11 @@
 
 </div>
 
-<div class="main_div" style="overflow:hidden">
+<div class="main_div" style="overflow:hidden;">
 
 
 <!-- after the login page display this page (in this page firstly show these menu buttons) -->
-<div class="navigation" style="display:none;z-index:10">
+<div class="navigation" style="display:block; z-index:10">
 
 <div class="ctgry-row">
 <div id="YuCamOption" class="unselect left_box">Yu Cam</div>
@@ -65,9 +65,9 @@
 </div>
 
 
-
+<div class="inner-pages">
 <!-- after the click on single menu show this div -->
-<div class="ctgry-list-main" style="display:block;">
+<div class="ctgry-list-main" style="display:none;">
 
 <div class="list-area">
 
@@ -130,7 +130,7 @@
 
 <!-- add new frends screen start here -->
 
-<div class="add-frnd" style="display:none;">
+<div class="add-frnd" style="display:block;">
 
 <div id="TabbedPanels2" class="TabbedPanels">
     <ul class="TabbedPanelsTabGroup">
@@ -196,7 +196,7 @@
     </div>
   </div>    
 </div>
-
+</div>
 <div class="clr"></div>
 </div>
     <script src="js/idangerous.swiper-2.0.min.js"></script>
@@ -210,7 +210,7 @@
     <script>
        var flag = 0;
        $(document).ready(function () {
-
+           GetPeopleRandom();
            $("#SeeProfile").on("click", function () {
         
                $("#see_profile").css("display", "block");
@@ -242,7 +242,7 @@
                $("#edit_profile,#see_profile").css("display", "none");       
                 GetAllFollowerList();           
                $(".navigation,.add-frnd").css("display", "none");
-               $("#TabbedPanels1").css("display", "block");
+               $(".follow-friend").css("display", "block");
                $(".top_heading").text("FRIENDS");
 
            });
@@ -265,17 +265,20 @@
                 window.location.replace("login.html");
             });
          
-
-            $(".menu_btn_top").on("click", function () {
+            $(".menu_btn_top").bind('click', function () {
                 if (flag == 0) {
-                    $(".navigation").css("display", "block");
-                    $(".navigation").animate({ bottom: '10px' });
+                                           
+                    $('.inner-pages').animate({
+                          'top': "345px" //moves up
+                        });
+
                     flag = 1;
                 }
                 else {
-
-                    $(".navigation").css("display", "none");
-                    // $(".ctgry-list-main").animate({ bottom: '1px' });
+                 
+                    $('.inner-pages').animate({
+                        'top': "0px" //moves up
+                    });
                     flag = 0;
                 }
 

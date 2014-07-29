@@ -13,15 +13,22 @@ $('#SignUpEmail').blur(function () {
 $("#signUpButton").on("click", function () {
     //  $(".signup_inputs, .registerpage_btns, .signup-logo").css("display", "block");
     $(".login_inputs,#loginButtonDiv,#signUpButtonDiv,.need_help,.logo").css("display", "none");
+
+    $('#signUpDiv').animate({
+        'marginTop': "-20px" //moves down
+    });
     $("#signUpDiv").css("display", "block");
-    $("#signUpDiv").animate({ top: '1px' });
 });
 
 
 $("#backButtonRegister").on("click", function () {
     $("#signUpDiv").css("display", "none");
+
+
+    $('#signUpDiv').animate({
+        'marginTop': "20px" //moves up
+    });
     $(".login_inputs,#loginButtonDiv,#signUpButtonDiv,.need_help,.logo").css("display", "block");
-    $("#LoginDiv").animate({ bottom: '1px' });
 
 });
 
