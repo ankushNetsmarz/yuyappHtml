@@ -1,9 +1,9 @@
 ﻿
-
+var userId= localStorage.getItem("userId");
 function GetAllFollowerList()
 {
     var inputdata = {
-        "userId": 4,
+        "userId": userId,
         "start": 1,
         "end": 10
     };
@@ -47,7 +47,7 @@ function GetAllFollowerList()
 
 function GetRecentFollowerList() {
     var inputdata = {
-        "userId": 4,
+        "userId": userId,
         "start": 1,
         "end": 10
     };

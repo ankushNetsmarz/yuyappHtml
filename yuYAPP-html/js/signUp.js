@@ -71,6 +71,7 @@ function Signup(SignUpFirstName, SignUpLastName, SignUpUserName, SignUpUserName,
         success: function (data) {
           
             console.log(data);
+
             //alert("success..." + data);
         },
         error: function (xhr) {

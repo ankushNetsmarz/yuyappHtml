@@ -253,19 +253,24 @@ Another beautiful temple I just came across here in southern Thailand.  The arch
     <script>
        var flag = 0;
        $(document).ready(function () {
-           GetPeopleRandom();
+      //    GetPeopleRandom();
            $("#SeeProfile").on("click", function () {
-        
+               $('.inner-pages').animate({
+                   'top': "0px" //moves up
+               });
                $("#see_profile").css("display", "block");
-               $(".add-frnd,.navigation").css("display", "none");
-               $("#TabbedPanels1,#edit_profile").css("display", "none");
+               $(".add-frnd").css("display", "none");
+               $("#edit_profile").css("display", "none");
                $(".top_heading").text("USER-PROFILE");
            });
 
            $("#EditProfile").on("click", function ()
            {
-               $("#see_profile,#TabbedPanels1").css("display", "none");         
-               $(".add-frnd,.navigation").css("display", "none");           
+               $('.inner-pages').animate({
+                   'top': "0px" //moves up
+               });
+               $("#see_profile").css("display", "none");         
+               $(".add-frnd").css("display", "none");           
                $("#edit_profile").css("display", "block");
                $(".top_heading").text("EDIT-PROFILE");
            });
@@ -378,7 +383,7 @@ Another beautiful temple I just came across here in southern Thailand.  The arch
 
 
            $(document).on("click", "#plug", function () {
-       
+                          $(this).attr("userId");
                       AddFriend();
 
                    });

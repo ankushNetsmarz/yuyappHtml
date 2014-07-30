@@ -1,6 +1,9 @@
-﻿function GetPeopleRandom() {
+﻿
+var userId = localStorage.getItem("userId");
+alert(userId);
+function GetPeopleRandom() {
     var inputdata = {
-        "userId": 4,
+        "userId": userId,
         "start": 1,
         "end": 10
     };
@@ -23,10 +26,10 @@
 
          HTML += "<div class='plug-frnd-main'>"            
          HTML += "<div class='plug-frnd'>"
-         HTML += "<div class='fl single-frnd-imgarea'><img src=''></div>"
+         HTML += "<div class='fl single-frnd-imgarea' ><img src=''></div>"
          HTML += "<div>"+ data.ResponseData[i].UserName+ "</div>"
          HTML += "</div>"
-         HTML += "<div  id='plug' class='plug-btn-div'><button type='button' class='plug-btn'>PLUG</button></div></div>"
+         HTML += "<div  id='plug' class='plug-btn-div' userId=" + data.ResponseData[i].UserId + "><button type='button' class='plug-btn'>PLUG</button></div></div>"
             //console.log(data.ResponseData.length);
        }
                 $(".add-frnd-list").html(HTML);
@@ -44,7 +47,7 @@
 
 function AddFriend() {
     var postData = {
-        userId: 4,
+        userId: userId,
         friendId: 13,
     };
     $.ajax({
