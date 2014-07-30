@@ -116,12 +116,12 @@ input[placeholder], [placeholder], *[placeholder] {
 .ctgry-list-main{/*background:url(../images/ctgry-list-bg.jpg) no-repeat; background-size:cover; */margin:7% 0 0;}
 
 
-.list-area{padding:10px 10px 0; width:93.491%; height:330px; overflow-y:scroll;}
+.list-area{padding:0; width:100%; height:410px; overflow-y:scroll;}
 
-.single-user{ width:100%; margin:0 0 15px;}
-.user-list-pic{width:49px; height:49px; border:2px solid #00afbf; overflow:hidden;}
+.single-user{ width:100%; margin:0 0 20px; background:url(../images/menu-shadow.png) no-repeat bottom center;}
+.user-list-pic{width:49px; height:49px; overflow:hidden; box-shadow:2px 2px 4px -2px rgba(0, 0, 0, 0.7); margin:0 5px 5px 0;}
 .user-list-pic img{width:49px;}
-.user-title{background:#f3f3f3; padding:10px 0 10px 5px; margin:15px 0 0; text-align:left; width:79.8%;}
+.user-title{ padding:0 5px 5px 0; margin:0; text-align:left;}
 
 .frnd-list-main{width: 100%; margin: 0px auto 10px; height:300px; overflow-y:scroll; background:#FFF;}
 .single-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#76b923; font-weight: bold; width:48%; line-height:50px; float: left; margin: 15px 0px 0px 5px; background:#f3f3f3; border-top-left-radius:100%; border-bottom-left-radius:100%;}
@@ -163,13 +163,22 @@ input[placeholder], [placeholder], *[placeholder] {
 .plug-btn{float:right;background:url(../images/plug.png) no-repeat left 3px center / 11px auto rgba(118, 185, 35, 1); border: medium none; color: rgb(255, 255, 255); margin:0px; padding:3% 4% 3% 12%; cursor:pointer;}
 
 .menu-shadow{margin:15px 0 0 0; width:100%;}
-.menu-shadow img{width:100%; opacity:0.4;}
+.menu-shadow img{width:100%; opacity:0.5;}
 
 .inner-pages {
 position: absolute; background: none repeat scroll 0% 0% rgb(255, 255, 255); top: 0px; width: 96%; margin: 0px 2%;
 }
 
+.wordwall-btns{width:100%; margin:0 auto;}
+.like-btn{padding:7px 15px; border-bottom-right-radius:7px; border-top-left-radius:7px; background:rgba(118, 185, 35, 0.7); border:none; color:#fff;text-shadow:0 1px 0 rgba(0, 0, 0, 0.7);}
 
+
+
+/*-- This css for Mobile's different resolutions --*/
+
+@media screen and (max-device-width: 320px) and (orientation: portrait){
+	
+	}
 
 
 
