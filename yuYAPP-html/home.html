@@ -70,7 +70,7 @@
 
 <div class="inner-pages">
 <!-- after the click on single menu show this div -->
-<div class="ctgry-list-main" style="display:block;">
+<div  class="ctgry-list-main" style="display:block;">
 
 <div class="post-status">
 <input type="text" placeholder="Enter your status" class="post-input">
@@ -258,16 +258,25 @@ Another beautiful temple I just came across here in southern Thailand.  The arch
     <script>
        var flag = 0;
        $(document).ready(function () {
-      //    GetPeopleRandom();
+           //    GetPeopleRandom();
            $("#SeeProfile").on("click", function () {
                $('.inner-pages').animate({
                    'top': "0px" //moves up
                });
                $("#see_profile").css("display", "block");
                $(".add-frnd").css("display", "none");
-               $("#edit_profile").css("display", "none");
+               $("#edit_profile,").css("display", "none");
                $(".top_heading").text("USER-PROFILE");
            });
+
+
+           $("#WordWallOption").on("click", function () {
+               $('.inner-pages').animate({
+                   'top': "0px" //moves up
+               });
+               $(".ctgry-list-main").css("display", "block");
+           });
+
 
            $("#EditProfile").on("click", function ()
            {
@@ -287,7 +296,7 @@ Another beautiful temple I just came across here in southern Thailand.  The arch
                    'top': "0px" //moves up
                });
                $("#edit_profile,#see_profile").css("display", "none");   
-                GetPeopleRandom();          
+               GetPeopleRandom();          
            
                $(".add-frnd").css("display", "block");
                $(".top_heading").text("FIND-FRIENDS");
@@ -299,7 +308,7 @@ Another beautiful temple I just came across here in southern Thailand.  The arch
                    'top': "0px" //moves up
                });
                $("#edit_profile,#see_profile").css("display", "none");       
-                GetAllFollowerList();           
+               GetAllFollowerList();           
                $(".add-frnd").css("display", "none");
                $(".follow-friend").css("display", "block");
                $(".top_heading").text("FRIENDS");
@@ -316,48 +325,48 @@ Another beautiful temple I just came across here in southern Thailand.  The arch
                var editGender = $("#editGender").val();
               
                UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editGender);
-            //   return false;
+               //   return false;
            });
 
-            $("#logout").on("click", function () {
-                localStorage.clear();
-                window.location.replace("login.html");
-            });
+           $("#logout").on("click", function () {
+               localStorage.clear();
+               window.location.replace("login.html");
+           });
          
-            $(".menu_btn_top").bind('click', function () {
-                if (flag == 0) {
+           $(".menu_btn_top").bind('click', function () {
+               if (flag == 0) {
                                            
-                    $('.inner-pages').animate({
-                          'top': "345px" //moves up
-                        });
+                   $('.inner-pages').animate({
+                       'top': "345px" //moves up
+                   });
 
-                    flag = 1;
-                }
-                else {
+                   flag = 1;
+               }
+               else {
                  
-                    $('.inner-pages').animate({
-                        'top': "0px" //moves up
-                    });
-                    flag = 0;
-                }
+                   $('.inner-pages').animate({
+                       'top': "0px" //moves up
+                   });
+                   flag = 0;
+               }
 
-            });
+           });
 
 
-            $("#recentFollower").on("click", function () {
-                GetRecentFollowerList();
-            });
-            $("#allFollower").on("click", function () {
-                GetAllFollowerList();
-            });
+           $("#recentFollower").on("click", function () {
+               GetRecentFollowerList();
+           });
+           $("#allFollower").on("click", function () {
+               GetAllFollowerList();
+           });
       
 
-            $("#recentFollowing").on("click", function () {
-                GetRecentFollowingList();
-            });
-            $("#allFollowing").on("click", function () {
-                GetAllFollowing();
-            });
+           $("#recentFollowing").on("click", function () {
+               GetRecentFollowingList();
+           });
+           $("#allFollowing").on("click", function () {
+               GetAllFollowing();
+           });
         
 
             $("#getFollowers").on("click", function () {
