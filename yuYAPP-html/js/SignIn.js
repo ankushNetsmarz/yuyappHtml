@@ -34,10 +34,11 @@ function SignIn(userLoginEmailId, loginPassword) {
             if (data.ResponseData[0].UserID != 0)
             {
                 var userId = data.ResponseData[0].UserID;
+                alert(userId);
                 localStorage.setItem("userId", userId);
                 localStorage.setItem("LoginName", userLoginEmailId);
                 localStorage.setItem("loginPassword", loginPassword);
-             // window.location.replace("home.html");
+           //   window.location.replace("home.html");
             }
             else {
                 alert("wrong user");
