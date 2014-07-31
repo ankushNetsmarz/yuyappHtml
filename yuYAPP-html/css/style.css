@@ -179,12 +179,30 @@ position: absolute; background: none repeat scroll 0% 0% rgb(255, 255, 255); top
 .user-name-title{color:#00afbf; font-weight:bold;}
 .user-name-title span{color:#333;}
 .user-title p{margin:5px 0;}
+.swipe-top{top:345px;}
 
 
 /*-- This css for Mobile's different resolutions --*/
 
-@media screen and (max-device-width: 480px) and (max-device-height: 320px){
+@media screen and (width: 480px) and (height: 320px){
+	.list-area{height:173px;}
+	.main_div{height:270px;}
+	}
 	
+@media screen and (width: 480px) and (height: 800px){
+	.list-area{height:653px;}
+	.main_div{height:750px;}
+	}
+
+@media screen and (width: 800px) and (height: 480px){
+	.list-area{height:311px;}
+	.main_div{height:430px;}
+	}
+	
+@media screen and (width: 640px) and (height: 960px){
+	.list-area{height:802px;}
+	.main_div{height:910px;}
+	.swipe-top{top:420px;}
 	}
 
 
