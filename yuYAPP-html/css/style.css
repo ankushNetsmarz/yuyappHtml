@@ -176,11 +176,14 @@ position: absolute; background: none repeat scroll 0% 0% rgb(255, 255, 255); top
 .post-input{background:#fff;border:none; box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7); padding: 7px 10px; width: 60%;}
 .post-btn{padding:0; border:none; background:url(../images/add-status.png) no-repeat center center rgba(0, 0, 0, 0); background-size:100%; width:30px; height:30px;}
 .post-text-btn{background:#00afbf; color:#FFF; padding:7px 10px; border:none; box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7); font-size:12px;}
+.user-name-title{color:#00afbf; font-weight:bold;}
+.user-name-title span{color:#333;}
+.user-title p{margin:5px 0;}
 
 
 /*-- This css for Mobile's different resolutions --*/
 
-@media screen and (max-device-width: 320px) and (orientation: portrait){
+@media screen and (max-device-width: 480px) and (max-device-height: 320px){
 	
 	}
 
