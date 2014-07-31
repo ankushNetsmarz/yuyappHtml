@@ -73,27 +73,16 @@
 <div  class="ctgry-list-main" style="display:block;">
 
 <div class="post-status">
+
+
 <input type="button" class="post-btn">
-<input type="text" placeholder="Enter your status" class="post-input">
+<input type="text" id="InsertStatusTextBox" placeholder="Enter your status" class="post-input">
 <input type="button" class="post-text-btn" value="POST">
+
 </div>
 
 <div class="list-area">
 
-<div class="single-user">
-
-<div class="user-title"> 
-<div class="fl user-list-pic"><img src="images/user-pic-list.jpg" /></div>
-<div class="fl user-name-title">Jenifer D'soza <br><span>(40 mins ago)</span></div>
-<div class="clr"></div>
-<p>Another beautiful temple I just came across here in southern Thailand.  The architecture here is always so unique and other-worldly</p></div>
-<div class="wordwall-btns">
-<input type="button" class="like-btn" value="Like">
-<input type="button" class="like-btn" value="Comment">
-<input type="button" class="like-btn" value="Dislike">
-</div>
-<div class="clr"></div>
-</div>
 
 <div class="single-user">
 
@@ -109,6 +98,7 @@
 </div>
 <div class="clr"></div>
 </div>
+
 <div class="single-user">
 
 <div class="user-title"> 
@@ -137,6 +127,21 @@
 </div>
 <div class="clr"></div>
 </div>
+<div class="single-user">
+
+<div class="user-title"> 
+<div class="fl user-list-pic"><img src="images/user-pic-list.jpg" /></div>
+<div class="fl user-name-title">Jenifer D'soza <br><span>(40 mins ago)</span></div>
+<div class="clr"></div>
+<p>Another beautiful temple I just came across here in southern Thailand.  The architecture here is always so unique and other-worldly</p></div>
+<div class="wordwall-btns">
+<input type="button" class="like-btn" value="Like">
+<input type="button" class="like-btn" value="Comment">
+<input type="button" class="like-btn" value="Dislike">
+</div>
+<div class="clr"></div>
+</div>
+
 
 <div class="clr"></div>
 </div>
@@ -262,9 +267,12 @@
     <script src="js/jquery-2.0.2.js"></script>
     <script src="js/getFollowing.js"></script>
     <script src="js/getFollower.js"></script>
+    <script src="js/insertStatus.js"></script>
+    <script src="js/getPost.js"></script>
     <script>
        var flag = 0;
        $(document).ready(function () {
+           GetUserPost();
            //    GetPeopleRandom();
            $("#SeeProfile").on("click", function () {
                $('.inner-pages').animate({
@@ -304,7 +312,7 @@
                });
                $("#edit_profile,#see_profile").css("display", "none");   
                GetPeopleRandom();          
-           
+               $(".ctgry-list-main").css("display", "none");
                $(".add-frnd").css("display", "block");
                $(".top_heading").text("FIND-FRIENDS");
 

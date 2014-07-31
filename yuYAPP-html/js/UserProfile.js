@@ -1,6 +1,8 @@
-﻿function GetUserProfile() {
+﻿
+var userId = localStorage.getItem("userId");
+function GetUserProfile() {
     var userData = {
-        userId: 13
+        userId: userId
     };
     $.ajax({
         type: "GET",
