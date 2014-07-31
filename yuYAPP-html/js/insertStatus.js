@@ -2,6 +2,7 @@
 
 $("#postStatus").on("click", function () {
     InsertStatus();
+  
 });
 
 
@@ -23,7 +24,8 @@ function InsertStatus() {
         url: "http://174.141.233.6/YuY/posts/add",
         data: postData,
         success: function (data) {
-          
+            $("#InsertStatusTextBox").val('');
+            GetUserPost();
             console.log(data);
             //alert("success..." + data);
         },
