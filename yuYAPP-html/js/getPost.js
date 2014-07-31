@@ -15,12 +15,16 @@
                 success: function (data) {
                   
                     console.log(data);
+                    var HTML = "";
 
+                    if (data.ResponseData.length > 0) {
+
+                        for (var i = 0; i < data.ResponseData.length; i++) {
                 HTML+= "<div class='single-user'>"
 
-                HTML+= "<div class='user-title'> "
+                HTML += "<div class='user-title'> " + data.ResponseData[i].UserName;
                 HTML+= "<div class='fl user-list-pic'><img src='images/user-pic-list.jpg' /></div>"
-                HTML+=  "</div>"
+                HTML+=  data.ResponseData[i].Status + "</div>"
                 HTML+=  "<div class='wordwall-btns'>"
                 HTML+=  "<input type='button' class='like-btn' value='Like'>"
                 HTML+=  "<input type='button' class='like-btn' value='Comment'>"
@@ -29,6 +33,11 @@
                 HTML+=  "<div class='clr'></div>"
                 HTML+=  "</div>"
                     //alert("success..." + data);
+                        }
+                        $(".list-area").html(HTML);
+                    }
+
+                    //console.log(data.ResponseData.length);
                 },
                 error: function (xhr) {
                    
