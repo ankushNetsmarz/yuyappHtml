@@ -1,6 +1,6 @@
 ﻿
 var userId = localStorage.getItem("userId");
-alert(userId);
+
 function GetPeopleRandom() {
     var inputdata = {
         "userId": userId,
@@ -48,7 +48,7 @@ function GetPeopleRandom() {
 function AddFriend() {
     var postData = {
         userId: userId,
-        friendId: 13,
+        friendId: 1,
     };
     $.ajax({
         type: "POST",
