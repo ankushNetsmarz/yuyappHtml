@@ -45,11 +45,13 @@ function GetPeopleRandom() {
 }
 
 
-function AddFriend() {
+function AddFriend(friendId) {
+
     var postData = {
         userId: userId,
-        friendId: 1,
+        friendId: friendId,
     };
+   
     $.ajax({
         type: "POST",
         beforeSend: showLoader(),
@@ -59,7 +61,7 @@ function AddFriend() {
         success: function (data) {
           
             console.log(data);
-            GetPeopleRandom();
+           GetPeopleRandom();
             //alert("success..." + data);
         },
         error: function (xhr) {

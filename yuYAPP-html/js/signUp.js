@@ -22,6 +22,9 @@ $("#signUpButton").on("click", function () {
 
 
 $("#backButtonRegister").on("click", function () {
+    $("#SignUpFullName, #SignUpPassword, #SignUpDOB, #SignUpgender, #SignUpUserName, #SignUpEmail").val('');
+   
+ 
     $("#signUpDiv").css("display", "none");
 
 
@@ -71,8 +74,14 @@ function Signup(SignUpFirstName, SignUpLastName, SignUpUserName, SignUpUserName,
         success: function (data) {
           
             console.log(data);
-
+            if (data.ResponseData != 0)
+            {
+                var userId = data.ResponseData;
+                alert(userId);
+                localStorage.setItem("userId", userId);
+                window.location.replace("home.html");
             //alert("success..." + data);
+            }
         },
         error: function (xhr) {
          
@@ -94,7 +103,7 @@ function ValidateEmail() {
     $.ajax({
         type: "GET",
         beforeSend: showLoader(),
-        url: mainUrl + "checkuser",
+        url: mainUrl + "checkemail",
         data: postData,
         success: function (data) {
 

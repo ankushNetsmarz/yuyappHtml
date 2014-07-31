@@ -6,6 +6,7 @@ function GetUserProfile() {
     };
     $.ajax({
         type: "GET",
+        beforeSend: showLoader(),
         //url: "http://localhost:6269/users/GetProfile",
         url: "http://174.141.233.6/YuY/users/GetProfile",
         data: userData,
@@ -25,6 +26,8 @@ function GetUserProfile() {
        
             alert(xhr.responseText);
         }
+    }).done(function () {
+        hideLoader();
     });
 }
 

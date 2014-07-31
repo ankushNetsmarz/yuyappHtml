@@ -9,6 +9,7 @@
             }
             $.ajax({
                 type: "GET",
+                beforeSend: showLoader(),
               //  url: "http://localhost:6269/posts/GetPosts",
                 url: "http://174.141.233.6/YuY/posts/GetPosts",
                 data: postData,
@@ -20,11 +21,19 @@
                     if (data.ResponseData.length > 0) {
 
                         for (var i = 0; i < data.ResponseData.length; i++) {
+
+
+                            
+                           
+                    
                 HTML+= "<div class='single-user'>"
 
-                HTML += "<div class='user-title'> " + data.ResponseData[i].UserName;
+                HTML += "<div class='user-title'> "
                 HTML+= "<div class='fl user-list-pic'><img src='images/user-pic-list.jpg' /></div>"
-                HTML+=  data.ResponseData[i].Status + "</div>"
+                HTML += "<div class='fl user-name-title'>" + data.ResponseData[i].UserName + "<br><span>(" + data.ResponseData[i].TimeSpan + ")</span></div>"
+                HTML+= "<div class='clr'></div>"
+                HTML += "<p>"+ data.ResponseData[i].Status+"</p></div>"
+                         
                 HTML+=  "<div class='wordwall-btns'>"
                 HTML+=  "<input type='button' class='like-btn' value='Like'>"
                 HTML+=  "<input type='button' class='like-btn' value='Comment'>"

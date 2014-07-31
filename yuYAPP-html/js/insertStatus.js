@@ -11,6 +11,7 @@ $("#postStatus").on("click", function () {
 var userId= localStorage.getItem("userId");
 
 function InsertStatus() {
+ 
     var postData = {
         postedBy: userId, /*user who Post the status or the Post */
         postFileTitle: $("#InsertStatusTextBox").val(), /*This is for both Post and status*/
@@ -20,6 +21,7 @@ function InsertStatus() {
     };
     $.ajax({
         type: "POST",
+        beforeSend: showLoader(),
     //    url: "http://localhost:6269/posts/add",
         url: "http://174.141.233.6/YuY/posts/add",
         data: postData,
@@ -33,5 +35,7 @@ function InsertStatus() {
           
             alert(xhr.responseText);
         }
+    }).done(function () {
+        hideLoader();
     });
 }
