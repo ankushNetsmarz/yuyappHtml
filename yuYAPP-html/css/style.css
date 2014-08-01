@@ -170,7 +170,7 @@ position: absolute; background: none repeat scroll 0% 0% rgb(255, 255, 255); top
 }
 
 .wordwall-btns{width:100%; margin:0 auto;}
-.like-btn{padding:7px 15px; border-bottom-right-radius:7px; border-top-left-radius:7px; background:rgba(118, 185, 35, 0.7); border:none; color:#fff;text-shadow:0 1px 0 rgba(0, 0, 0, 0.7);}
+.like-btn{padding:7px 15px; border-bottom-right-radius:7px; border-top-left-radius:7px; background:rgba(118, 185, 35, 0.7); border:none; color:#fff;text-shadow:0 1px 0 rgba(0, 0, 0, 0.7); margin:0 3px 0 0;}
 
 .post-status{width:100%; margin:0 auto 15px;background:#f3f3f3; padding:10px 0;}
 .post-input{background:#fff;border:none; box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7); padding: 7px 10px; width: 60%;}
