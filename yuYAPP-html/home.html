@@ -232,30 +232,34 @@
            var currentWindowWidth = $(window).width(); // returns height of HTML document
       
            var top;
-
+           alert(currentWindowHeight);
            switch (currentWindowHeight) {
-               case '320':                   //320 *480
+               case 320:                   //320 *480
                    {
+                      
                        top = 'px';
                    }
-               case '480':  
+                   break;
+               case 480:  
 
-                   if (currentWindowWidth == '320')//480*320
+                   if (currentWindowWidth == 320)//480*320
                    {
                        top = 'px';
                    }
                    else {
-                       top = 'px';       //480* 800
+                       top = 'px';          //480* 800
                    }
+                   break;
 
-               case '800':
+               case 800:
 
                    {
                        top = 'px';          //800*480
 
                    }
-               case '640':
-                   if(currentWindowWidth == '1136')             //640*1136
+                   break;
+               case 640:
+                   if(currentWindowWidth == 1136)             //640*1136
                    {
                        top = 'px';
                    }
@@ -263,26 +267,27 @@
                    {
                        top='px';           //640*960
                    }
-
-               case '768':
+                   break;
+               case 768:
                    {
                        top= 'px'          //768 *1024
                    }
-               case '1024':
+                   break;
+               case 1024:
                    {
                        top = 'px'          //1024 *768
                    }
-
-               case '540':
+                   break;
+               case 540:
                    {
                        top = 'px'          //540 *960
                    }
-
-               case '960':
+                   break;
+               case 960:
                    {
                        top = 'px'          //960 *540
                    }
-
+                   break;
            }
 
            GetUserPost();
