@@ -1,10 +1,6 @@
 ﻿function UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editGender) {
     var userId = localStorage.getItem("userId");
-    alert(editFirstname);
-    alert(editLastname);
-    alert(editUserName);
-    alert(editDOB);
-    alert(editGender);
+
     var userData = {
         userId: userId,
         userName: editUserName,

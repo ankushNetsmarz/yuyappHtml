@@ -1,4 +1,7 @@
 ﻿
+
+
+
 var userId = localStorage.getItem("userId");
 function GetUserProfile() {
     var userData = {
@@ -13,7 +16,7 @@ function GetUserProfile() {
         success: function (data) {
           
             console.log(data);
-
+            $("#seeStatus").text(data.ResponseData.Post);
             $("#SeeUserName,#editUserName").val(data.ResponseData.UserName);
             $("#SeefullName").val(data.ResponseData.FirstName + " " + data.ResponseData.LastName);
             $("#editLastname").val(data.ResponseData.LastName);

@@ -1,4 +1,34 @@
 ﻿
+$("#FriendsOption").on("click", function () {
+    $('.inner-pages').animate({
+        'top': "0px" //moves up
+    });
+    $("#edit_profile,#see_profile").css("display", "none");
+    GetAllFollowerList();
+    $(".add-frnd").css("display", "none");
+    $(".follow-friend").css("display", "block");
+    $(".top_heading").text("FRIENDS");
+
+    $(".ctgry-list-main").css("display", "none");
+});
+
+
+
+$("#recentFollower").on("click", function () {
+    GetRecentFollowerList();
+});
+$("#allFollower").on("click", function () {
+    GetAllFollowerList();
+});
+
+
+
+
+$("#getFollowers").on("click", function () {
+
+    GetAllFollowerList();
+});
+
 var userId= localStorage.getItem("userId");
 function GetAllFollowerList()
 {

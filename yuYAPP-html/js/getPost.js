@@ -1,4 +1,16 @@
-﻿var userId = localStorage.getItem("userId");
+﻿
+$("#WordWallOption").on("click", function () {
+    GetUserPost();
+    $('.inner-pages').animate({
+        'top': "0px" //moves up
+    });
+    $(".top_heading").text("WORD");
+    $(".ctgry-list-main").css("display", "block");
+});
+
+
+
+var userId = localStorage.getItem("userId");
         /*get user post*/
         function GetUserPost() {
             var postData = {

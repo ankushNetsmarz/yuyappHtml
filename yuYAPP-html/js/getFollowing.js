@@ -1,4 +1,17 @@
 ﻿
+
+$("#recentFollowing").on("click", function () {
+    GetRecentFollowingList();
+});
+$("#allFollowing").on("click", function () {
+    GetAllFollowing();
+});
+
+
+$("#GetFollowingList").on("click", function () {
+    GetAllFollowing();
+});
+
 var userId = localStorage.getItem("userId");
 function GetAllFollowing() {
     var inputdata = {
