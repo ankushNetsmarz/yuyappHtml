@@ -237,55 +237,65 @@
                case 320:                   //320 *480
                    {
                       
-                       top = 'px';
+                       top = '345px';
                    }
                    break;
                case 480:  
 
                    if (currentWindowWidth == 320)//480*320
                    {
-                       top = 'px';
+                       top = '345px';
                    }
                    else {
-                       top = 'px';          //480* 800
+                       top = '420px';          //480* 800
                    }
                    break;
 
                case 800:
 
                    {
-                       top = 'px';          //800*480
+                       top = '380px';          //800*480
 
                    }
                    break;
                case 640:
                    if(currentWindowWidth == 1136)             //640*1136
                    {
-                       top = 'px';
+                       top = '520px';
                    }
                    else
                    {
-                       top='px';           //640*960
+                       top='485px';           //640*960
+                   }
+                   break;
+				   case 1136:
+                   {
+                       top='415px';           //640*1136
                    }
                    break;
                case 768:
                    {
-                       top= 'px'          //768 *1024
+                       top= '500px'          //768 *1024
                    }
                    break;
                case 1024:
                    {
-                       top = 'px'          //1024 *768
+                       top = '445px'          //1024 *768
                    }
                    break;
                case 540:
                    {
-                       top = 'px'          //540 *960
+                       top = '485px'          //540 *960
                    }
                    break;
                case 960:
+                   if(currentWindowWidth == 640)             //640*960
                    {
-                       top = 'px'          //960 *540
+                       top = '485px';
+                   }
+                   else
+                   {
+                       top= '395px';           //540*960
                    }
                    break;
            }
