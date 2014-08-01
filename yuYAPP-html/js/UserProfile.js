@@ -14,11 +14,13 @@ function GetUserProfile() {
           
             console.log(data);
 
-            $("#SeeUserName").val(data.ResponseData.UserName);        
+            $("#SeeUserName,#editUserName").val(data.ResponseData.UserName);
             $("#SeefullName").val(data.ResponseData.FirstName + " " + data.ResponseData.LastName);
-            $("#SeeGender").val(data.ResponseData.Gender);
+            $("#editLastname").val(data.ResponseData.LastName);
+            $("#editFirstname").val(data.ResponseData.FirstName);
+            $("#SeeGender,#editGender").val(data.ResponseData.Gender);
             $("#SeeEmail").val(data.ResponseData.Email);
-            $("#SeeDOB").val(data.ResponseData.DOB);
+            $("#SeeDOB,#editDOB").val(data.ResponseData.DOB);
 
 
         },

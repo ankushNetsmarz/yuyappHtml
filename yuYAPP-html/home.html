@@ -228,8 +228,65 @@
     <script>
        var flag = 0;
        $(document).ready(function () {
+           var currentWindowHeight= $(window).height();   // returns height of browser viewport
+           var currentWindowWidth = $(window).width(); // returns height of HTML document
+      
+           var top;
+
+           switch (currentWindowHeight) {
+               case '320':                   //320 *480
+                   {
+                       top = 'px';
+                   }
+               case '480':  
+
+                   if (currentWindowWidth == '320')//480*320
+                   {
+                       top = 'px';
+                   }
+                   else {
+                       top = 'px';       //480* 800
+                   }
+
+               case '800':
+
+                   {
+                       top = 'px';          //800*480
+
+                   }
+               case '640':
+                   if(currentWindowWidth == '1136')             //640*1136
+                   {
+                       top = 'px';
+                   }
+                   else
+                   {
+                       top='px';           //640*960
+                   }
+
+               case '768':
+                   {
+                       top= 'px'          //768 *1024
+                   }
+               case '1024':
+                   {
+                       top = 'px'          //1024 *768
+                   }
+
+               case '540':
+                   {
+                       top = 'px'          //540 *960
+                   }
+
+               case '960':
+                   {
+                       top = 'px'          //960 *540
+                   }
+
+           }
+
            GetUserPost();
-         
+           GetUserProfile();
            $("#SeeProfile").on("click", function () {
                $(".ctgry-list-main").css("display", "none");
                $('.inner-pages').animate({
@@ -237,13 +294,14 @@
                });
                $("#see_profile").css("display", "block");
                $(".add-frnd").css("display", "none");
-               $("#edit_profile,").css("display", "none");
+               $("#edit_profile").css("display", "none");
                $(".top_heading").text("USER-PROFILE");
           
            });
 
 
            $("#WordWallOption").on("click", function () {
+               GetUserPost();
                $('.inner-pages').animate({
                    'top': "0px" //moves up
                });
@@ -264,7 +322,7 @@
                $(".ctgry-list-main").css("display", "none");
            });
 
-           GetUserProfile();
+        
 
            $("#RequestOption").on("click", function () {
                $('.inner-pages').animate({
@@ -304,6 +362,7 @@
                //   return false;
            });
 
+
            $("#logout").on("click", function () {
                localStorage.clear();
                window.location.replace("login.html");
@@ -311,18 +370,20 @@
          
            $(".menu_btn_top").bind('click', function () {
                if (flag == 0) {
-                                           
-                   $('.inner-pages').animate({
-                       'top': "345px" //moves up
-                   });
 
+                  
+                   $('.inner-pages').animate({
+                  'top': top    //moves up
+                  
+                  });
+                 
                    flag = 1;
                }
                else {
-                 
+                  
                    $('.inner-pages').animate({
-                       'top': "0px" //moves up
-                   });
+                  'top': "0px" //moves up
+                  });
                    flag = 0;
                }
 
