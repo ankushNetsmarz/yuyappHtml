@@ -186,7 +186,7 @@ position: absolute; background: none repeat scroll 0% 0% rgb(255, 255, 255); top
 
 @media screen and (width: 480px) and (height: 320px){
 	.list-area{height:173px;}
-	.main_div{height:270px;}
+	.main_div{height:270px; overflow:scroll !important;}
 	}
 	
 @media screen and (width: 480px) and (height: 800px){
@@ -251,5 +251,18 @@ position: absolute; background: none repeat scroll 0% 0% rgb(255, 255, 255); top
 	.ctgry-list-main{margin:2% 0 0 0;}
 	}
 
-
+@media screen and (width: 600px) and (height: 1024px){
+	.list-area{height:897px;}
+	.main_div{height:974px;}
+	.inner-pages{width:98%; margin:0 1%;}
+	.ctgry-list-main{margin:2% 0 0 0;}
+	}
+	
+@media screen and (width: 1024px) and (height: 600px){
+	.list-area{height:465px;}
+	.main_div{height:550px;}
+	.inner-pages{width:98%; margin:0 1%;}
+	.ctgry-list-main{margin:2% 0 0 0;}
+	.ctgry-row{margin:4% auto 0;}
+	}
 

@@ -235,14 +235,9 @@
         
            switch (currentWindowHeight) {
                case 320:                   //320 *480
-<<<<<<< HEAD
-                   {                     
-                       top = 'px';
-=======
                    {
-                      
-                       top = '345px';
->>>>>>> origin/master
+                       top = '380px';
+				
                    }
                    break;
 
@@ -289,6 +284,11 @@
                case 1024:
                    {
                        top = '445px'          //1024 *768
+                   }
+                   break;
+			   case 600:
+                   {
+                       top = '490px'          //1024 *600
                    }
                    break;
                case 540:
@@ -370,7 +370,7 @@
 
            $(".menu_btn_top").bind('click', function () {
                if (flag == 0) {
-
+	                $(".inner-pages").css("display","none");
                   
                    $('.inner-pages').animate({
                   'top': top    //moves up
@@ -380,7 +380,7 @@
                    flag = 1;
                }
                else {
-                  
+                     $(".inner-pages").css("display","block");
                    $('.inner-pages').animate({
                   'top': "0px" //moves up
                   });
