@@ -232,13 +232,16 @@
            var currentWindowWidth = $(window).width(); // returns height of HTML document
       
            var top;
+           var topFlag = 0;
         
            switch (currentWindowHeight) {
                case 320:                   //320 *480
 
                    {
-                      
-                       top = '345px';
+
+                       
+                       top = '380px';
+                       topFlag = 1;
 
                    }
                    break;
@@ -284,21 +287,18 @@
                    }
                    break;
                case 1024:
-                   if (currentWindowWidth == 600)   //1024*600
-                   {
-
-                   }
-
+                   
                    {
                        top = '445px'          //1024 *768
                    }
                    break;
 
-               case 600:                          //600*1024
+			   case 600:
                    {
-
-
+                       top = '490px'          //1024 *600
                    }
+                   break;
+
                case 540:
                    {
                        top = '485px'          //540 *960
@@ -314,6 +314,10 @@
                        top= '395px';           //540*960
                    }
                    break;
+               default:
+                   {
+                       top='px';
+                   }
            }
 
     GetUserPost();
@@ -379,8 +383,10 @@
            $(".menu_btn_top").bind('click', function () {
           
                if (flag == 0) {
-
-                  
+                   if (topFlag == 1)
+                   {
+                      $(".inner-pages").css("display","none");
+                   }
                    $('.inner-pages').animate({
                   'top': top    //moves up
                   
@@ -389,7 +395,10 @@
                    flag = 1;
                }
                else {
-                  
+                   if (topFlag == 1) {
+                       $(".inner-pages").css("display","block");
+                   }
+              
                    $('.inner-pages').animate({
                   'top': "0px" //moves up
                   });
