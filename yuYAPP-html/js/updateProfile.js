@@ -13,7 +13,7 @@
     };
     $.ajax({
         type: "Post",
-     
+        beforeSend: showLoader(),
        url: "http://174.141.233.6/YuY/Users/UpdateProfile",
         data: userData,
         success: function (data) {
@@ -25,5 +25,7 @@
           
             alert(xhr.responseText);
         }
+    }).done(function () {
+        hideLoader();
     });
 }

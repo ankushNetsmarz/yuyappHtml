@@ -235,14 +235,11 @@
         
            switch (currentWindowHeight) {
                case 320:                   //320 *480
-<<<<<<< HEAD
-                   {                     
-                       top = 'px';
-=======
+
                    {
                       
                        top = '345px';
->>>>>>> origin/master
+
                    }
                    break;
 
@@ -287,10 +284,21 @@
                    }
                    break;
                case 1024:
+                   if (currentWindowWidth == 600)   //1024*600
+                   {
+
+                   }
+
                    {
                        top = '445px'          //1024 *768
                    }
                    break;
+
+               case 600:                          //600*1024
+                   {
+
+
+                   }
                case 540:
                    {
                        top = '485px'          //540 *960
@@ -308,8 +316,8 @@
                    break;
            }
 
-           GetUserPost();
-           GetUserProfile();
+    GetUserPost();
+      GetUserProfile();
  
 
            $("#EditProfile").on("click", function () {
@@ -369,6 +377,7 @@
          
 
            $(".menu_btn_top").bind('click', function () {
+          
                if (flag == 0) {
 
                   

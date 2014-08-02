@@ -1,6 +1,6 @@
 ﻿
 $("#WordWallOption").on("click", function () {
-    GetUserPost();
+   // GetUserPost();
     $('.inner-pages').animate({
         'top': "0px" //moves up
     });
