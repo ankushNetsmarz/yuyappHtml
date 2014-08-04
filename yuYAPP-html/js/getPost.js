@@ -46,6 +46,7 @@ var userId = localStorage.getItem("userId");
                 HTML+= "<div class='clr'></div>"
                 HTML += "<p>"+ data.ResponseData[i].Status+"</p></div>"
                          
+<<<<<<< HEAD
                 HTML += "<div postId=" + data.ResponseData[i].PostId + " class='wordwall-btns'>"
                 if (liked == true)
                 {
@@ -57,6 +58,12 @@ var userId = localStorage.getItem("userId");
                 }
                 HTML+=  "<input id='commentButton' type='button' class='like-btn' value='Comment'>"
                 HTML += "<input id='dislikeButton'type='button' class='like-btn' value='Dislike'>"
+=======
+                HTML+=  "<div class='wordwall-btns'>"
+                HTML+=  "<input type='button' class='like-btn' value='Like'>"
+                HTML+=  "<input type='button' class='like-btn' value='Comment' id='post-comment'>"
+                HTML+=  "<input type='button' class='like-btn' value='Dislike'>"
+>>>>>>> origin/master
                 HTML+=  "</div>"
                 HTML+=  "<div class='clr'></div>"
                 HTML+=  "</div>"
