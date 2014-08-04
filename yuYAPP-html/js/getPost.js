@@ -29,14 +29,14 @@ var userId = localStorage.getItem("userId");
                   
                     console.log(data);
                     var HTML = "";
-
+           
                     if (data.ResponseData.length > 0) {
 
                         for (var i = 0; i < data.ResponseData.length; i++) {
 
 
                             
-                           
+                           var liked= data.ResponseData[i].Liked;
                     
                 HTML+= "<div class='single-user'>"
 
@@ -46,10 +46,17 @@ var userId = localStorage.getItem("userId");
                 HTML+= "<div class='clr'></div>"
                 HTML += "<p>"+ data.ResponseData[i].Status+"</p></div>"
                          
-                HTML+=  "<div class='wordwall-btns'>"
-                HTML+=  "<input type='button' class='like-btn' value='Like'>"
-                HTML+=  "<input type='button' class='like-btn' value='Comment'>"
-                HTML+=  "<input type='button' class='like-btn' value='Dislike'>"
+                HTML += "<div postId=" + data.ResponseData[i].PostId + " class='wordwall-btns'>"
+                if (liked == true)
+                {
+                  
+                    HTML += "<input id='likeButton' type='button' class='clicked-like-btn' value='Like'>"
+                }
+                else {
+                    HTML += "<input id='likeButton' type='button' class='like-btn' value='Like'>"
+                }
+                HTML+=  "<input id='commentButton' type='button' class='like-btn' value='Comment'>"
+                HTML += "<input id='dislikeButton'type='button' class='like-btn' value='Dislike'>"
                 HTML+=  "</div>"
                 HTML+=  "<div class='clr'></div>"
                 HTML+=  "</div>"
@@ -66,3 +73,23 @@ var userId = localStorage.getItem("userId");
                 }
             });
         }
+        $(document).on("click", "#likeButton", function () {
+           var postId= $(this).parent().attr('postId');
+           localStorage.setItem("like", "1");
+         
+           addLikes(postId);
+        });
+
+        $(document).on("click", "#dislikeButton", function () {
+            var postId = $(this).parent().attr('postId');
+            localStorage.setItem("like", "0");
+           
+            addLikes(postId);
+
+        });
+
+        $(document).on("click", "#commentButton", function () {
+
+       
+
+        });
