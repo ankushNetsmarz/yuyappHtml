@@ -48,7 +48,7 @@ var userId = localStorage.getItem("userId");
                          
                 HTML+=  "<div class='wordwall-btns'>"
                 HTML+=  "<input type='button' class='like-btn' value='Like'>"
-                HTML+=  "<input type='button' class='like-btn' value='Comment'>"
+                HTML+=  "<input type='button' class='like-btn' value='Comment' id='post-comment'>"
                 HTML+=  "<input type='button' class='like-btn' value='Dislike'>"
                 HTML+=  "</div>"
                 HTML+=  "<div class='clr'></div>"
