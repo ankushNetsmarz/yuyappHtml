@@ -226,8 +226,9 @@
     <script src="js/insertStatus.js"></script>
     <script src="js/getPost.js"></script>
     <script>
-       var flag = 0;
-       $(document).ready(function () {
+   
+        $(document).ready(function () {
+            var flag = 0;
            var currentWindowHeight= $(window).height();   // returns height of browser viewport
            var currentWindowWidth = $(window).width(); // returns height of HTML document
       
@@ -237,9 +238,7 @@
            switch (currentWindowHeight) {
                case 320:                   //320 *480
 
-                   {
-
-                       
+                   {                     
                        top = '380px';
                        topFlag = 1;
 
@@ -320,8 +319,8 @@
                    }
            }
 
-    GetUserPost();
-      GetUserProfile();
+          GetUserPost();
+         GetUserProfile();
  
 
            $("#EditProfile").on("click", function () {
@@ -383,18 +382,21 @@
            $(".menu_btn_top").bind('click', function () {
           
                if (flag == 0) {
+                
                    if (topFlag == 1)
                    {
+                     
                       $(".inner-pages").css("display","none");
                    }
                    $('.inner-pages').animate({
                   'top': top    //moves up
                   
                   });
-                 
+                
                    flag = 1;
                }
                else {
+                
                    if (topFlag == 1) {
                        $(".inner-pages").css("display","block");
                    }
