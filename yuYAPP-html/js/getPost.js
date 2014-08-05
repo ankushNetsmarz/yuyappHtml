@@ -108,7 +108,7 @@ var userId = localStorage.getItem("userId");
                      
                             HTML+=   "<div class='single-comment'>"
                             HTML += "<div class='fl comment-by-user'><img src='images/user-pic-list.jpg' /></div>"
-                            HTML += "<div class='fl comment-text'><span class='comment-user'> "+data.ResponseData[i].UserName+" </span> "+ data.ResponseData[i].Comment + "<div class='comment-msg-ago'>21 min</div></div>"
+                            HTML += "<div class='fl comment-text'><span class='comment-user'> "+data.ResponseData[i].UserName+" </span> "+ data.ResponseData[i].Comment + "<div class='comment-msg-ago'>"+ data.ResponseData[i].TimeSpan+"</div></div>"
                             HTML+=   "<div class='clr'></div>"
                             HTML+=   "</div>"
                         }
