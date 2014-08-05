@@ -40,3 +40,34 @@ function InsertStatus() {
         hideLoader();
     });
 }
+
+
+
+
+/*Add comment on the post*/
+function InsertPostComment(postIdForComment) {
+    var commentMessage = $("#InsertStatusTextBoxComments").val();
+
+    var postData = {
+        postId: postIdForComment,
+        userId: userId,
+        comment: commentMessage
+    };
+    $.ajax({
+        type: "Post",
+       // url: "http://localhost:6269/posts/addcomments",
+        url: "http://174.141.233.6/YuY/posts/AddComments",
+        data: postData,
+        success: function (data) {
+            
+            console.log(data);
+        
+            //alert("success..." + data);
+        },
+        error: function (xhr) {
+          
+            alert(xhr.responseText);
+        }
+    });
+}
+

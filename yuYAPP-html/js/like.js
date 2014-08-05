@@ -2,8 +2,7 @@
 var userId = localStorage.getItem("userId");
 /*Add Likes on the post*/
 function addLikes(postId) {
-    alert(userId);
-    alert(postId);
+  
     var likeStatus= localStorage.getItem("like");
     var postData = {
         postId: postId,

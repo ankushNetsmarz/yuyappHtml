@@ -22,7 +22,7 @@ function GetAllFollowing() {
     $.ajax({
         type: "GET",
         beforeSend: showLoader(),
-        //url: "http://localhost:6269/Users/GetFollowing",
+    
         url: "http://174.141.233.6/YuY/Users/GetAllFollowing",
         data: inputdata,
         dataType: "json",

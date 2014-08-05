@@ -48,17 +48,25 @@ var userId = localStorage.getItem("userId");
                          
 
                 HTML += "<div postId=" + data.ResponseData[i].PostId + " class='wordwall-btns'>"
-                if (liked == true)
-                {
-                  
+                if (liked == true) {
+
                     HTML += "<input id='likeButton' type='button' class='clicked-like-btn' value='Like'>"
+                    HTML += "<input id='commentButton' type='button' class='like-btn' value='Comment'>"
+                    HTML += "<input id='dislikeButton'type='button' class='like-btn' value='Dislike'>"
                 }
+
+                else if (liked == false) {
+
+                    HTML += "<input id='likeButton' type='button' class='like-btn' value='Like'>"
+                    HTML += "<input id='commentButton' type='button' class='like-btn' value='Comment'>"
+                    HTML += "<input id='dislikeButton'type='button' class='clicked-like-btn' value='Dislike'>"
+                }
+
                 else {
                     HTML += "<input id='likeButton' type='button' class='like-btn' value='Like'>"
+                    HTML += "<input id='commentButton' type='button' class='like-btn' value='Comment'>"
+                    HTML += "<input id='dislikeButton'type='button' class='like-btn' value='Dislike'>"
                 }
-                HTML+=  "<input id='commentButton' type='button' class='like-btn' value='Comment'>"
-                HTML += "<input id='dislikeButton'type='button' class='like-btn' value='Dislike'>"
-
 
                 HTML+=  "</div>"
                 HTML+=  "<div class='clr'></div>"
@@ -94,7 +102,12 @@ var userId = localStorage.getItem("userId");
         });
 
         $(document).on("click", "#commentButton", function () {
+            var postId = $(this).parent().attr('postId');
+            localStorage.setItem("postId", postId);
+            $("#commentPopup").css("display", "block");
 
-       
-
+        });
+        $(document).on("click", "#postComments", function () {
+            var postIdForComment= localStorage.getItem("postId");
+            InsertPostComment(postIdForComment);
         });
