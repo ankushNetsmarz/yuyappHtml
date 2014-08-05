@@ -18,6 +18,7 @@ function addLikes(postId) {
         success: function (data) {
         
             console.log(data);
+            GetUserPost();
             //alert("success..." + data);
         },
         error: function (xhr) {
