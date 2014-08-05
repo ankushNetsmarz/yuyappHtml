@@ -86,6 +86,51 @@ var userId = localStorage.getItem("userId");
                 hideLoader();
             });
         }
+
+        /get user Comments/
+        function GetPostComments(postId) {
+            var postData = {
+                postId: postId
+            }
+            $.ajax({
+                type: "GET",
+                //url: "http://localhost:6269/posts/GetPostComments",
+                url: "http://174.141.233.6/YuY/posts/GetPostComments",
+                data: postData,
+                success: function (data) {
+
+                    var HTML = "";
+           
+                    if (data.ResponseData.length > 0) {
+
+                        for (var i = 0; i < data.ResponseData.length; i++) {
+                     
+                            HTML+=   "<div class='single-comment'>"
+                            HTML += "<div class='fl comment-by-user'><img src='images/user-pic-list.jpg' /></div>"
+                            HTML += "<div class='fl comment-text'>" +data.ResponseData[i].UserName+" "+ data.ResponseData[i].Comment + "</div>"
+                            HTML+=   "<div class='clr'></div>"
+                            HTML+=   "</div>"
+                        }
+                        $(".comment-list").html(HTML);
+                        }
+                    
+                
+                    console.log(data);
+                    //alert("success..." + data);
+                },
+                error: function (xhr) {
+                 
+                    alert(xhr.responseText);
+                }
+            });
+        }
+
+
+
+
+
+
+
         $(document).on("click", "#likeButton", function () {
            var postId= $(this).parent().attr('postId');
            localStorage.setItem("like", "1");
@@ -105,6 +150,7 @@ var userId = localStorage.getItem("userId");
             var postId = $(this).parent().attr('postId');
             localStorage.setItem("postId", postId);
             $("#commentPopup").css("display", "block");
+            GetPostComments(postId);
 
         });
         $(document).on("click", "#postComments", function () {

@@ -55,19 +55,22 @@ function InsertPostComment(postIdForComment) {
     };
     $.ajax({
         type: "Post",
+        beforeSend: showLoader(),
        // url: "http://localhost:6269/posts/addcomments",
         url: "http://174.141.233.6/YuY/posts/AddComments",
         data: postData,
         success: function (data) {
-            
+       
             console.log(data);
-        
+            GetPostComments(postIdForComment);
             //alert("success..." + data);
         },
         error: function (xhr) {
           
             alert(xhr.responseText);
         }
+    }).done(function () {
+        hideLoader();
     });
 }
 
