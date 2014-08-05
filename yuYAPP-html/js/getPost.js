@@ -89,6 +89,7 @@ var userId = localStorage.getItem("userId");
 
         /get user Comments/
         function GetPostComments(postId) {
+            alert(postId);
             var postData = {
                 postId: postId
             }
@@ -128,7 +129,10 @@ var userId = localStorage.getItem("userId");
 
 
 
+        $(document).on("click", "#cancelCommentBox", function () {
+            $("#commentPopup").css("display", "none");
 
+        });
 
 
         $(document).on("click", "#likeButton", function () {
@@ -140,8 +144,7 @@ var userId = localStorage.getItem("userId");
 
         $(document).on("click", "#dislikeButton", function () {
             var postId = $(this).parent().attr('postId');
-            localStorage.setItem("like", "0");
-           
+            localStorage.setItem("like", "0");          
             addLikes(postId);
 
         });
@@ -150,6 +153,7 @@ var userId = localStorage.getItem("userId");
             var postId = $(this).parent().attr('postId');
             localStorage.setItem("postId", postId);
             $("#commentPopup").css("display", "block");
+            $(".comment-list").html("");
             GetPostComments(postId);
 
         });
