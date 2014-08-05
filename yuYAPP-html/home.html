@@ -23,7 +23,7 @@
 <!-- when click on comment button in word wall screen then this div will display -->
 
 
-<div id="commentPopup" class="comment-bg" style="display:none; z-index:49">
+<div id="commentPopup" class="comment-bg" style="display:none;z-index:49">
 
 
 <div class="comment-area">
@@ -210,60 +210,19 @@
 </div>
 
 <div class="notification" style="display:none;">
-    <div class="notify-area">
-    <div id="" class="notify-list">
-         <div class="single-notifi">
-              <div class="fl notifi-by-user"><img src="images/user-pic-list.jpg" /></div>
-              <div class="fl notifi-text"><span>Maninder Singh</span> updated this post
-              <div class="notifi-msg-ago">21 min</div>
-              </div>
-              <div class="clr"></div>
-         </div>
-         <div class="single-notifi">
-              <div class="fl notifi-by-user"><img src="images/user-pic-list.jpg" /></div>
-              <div class="fl notifi-text"><span>Maninder Singh</span> updated this post
-              <div class="notifi-msg-ago">21 min</div>
-              </div>
-              <div class="clr"></div>
-         </div>
-         <div class="single-notifi">
-              <div class="fl notifi-by-user"><img src="images/user-pic-list.jpg" /></div>
-              <div class="fl notifi-text"><span>Maninder Singh</span> updated this post
-              <div class="notifi-msg-ago">21 min</div>
-              </div>
-              <div class="clr"></div>
-         </div>
-         <div class="single-notifi">
-              <div class="fl notifi-by-user"><img src="images/user-pic-list.jpg" /></div>
-              <div class="fl notifi-text"><span>Maninder Singh</span> updated this post
-              <div class="notifi-msg-ago">21 min</div>
-              </div>
-              <div class="clr"></div>
-         </div>
-         <div class="single-notifi">
-              <div class="fl notifi-by-user"><img src="images/user-pic-list.jpg" /></div>
-              <div class="fl notifi-text"><span>Maninder Singh</span> updated this post
-              <div class="notifi-msg-ago">21 min</div>
-              </div>
-              <div class="clr"></div>
-         </div>
-         <div class="single-notifi">
-              <div class="fl notifi-by-user"><img src="images/user-pic-list.jpg" /></div>
-              <div class="fl notifi-text"><span>Maninder Singh</span> updated this post
-              <div class="notifi-msg-ago">21 min</div>
-              </div>
-              <div class="clr"></div>
-         </div>
-         <div class="single-notifi">
-              <div class="fl notifi-by-user"><img src="images/user-pic-list.jpg" /></div>
-              <div class="fl notifi-text"><span>Maninder Singh</span> updated this post
-              <div class="notifi-msg-ago">21 min</div>
-              </div>
-              <div class="clr"></div>
-         </div>
-    </div>
-    <div><input type="button" id="Button1" class="load-more" value="Load More" /></div>
-      </div>
+<div class="notify-area">
+<div id="" class="notify-list">
+<!--<div class="single-notifi">
+<div class="fl notifi-by-user"><img src="images/user-pic-list.jpg" /></div>
+<div class="fl notifi-text"><span>Maninder Singh</span> updated this post
+<div class="notifi-msg-ago">21 min</div>
+</div>
+<div class="clr"></div>
+</div>-->
+
+</div>
+<div><input type="button" id="Button3" class="load-more" value="Load More" /></div>
+</div>
 </div>
 
 </div>
@@ -272,7 +231,7 @@
 
     <script src="js/like.js"></script>
 
-
+    <script src="js/getNotification.js"></script>
     <script src="js/ajaxWebService.js"></script>
     <script src="js/idangerous.swiper-2.0.min.js"></script>
 	<script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
@@ -390,6 +349,18 @@
                $(".add-frnd").css("display", "none");
                $("#edit_profile").css("display", "block");
                $(".top_heading").text("EDIT-PROFILE");
+               $(".ctgry-list-main").css("display", "none");
+           });
+
+
+           $("#NotificationOption").on("click", function () {
+               GetNotification();
+               $('.inner-pages').animate({
+                   'top': "0px" //moves up
+               });
+               $(".notification").css("display", "block");
+               $("#see_profile").css("display", "none");
+               $(".add-frnd,.follow-friend").css("display", "none");
                $(".ctgry-list-main").css("display", "none");
            });
 
