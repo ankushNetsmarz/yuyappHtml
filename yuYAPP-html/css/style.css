@@ -193,6 +193,14 @@ position: absolute; background:url("../images/body-bg.png") no-repeat fixed cent
 .comment-text{font-size:12px; color:#FFF;}
 .cancel-btn{width:100%; margin:20px auto 0;}
 
+.notify-area{margin:4% 0; width:100%;}
+.notify-list{height:379px; overflow-y:scroll;}
+.single-notifi{width:100%; margin:7px 0 0; padding:0 0 4px; border-bottom:1px dashed #CCC; color:#000; background:rgba(0, 175, 191, 0.05);}
+.notifi-by-user{width:40px; height:40px; overflow:hidden; margin:0 5px 5px 0;}
+.notifi-by-user img{width:40px;}
+
+.notifi-text{font-size:12px; color:#000;}
+
 /*-- This css for Mobile's different resolutions --*/
 
 @media screen and (width: 480px) and (height: 320px){
