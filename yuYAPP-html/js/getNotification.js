@@ -46,13 +46,9 @@ function GetNotification() {
                     HTML+= "<div class='clr'></div>"
                     HTML+=  "</div>"
                 }
-<<<<<<< HEAD
-                $(".notify-list").html(HTML);
-            }
-=======
+
 				$(".notify-list").html(HTML);
 				}
->>>>>>> origin/master
         },
         error: function (xhr) {
             debugger;
