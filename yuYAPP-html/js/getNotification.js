@@ -49,7 +49,10 @@ function GetNotification() {
 
 				$(".notify-list").html(HTML);
 				}
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
         },
         error: function (xhr) {
             debugger;
