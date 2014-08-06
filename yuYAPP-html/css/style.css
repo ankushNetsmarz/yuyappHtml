@@ -124,7 +124,7 @@ input[placeholder], [placeholder], *[placeholder] {
 .user-title{ padding:0 5px 5px 0; margin:0; text-align:left; font-size:12px;}
 
 .frnd-list-main{width: 100%; margin: 0px auto 10px; height:300px; overflow-y:scroll;}
-.single-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#76b923; font-weight: bold; width:48%; line-height:50px; float: left; margin: 15px 0px 0px 5px; background:#f3f3f3; border-top-left-radius:100%; border-bottom-left-radius:100%;}
+.single-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#76b923; font-weight: bold; width:48%; line-height:50px; float: left; margin: 15px 0px 0px 5px; background:#f3f3f3; border-top-left-radius:100%; border-bottom-left-radius:100%; position:relative;}
 .single-frnd-imgarea{width:55px; height: 55px; border-radius: 50%; overflow: hidden; box-shadow:2px 2px 2px -1px rgba(0, 0, 0, 0.8); background:#FFF;}
 .single-frnd-imgarea img{width:100%;}
 

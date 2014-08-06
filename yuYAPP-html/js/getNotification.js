@@ -45,7 +45,9 @@ function GetNotification() {
                     HTML+=  "</div>"
                     HTML+= "<div class='clr'></div>"
                     HTML+=  "</div>"
-                }}
+                }
+				$(".notify-list").html(HTML);
+				}
         },
         error: function (xhr) {
             debugger;
