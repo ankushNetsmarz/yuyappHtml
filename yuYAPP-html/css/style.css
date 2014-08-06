@@ -206,6 +206,7 @@ position: absolute; background:url("../images/body-bg.png") no-repeat fixed cent
 
 .like-cmnt-no{margin: 0px 0px 10px; text-align: left; font-size: 11px; color: rgb(170, 170, 170); width:100%;}
 .like-cmnt-no span{color: rgb(0, 175, 191);}
+.checkbox-list{display:none; position:absolute; top:0; right:0; line-height:0;}
 
 /*-- This css for Mobile's different resolutions --*/
 
