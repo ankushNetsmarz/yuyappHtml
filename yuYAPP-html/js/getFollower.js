@@ -64,6 +64,9 @@ function GetAllFollowerList()
                 }
                 $("#getfollowerList").html(HTML);
             }
+            if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
+                $('.checkbox-list').show();
+            }
           
             },
         error: function (xhr) {
@@ -107,6 +110,9 @@ function GetRecentFollowerList() {
                     //console.log(data.ResponseData.length);
                 }
                 $("#getfollowerList").html(HTML);
+            }
+            if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
+                $('.checkbox-list').show();
             }
 
             console.log(data);

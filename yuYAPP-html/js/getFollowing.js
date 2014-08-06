@@ -22,7 +22,7 @@ function GetAllFollowing() {
     $.ajax({
         type: "GET",
         beforeSend: showLoader(),
-    
+
         url: "http://174.141.233.6/YuY/Users/GetAllFollowing",
         data: inputdata,
         dataType: "json",
@@ -38,14 +38,20 @@ function GetAllFollowing() {
                     HTML += "<div class='single-frnd'>"
                     HTML += "<div class='fl single-frnd-imgarea'><img src='images/Syra-yousaf-profile-pictures.jpg'></div>"
                     HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
-					HTML += "<div class='checkbox-list'><input type='checkbox' alt='access list'></div>"
+                    HTML += "<div class='checkbox-list'><input type='checkbox' alt='access list'></div>"
                     HTML += "</div>"
 
                     //console.log(data.ResponseData.length);
                 }
                 $("#getfollowingLists").html(HTML);
             }
+            //if (IsWordClick)
+            //  
 
+            // if
+            if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
+                $('.checkbox-list').show();
+            }
             //console.log(data.ResponseData.length);
         },
         error: function (xhr) {
@@ -85,6 +91,9 @@ function GetRecentFollowingList() {
                     //console.log(data.ResponseData.length);
                 }
                 $("#getfollowingLists").html(HTML);
+            }
+            if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
+                $('.checkbox-list').show();
             }
 
             //console.log(data.ResponseData.length);

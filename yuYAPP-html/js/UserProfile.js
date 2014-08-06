@@ -1,7 +1,18 @@
 ﻿
 
 
+$("#SeeProfile").on("click", function () {
+    GetUserProfile();
+    $(".ctgry-list-main").css("display", "none");
+    $('.inner-pages').animate({
+        'top': "0px" //moves up
+    });
+    $("#see_profile").css("display", "block");
+    $(".add-frnd").css("display", "none");
+    $("#edit_profile").css("display", "none");
+    $(".top_heading").text("USER-PROFILE");
 
+});
 var userId = localStorage.getItem("userId");
 function GetUserProfile() {
     var userData = {

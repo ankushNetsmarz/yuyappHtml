@@ -1,5 +1,5 @@
 ﻿var mainUrl = "http://174.141.233.6/YuY/users/";
-
+var webservicesiteurl = "http://174.141.233.6/YuY/";
 //<!--http://174.141.233.6/YuY/UserData/ProfilePic/-->
 
 function hideLoader() {
@@ -13,3 +13,36 @@ function showLoader() {
   
 
 }
+
+
+///*Ajax Call Custom Made Plugin*/
+//(function ($) {
+//    $.fn.ajaxcall = function (option, Callback) {
+//        var defaults = {
+//            HttpVerb: "GET",
+//            Data: {},
+//            async: true,
+//            //  contentType: "application/json; charset=utf-8",
+//            dataType: "json"
+//        }
+
+//        var settings = $.extend({}, defaults, option);
+
+//        $.ajax({
+//            type: settings.HttpVerb,
+//            url: webservicesiteurl + settings.url,
+//            contentType: settings.contentType,
+//            data: settings.Data,
+//            dataType: settings.dataType,
+//            async: settings.async,
+//            beforeSend: function () { showLoader(); },
+//            complete: function () { hideLoader(); },
+//            success: function (data) {
+//                return Callback(data);
+//            },
+//            error: function (error) {
+//                alert(error.status + "<--and--> " + error.statusText);
+//            }
+//        });
+//    }
+//})(jQuery)

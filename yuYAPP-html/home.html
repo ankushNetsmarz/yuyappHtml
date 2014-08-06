@@ -92,7 +92,7 @@
 
 <div class="post-status">
 
-<input type="button" class="post-btn">
+<input id="accessButton" type="button" class="post-btn">
 <input type="text" id="InsertStatusTextBox" placeholder="Enter your status" class="post-input">
 <input type="button"  id="postStatus" class="post-text-btn" value="POST">
 </div>
@@ -229,6 +229,7 @@
 </div>
 <div class="clr"></div>
 </div>
+    <script src="js/jquery-2.0.2.js"></script>
 
     <script src="js/like.js"></script>
 
@@ -239,7 +240,6 @@
     <script src="js/findPeople.js"></script>
     <script src="js/updateProfile.js"></script>
     <script src="js/UserProfile.js"></script>
-    <script src="js/jquery-2.0.2.js"></script>
     <script src="js/getFollowing.js"></script>
     <script src="js/getFollower.js"></script>
     <script src="js/insertStatus.js"></script>
@@ -342,10 +342,20 @@
          GetUserProfile();
  
 
+         $("#accessButton").on("click", function () {
+             //  $(".checkbox-list").css("display", "block");
+             $(".checkbox-list").show();
+             $(".ctgry-list-main").css("display", "none");
+             $(".add-frnd").css("display", "none");
+             $(".follow-friend").css("display", "block");
+           
+         });
+
            $("#EditProfile").on("click", function () {
                $('.inner-pages').animate({
                    'top': "0px" //moves up
                });
+
                $("#see_profile").css("display", "none");
                $(".add-frnd").css("display", "none");
                $("#edit_profile").css("display", "block");
@@ -353,7 +363,7 @@
                $(".ctgry-list-main").css("display", "none");
            });
 
-
+                
            $("#NotificationOption").on("click", function () {
                GetNotification();
                $('.inner-pages').animate({
@@ -366,18 +376,7 @@
            });
 
 
-           $("#SeeProfile").on("click", function () {
-               GetUserProfile();
-               $(".ctgry-list-main").css("display", "none");
-               $('.inner-pages').animate({
-                   'top': "0px" //moves up
-               });
-               $("#see_profile").css("display", "block");
-               $(".add-frnd").css("display", "none");
-               $("#edit_profile").css("display", "none");
-               $(".top_heading").text("USER-PROFILE");
-
-           });
+          
 
            $("#RequestOption").on("click", function () {
                $('.inner-pages').animate({

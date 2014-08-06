@@ -17,7 +17,8 @@ function InsertStatus() {
         postFileTitle: $("#InsertStatusTextBox").val(), /*This is for both Post and status*/
         allowedUser: "0",
         deniedUser: "0",
-        postType: "0" /*0 for Status, 1 for the Image,  2 for VIdeo*/
+        postType: "0",/*0 for Status, 1 for the Image,  2 for VIdeo*/
+        method: 1 
     };
     $.ajax({
         type: "POST",

@@ -1,5 +1,6 @@
 ﻿
 $("#WordWallOption").on("click", function () {
+   
    // GetUserPost();
     $('.inner-pages').animate({
         'top': "0px" //moves up
@@ -90,7 +91,7 @@ var userId = localStorage.getItem("userId");
 
         /get user Comments/
         function GetPostComments(postId) {
-            alert(postId);
+       
             var postData = {
                 postId: postId
             }
