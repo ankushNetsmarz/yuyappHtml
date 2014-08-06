@@ -46,7 +46,7 @@ var userId = localStorage.getItem("userId");
                 HTML+= "<div class='clr'></div>"
                 HTML += "<p>"+ data.ResponseData[i].Status+"</p></div>"
                 
-				HTML += "<div class='like-cmnt-no'><span>857</span> Likes, <span>15</span> Comments, <span>45</span> Dislikes</div>"         
+                HTML += "<div class='like-cmnt-no'><span>" + data.ResponseData[i].TotalLikes + "</span> Likes, <span>" + data.ResponseData[i].TotalComment + "</span> Comments, <span>"+ data.ResponseData[i].TotalDisLikes +"</span> Dislikes</div>"
 
                 HTML += "<div postId=" + data.ResponseData[i].PostId + " class='wordwall-btns'>"
                 if (liked == true) {
