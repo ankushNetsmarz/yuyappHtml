@@ -5,20 +5,49 @@ $("#postStatus").on("click", function () {
   
 });
 
+//function InsertStatus() {
+//    var postData = {
+//        postedBy: "10", /*user who Post the status or the Post */
+//        postFileTitle: "Posted By 10", //This is for both Post and status/
+//        allowedUser: "5,6,7",
+//        deniedUser: "8,9",
+//        postType: "0", //0 for Status, 1 for the Image, 2 for VIdeo/
+//    // method: 1 /* 1 for Like Dislike, 2 for Hate Love, 3 for Agree Disagree */
+//        positiveAnnotation: "",
+//        negativeAnnotation: ""
+//};
+//$.ajax({
+//    type: "POST",
+//    url: "http://localhost:6269/posts/add",
+//    //url: "http://174.141.233.6/YuY/posts/add",
+//    data: postData,
+//    success: function (data) {
+//        debugger;
+//        console.log(data);
+//        //alert("success..." + data);
+//    },
+//    error: function (xhr) {
+//        debugger;
+//        alert(xhr.responseText);
+//    }
+//});
+//}
+
 
 
 /*Insert user post*/
 var userId= localStorage.getItem("userId");
 
 function InsertStatus() {
- 
+    
     var postData = {
         postedBy: userId, /*user who Post the status or the Post */
         postFileTitle: $("#InsertStatusTextBox").val(), /*This is for both Post and status*/
         allowedUser: "0",
         deniedUser: "0",
         postType: "0",/*0 for Status, 1 for the Image,  2 for VIdeo*/
-        method: 1 
+        positiveAnnotation: "hate",
+        negativeAnnotation: "love"
     };
     $.ajax({
         type: "POST",

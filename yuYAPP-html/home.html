@@ -5,6 +5,11 @@
 <title>Untitled Document</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, user-scalable=no">
+     <style type="text/css">
+      /*html { height: 100% }*/
+      body { padding: 0 }
+      #map-canvas { height: 390px;}
+    </style>
     <link href="css/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/idangerous.swiper.css">
 	<link rel="stylesheet" href="css/idangerous.swiper.scrollbar.css">
@@ -35,7 +40,7 @@
 <!-- comment screen end -->
 
 <!-- when click on single notification from the list then this div will display the full detail of ntification -->
-<div id="" class="full-notify-bg" style="display:block; z-index:49">
+<div id="" class="full-notify-bg" style="display:none; z-index:49">
 <div class="full-notify-area">
 <div class="full-notify-head">
 <input type="text" id="" placeholder="Enter your status" class="post-input">
@@ -169,7 +174,7 @@
 <div id="TabbedPanels2" class="TabbedPanels">
     <ul class="TabbedPanelsTabGroup">
       <li class="TabbedPanelsTab" tabindex="0">Plug List</li>
-      <li class="TabbedPanelsTab" tabindex="0">People Map</li>
+      <li class="TabbedPanelsTab"  id="TabbedPanels3" tabindex="0">People Map</li>
     </ul>
     <div class="TabbedPanelsContentGroup">
       <div class="TabbedPanelsContent">
@@ -179,8 +184,9 @@
                 
         </div>
       </div>
-      <div class="TabbedPanelsContent">
-      add map here
+      <div   class="TabbedPanelsContent">
+      
+         <!-- <div id="map-canvas"/>-->
       </div>
     </div>
   </div>
@@ -206,7 +212,7 @@
     <div id="getfollowerList" class="frnd-list-main">
          </div>
           <div><input type="button" id="Button1" class="load-more" value="Load More" />
-          <input type="button" id="Button2" class="load-more" value="Done" style="display:none;" />
+          <input type="button" id="doneButton" class="load-more" value="Done" style="display:none;" />
           </div>
       </div>
       <div class="TabbedPanelsContent">
@@ -223,8 +229,8 @@
       
        
          </div>
-          <div><input type="button" id="Button2" class="load-more" value="Load More" />
-          <input type="button" id="Button2" class="load-more" value="Done" style="display:none;" />
+          <div><input type="button" id="loadMore" class="load-more" value="Load More" />
+          <input type="button" id="doneButtons" class="load-more" value="Done" style="display:none;" />
           </div>
       </div>
     </div>
@@ -234,13 +240,7 @@
 <div class="notification" style="display:none;">
 <div class="notify-area">
 <div id="" class="notify-list">
-<!--<div class="single-notifi">
-<div class="fl notifi-by-user"><img src="images/user-pic-list.jpg" /></div>
-<div class="fl notifi-text"><span>Maninder Singh</span> updated this post
-<div class="notifi-msg-ago">21 min</div>
-</div>
-<div class="clr"></div>
-</div>-->
+
 
 </div>
 <div><input type="button" id="Button3" class="load-more" value="Load More" /></div>
@@ -253,7 +253,7 @@
     <script src="js/jquery-2.0.2.js"></script>
 
     <script src="js/like.js"></script>
-
+         <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="js/getNotification.js"></script>
     <script src="js/ajaxWebService.js"></script>
     <script src="js/idangerous.swiper-2.0.min.js"></script>
@@ -386,6 +386,7 @@
 
                 
            $("#NotificationOption").on("click", function () {
+           
                GetNotification();
                $('.inner-pages').animate({
                    'top': "0px" //moves up
@@ -483,7 +484,43 @@
                
                AddFriend(friendId);
 
+           });
+           $("#TabbedPanels3").on("click", function () {
+               
+               initialize();
+           });
+           function initialize() {
+               if (navigator.geolocation) {
+
+                   //Use HTML5 Geolocation API To Get Current Position
+                   navigator.geolocation.getCurrentPosition(function (position) {
+
+                       //Get Latitude From Geolocation API
+                       latitude = position.coords.latitude;
+
+                       //Get Longitude From Geolocation API
+                       longitude = position.coords.longitude;
+
+                       //Define New Google Map With Lat / Lon
+                       coords = new google.maps.LatLng(latitude, longitude);
+                      // setlocation(
+                       var mapOptions = {
+                           zoom: 16,
+                           center: coords
+                       }
+
+                       localStorage.setItem("latitude", latitude);
+                       localStorage.setItem("longitude", longitude);
+                       var map = new google.maps.Map(document.getElementById("map-canvas"),
+                     mapOptions);
+                       marker = new google.maps.Marker({
+                           position: coords,
+                           map: map
+                       });
+                       marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
                    });
+               }
+           }
 
     </script>
 <script type="text/javascript">

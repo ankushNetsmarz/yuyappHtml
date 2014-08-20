@@ -105,6 +105,7 @@ function GetRecentFollowerList() {
                     HTML += "<div class='single-frnd'>"
                     HTML += "<div class='fl single-frnd-imgarea'><img src='images/Syra-yousaf-profile-pictures.jpg'></div>"
                     HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
+                    HTML += "<div class='checkbox-list'><input type='checkbox' alt='access list'></div>"
                     HTML += "</div>"
 
                     //console.log(data.ResponseData.length);
@@ -112,6 +113,7 @@ function GetRecentFollowerList() {
                 $("#getfollowerList").html(HTML);
             }
             if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
+            
                 $('.checkbox-list').show();
             }
 

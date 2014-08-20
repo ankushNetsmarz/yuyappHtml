@@ -38,17 +38,14 @@ function GetAllFollowing() {
                     HTML += "<div class='single-frnd'>"
                     HTML += "<div class='fl single-frnd-imgarea'><img src='images/Syra-yousaf-profile-pictures.jpg'></div>"
                     HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
-                    HTML += "<div class='checkbox-list'><input type='checkbox' alt='access list'></div>"
+                    HTML += "<div class='checkbox-list'><input Userid=" +data.ResponseData[i].UserId+ " class='checks'  type='checkbox' alt='access list'></div>"
                     HTML += "</div>"
 
                     //console.log(data.ResponseData.length);
                 }
                 $("#getfollowingLists").html(HTML);
             }
-            //if (IsWordClick)
-            //  
-
-            // if
+          
             if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
                 $('.checkbox-list').show();
             }
@@ -86,17 +83,21 @@ function GetRecentFollowingList() {
                     HTML += "<div class='single-frnd'>"
                     HTML += "<div class='fl single-frnd-imgarea'><img src='images/Syra-yousaf-profile-pictures.jpg'></div>"
                     HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
+                    HTML += "<div class='checkbox-list'><input Userid=" +data.ResponseData[i].UserId+ " class='checks' type='checkbox' alt='access list'></div>"
                     HTML += "</div>"
 
                     //console.log(data.ResponseData.length);
                 }
                 $("#getfollowingLists").html(HTML);
-            }
-            if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
+            }       
+
+            if ($.trim($('.interest-topbar .top_heading').text()) == "WORD")
+            {
+            
                 $('.checkbox-list').show();
             }
 
-            //console.log(data.ResponseData.length);
+         
 
         },
         error: function (xhr) {
@@ -106,3 +107,28 @@ function GetRecentFollowingList() {
         hideLoader();
     });
 }
+var UserIdArray = [];
+$(document).on("click", ".checks", function () {
+    var SelectedCheckBox =$(this).attr("Userid");
+    
+    if ($(this).is(':checked')) {
+       SelectedCheckBox = $(this).attr("Userid");
+      
+        UserIdArray.push(SelectedCheckBox);
+   
+ 
+    }
+    else {    
+       UserIdArray.splice($.inArray(SelectedCheckBox, UserIdArray), 1);  
+    }
+    
+ 
+});
+
+
+$(document).on("click", "#loadMore", function () {
+    for (i = 0; i < UserIdArray.length; i++) {
+        alert(UserIdArray[i]);
+    }
+
+});

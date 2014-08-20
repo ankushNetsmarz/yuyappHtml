@@ -3,11 +3,18 @@ var userId = localStorage.getItem("userId");
 /*Add Likes on the post*/
 function addLikes(postId) {
   
-    var likeStatus= localStorage.getItem("like");
+    var likeStatus = localStorage.getItem("like");
+    var clickStatus= localStorage.getItem("click");
+    //alert(postId);
+    //alert(userId);
+    //alert(likeStatus);
+    //alert(clickStatus);
     var postData = {
         postId: postId,
         userId: userId,
+        clickType: clickStatus,
         likeStatus: likeStatus    //0 for dislike
+
     };
     $.ajax({
         type: "Post",

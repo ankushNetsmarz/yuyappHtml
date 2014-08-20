@@ -38,21 +38,17 @@ function GetNotification() {
             if (data.ResponseData.length > 0) {
 
                 for (var i = 0; i < data.ResponseData.length; i++) {
-                    HTML+= "<div class='single-notifi'>"
-                    HTML+=  "<div class='fl notifi-by-user'><img src='images/user-pic-list.jpg' /></div>"
-                    HTML += "<div class='fl notifi-text'><span>"+ data.ResponseData[i].UserName  + " " + "</span>" + data.ResponseData[i].Type+ "ed on your post"
-                    HTML+=  "<div class='notifi-msg-ago'>"+ data.ResponseData[i].TimeSpan +"</div>"
-                    HTML+=  "</div>"
-                    HTML+= "<div class='clr'></div>"
-                    HTML+=  "</div>"
+                    HTML += "<div class='single-notifi'>"
+                    HTML += "<div class='fl notifi-by-user'><img src='images/user-pic-list.jpg' /></div>"
+                    HTML += "<div class='fl notifi-text'><span>" + data.ResponseData[i].UserName + " " + "</span>" + data.ResponseData[i].Type + "ed on your post"
+                    HTML += "<div class='notifi-msg-ago'>" + data.ResponseData[i].TimeSpan + "</div>"
+                    HTML += "</div>"
+                    HTML += "<div class='clr'></div>"
+                    HTML += "</div>"
                 }
 
-				$(".notify-list").html(HTML);
-				}
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
+                $(".notify-list").html(HTML);
+            }
         },
         error: function (xhr) {
             debugger;
