@@ -23,7 +23,10 @@
 var userId = localStorage.getItem("userId");
 function GetNotification() {
     var postData = {
-        userId: userId
+        userId: userId,
+        start:1,
+        end:10
+    
     }
     $.ajax({
         type: "GET",

@@ -181,7 +181,7 @@
       </div>
       <div   class="TabbedPanelsContent">
       
-         <!-- <div id="map-canvas"/>-->
+        <div id="map-canvas"/>
       </div>
     </div>
   </div>
@@ -258,11 +258,14 @@
     <script src="js/UserProfile.js"></script>
     <script src="js/getFollowing.js"></script>
     <script src="js/getFollower.js"></script>
+    <script src="js/getNotificationCount.js"></script>
     <script src="js/insertStatus.js"></script>
     <script src="js/getPost.js"></script>
+
     <script>
    
         $(document).ready(function () {
+            GetNotificationCount();
             var flag = 0;
            var currentWindowHeight= $(window).height();   // returns height of browser viewport
            var currentWindowWidth = $(window).width(); // returns height of HTML document
