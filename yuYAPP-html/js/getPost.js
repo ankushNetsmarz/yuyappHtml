@@ -95,7 +95,9 @@ var userId = localStorage.getItem("userId");
         function GetPostComments(postId) {
        
             var postData = {
-                postId: postId
+                postId: postId,
+                start: 1,
+                end: 10
             }
             $.ajax({
                 type: "GET",
