@@ -209,10 +209,12 @@ position: absolute; background:url("../images/body-bg.png") no-repeat fixed cent
 .checkbox-list{display:none; position:absolute; top:0; right:0; line-height:0;}
 
 .full-annotate-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:fixed;}
-.full-annotate-area{position: absolute; margin: 0px 2%; text-align: center; width: 96%; top: 3%; background:none;}
-.full-annotate-head{width:100%; margin:0 auto 15px;background:none; padding:10px 0;}
-.full-annotate-list{width:100%; height:285px; overflow-y:scroll;}
-.single-full-annotate{width:100%; margin:7px 0 0; padding:0 0 4px; border-bottom:1px dashed #CCC; color:#FFF;}
+.full-annotate-area{position: absolute; margin: 0px 4%; text-align: center; width: 92%; top:17%; background:none;}
+.full-annotate-head{width:100%; margin:0 auto 15px;background:none; padding:10px 0; text-align:center; color:#00afbf;}
+.full-annotate-list{width:100%; height:130px; overflow-y:scroll;}
+.single-full-annotate{width:100%; margin:20px 0 0; padding:0 0 4px; color:#FFF;}
+.single-full-annotate label span{color: rgb(255, 255, 255); margin: 3px 15px 0px 0px;}
+.single-full-annotate label input{border: medium none; background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 5px;}
 .full-annotate-by-user{width:40px; height:40px; overflow:hidden; margin:0 5px 5px 0;}
 .full-annotate-by-user img{width:40px;}
 
@@ -223,6 +225,18 @@ position: absolute; background:url("../images/body-bg.png") no-repeat fixed cent
 
 .add-annotation{margin: 6px 0px 0px; color: rgb(118, 185, 35); font-weight: bold; font-size: 12px; width: 100%; text-align: center;}
 .add-annotation a{ color: rgb(118, 185, 35); text-decoration:none;}
+
+.Upload-btn{padding:0; border:none; background:url(../images/add-status.png) no-repeat center center rgba(0, 0, 0, 0); background-size:100%; width:30px; height:30px;}
+.upload-list-main{height:305px; overflow-y:scroll; margin:1.2% 0 0;}
+.upload-area{padding:0; width:100%; height:343px; overflow-y:scroll;}
+.single-upload{ width:100%; margin:0 0 20px; background:url(../images/menu-shadow.png) no-repeat bottom center;}
+.upload-user-pic{width:49px; height:49px; overflow:hidden; box-shadow:2px 2px 4px -2px rgba(0, 0, 0, 0.7); margin:0 5px 5px 0;}
+.upload-user-pic img{width:49px;}
+.upload-title{ padding:0; margin:0; text-align:left; font-size:12px;}
+.uploaded-pic{height: 150px; overflow: hidden; width: 100%;}
+.uploaded-pic img{width: 100%;}
+.select-ctgry{background:#fff;border:none; box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7); padding: 7px 10px; width: 45%; margin:0 10px;}
+.Upload-text-btn{padding:0; border:none; background:url(../images/upload.png) no-repeat center center rgba(0, 0, 0, 0); background-size:100%; width:30px; height:30px;}
 
 /*-- This css for Mobile's different resolutions --*/
 

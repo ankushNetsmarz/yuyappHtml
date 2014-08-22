@@ -33,6 +33,7 @@
 <input type="button"  id="postComments" class="like-btn" value="Comment">
 </div>
 <div class="comment-list">
+
 </div>
 <div class="cancel-btn"><input type="button"  id="cancelCommentBox" class="like-btn" value="Cancel"></div>
 </div>
@@ -40,16 +41,30 @@
 <!-- comment screen end -->
 
 <!-- when click on single notification from the list then this div will display the full detail of ntification -->
-<div id="" class="full-notify-bg" style="display:none; z-index:49">
-<div class="full-notify-area">
-<div class="full-notify-head">
-
-
-<input type="text" id="" placeholder="Enter your status" class="post-input">
+<div id="" class="full-annotate-bg" style="display:none; z-index:49">
+<div class="full-annotate-area">
+<div class="full-annotate-head">
+<h3>Fill Your Own Annotations</h3>
 </div>
 <div class="full-annotate-list">
+<div class="single-full-annotate">
+<label>
+<span class="fl">Add First Annotate</span>
+<input type="text" class="fr" placeholder="Enter your status" id="">
+  <div class="clr"></div>
+</label>
 </div>
-<div class="cancel-btn"><input type="button"  id="" class="like-btn" value="Cancel"></div>
+<div class="single-full-annotate">
+<label>
+<span class="fl">Add Second Annotate</span>
+<input type="text" class="fr" placeholder="Enter your status" id="">
+  <div class="clr"></div>
+</label>
+</div>
+</div>
+<div class="cancel-btn">
+<input type="button"  id="" class="like-btn" value="Cancel">
+<input type="button"  id="" class="like-btn" value="Add Annotate"></div>
 </div>
 </div>
 <!-- notification detail screen end -->
@@ -104,7 +119,7 @@
 
 <div class="inner-pages">
 <!-- after the click on single menu show this div -->
-<div  class="ctgry-list-main" style="display:block;">
+<div  class="ctgry-list-main" style="display:none;">
 
 <div class="post-status">
 
@@ -162,32 +177,7 @@
 </div>
 <!-- the edit profile or see profile divs ends here -->
 
-<!-- add new frends screen start here -->
 
-<div class="add-frnd" style="display:none;">
-
-<div id="TabbedPanels2" class="TabbedPanels">
-    <ul class="TabbedPanelsTabGroup">
-      <li class="TabbedPanelsTab" tabindex="0">Plug List</li>
-      <li class="TabbedPanelsTab"  id="TabbedPanels3" tabindex="0">People Map</li>
-    </ul>
-    <div class="TabbedPanelsContentGroup">
-      <div class="TabbedPanelsContent">
-      <div class="add-frnd-list">
-      
-        
-                
-        </div>
-      </div>
-      <div   class="TabbedPanelsContent">
-      
-        <div id="map-canvas"/>
-      </div>
-    </div>
-  </div>
-
-</div>
-<!-- add new frends screen ends here -->
 
 <div class="follow-friend" style="display:none;">
 <div id="TabbedPanels1" class="TabbedPanels">
@@ -241,6 +231,121 @@
 <div><input type="button" id="Button3" class="load-more" value="Load More" /></div>
 </div>
 </div>
+
+<!-- YAPP Live screen start here -->
+
+<div class="YAPP-Live" style="display:block;">
+
+<div class="post-status">
+<input type="button" class="post-btn">
+<select class="select-ctgry">
+<option>All</option>
+<option>Images</option>
+<option>Videos</option>
+</select>
+<input type="button" class="Upload-text-btn">
+<div class="add-annotation"><a href="#">Add your own Annotation</a></div>
+</div>
+
+<div id="TabbedPanels3" class="TabbedPanels">
+    <ul class="TabbedPanelsTabGroup">
+      <li class="TabbedPanelsTab" tabindex="0">All Uploads</li>
+      <li class="TabbedPanelsTab" tabindex="0">My Uploads</li>
+    </ul>
+    <div class="TabbedPanelsContentGroup">
+      <div class="TabbedPanelsContent">
+
+<div  class="upload-list-main">
+<div class="upload-area">
+
+<div class="single-upload">
+<div class="upload-title">
+ <div class="fl upload-user-pic">
+ <img src="images/user-pic-list.jpg"></div>
+ <div class="fl user-name-title">Maninder<br><span>(5 hours ago)</span></div>
+ <div class="clr"></div>
+ <div>
+ <div class="uploaded-pic"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+ <p><strong>This is Title area</strong></p>
+ <p>This is discription area</p>
+ </div>
+ </div>
+ <div class="wordwall-btns">
+ <input type="button" value="hate" class="like-btn" id="">
+ <input type="button" value="Comment" class="like-btn" id="">
+ <input type="button" value="love" class="like-btn" id="">
+ </div>
+ <div class="clr"></div>
+ </div>
+
+<div class="clr"></div>
+</div>
+
+<div class="clr"></div>
+</div>
+      </div>
+      <div class="TabbedPanelsContent">
+  <div  class="upload-list-main">
+<div class="upload-area">
+
+<div class="single-upload">
+<div class="upload-title">
+ <div class="fl upload-user-pic">
+ <img src="images/user-pic-list.jpg"></div>
+ <div class="fl user-name-title">Maninder<br><span>(5 hours ago)</span></div>
+ <div class="clr"></div>
+ <div>
+ <div class="uploaded-pic"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+ <p><strong>This is Title area</strong></p>
+ <p>This is discription area</p>
+ </div>
+ </div>
+ <div class="wordwall-btns">
+ <input type="button" value="hate" class="like-btn" id="">
+ <input type="button" value="Comment" class="like-btn" id="">
+ <input type="button" value="love" class="like-btn" id="">
+ </div>
+ <div class="clr"></div>
+ </div>
+
+<div class="clr"></div>
+</div>
+
+<div class="clr"></div>
+</div>     
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- YAPP Live screen ends here -->
+
+<!-- add new frends screen start here -->
+
+<div class="add-frnd" style="display:none;">
+
+<div id="TabbedPanels2" class="TabbedPanels">
+    <ul class="TabbedPanelsTabGroup">
+      <li class="TabbedPanelsTab" tabindex="0">Plug List</li>
+      <li class="TabbedPanelsTab" tabindex="0">People Map</li>
+    </ul>
+    <div class="TabbedPanelsContentGroup">
+      <div class="TabbedPanelsContent">
+      <div class="add-frnd-list">
+      
+        
+                
+        </div>
+      </div>
+      <div   class="TabbedPanelsContent">
+      
+        <div id="map-canvas"/>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- add new frends screen ends here -->
 
 </div>
 <div class="clr"></div>
@@ -521,6 +626,10 @@
            }
 
     </script>
+<script type="text/javascript">
+var TabbedPanels3 = new Spry.Widget.TabbedPanels("TabbedPanels3");
+</script>    
+    
 <script type="text/javascript">
 var TabbedPanels2 = new Spry.Widget.TabbedPanels("TabbedPanels2");
 </script>

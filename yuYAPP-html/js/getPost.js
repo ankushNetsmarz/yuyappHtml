@@ -18,7 +18,7 @@ var userId = localStorage.getItem("userId");
             	userId: userId,
                 postType: 0,/*0 for status, 1 for Image, 2 for Videos*/
                 start: 1,
-                end: 10
+                end: 30
             }
             $.ajax({
                 type: "GET",
@@ -77,6 +77,7 @@ var userId = localStorage.getItem("userId");
                 HTML+=  "</div>"
                     //alert("success..." + data);
                         }
+			HTML+= "<div style='width: 100%;'><input type='button' value='Load more...' style='width: 100%; padding: 2px 0px; border:none;'></div>"
                         $(".list-area").html(HTML);
                     }
 
@@ -118,6 +119,7 @@ var userId = localStorage.getItem("userId");
                             HTML+=   "<div class='clr'></div>"
                             HTML+=   "</div>"
                         }
+						HTML+= "<div style='width: 100%;'><input type='button' value='Load more...' style='width: 100%; padding: 2px 0px; margin: 10px 0px 0px;'></div>"
                         $(".comment-list").html(HTML);
                         }
                     
