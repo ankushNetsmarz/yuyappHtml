@@ -232,6 +232,7 @@
 </div>
 </div>
 
+<<<<<<< HEAD
 <!-- YAPP Live screen start here -->
 
 <div class="YAPP-Live" style="display:block;">
@@ -321,17 +322,25 @@
 <!-- YAPP Live screen ends here -->
 
 <!-- add new frends screen start here -->
+=======
+    <!-- add new frends screen start here -->
+>>>>>>> origin/master
 
 <div class="add-frnd" style="display:none;">
 
 <div id="TabbedPanels2" class="TabbedPanels">
     <ul class="TabbedPanelsTabGroup">
       <li class="TabbedPanelsTab" tabindex="0">Plug List</li>
+<<<<<<< HEAD
       <li class="TabbedPanelsTab" tabindex="0">People Map</li>
+=======
+      <li class="TabbedPanelsTab"  tabindex="0">People Map</li>
+>>>>>>> origin/master
     </ul>
     <div class="TabbedPanelsContentGroup">
       <div class="TabbedPanelsContent">
       <div class="add-frnd-list">
+<<<<<<< HEAD
       
         
                 
@@ -340,6 +349,13 @@
       <div   class="TabbedPanelsContent">
       
         <div id="map-canvas"/>
+=======
+                        
+        </div>
+      </div>
+      <div   class="TabbedPanelsContent">
+      <div id="map-canvas"/>
+>>>>>>> origin/master
       </div>
     </div>
   </div>
@@ -353,7 +369,7 @@
     <script src="js/jquery-2.0.2.js"></script>
 
     <script src="js/like.js"></script>
-         <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="js/getNotification.js"></script>
     <script src="js/ajaxWebService.js"></script>
     <script src="js/idangerous.swiper-2.0.min.js"></script>
@@ -370,6 +386,7 @@
     <script>
    
         $(document).ready(function () {
+            initialize();
             GetNotificationCount();
             var flag = 0;
            var currentWindowHeight= $(window).height();   // returns height of browser viewport
@@ -509,7 +526,7 @@
                });
                $("#edit_profile,#see_profile").css("display", "none");
                GetPeopleRandom();
-               $(".ctgry-list-main").css("display", "none");
+               $(".ctgry-list-main,.follow-friend,.notification").css("display", "none");
                $(".add-frnd").css("display", "block");
                $(".top_heading").text("FIND-FRIENDS");
 
@@ -588,10 +605,10 @@
                AddFriend(friendId);
 
            });
-           $("#TabbedPanels3").on("click", function () {
+           //$("#TabbedPanels3").on("click", function () {
                
-               initialize();
-           });
+           //    initialize();
+           //});
            function initialize() {
                if (navigator.geolocation) {
 
