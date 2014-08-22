@@ -1,6 +1,7 @@
-﻿function GetNotificationCount() {
+﻿var userId = localStorage.getItem("userId");
+function GetNotificationCount() {
     var postData = {
-        userId: 1
+        userId: userId
     }
     $.ajax({
         type: "GET",
@@ -24,8 +25,8 @@ var userId = localStorage.getItem("userId");
 function GetNotification() {
     var postData = {
         userId: userId,
-        start:1,
-        end:10
+        page: 1,
+        RecsPerPage: 10
     
     }
     $.ajax({
