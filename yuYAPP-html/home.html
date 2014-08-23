@@ -283,7 +283,7 @@
 
 <!-- YAPP Live screen start here -->
 
-<div class="YAPP-Live" style="display:block;">
+<div id="YAPP-Live" class="YAPP-Live" style="display:none;">
 
 <div class="post-status">
 <select class="select-ctgry">
@@ -415,6 +415,7 @@
     <script src="js/getFollower.js"></script>
     <script src="js/getNotificationCount.js"></script>
     <script src="js/insertStatus.js"></script>
+    <script src="js/getImageVideoPost.js"></script>
     <script src="js/getPost.js"></script>
 
     <script>
@@ -422,6 +423,9 @@
         $(document).ready(function () {
             initialize();
             GetNotificationCount();
+            //GetPostNonAnonymousList();
+            SetUnFriend();
+
             var flag = 0;
            var currentWindowHeight= $(window).height();   // returns height of browser viewport
            var currentWindowWidth = $(window).width(); // returns height of HTML document
@@ -524,6 +528,10 @@
              $(".add-frnd").css("display", "none");
              $(".follow-friend").css("display", "block");
            
+         });
+
+         $("#YappLiveOption").on("click", function () {
+             $("#YAPP-Live").css("display", "block");
          });
 
            $("#EditProfile").on("click", function () {
