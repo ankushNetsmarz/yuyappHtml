@@ -40,7 +40,7 @@
 </div>
 <!-- comment screen end -->
 
-<!-- when click on single notification from the list then this div will display the full detail of ntification -->
+<!-- add annotation screen -->
 <div id="" class="full-annotate-bg" style="display:none; z-index:49">
 <div class="full-annotate-area">
 <div class="full-annotate-head">
@@ -67,7 +67,57 @@
 <input type="button"  id="" class="like-btn" value="Add Annotate"></div>
 </div>
 </div>
-<!-- notification detail screen end -->
+<!-- add annotation screen end -->
+
+<!-- upload gallery popup -->
+<div id="" class="upload-popup-bg" style="display:block; z-index:49">
+<div class="upload-popup-area">
+<div class="upload-popup-head">
+<h3>Upload Gallery</h3>
+</div>
+<div class="upload-popup-list">
+<div class="pic-btn">
+<div class="display-pic"> <img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+<div>
+<input type="button"  id="" class="upload-gall-btn" value="Images">
+<input type="button"  id="" class="upload-gall-btn" value="Videos">
+</div>
+</div>
+<div class="single-upload-popup">
+<label>
+<span class="fl">Add Title</span>
+<input type="text" class="fr" placeholder="" id="">
+  <div class="clr"></div>
+</label>
+</div>
+<div class="single-upload-popup">
+<label>
+<span class="fl">Add Discription</span>
+<input type="text" class="fr" placeholder="" id="">
+  <div class="clr"></div>
+</label>
+</div>
+<div class="single-upload-popup">
+<label>
+<span class="fl">Add First Annotate</span>
+<input type="text" class="fr" placeholder="" id="">
+  <div class="clr"></div>
+</label>
+</div>
+<div class="single-upload-popup">
+<label>
+<span class="fl">Add Second Annotate</span>
+<input type="text" class="fr" placeholder="" id="">
+  <div class="clr"></div>
+</label>
+</div>
+</div>
+<div class="cancel-btn">
+<input type="button"  id="" class="like-btn" value="Next">
+<input type="button"  id="" class="like-btn" value="Add Annotate"></div>
+</div>
+</div>
+<!-- upload gallery popup end -->
 
 <div class="interest-topbar">
 <div class="left-top-btn"><button type="button" class="menu_btn_top"></button></div>
@@ -236,14 +286,12 @@
 <div class="YAPP-Live" style="display:block;">
 
 <div class="post-status">
-<input type="button" class="post-btn">
 <select class="select-ctgry">
 <option>All</option>
 <option>Images</option>
 <option>Videos</option>
 </select>
 <input type="button" class="Upload-text-btn">
-<div class="add-annotation"><a href="#">Add your own Annotation</a></div>
 </div>
 
 <div id="TabbedPanels3" class="TabbedPanels">
@@ -264,7 +312,7 @@
  <div class="fl user-name-title">Maninder<br><span>(5 hours ago)</span></div>
  <div class="clr"></div>
  <div>
- <div class="uploaded-pic"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+ <div class="uploaded-pic"> <img src="images/Syra-yousaf-profile-pictures.jpg"></div>
  <p><strong>This is Title area</strong></p>
  <p>This is discription area</p>
  </div>

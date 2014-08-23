@@ -173,7 +173,7 @@ position: absolute; background:url("../images/body-bg.png") no-repeat fixed cent
 
 .clicked-like-btn{padding:7px 15px; border-bottom-right-radius:7px; border-top-left-radius:7px; background:rgba(213, 213, 213, 0.8); border:none; color:rgba(118, 185, 35, 1);text-shadow:0 1px 0 rgba(0, 0, 0, 0.7); margin:0 3px 0 0;}
 
-.post-status{width:100%; margin:0 auto 15px;background:#f3f3f3; padding:10px 0 6px;}
+.post-status{width:100%; margin:0 auto;background:#f3f3f3; padding:10px 0 6px;}
 .post-input{background:#fff;border:none; box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7); padding: 7px 10px; width: 60%;}
 .post-btn{padding:0; border:none; background:url(../images/add-status.png) no-repeat center center rgba(0, 0, 0, 0); background-size:100%; width:30px; height:30px;}
 .post-text-btn{background:#00afbf; color:#FFF; padding:7px 10px; border:none; box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7); font-size:12px;}
@@ -237,6 +237,25 @@ position: absolute; background:url("../images/body-bg.png") no-repeat fixed cent
 .uploaded-pic img{width: 100%;}
 .select-ctgry{background:#fff;border:none; box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7); padding: 7px 10px; width: 45%; margin:0 10px;}
 .Upload-text-btn{padding:0; border:none; background:url(../images/upload.png) no-repeat center center rgba(0, 0, 0, 0); background-size:100%; width:30px; height:30px;}
+
+.upload-popup-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:fixed;}
+.upload-popup-area{position: absolute; margin: 0px 4%; text-align: center; width: 92%; top:0%; background:none;}
+.upload-popup-head{width:100%; margin:15px auto;background:none; padding:0; text-align:center; color:#00afbf;}
+.upload-popup-head h3{margin:0;}
+.upload-popup-list{width:100%; height:375px; overflow-y:scroll;}
+.single-upload-popup{width:100%; margin:20px 0 0; padding:3px 0; color:#FFF; background:rgba(255, 255, 255, 0.9);}
+.single-upload-popup label span{color: rgba(0, 0, 0, 1); margin: 3px 5px 0px;}
+.single-upload-popup label input{border:none; border-left:1px dotted #000; background:rgba(255, 255, 255, 0); padding: 3px 5px;}
+.upload-popup-by-user{width:40px; height:40px; overflow:hidden; margin:0 5px 5px 0;}
+.upload-popup-by-user img{width:40px;}
+
+.upload-popup-text{font-size:12px; color:#FFF; white-space:pre-wrap; width:85%; text-align:left;}
+.upload-popup-user{color:#00afbf; font-weight:bold; text-transform:capitalize;}
+.upload-popup-msg-ago{color:#bbb; font-size:11px;font-weight:bold; text-align:left;}
+.upload-gall-btn{background:#00afbf; color:#FFF; padding:10px 20px; border:1px solid #fff; font-size:12px; margin:0 }
+.cancel-btn{width:100%; margin:20px auto 0;}
+.display-pic{height: 130px; overflow: hidden; width: 100%; margin:0 0 10px;}
+.display-pic img{width: 100%;}
 
 /*-- This css for Mobile's different resolutions --*/
 
