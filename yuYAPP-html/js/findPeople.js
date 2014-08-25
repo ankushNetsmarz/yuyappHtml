@@ -5,7 +5,7 @@ function GetPeopleRandom() {
     var inputdata = {
         "userId": userId,
         "start": 1,
-        "end": 10
+        "end": 100 
     };
     $.ajax({
         type: "GET",
