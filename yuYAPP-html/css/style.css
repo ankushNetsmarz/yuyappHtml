@@ -41,7 +41,8 @@ input[placeholder], [placeholder], *[placeholder] {
     color:#000 !important;
 }
 
-.logo{margin:15% 0 10%;}
+.logo{margin:19% 0 10%;}
+.logo img{width:55%;}
 .login_inputs .user_input{width:72%; background:url(../images/user-icons.png) no-repeat rgba(255, 255, 255, 0.7); border:none; padding:6px 10px 6px 25px; margin:0 0 15px; background-position:3px 5px; border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
 .login_inputs .pass_input{width:72%; background:url(../images/user-icons.png) no-repeat rgba(255, 255, 255, 0.7); border:none; padding:6px 10px 6px 25px; margin:0 0 15px; background-position:3px -45px; border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
 
