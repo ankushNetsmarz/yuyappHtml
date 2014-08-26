@@ -8,7 +8,6 @@
      <style type="text/css">
       /*html { height: 100% }*/
       body { padding: 0 }
-      #map-canvas { height: 390px;}
     </style>
     <link href="css/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/idangerous.swiper.css">
@@ -136,7 +135,7 @@
 
 </div>
 
-<div class="main_div" style="overflow:hidden;">
+<div class="main_div">
 
 
 <!-- after the login page display this page (in this page firstly show these menu buttons) -->
@@ -169,7 +168,7 @@
 
 <div class="inner-pages">
 <!-- after the click on single menu show this div -->
-<div  class="ctgry-list-main" style="display:none;">
+<div  class="ctgry-list-main" style="display:block;">
 
 <div class="post-status">
 
@@ -195,17 +194,12 @@
 <div class="profile-pic"> <img src="images/user-profile-pic.png"><div class="change-pic">Change Your Pic</div> </div>
 <div class="edit_prof_inputs">
 <form>
-
 <div><input  id="editFirstname"  type="text" placeholder="First Name" class="edit_prof_box"></div>
 <div><input  id="editLastname" type="text" placeholder="Last Name" class="edit_prof_box"></div>
 <div><input  id="editUserName" type="text" placeholder="User Name" class="edit_prof_box"></div>
 <div><input id="editDOB" placeholder="DOB" class="edit_prof_box"></div>
 <div><input id="editGender"  placeholder="Gender" class="edit_prof_box"></div>
-<div><input type="button" id="updateButton" class="edit-prof-btn" value="UPDATE" />
-
-    
-
-</div>
+<div><input type="button" id="updateButton" class="edit-prof-btn" value="UPDATE" /></div>
 </form>
 </div>
 </div>
@@ -282,6 +276,7 @@
 </div>
 
 <!-- YAPP Live screen start here -->
+
 
 <div id="YAPP-Live" class="YAPP-Live" style="display:none;">
 
@@ -380,17 +375,16 @@
     </ul>
     <div class="TabbedPanelsContentGroup">
       <div class="TabbedPanelsContent">
-      <div class="add-frnd-list">
-
-      
-        
-                
-        </div>
+      <div class="add-frnd-list"></div>
       </div>
       <div   class="TabbedPanelsContent">
+<<<<<<< HEAD
      
            <div id="map-canvas"/>
 
+=======
+      <div id="map-canvas"/>
+>>>>>>> origin/master
       </div>
     </div>
   </div>
