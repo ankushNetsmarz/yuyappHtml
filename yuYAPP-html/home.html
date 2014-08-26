@@ -48,14 +48,14 @@
 <div class="full-annotate-list">
 <div class="single-full-annotate">
 <label>
-<span class="fl">Add First Annotate</span>
+<span class="fl">First Annotate</span>
 <input type="text" class="fr" placeholder="Enter your status" id="">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-full-annotate">
 <label>
-<span class="fl">Add Second Annotate</span>
+<span class="fl">Second Annotate</span>
 <input type="text" class="fr" placeholder="Enter your status" id="">
   <div class="clr"></div>
 </label>
@@ -84,28 +84,28 @@
 </div>
 <div class="single-upload-popup">
 <label>
-<span class="fl">Add Title</span>
+<span class="fl">Title</span>
 <input type="text" class="fr" placeholder="" id="">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
-<span class="fl">Add Discription</span>
+<span class="fl">Discription</span>
 <input type="text" class="fr" placeholder="" id="">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
-<span class="fl">Add First Annotate</span>
+<span class="fl">First Annotate</span>
 <input type="text" class="fr" placeholder="" id="">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
-<span class="fl">Add Second Annotate</span>
+<span class="fl">Second Annotate</span>
 <input type="text" class="fr" placeholder="" id="">
   <div class="clr"></div>
 </label>
@@ -150,7 +150,9 @@
 
 <div class="ctgry-row-2">
 <div id="RequestOption" class="unselect left_box">Request</div>
-<div id="NotificationOption" class="unselect mid_box">Notification</div>
+<div id="NotificationOption" class="unselect mid_box">Notification
+ <span class="notify-badge">5</span>
+</div>
 <div id="FriendsOption" class="unselect right_box">Friends</div>
 <div class="clr"></div>
 </div>
@@ -437,14 +439,21 @@
         
            switch (currentWindowHeight) {
                case 320:                   //320 *480
-
+                   
                    {                     
                        top = '380px';
                        topFlag = 1;
 
                    }
                    break;
-
+				   
+               case 568:
+				   if(currentWindowWidth == 320)  //320*568
+                   {
+                       top='440px';           
+                   }
+                   break;
+				   
                case 480:  
 
                    if (currentWindowWidth == 320)//480*320
@@ -458,26 +467,31 @@
 
                case 800:
 
+                   if (currentWindowWidth == 1280)//800*1280
                    {
+                       top = '1024px';
+                   }
+                   else{
                        top = '380px';          //800*480
 
                    }
                    break;
-
-
+				   
                case 640:
-                   if(currentWindowWidth == 1136)  //640*1136
+                   if(currentWindowWidth == 400)  //400*640
                    {
                        top = '520px';
                    }
                    else
                    {
-                       top='485px';           //640*960
+                       top='500px';           //360*640
                    }
                    break;
-				   case 1136:
+				   
+			   case 640:
+				   if(currentWindowWidth == 384)  //384*640
                    {
-                       top='415px';           //640*1136
+                       top='415px';           
                    }
                    break;
                case 768:
@@ -503,14 +517,20 @@
                        top = '485px'          //540 *960
                    }
                    break;
-               case 960:
-                   if(currentWindowWidth == 640)             //640*960
+               case 360:
+                   if(currentWindowWidth == 600)     //360*600
                    {
                        top = '485px';
                    }
                    else
                    {
-                       top= '395px';           //540*960
+                       top= '440px';       //360*640
+                   }
+                   break;
+				   case 360:
+				   if(currentWindowWidth == 480)   //360*480
+                   {
+                       top = '485px'     
                    }
                    break;
                default:

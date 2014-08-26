@@ -213,9 +213,9 @@ position: absolute; background:url("../images/body-bg.png") no-repeat fixed cent
 .full-annotate-area{position: absolute; margin: 0px 4%; text-align: center; width: 92%; top:17%; background:none;}
 .full-annotate-head{width:100%; margin:0 auto 15px;background:none; padding:10px 0; text-align:center; color:#00afbf;}
 .full-annotate-list{width:100%; height:130px; overflow-y:scroll;}
-.single-full-annotate{width:100%; margin:20px 0 0; padding:0 0 4px; color:#FFF;}
-.single-full-annotate label span{color: rgb(255, 255, 255); margin: 3px 15px 0px 0px;}
-.single-full-annotate label input{border: medium none; background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 5px;}
+.single-full-annotate{width:100%; margin:20px 0 0; padding:0; color:#FFF;background:rgba(255, 255, 255, 0.9);}
+.single-full-annotate label span{background:url("../images/user-icons.png") no-repeat scroll 0 2px / 24px auto rgba(0, 0, 0, 0); color: rgba(0, 0, 0, 1); margin: 0px 2px; padding:5px 3px 4px 26px;}
+.single-full-annotate label input{border:none; border-left:1px dotted #000; background:rgba(255, 255, 255, 0); padding: 3px 5px; margin:3px 0; width:146px;}
 .full-annotate-by-user{width:40px; height:40px; overflow:hidden; margin:0 5px 5px 0;}
 .full-annotate-by-user img{width:40px;}
 
@@ -234,7 +234,7 @@ position: absolute; background:url("../images/body-bg.png") no-repeat fixed cent
 .upload-user-pic{width:49px; height:49px; overflow:hidden; box-shadow:2px 2px 4px -2px rgba(0, 0, 0, 0.7); margin:0 5px 5px 0;}
 .upload-user-pic img{width:49px;}
 .upload-title{ padding:0; margin:0; text-align:left; font-size:12px;}
-.uploaded-pic{height: 150px; overflow: hidden; width: 100%;}
+.uploaded-pic{height:300px; overflow: hidden; width: 100%;}
 .uploaded-pic img{width: 100%;}
 .select-ctgry{background:#fff;border:none; box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7); padding: 7px 10px; width: 45%; margin:0 10px;}
 .Upload-text-btn{padding:0; border:none; background:url(../images/upload.png) no-repeat center center rgba(0, 0, 0, 0); background-size:100%; width:30px; height:30px;}
@@ -244,21 +244,23 @@ position: absolute; background:url("../images/body-bg.png") no-repeat fixed cent
 .upload-popup-head{width:100%; margin:15px auto;background:none; padding:0; text-align:center; color:#00afbf;}
 .upload-popup-head h3{margin:0;}
 .upload-popup-list{width:100%; height:375px; overflow-y:scroll;}
-.single-upload-popup{width:100%; margin:20px 0 0; padding:3px 0; color:#FFF; background:rgba(255, 255, 255, 0.9);}
-.single-upload-popup label span{color: rgba(0, 0, 0, 1); margin: 3px 5px 0px;}
-.single-upload-popup label input{border:none; border-left:1px dotted #000; background:rgba(255, 255, 255, 0); padding: 3px 5px;}
+.single-upload-popup{width:100%; margin:20px 0 0; padding:0; color:#FFF; background:rgba(255, 255, 255, 0.9);}
+.single-upload-popup label span{background:url("../images/user-icons.png") no-repeat scroll 0 2px / 24px auto rgba(0, 0, 0, 0); color: rgba(0, 0, 0, 1); margin: 0px 2px; padding:5px 3px 4px 26px;}
+.single-upload-popup label input{border:none; border-left:1px dotted #000; background:rgba(255, 255, 255, 0); padding: 3px 5px; margin:3px 0;}
 .upload-popup-by-user{width:40px; height:40px; overflow:hidden; margin:0 5px 5px 0;}
 .upload-popup-by-user img{width:40px;}
 
 .upload-popup-text{font-size:12px; color:#FFF; white-space:pre-wrap; width:85%; text-align:left;}
 .upload-popup-user{color:#00afbf; font-weight:bold; text-transform:capitalize;}
 .upload-popup-msg-ago{color:#bbb; font-size:11px;font-weight:bold; text-align:left;}
-.upload-gall-btn{background:#00afbf; color:#FFF; padding:10px 20px; border:1px solid #fff; font-size:12px; margin:0 }
-.cancel-btn{width:100%; margin:20px auto 0;}
+.upload-gall-btn{background:#00afbf; color:#FFF; padding:6px 0px; border:1px solid #fff; font-size:12px; margin:0; width:49%; }
+.cancel-btn{width:100%; margin:10px auto 0;}
 .display-pic{height: 130px; overflow: hidden; width: 100%; margin:0 0 10px;}
 .display-pic img{width: 100%;}
 
 #map-canvas { height: 390px;}
+
+.notify-badge{position: absolute; text-align: center; display: block; background: none repeat scroll 0% 0% rgb(0, 175, 191); border-radius: 50%; line-height: 2; padding: 0px 9px; margin: 0px 30% 0px 58%; top: 14px;}
 
 /*-- This css for Mobile's different resolutions --*/
 
@@ -283,37 +285,52 @@ position: absolute; background:url("../images/body-bg.png") no-repeat fixed cent
 	.TabbedPanels{margin:2% 0 0;}
 	.upload-list-main{height:163px;}
 	.upload-area{height:163px;}
+	.comment-head{margin:0 auto;}
+	.comment-list{height:190px;}
+	.cancel-btn{margin:10px auto 0;}
+	.full-annotate-head h3{margin:0;}
+	.upload-popup-list{height:220px;}
+	.single-upload-popup label input{width:284px;}
+	.notify-badge{margin:0 30% 0 56%;}
 	}
 	
-@media screen and (width: 360px) and (height: 640px){
+@media screen and (width: 320px) and (height: 568px){
 	.logo{margin:2% 0;}
 	.logo img{width:25%;}
 	.login_inputs .user_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 4px; background-size:7%;}
 	.login_inputs .pass_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 2px; background-size:7%;}
 	.loginpage_btns{margin:0 auto;}
-	.list-area{height:195px;}
-	.main_div{height:590px; overflow:scroll;}
-	.add-frnd-list{height:206px;}
-	#map-canvas{height:206px;}
+	.list-area{height:445px;}
+	.main_div{height:518px; overflow:scroll;}
+	.ctgry-row{margin:13% auto 0;}
+	.ctgry-row-2{margin:13% auto 0;}
+	.ctgry-row-3{margin:13% auto 0;}
+	.menu-shadow{margin:20px 0 0;}
+	.add-frnd-list{height:458px;}
+	#map-canvas{height:463px;}
 	.plug-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
 	.single-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
-	.frnd-list-main{height:166px;}
-	.notify-list{height:206px;}
-	.see-status{margin:2% 0;}
-	#see_profile{height:260px; overflow:scroll;}
-	#edit_profile{height:260px; overflow:scroll;}
-	.edit_prof_inputs{margin:3% 0 0;}
+	.frnd-list-main{height:383px;}
+	.notify-list{height:468px;}
+	.see-status{margin:6% 0;}
+	#see_profile{height:510px; overflow:scroll;}
+	#edit_profile{height:510px; overflow:scroll;}
+	.edit_prof_inputs{margin:10% 0 0;}
+	.edit_prof_box{margin:0 0 15px;}
 	.TabbedPanels{margin:2% 0 0;}
-	.upload-list-main{height:163px;}
-	.upload-area{height:163px;}
-	.ctgry-row{margin:15% 0 0;}
-	.ctgry-row-2{margin:15% 0 0;}
-	.ctgry-row-3{margin:15% 0 0;}
-	.mid_box{top:65px;}
-	.menu-shadow{margin:30px 0 0;}
+	.upload-list-main{height:413px;}
+	.upload-area{height:413px;}
+	.comment-head{margin:0 auto;}
+	.comment-list{height:190px;}
+	.cancel-btn{margin:10px auto 0;}
+	.full-annotate-head h3{margin:0;}
+	.upload-popup-list{height:460px;}
+	.single-upload-popup label input{width:146px;}
+	.notify-badge{margin:0 30% 0 56%;}
+	.display-pic{height:200px;}
 	}
-
-@media screen and (width: 640px) and (height: 360px){
+	
+@media screen and (width: 568px) and (height: 320px){
 	.logo{margin:2% 0;}
 	.logo img{width:25%;}
 	.login_inputs .user_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 4px; background-size:7%;}
@@ -334,6 +351,187 @@ position: absolute; background:url("../images/body-bg.png") no-repeat fixed cent
 	.TabbedPanels{margin:2% 0 0;}
 	.upload-list-main{height:163px;}
 	.upload-area{height:163px;}
+	.comment-head{margin:0 auto;}
+	.comment-list{height:190px;}
+	.cancel-btn{margin:10px auto 0;}
+	.full-annotate-head h3{margin:0;}
+	.upload-popup-list{height:220px;}
+	.single-upload-popup label input{width:284px;}
+	.notify-badge{margin:0 30% 0 56%;}
+	}
+	
+@media screen and (width: 360px) and (height: 640px){
+	.logo{margin:30% 0 10%;}
+	.logo img{width:55%;}
+	.login_inputs .user_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:3px 6px; background-size:7%;}
+	.login_inputs .pass_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 5px; background-size:7%;}
+	.loginpage_btns{margin:15px auto;}
+	.need_help{margin:30px 0 0;}
+	.signup-logo{margin:30% 0 10%;}
+	.list-area{height:516px;}
+	.main_div{height:590px;}
+	.add-frnd-list{height:528px;}
+	#map-canvas{height:535px;}
+	.plug-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
+	.single-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
+	.frnd-list-main{height:450px;}
+	.notify-list{height:533px;}
+	.see-status{margin:2% 0;}
+	#see_profile{height:260px; overflow:scroll;}
+	#edit_profile{height:260px; overflow:scroll;}
+	.edit_prof_inputs{margin:3% 0 0;}
+	.TabbedPanels{margin:2% 0 0;}
+	.upload-list-main{height:488px;}
+	.upload-area{height:482px;}
+	.ctgry-row{margin:15% 0 0;}
+	.ctgry-row-2{margin:15% 0 0;}
+	.ctgry-row-3{margin:15% 0 0;}
+	.mid_box{top:65px;}
+	.menu-shadow{margin:30px 0 0;}
+	.comment-list{height:460px;}
+	.full-annotate-area{margin:10% 4%;}
+	.upload-popup-list{height:500px;}
+	.display-pic{height:200px; margin:0 0 20px;}
+	.upload-gall-btn{width:49.4%;}
+	.single-upload-popup label input{width:183px;}
+	}
+
+@media screen and (width: 640px) and (height: 360px){
+	.logo{margin:2% 0;}
+	.logo img{width:25%;}
+	.login_inputs .user_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 4px; background-size:7%;}
+	.login_inputs .pass_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 2px; background-size:7%;}
+	.loginpage_btns{margin:0 auto;}
+	.list-area{height:234px;}
+	.main_div{height:310px; overflow:scroll;}
+	.add-frnd-list{height:236px;}
+	#map-canvas{height:245px;}
+	.plug-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
+	.single-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
+	.frnd-list-main{height:160px;}
+	.notify-area{margin:2% 0;}
+	.notify-list{height:245px;}
+	.see-status{margin:2% 0;}
+	#see_profile{height:260px; overflow:scroll;}
+	#edit_profile{height:260px; overflow:scroll;}
+	.edit_prof_inputs{margin:3% 0 0;}
+	.TabbedPanels{margin:2% 0 0 !important;}
+	.upload-list-main{height:205px;}
+	.upload-area{height:204px;}
+	.comment-head{margin:0 auto;}
+	.comment-list{height:222px;}
+	.cancel-btn{margin:10px auto 0;}
+	.full-annotate-head h3{margin:0;}
+	.upload-popup-list{height:257px;}
+	.single-upload-popup label input{width:441px;}
+	.display-pic{height:180px;}
+	.notify-badge{margin:0 30% 0 55%;}
+	.single-full-annotate label input{width:432px;}
+	}
+	
+@media screen and (width: 600px) and (height: 360px){
+	.logo{margin:2% 0;}
+	.logo img{width:25%;}
+	.login_inputs .user_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 4px; background-size:7%;}
+	.login_inputs .pass_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 2px; background-size:7%;}
+	.loginpage_btns{margin:0 auto;}
+	.list-area{height:234px;}
+	.main_div{height:310px; overflow:scroll;}
+	.add-frnd-list{height:236px;}
+	#map-canvas{height:245px;}
+	.plug-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
+	.single-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
+	.frnd-list-main{height:160px;}
+	.notify-area{margin:2% 0;}
+	.notify-list{height:245px;}
+	.see-status{margin:2% 0;}
+	#see_profile{height:260px; overflow:scroll;}
+	#edit_profile{height:260px; overflow:scroll;}
+	.edit_prof_inputs{margin:3% 0 0;}
+	.TabbedPanels{margin:2% 0 0 !important;}
+	.upload-list-main{height:205px;}
+	.upload-area{height:204px;}
+	.comment-head{margin:0 auto;}
+	.comment-list{height:222px;}
+	.cancel-btn{margin:10px auto 0;}
+	.full-annotate-head h3{margin:0;}
+	.upload-popup-list{height:257px;}
+	.single-upload-popup label input{width:404px;}
+	.display-pic{height:180px;}
+	.notify-badge{margin:0 30% 0 55%;}
+	.single-full-annotate label input{width:404px;}
+	}
+	
+@media screen and (width: 384px) and (height: 640px){
+	.logo{margin:30% 0 10%;}
+	.logo img{width:55%;}
+	.login_inputs .user_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:3px 6px; background-size:7%;}
+	.login_inputs .pass_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 5px; background-size:7%;}
+	.loginpage_btns{margin:15px auto;}
+	.need_help{margin:30px 0 0;}
+	.signup-logo{margin:30% 0 10%;}
+	.list-area{height:516px;}
+	.main_div{height:590px;}
+	.add-frnd-list{height:528px;}
+	#map-canvas{height:535px;}
+	.plug-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
+	.single-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
+	.frnd-list-main{height:450px;}
+	.notify-list{height:533px;}
+	.see-status{margin:6% 0;}
+	#see_profile{height:584px; overflow:scroll;}
+	#edit_profile{height:584px; overflow:scroll;}
+	.edit_prof_inputs{margin:10% 0 0;}
+	.edit_prof_box{margin:0 0 15px;}
+	.TabbedPanels{margin:2% 0 0;}
+	.upload-list-main{height:488px;}
+	.upload-area{height:482px;}
+	.ctgry-row{margin:15% 0 0;}
+	.ctgry-row-2{margin:15% 0 0;}
+	.ctgry-row-3{margin:15% 0 0;}
+	.mid_box{top:65px;}
+	.menu-shadow{margin:30px 0 0;}
+	.comment-list{height:460px;}
+	.full-annotate-area{margin:10% 4%;}
+	.upload-popup-list{height:500px;}
+	.display-pic{height:245px; margin:0 0 20px;}
+	.upload-gall-btn{width:49.4%;}
+	.single-upload-popup label input{width:205px;}
+	.notify-badge{margin:0 30% 0 58%;}
+	.single-full-annotate label input{width:205px;}
+	}
+
+@media screen and (width: 640px) and (height: 384px){
+	.logo{margin:2% 0;}
+	.logo img{width:25%;}
+	.login_inputs .user_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 4px; background-size:7%;}
+	.login_inputs .pass_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 2px; background-size:7%;}
+	.loginpage_btns{margin:0 auto;}
+	.list-area{height:258px;}
+	.main_div{height:334px; overflow:scroll;}
+	.add-frnd-list{height:236px;}
+	#map-canvas{height:245px;}
+	.plug-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
+	.single-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
+	.frnd-list-main{height:160px;}
+	.notify-area{margin:2% 0;}
+	.notify-list{height:245px;}
+	.see-status{margin:2% 0;}
+	#see_profile{height:260px; overflow:scroll;}
+	#edit_profile{height:260px; overflow:scroll;}
+	.edit_prof_inputs{margin:3% 0 0;}
+	.TabbedPanels{margin:2% 0 0 !important;}
+	.upload-list-main{height:205px;}
+	.upload-area{height:204px;}
+	.comment-head{margin:0 auto;}
+	.comment-list{height:222px;}
+	.cancel-btn{margin:10px auto 0;}
+	.full-annotate-head h3{margin:0;}
+	.upload-popup-list{height:257px;}
+	.single-upload-popup label input{width:441px;}
+	.display-pic{height:180px;}
+	.notify-badge{margin:0 30% 0 55%;}
+	.single-full-annotate label input{width:432px;}
 	}
 	
 @media screen and (width: 600px) and (height: 960px){
