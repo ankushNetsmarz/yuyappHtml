@@ -212,7 +212,7 @@
 
 
 <div id="see_profile" style="display:none;">
-<div class="profile-pic"> <img src="images/user-profile-pic.png"></div>
+<div class="profile-pic"> <img  id="profilePicture" src=""></div>
 <div id="seeStatus" class="see-status"></div>
 <div class="see_prof">
 <form>
@@ -388,7 +388,8 @@
         </div>
       </div>
       <div   class="TabbedPanelsContent">
-      <div id="map-canvas"/>
+     
+           <div id="map-canvas"/>
 
       </div>
     </div>
@@ -422,11 +423,18 @@
    
         $(document).ready(function () {
             initialize();
-            GetNotificationCount();
-            //GetPostNonAnonymousList();
-            SetUnFriend();
+         //   GetNotificationCount();
+        //    GetPostNonAnonymousList();
+         //   GetPostAnonymousList();
+        //    SetUnFriend();
+            var GetProfilePicture = localStorage.getItem("ProfilePicUrl");
+            alert(GetProfilePicture);
+     
+            var profilePicture = $("#profilePicture");
 
-            var flag = 0;
+            profilePicture.prop('src',GetProfilePicture);
+         
+           var flag = 0;
            var currentWindowHeight= $(window).height();   // returns height of browser viewport
            var currentWindowWidth = $(window).width(); // returns height of HTML document
       

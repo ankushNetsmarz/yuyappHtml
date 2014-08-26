@@ -97,7 +97,23 @@
     <script src="js/jquery-2.0.2.js"></script>
     <script src="js/SignIn.js"></script>
     <script src="js/signUp.js"></script>
+       <!--<script src="js/signUp.js"></script>-->
     <script>
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+
+            function alertDismissed() {
+
+            }
+
+            navigator.notification.alert(
+			    'You are the winner!',  // message
+			    alertDismissed,         // callback
+			    'Game Over',            // title
+			    'Done'                  // buttonName
+			);
+
+        }
         $(document).ready(function () {
             //  var options = {
             //	  date: new Date(),

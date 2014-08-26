@@ -22,11 +22,15 @@ function GetPeopleRandom() {
           
             if (data.ResponseData.length > 0) {
                
-                for (var i = 0; i < data.ResponseData.length; i++) {
+                for (var i = 0; i < data.ResponseData.length; i++)
+
+                {
+                    var profilePicture = data.ResponseData[i].PicUrl;
+                    var UserId = data.ResponseData[i].UserId;
 
          HTML += "<div class='plug-frnd-main'>"            
          HTML += "<div class='plug-frnd'>"
-         HTML += "<div class='fl single-frnd-imgarea' ><img src=''></div>"
+         HTML += "<div class='fl single-frnd-imgarea' ><img userId=" + UserId + "src=" + profilePicture + "></div>"
          HTML += "<div>"+ data.ResponseData[i].UserName+ "</div>"
          HTML += "</div>"
          HTML += "<div  id='plug' class='plug-btn-div' userId=" + data.ResponseData[i].UserId + "><button type='button' class='plug-btn'>PLUG</button></div></div>"

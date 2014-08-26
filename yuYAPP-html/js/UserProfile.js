@@ -27,6 +27,10 @@ function GetUserProfile() {
         success: function (data) {
           
             console.log(data);
+
+            var PicUrl = "http://174.141.233.6/YuY/" + data.ResponseData.PicUrl;
+            localStorage.setItem("ProfilePicUrl", PicUrl);
+
             $("#seeStatus").text(data.ResponseData.Post);
             $("#SeeUserName,#editUserName").val(data.ResponseData.UserName);
             $("#SeefullName").val(data.ResponseData.FirstName + " " + data.ResponseData.LastName);
