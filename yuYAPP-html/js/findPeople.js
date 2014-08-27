@@ -1,4 +1,19 @@
 ﻿
+
+
+$("#RequestOption").on("click", function () {
+    $('.inner-pages').animate({
+        'top': "0px" //moves up
+    });
+    $("#edit_profile,#see_profile").css("display", "none");
+    GetPeopleRandom();
+    $(".ctgry-list-main,.follow-friend,.notification").css("display", "none");
+    $(".add-frnd").css("display", "block");
+    $(".top_heading").text("FIND-FRIENDS");
+
+});
+
+
 var userId = localStorage.getItem("userId");
 
 function GetPeopleRandom() {

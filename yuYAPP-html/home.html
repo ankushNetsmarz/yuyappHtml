@@ -69,14 +69,14 @@
 <!-- add annotation screen end -->
 
 <!-- upload gallery popup -->
-<div id="" class="upload-popup-bg" style="display:none; z-index:49">
+<div id="uploadScreen" class="upload-popup-bg" style="display:none; z-index:49">
 <div class="upload-popup-area">
 <div class="upload-popup-head">
 <h3>Upload Gallery</h3>
 </div>
 <div class="upload-popup-list">
 <div class="pic-btn">
-<div class="display-pic"> <img src="images/Syra-yousaf-profile-pictures.jpg"></div>
+<div class="display-pic"> <img src=""></div>
 <div>
 <input type="button"  id="" class="upload-gall-btn" value="Images">
 <input type="button"  id="" class="upload-gall-btn" value="Videos">
@@ -85,35 +85,35 @@
 <div class="single-upload-popup">
 <label>
 <span class="fl">Add Title</span>
-<input type="text" class="fr" placeholder="" id="">
+<input type="text" class="fr" placeholder="" id="UploadTitle">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
 <span class="fl">Add Discription</span>
-<input type="text" class="fr" placeholder="" id="">
+<input type="text" class="fr" placeholder="" id="UploadDescription">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
 <span class="fl">Add First Annotate</span>
-<input type="text" class="fr" placeholder="" id="">
+<input type="text" class="fr" placeholder="" id="Upload1Annotate">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
 <span class="fl">Add Second Annotate</span>
-<input type="text" class="fr" placeholder="" id="">
+<input type="text" class="fr" placeholder="" id="Upload2Annotate">
   <div class="clr"></div>
 </label>
 </div>
 </div>
 <div class="cancel-btn">
-<input type="button"  id="" class="like-btn" value="Next">
-<input type="button"  id="" class="like-btn" value="Add Annotate"></div>
+<input type="button"  id="nextUpload" class="like-btn" value="Post">
+<input type="button"  id="cancelUpload" class="like-btn" value="Cancel"></div>
 </div>
 </div>
 <!-- upload gallery popup end -->
@@ -150,7 +150,9 @@
 
 <div class="ctgry-row-2">
 <div id="RequestOption" class="unselect left_box">Request</div>
-<div id="NotificationOption" class="unselect mid_box">Notification</div>
+<div id="NotificationOption" class="unselect mid_box">Notification
+    <span style="position: absolute; text-align: center; display: block; background: none repeat scroll 0% 0% rgb(0, 175, 191); border-radius: 50%; line-height: 2; padding: 0px 9px; margin: 0px 30% 0px 58%; top: 14px;">5</span>
+</div>
 <div id="FriendsOption" class="unselect right_box">Friends</div>
 <div class="clr"></div>
 </div>
@@ -286,7 +288,7 @@
 <option>Images</option>
 <option>Videos</option>
 </select>
-<input type="button" class="Upload-text-btn">
+<input id="uploadButtonVideoImages" type="button" class="Upload-text-btn">
 </div>
 
 <div id="TabbedPanels3" class="TabbedPanels">
@@ -300,27 +302,7 @@
 <div  class="upload-list-main">
 <div class="upload-area">
 
-<div class="single-upload">
-<div class="upload-title">
- <div class="fl upload-user-pic">
- <img src="images/user-pic-list.jpg"></div>
- <div class="fl user-name-title">Maninder<br><span>(5 hours ago)</span></div>
- <div class="clr"></div>
- <div>
- <div class="uploaded-pic"> <img src="images/Syra-yousaf-profile-pictures.jpg"></div>
- <p><strong>This is Title area</strong></p>
- <p>This is discription area</p>
- </div>
- </div>
- <div class="wordwall-btns">
- <input type="button" value="hate" class="like-btn" id="">
- <input type="button" value="Comment" class="like-btn" id="">
- <input type="button" value="love" class="like-btn" id="">
- </div>
- <div class="clr"></div>
- </div>
 
-<div class="clr"></div>
 </div>
 
 <div class="clr"></div>
@@ -330,25 +312,6 @@
   <div  class="upload-list-main">
 <div class="upload-area">
 
-<div class="single-upload">
-<div class="upload-title">
- <div class="fl upload-user-pic">
- <img src="images/user-pic-list.jpg"></div>
- <div class="fl user-name-title">Maninder<br><span>(5 hours ago)</span></div>
- <div class="clr"></div>
- <div>
- <div class="uploaded-pic"><img src="images/Syra-yousaf-profile-pictures.jpg"></div>
- <p><strong>This is Title area</strong></p>
- <p>This is discription area</p>
- </div>
- </div>
- <div class="wordwall-btns">
- <input type="button" value="hate" class="like-btn" id="">
- <input type="button" value="Comment" class="like-btn" id="">
- <input type="button" value="love" class="like-btn" id="">
- </div>
- <div class="clr"></div>
- </div>
 
 <div class="clr"></div>
 </div>
@@ -378,13 +341,9 @@
       <div class="add-frnd-list"></div>
       </div>
       <div   class="TabbedPanelsContent">
-<<<<<<< HEAD
-     
-           <div id="map-canvas"/>
 
-=======
       <div id="map-canvas"/>
->>>>>>> origin/master
+
       </div>
     </div>
   </div>
@@ -395,10 +354,11 @@
 </div>
 <div class="clr"></div>
 </div>
+       <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="js/jquery-2.0.2.js"></script>
-
+   
     <script src="js/like.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  
     <script src="js/getNotification.js"></script>
     <script src="js/ajaxWebService.js"></script>
     <script src="js/idangerous.swiper-2.0.min.js"></script>
@@ -416,14 +376,10 @@
     <script>
    
         $(document).ready(function () {
-            initialize();
-         //   GetNotificationCount();
-        //    GetPostNonAnonymousList();
-         //   GetPostAnonymousList();
-        //    SetUnFriend();
+         //   initialize();
+      
             var GetProfilePicture = localStorage.getItem("ProfilePicUrl");
-            alert(GetProfilePicture);
-     
+         
             var profilePicture = $("#profilePicture");
 
             profilePicture.prop('src',GetProfilePicture);
@@ -533,60 +489,30 @@
          });
 
          $("#YappLiveOption").on("click", function () {
+             GetPostNonAnonymousList();
+             $('.inner-pages').animate({
+                 'top': "0px" //moves up
+             });
+             $(".ctgry-list-main").css("display", "none");
              $("#YAPP-Live").css("display", "block");
          });
 
-           $("#EditProfile").on("click", function () {
-               $('.inner-pages').animate({
-                   'top': "0px" //moves up
-               });
+        
+         
+         $("#uploadButtonVideoImages").on("click", function () {
 
-               $("#see_profile").css("display", "none");
-               $(".add-frnd").css("display", "none");
-               $("#edit_profile").css("display", "block");
-               $(".top_heading").text("EDIT-PROFILE");
-               $(".ctgry-list-main").css("display", "none");
-           });
+             $("#uploadScreen").css("display", "block");
 
-                
-           $("#NotificationOption").on("click", function () {
-           
-               GetNotification();
-               $('.inner-pages').animate({
-                   'top': "0px" //moves up
-               });
-               $(".notification").css("display", "block");
-               $("#see_profile").css("display", "none");
-               $(".add-frnd,.follow-friend").css("display", "none");
-               $(".ctgry-list-main").css("display", "none");
-           });
+         });
 
+         $("#cancelUpload").on("click", function () {
+
+             $("#uploadScreen").css("display", "none");
+
+         });
 
           
 
-           $("#RequestOption").on("click", function () {
-               $('.inner-pages').animate({
-                   'top': "0px" //moves up
-               });
-               $("#edit_profile,#see_profile").css("display", "none");
-               GetPeopleRandom();
-               $(".ctgry-list-main,.follow-friend,.notification").css("display", "none");
-               $(".add-frnd").css("display", "block");
-               $(".top_heading").text("FIND-FRIENDS");
-
-           });
-
-
-           $("#updateButton").on("click", function () {
-               var editFirstname = $("#editFirstname").val();
-               var editLastname = $("#editLastname").val();
-               var editUserName = $("#editUserName").val();
-               var editDOB = $("#editDOB").val();
-               var editGender = $("#editGender").val();
-
-               UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editGender);
-               //   return false;
-           });
 
 
            $("#logout").on("click", function () {
@@ -649,42 +575,8 @@
                AddFriend(friendId);
 
            });
-           //$("#TabbedPanels3").on("click", function () {
-               
-           //    initialize();
-           //});
-           function initialize() {
-               if (navigator.geolocation) {
-
-                   //Use HTML5 Geolocation API To Get Current Position
-                   navigator.geolocation.getCurrentPosition(function (position) {
-
-                       //Get Latitude From Geolocation API
-                       latitude = position.coords.latitude;
-
-                       //Get Longitude From Geolocation API
-                       longitude = position.coords.longitude;
-
-                       //Define New Google Map With Lat / Lon
-                       coords = new google.maps.LatLng(latitude, longitude);
-                      // setlocation(
-                       var mapOptions = {
-                           zoom: 16,
-                           center: coords
-                       }
-
-                       localStorage.setItem("latitude", latitude);
-                       localStorage.setItem("longitude", longitude);
-                       var map = new google.maps.Map(document.getElementById("map-canvas"),
-                     mapOptions);
-                       marker = new google.maps.Marker({
-                           position: coords,
-                           map: map
-                       });
-                       marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
-                   });
-               }
-           }
+        
+ 
 
     </script>
 <script type="text/javascript">

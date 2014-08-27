@@ -1,4 +1,17 @@
-﻿var userId = localStorage.getItem("userId");
+﻿
+$("#NotificationOption").on("click", function () {
+
+    GetNotification();
+    $('.inner-pages').animate({
+        'top': "0px" //moves up
+    });
+    $(".notification").css("display", "block");
+    $("#see_profile").css("display", "none");
+    $(".add-frnd,.follow-friend").css("display", "none");
+    $(".ctgry-list-main").css("display", "none");
+});
+
+var userId = localStorage.getItem("userId");
 function GetNotificationCount() {
     var postData = {
         userId: userId
