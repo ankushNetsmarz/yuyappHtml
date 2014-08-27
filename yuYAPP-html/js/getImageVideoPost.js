@@ -1,4 +1,18 @@
 ﻿
+  $("#YappLiveOption").on("click", function () {
+             $('.inner-pages').animate({
+                 'top': "0px" //moves up
+             });
+             $("#see_profile").css("display", "none");
+             $(".ctgry-list-main").css("display", "none");
+             $(".add-frnd").css("display", "none");
+             $("#edit_profile").css("display", "none");
+             $(".follow-friend,.notification").css("display", "none");
+             $("#YAPP-Live").css("display", "block");
+             GetPostNonAnonymousList();
+             localStorage.setItem("MenuFlag", "up");
+         });
+  
 var userId = localStorage.getItem("userId");
 
 function GetPostAnonymousList() {
@@ -46,26 +60,26 @@ function GetPostNonAnonymousList() {
                 for (var i = 0; i < data.ResponseData.length; i++) {
 
 
-                    var PostFileURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].PostFileURL;
-                    var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
+                	   var PostFileURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].PostFileURL;
+                       var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
 
-                    HTML += "<div class='single-upload'>"
-                    HTML += "<div class='upload-title'>"
-                    HTML += "<div class='fl upload-user-pic'>"
-                    HTML += "<img src=" + ProfilePicURL + "></div>"
-                    HTML += "<div class='fl user-name-title'>" + data.ResponseData[i].UserName + "<br><span>("+ data.ResponseData[i].TimeSpan +")</span></div>"
-                    HTML += "<div class='clr'></div>"
-                    HTML += "<div>"
-                    HTML += "<div class='uploaded-pic'> <img src=" + PostFileURL + "></div>"
-                    HTML += "<p><strong>" + data.ResponseData[i].Status + "</p>"
-                    HTML += "<p>" + data.ResponseData[i].Description + "</p> </div></div>"
-                    HTML += "<div class='wordwall-btns'>"
-                    HTML += "<input type='button' value=" + data.ResponseData[i].PositiveAnnotation + " class='like-btn' id=''>"
-                    HTML += "<input type='button' value='Comment' class='like-btn' id=''>"
-                    HTML += "<input type='button' value=" + data.ResponseData[i].NegativeAnnotation + " class='like-btn' id=''>"
-                    HTML += "</div><div class='clr'></div></div><div class='clr'></div>"
+                       HTML += "<div class='single-upload'>"
+                       HTML += "<div class='upload-title'>"
+                       HTML += "<div class='fl upload-user-pic'>"
+                       HTML += "<img src=" + ProfilePicURL + "></div>"
+                       HTML += "<div class='fl user-name-title'>" + data.ResponseData[i].UserName + "<br><span>("+ data.ResponseData[i].TimeSpan +")</span></div>"
+                       HTML += "<div class='clr'></div>"
+                       HTML += "<div>"
+                       HTML += "<div class='uploaded-pic'> <img src=" + PostFileURL + "></div>"
+                       HTML += "<p><strong>" + data.ResponseData[i].Status + "</p>"
+                       HTML += "<p>" + data.ResponseData[i].Description + "</p> </div></div>"
+                       HTML += "<div class='wordwall-btns'>"
+                       HTML += "<input type='button' value=" + data.ResponseData[i].PositiveAnnotation + " class='like-btn' id=''>"
+                       HTML += "<input type='button' value='Comment' class='like-btn' id=''>"
+                       HTML += "<input type='button' value=" + data.ResponseData[i].NegativeAnnotation + " class='like-btn' id=''>"
+                       HTML += "</div><div class='clr'></div></div><div class='clr'></div>"
 
-                    $(".upload-area").html(HTML);
+                       $(".upload-area").html(HTML);
                 }
                   
                 }

@@ -1,6 +1,14 @@
 ﻿
 
 
+  var GetProfilePicture = localStorage.getItem("ProfilePicUrl");
+            var profilePicture = $("#profilePicture");
+            var profile = $("#profile");
+            profile.prop('src', GetProfilePicture);
+            profilePicture.prop('src', GetProfilePicture);
+            
+            
+
 $("#SeeProfile").on("click", function () {
     GetUserProfile();
     $(".ctgry-list-main").css("display", "none");
@@ -11,6 +19,7 @@ $("#SeeProfile").on("click", function () {
     $(".add-frnd").css("display", "none");
     $("#edit_profile").css("display", "none");
     $(".top_heading").text("USER-PROFILE");
+    localStorage.setItem("MenuFlag", "up");
 
 });
 var userId = localStorage.getItem("userId");

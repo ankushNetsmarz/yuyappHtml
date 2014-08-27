@@ -1,74 +1,75 @@
  <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<meta name="viewport" content="width=device-width, user-scalable=no">
-     <style type="text/css">
-      /*html { height: 100% }*/
-      body { padding: 0 }
-    </style>
+    <meta charset="utf-8">
+    <title>Untitled Document</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
     <link href="css/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/idangerous.swiper.css">
-	<link rel="stylesheet" href="css/idangerous.swiper.scrollbar.css">
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/simple-app.css">
+    <link rel="stylesheet" href="css/idangerous.swiper.scrollbar.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/simple-app.css">
 
-<script src="js/SpryTabbedPanels.js" type="text/javascript"></script>
+    <script src="js/SpryTabbedPanels.js" type="text/javascript"></script>
 
 </head>
 
 <body>
-<div class="loader-bg" style="display:none;z-index:50">
-<div class="loader-area"><img src="images/482.GIF"></div>
-</div>
+    <div class="loader-bg" style="display: none; z-index: 50">
+        <div class="loader-area">
+            <img src="images/482.GIF"></div>
+    </div>
 
-<!-- when click on comment button in word wall screen then this div will display -->
-<div id="commentPopup" class="comment-bg" style="display:none; z-index:49">
-<div class="comment-area">
-<div class="comment-head">
-<input type="text" id="InsertStatusTextBoxComments" placeholder="Enter your status" class="post-input">
-<input type="button"  id="postComments" class="like-btn" value="Comment">
-</div>
-<div class="comment-list">
+    <!-- when click on comment button in word wall screen then this div will display -->
+    <div id="commentPopup" class="comment-bg" style="display: none; z-index: 49">
+        <div class="comment-area">
+            <div class="comment-head">
+                <input type="text" id="InsertStatusTextBoxComments" placeholder="Enter your status" class="post-input">
+                <input type="button" id="postComments" class="like-btn" value="Comment">
+            </div>
+            <div class="comment-list">
+            </div>
+            <div class="cancel-btn">
+                <input type="button" id="cancelCommentBox" class="like-btn" value="Cancel"></div>
+        </div>
+    </div>
+    <!-- comment screen end -->
 
-</div>
-<div class="cancel-btn"><input type="button"  id="cancelCommentBox" class="like-btn" value="Cancel"></div>
-</div>
-</div>
-<!-- comment screen end -->
+    <!-- add annotation screen -->
+    <div id="" class="full-annotate-bg" style="display: none; z-index: 49">
+        <div class="full-annotate-area">
+            <div class="full-annotate-head">
+                <h3>Fill Your Own Annotations</h3>
+            </div>
+            <div class="full-annotate-list">
+                <div class="single-full-annotate">
+                    <label>
+                        <span class="fl">First Annotate</span>
+                        <input type="text" class="fr" placeholder="Enter your status" id="">
+                        <div class="clr"></div>
+                    </label>
+                </div>
+                <div class="single-full-annotate">
+                    <label>
+                        <span class="fl">Second Annotate</span>
+                        <input type="text" class="fr" placeholder="Enter your status" id="">
+                        <div class="clr"></div>
+                    </label>
+                </div>
+            </div>
+            <div class="cancel-btn">
+                <input type="button" id="" class="like-btn" value="Cancel">
+                <input type="button" id="" class="like-btn" value="Add Annotate">
+            </div>
+        </div>
+    </div>
+    <!-- add annotation screen end -->
 
-<!-- add annotation screen -->
-<div id="" class="full-annotate-bg" style="display:none; z-index:49">
-<div class="full-annotate-area">
-<div class="full-annotate-head">
-<h3>Fill Your Own Annotations</h3>
-</div>
-<div class="full-annotate-list">
-<div class="single-full-annotate">
-<label>
-<span class="fl">First Annotate</span>
-<input type="text" class="fr" placeholder="Enter your status" id="">
-  <div class="clr"></div>
-</label>
-</div>
-<div class="single-full-annotate">
-<label>
-<span class="fl">Second Annotate</span>
-<input type="text" class="fr" placeholder="Enter your status" id="">
-  <div class="clr"></div>
-</label>
-</div>
-</div>
-<div class="cancel-btn">
-<input type="button"  id="" class="like-btn" value="Cancel">
-<input type="button"  id="" class="like-btn" value="Add Annotate"></div>
-</div>
-</div>
-<!-- add annotation screen end -->
-
+   
 <!-- upload gallery popup -->
+
 <div id="uploadScreen" class="upload-popup-bg" style="display:none; z-index:49">
 <div class="upload-popup-area">
 <div class="upload-popup-head">
@@ -76,57 +77,49 @@
 </div>
 <div class="upload-popup-list">
 <div class="pic-btn">
-<div class="display-pic"> <img src=""></div>
+<div class="display-pic"> <img id="UploadPreview" src=""></div>
 <div>
-<input type="button"  id="" class="upload-gall-btn" value="Images">
-<input type="button"  id="" class="upload-gall-btn" value="Videos">
+<input type="button"  id="UploadImageButton" onclick="getUploadPhoto(pictureSource.PHOTOLIBRARY);" class="upload-gall-btn" value="Images">
+<input type="button"  id="UploadVideoButton" class="upload-gall-btn" value="Videos">
 </div>
 </div>
 <div class="single-upload-popup">
 <label>
-
-<span class="fl">Title</span>
-<input type="text" class="fr" placeholder="" id="">
-
+<span class="fl">Add Title</span>
+<input type="text" class="fr" placeholder="" id="UploadTitle">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
-
-
-<span class="fl">Discription</span>
-<input type="text" class="fr" placeholder="" id="">
-
+<span class="fl">Add Discription</span>
+<input type="text" class="fr" placeholder="" id="UploadDescription">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
-
-<span class="fl">First Annotate</span>
-<input type="text" class="fr" placeholder="" id="">
-
+<span class="fl">Add First Annotate</span>
+<input type="text" class="fr" placeholder="" id="Upload1Annotate">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
-
-<span class="fl">Second Annotate</span>
-<input type="text" class="fr" placeholder="" id="">
-
+<span class="fl">Add Second Annotate</span>
+<input type="text" class="fr" placeholder="" id="Upload2Annotate">
   <div class="clr"></div>
 </label>
 </div>
 </div>
 <div class="cancel-btn">
-<input type="button"  id="nextUpload" class="like-btn" value="Post">
+<input type="button"  id="nextUpload" class="like-btn" value="Next">
 <input type="button"  id="cancelUpload" class="like-btn" value="Cancel"></div>
 </div>
 </div>
 <!-- upload gallery popup end -->
 
+<<<<<<< HEAD
 <div class="interest-topbar">
 <div class="left-top-btn"><button type="button" class="menu_btn_top"></button></div>
 <div class="top_head_bg"><label class="top_heading">WORD</label></div>
@@ -141,28 +134,51 @@
 <div class="clr"></div>
     
 </div>
+=======
+    <div class="interest-topbar">
+        <div class="left-top-btn">
+            <button type="button" class="menu_btn_top"></button>
+        </div>
+        <div class="top_head_bg">
+            <label class="top_heading">WORD</label></div>
+        <div class="right-top-btn">
+            <div style="text-align: right;"><a href="#" class="profile-setting">
+                <img src="images/profile-pic.jpg" width="39" height="39"></a></div>
+            <div class="profile-menu" style="display: none;">
+                <ul>
+                    <li id="SeeProfile">See Profile</li>
+                    <li id="EditProfile">Edit Profile</li>
+                    <li id="logout">Logout</li>
+                </ul>
+            </div>
+            <div class="clr"></div>
 
-</div>
+        </div>
+>>>>>>> origin/master
 
-<div class="main_div">
+    </div>
+
+    <div class="main_div">
 
 
-<!-- after the login page display this page (in this page firstly show these menu buttons) -->
-<div class="navigation" style="display:block; z-index:10">
+        <!-- after the login page display this page (in this page firstly show these menu buttons) -->
+        <div class="navigation" style="display: block; z-index: 10">
 
-<div class="ctgry-row">
-<div id="YuCamOption" class="unselect left_box">Yu Cam</div>
-<div id="WordWallOption" class="unselect mid_box">Word</div>
-<div id="YappLiveOption" class="unselect right_box">YAPP Live</div>
-<div class="clr"></div>
-</div>
+            <div class="ctgry-row">
+                <div id="YuCamOption" class="unselect left_box">Yu Cam</div>
+                <div id="WordWallOption" class="unselect mid_box">Word</div>
+                <div id="YappLiveOption" class="unselect right_box">YAPP Live</div>
+                <div class="clr"></div>
+            </div>
 
-<div class="ctgry-row-2">
-<div id="RequestOption" class="unselect left_box">Request</div>
-<div id="NotificationOption" class="unselect mid_box">Notification
+            <div class="ctgry-row-2">
+                <div id="RequestOption" class="unselect left_box">Request</div>
+                <div id="NotificationOption" class="unselect mid_box">
+                    Notification
 
  <span class="notify-badge">5</span>
 
+<<<<<<< HEAD
 </div>
 <div id="FriendsOption" class="unselect right_box">Friends</div>
 <div class="clr"></div>
@@ -290,108 +306,233 @@
           <input type="button" id="doneButtons" class="load-more" value="Done" style="display:none;" />
           </div>
       </div>
+=======
+                </div>
+                <div id="FriendsOption" class="unselect right_box">Friends</div>
+                <div class="clr"></div>
+            </div>
+
+            <div class="ctgry-row-3">
+                <div id="ShhhOption" class="unselect left_box">Shhh..</div>
+                <div id="YappOption" class="unselect right_box">YAPP</div>
+                <div class="clr"></div>
+            </div>
+
+            <div class="menu-shadow">
+                <img src="images/menu-shadow.png"></div>
+
+        </div>
+
+
+        <div class="inner-pages">
+            <div class="inner-page-bg">
+                <!-- after the click on single menu show this div -->
+                <div class="ctgry-list-main" style="display: block;">
+
+                    <div class="post-status">
+
+                        <input id="accessButton" type="button" class="post-btn">
+                        <input type="text" id="InsertStatusTextBox" placeholder="Enter your status" class="post-input">
+                        <input type="button" id="postStatus" class="post-text-btn" value="POST">
+                        <div class="add-annotation"><a href="#">Add your own Annotation</a></div>
+                    </div>
+
+                    <div class="list-area">
+
+
+
+                        <div class="clr"></div>
+                    </div>
+
+                    <div class="clr"></div>
+                </div>
+
+                <!-- the edit profile or see profile divs start from below -->
+
+                <div id="edit_profile" style="display: none;">
+                 
+                    <div class="profile-pic"  onclick="getPhoto(pictureSource.PHOTOLIBRARY);"> <img  id="profile" src=""><div class="change-pic">Change Your Pic</div>
+                    </div>
+                    <div class="edit_prof_inputs">
+                        <form>
+                            <div>
+                                <input id="editFirstname" type="text" placeholder="First Name" class="edit_prof_box"></div>
+                            <div>
+                                <input id="editLastname" type="text" placeholder="Last Name" class="edit_prof_box"></div>
+                            <div>
+                                <input id="editUserName" type="text" placeholder="User Name" class="edit_prof_box"></div>
+                            <div>
+                                <input id="editDOB" placeholder="DOB" class="edit_prof_box"></div>
+                            <div>
+                                <input id="editGender" placeholder="Gender" class="edit_prof_box"></div>
+                            <div>
+                                <input type="button" id="updateButton" class="edit-prof-btn" value="UPDATE" /></div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div id="see_profile" style="display: none;">
+                    <div class="profile-pic">
+                        <img id="profilePicture" src=""></div>
+                    <div id="seeStatus" class="see-status"></div>
+                    <div class="see_prof">
+                        <form>
+                            <div>
+                                <input id="SeefullName" type="text" placeholder="Full Name" class="edit_prof_box" disabled></div>
+                            <div>
+                                <input id="SeeUserName" type="text" placeholder="User Name" class="edit_prof_box" disabled></div>
+                            <div>
+                                <input id="SeeEmail" type="email" placeholder="Email Address" class="edit_prof_box" disabled></div>
+                            <div>
+                                <input id="SeeDOB" placeholder="DOB" class="edit_prof_box" disabled></div>
+                            <div>
+                                <input id="SeeGender" placeholder="Gender" class="edit_prof_box" disabled></div>
+
+                        </form>
+                    </div>
+                </div>
+                <!-- the edit profile or see profile divs ends here -->
+
+
+                <div class="follow-friend" style="display: none;">
+                    <div id="TabbedPanels1" class="TabbedPanels">
+                        <ul class="TabbedPanelsTabGroup">
+                            <li id="getFollowers" class="TabbedPanelsTab" tabindex="0">Your Followers</li>
+                            <li id="GetFollowingList" class="TabbedPanelsTab" tabindex="0">Who You Following</li>
+                        </ul>
+                        <div class="TabbedPanelsContentGroup">
+                            <div class="TabbedPanelsContent">
+                                <div class="swiper-nav swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide" id="recentFollower"><span>Recent</span></div>
+                                        <div class="swiper-slide" id="allFollower"><span>All</span></div>
+
+                                    </div>
+                                </div>
+                                <div id="getfollowerList" class="frnd-list-main">
+                                </div>
+                                <div>
+                                    <input type="button" id="Button1" class="load-more" value="Load More" />
+                                    <input type="button" id="doneButton" class="load-more" value="Done" style="display: none;" />
+                                </div>
+                            </div>
+                            <div class="TabbedPanelsContent">
+                                <div class="swiper-nav swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide" id="recentFollowing"><span>Recent</span></div>
+                                        <div class="swiper-slide" id="allFollowing"><span>All</span></div>
+
+                                    </div>
+                                </div>
+                                <div id="getfollowingLists" class="frnd-list-main">
+                                </div>
+                                <div>
+                                    <input type="button" id="loadMore" class="load-more" value="Load More" />
+                                    <input type="button" id="doneButtons" class="load-more" value="Done" style="display: none;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification" style="display: none;">
+                    <div class="notify-area">
+                        <div id="" class="notify-list">
+                        </div>
+                        <div>
+                            <input type="button" id="Button3" class="load-more" value="Load More" /></div>
+                    </div>
+                </div>
+
+                <!-- YAPP Live screen start here -->
+
+
+                <div id="YAPP-Live" class="YAPP-Live" style="display: none;">
+
+                    <div class="post-status">
+                        <select class="select-ctgry">
+                            <option>All</option>
+                            <option>Images</option>
+                            <option>Videos</option>
+                        </select>
+                        <input id="uploadButtonVideoImages" type="button" class="Upload-text-btn">
+                    </div>
+
+                    <div id="TabbedPanels3" class="TabbedPanels">
+                        <ul class="TabbedPanelsTabGroup">
+                            <li class="TabbedPanelsTab" tabindex="0">All Uploads</li>
+                            <li class="TabbedPanelsTab" tabindex="0">My Uploads</li>
+                        </ul>
+                        <div class="TabbedPanelsContentGroup">
+                            <div class="TabbedPanelsContent">
+
+                                <div class="upload-list-main">
+                                    <div class="upload-area">
+                                    </div>
+
+                                    <div class="clr"></div>
+                                </div>
+                            </div>
+                            <div class="TabbedPanelsContent">
+                                <div class="upload-list-main">
+                                    <div class="upload-area">
+
+
+                                        <div class="clr"></div>
+                                    </div>
+
+                                    <div class="clr"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- YAPP Live screen ends here -->
+
+                <!-- add new frends screen start here -->
+
+                <div class="add-frnd" style="display: none;">
+
+                    <div id="TabbedPanels2" class="TabbedPanels">
+                        <ul class="TabbedPanelsTabGroup">
+                            <li class="TabbedPanelsTab" tabindex="0">Plug List</li>
+
+                            <li class="TabbedPanelsTab" tabindex="0">People Map</li>
+
+                        </ul>
+                        <div class="TabbedPanelsContentGroup">
+                            <div class="TabbedPanelsContent">
+                                <div class="add-frnd-list"></div>
+                            </div>
+                            <div class="TabbedPanelsContent">
+
+
+                                <div id="map-canvas"></div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- add new frends screen ends here -->
+            </div>
+        </div>
+        <div class="clr"></div>
+>>>>>>> origin/master
     </div>
-  </div>    
-</div>
-
-<div class="notification" style="display:none;">
-<div class="notify-area">
-<div id="" class="notify-list">
-
-
-</div>
-<div><input type="button" id="Button3" class="load-more" value="Load More" /></div>
-</div>
-</div>
-
-<!-- YAPP Live screen start here -->
-
-
-<div id="YAPP-Live" class="YAPP-Live" style="display:none;">
-
-<div class="post-status">
-<select class="select-ctgry">
-<option>All</option>
-<option>Images</option>
-<option>Videos</option>
-</select>
-<input id="uploadButtonVideoImages" type="button" class="Upload-text-btn">
-</div>
-
-<div id="TabbedPanels3" class="TabbedPanels">
-    <ul class="TabbedPanelsTabGroup">
-      <li class="TabbedPanelsTab" tabindex="0">All Uploads</li>
-      <li class="TabbedPanelsTab" tabindex="0">My Uploads</li>
-    </ul>
-    <div class="TabbedPanelsContentGroup">
-      <div class="TabbedPanelsContent">
-
-<div  class="upload-list-main">
-<div class="upload-area">
-
-
-</div>
-
-<div class="clr"></div>
-</div>
-      </div>
-      <div class="TabbedPanelsContent">
-  <div  class="upload-list-main">
-<div class="upload-area">
-
-
-<div class="clr"></div>
-</div>
-
-<div class="clr"></div>
-</div>     
-      </div>
-    </div>
-  </div>
-
-</div>
-<!-- YAPP Live screen ends here -->
-
-<!-- add new frends screen start here -->
-
-<div class="add-frnd" style="display:none;">
-
-<div id="TabbedPanels2" class="TabbedPanels">
-    <ul class="TabbedPanelsTabGroup">
-      <li class="TabbedPanelsTab" tabindex="0">Plug List</li>
-
-      <li class="TabbedPanelsTab" tabindex="0">People Map</li>
-
-    </ul>
-    <div class="TabbedPanelsContentGroup">
-      <div class="TabbedPanelsContent">
-      <div class="add-frnd-list"></div>
-      </div>
-      <div   class="TabbedPanelsContent">
-
-
-      <div id="map-canvas"></div>
-
-
-      </div>
-    </div>
-  </div>
-
-</div>
-<!-- add new frends screen ends here -->
-
-</div>
-<div class="clr"></div>
-</div>
-       <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="js/jquery-2.0.2.js"></script>
-   
+
     <script src="js/like.js"></script>
-  
+
     <script src="js/getNotification.js"></script>
     <script src="js/ajaxWebService.js"></script>
     <script src="js/idangerous.swiper-2.0.min.js"></script>
-	<script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
+    <script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
+    <script src="js/resolution.js"></script>
     <script src="js/findPeople.js"></script>
     <script src="js/updateProfile.js"></script>
     <script src="js/UserProfile.js"></script>
@@ -400,207 +541,112 @@
     <script src="js/getNotificationCount.js"></script>
     <script src="js/insertStatus.js"></script>
     <script src="js/getImageVideoPost.js"></script>
+    <script src="js/InsertImageVideo.js"></script>
     <script src="js/getPost.js"></script>
+    <script src="cordova.js"></script>
+
 
     <script>
-   
+        var pictureSource;   // picture source
+        var destinationType; // sets the format of returned value 
+        var imageURL, imageURLs;
+        var flagProfile = 0;
+
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+            pictureSource = navigator.camera.PictureSourceType;
+            destinationType = navigator.camera.DestinationType;
+        }
+
+        function getUploadPhoto(source) {
+            navigator.camera.getPicture(onPhotoURISuccessUpload, onFail, {
+                quality: 50,
+                destinationType: destinationType.DATA_URL,
+
+                encodingType: Camera.EncodingType.PNG,
+
+                sourceType: source
+
+            });
+        }
+        function onPhotoURISuccessUpload(imageURI) {
+
+            var Image = document.getElementById('UploadPreview');
+            Image.src = "data:image/png;base64," + imageURI;
+            imageURLs = imageURI;
+
+        }
+
+        / * opens default gallery of native system, i.e android or iphone */
+        function getPhoto(source) {
+            navigator.camera.getPicture(onPhotoURISuccess, onFail, {
+                quality: 50,
+                destinationType: destinationType.DATA_URL,
+                encodingType: Camera.EncodingType.PNG,
+                sourceType: source
+
+            });
+            // Retrieve image file location from specified source
+
+        }
+
+        /* on selection of photo passing imageURI for uploading */
+        function onPhotoURISuccess(imageURI) {
+
+            var largeImage = document.getElementById('profile');
+            largeImage.src = "data:image/png;base64," + imageURI;
+            imageURL = imageURI;
+            flagProfile = 1;
+        }
+
+
+
+        function onFail(message) {
+            //  alert('Failed because: ' + message);
+        }
+
+
+
+
+
         $(document).ready(function () {
-         //   initialize();
-      
-            var GetProfilePicture = localStorage.getItem("ProfilePicUrl");
+            localStorage.setItem("MenuFlag", "up");
          
-            var profilePicture = $("#profilePicture");
-
-            profilePicture.prop('src',GetProfilePicture);
-         
-           var flag = 0;
-           var currentWindowHeight= $(window).height();   // returns height of browser viewport
-           var currentWindowWidth = $(window).width(); // returns height of HTML document
-      
-           var top;
-           var topFlag = 0;
         
-           switch (currentWindowHeight) {
-               case 320:                   //320 *480
-                   
-                   {                     
-                       top = '380px';
-                       topFlag = 1;
+            var flag = 0;
+            var top;
+            var topFlag = 0;
+            GetUserPost();
+            GetUserProfile();
+            var currentWindowHeight = $(window).height();   // returns height of browser viewport
+            var currentWindowWidth = $(window).width(); // returns height of HTML document
 
-                   }
-                   break;
-				   
-               case 568:
-				   if(currentWindowWidth == 320)  //320*568
-                   {
-                       top='440px';           
-                   }
-                   break;
-				   
-               case 480:  
-
-                   if (currentWindowWidth == 320)//480*320
-                   {
-                       top = '345px';
-                   }
-                   else {
-                       top = '420px';          //480* 800
-                   }
-                   break;
-
-               case 800:
-
-                   if (currentWindowWidth == 1280)//800*1280
-                   {
-                       top = '1024px';
-                   }
-                   else{
-                       top = '380px';          //800*480
-
-                   }
-                   break;
-				   
-               case 640:
-                   if(currentWindowWidth == 400)  //400*640
-                   {
-                       top = '520px';
-                   }
-                   else
-                   {
-                       top='500px';           //360*640
-                   }
-                   break;
-				   
-			   case 640:
-				   if(currentWindowWidth == 384)  //384*640
-                   {
-                       top='415px';           
-                   }
-                   break;
-               case 768:
-                   {
-                       top= '500px'          //768 *1024
-                   }
-                   break;
-               case 1024:
-                   
-                   {
-                       top = '445px'          //1024 *768
-                   }
-                   break;
-
-			   case 600:
-                   {
-                       top = '490px'          //1024 *600
-                   }
-                   break;
-
-               case 540:
-                   {
-                       top = '485px'          //540 *960
-                   }
-                   break;
-               case 360:
-                   if(currentWindowWidth == 600)     //360*600
-                   {
-                       top = '485px';
-                   }
-                   else
-                   {
-                       top= '440px';       //360*640
-                   }
-                   break;
-				   case 360:
-				   if(currentWindowWidth == 480)   //360*480
-                   {
-                       top = '485px'     
-                   }
-                   break;
-               default:
-                   {
-                       top='390px';
-                   }
-           }
-
-          GetUserPost();
-         GetUserProfile();
- 
-
-         $("#accessButton").on("click", function () {
-             //  $(".checkbox-list").css("display", "block");
-             $(".checkbox-list").show();
-             $(".ctgry-list-main").css("display", "none");
-             $(".add-frnd").css("display", "none");
-             $(".follow-friend").css("display", "block");
-           
-         });
-
-         $("#YappLiveOption").on("click", function () {
-             GetPostNonAnonymousList();
-             $('.inner-pages').animate({
-                 'top': "0px" //moves up
-             });
-             $(".ctgry-list-main").css("display", "none");
-             $("#YAPP-Live").css("display", "block");
-         });
-
-        
+    
          
          $("#uploadButtonVideoImages").on("click", function () {
 
              $("#uploadScreen").css("display", "block");
 
          });
+         $("#nextUpload").on("click", function () {
 
+             InsertPostImage(imageURLs);
+         });
+
+           
          $("#cancelUpload").on("click", function () {
 
              $("#uploadScreen").css("display", "none");
 
          });
-
-          
-
-
-
-           $("#logout").on("click", function () {
-               localStorage.clear();
-               window.location.replace("login.html");
-           });
          
 
-           $(".menu_btn_top").bind('click', function () {
-          
-               if (flag == 0) {
-                
-                   if (topFlag == 1)
-                   {
-                     
-                      $(".inner-pages").css("display","none");
-                   }
-                   $('.inner-pages').animate({
-                  'top': top    //moves up
-                  
-                  });
-                
-                   flag = 1;
-               }
-               else {
-                
-                   if (topFlag == 1) {
-                       $(".inner-pages").css("display","block");
-                   }
-              
-                   $('.inner-pages').animate({
-                  'top': "0px" //moves up
-                  });
-                   flag = 0;
-               }
 
-           });
-
-
-     
-      
+            $("#logout").on("click", function () {
+                localStorage.clear();
+                window.location.replace("login.html");
+            });
 
 
             $(".right-top-btn").on("click", function () {
@@ -613,30 +659,153 @@
                     flag = 0;
                 }
             });
+
+            $(".menu_btn_top").bind('click', function () {
+                var flags = localStorage.getItem("MenuFlag");
+              
+                if (flags == "up")
+                {
+                
+                
+                    $('.inner-pages').animate({
+                        'top': top    //moves up
+
+                    });
+
+                    localStorage.setItem("MenuFlag","down");
+                }
+                else
+                {
+                
+                 
+                    $('.inner-pages').animate({
+                        'top': "0px" //moves up
+                    });
+                    localStorage.setItem("MenuFlag", "up");
+                }
+
             });
 
 
-           $(document).on("click", "#plug", function () {
-               var friendId = $(this).attr("userId");
-               
-               AddFriend(friendId);
 
-           });
-        
- 
+
+            switch (currentWindowHeight) {
+                case 320:                   //320 *480
+
+                    {
+                        top = '380px';
+                       
+
+                    }
+                    break;
+
+                case 568:
+                    if (currentWindowWidth == 320)  //320*568
+                    {
+                        top = '440px';
+                       
+                    }
+                    break;
+
+                case 480:
+
+                    if (currentWindowWidth == 320)//480*320
+                    {
+                        top = '345px';
+                      
+                    }
+                    else {
+                        top = '420px';          //480* 800
+                    }
+                    break;
+
+                case 800:
+
+                    if (currentWindowWidth == 1280)//800*1280
+                    {
+                        top = '1024px';
+                    }
+                    else {
+                        top = '380px';          //800*480
+
+                    }
+                    break;
+
+                case 640:
+              
+                    if (currentWindowWidth == 400)  //400*640
+                    {
+                        top = '520px';
+                    }
+                       else if (currentWindowWidth == 384)  //384*640
+                    {
+                        top = '415px';
+                     }
+                    else {
+                  
+                        top = '500px';           //360*640
+                    }
+                    break;
+
+             
+                case 768:
+                    {
+                        top = '500px'          //768 *1024
+                    }
+                    break;
+                case 1024:
+
+                    {
+                        top = '445px'          //1024 *768
+                    }
+                    break;
+
+                case 600:
+                    {
+                        top = '490px'          //1024 *600
+                    }
+                    break;
+
+                case 540:
+                    {
+                        top = '485px'          //540 *960
+                    }
+                    break;
+                case 360:
+                    if (currentWindowWidth == 600)     //360*600
+                    {
+                        top = '485px';
+                    }
+                    else {
+                        top = '440px';       //360*640
+                    }
+                    break;
+                case 360:
+                    if (currentWindowWidth == 480)   //360*480
+                    {
+                        top = '485px'
+                    }
+                    break;
+                default:
+                    {
+                        top = '390px';
+                    }
+                    topFlag = 1;
+            }
+        });
 
     </script>
-<script type="text/javascript">
-var TabbedPanels3 = new Spry.Widget.TabbedPanels("TabbedPanels3");
-</script>    
-    
-<script type="text/javascript">
-var TabbedPanels2 = new Spry.Widget.TabbedPanels("TabbedPanels2");
-</script>
+    <script type="text/javascript">
+        var TabbedPanels3 = new Spry.Widget.TabbedPanels("TabbedPanels3");
+    </script>
 
-<script type="text/javascript">
-var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
-</script>
+    <script type="text/javascript">
+        var TabbedPanels2 = new Spry.Widget.TabbedPanels("TabbedPanels2");
+    </script>
+
+    <script type="text/javascript">
+        var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+    </script>
 </body>
 
 <script src="js/jquery.min.js"></script>

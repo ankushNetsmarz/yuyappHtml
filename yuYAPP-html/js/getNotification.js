@@ -9,6 +9,7 @@ $("#NotificationOption").on("click", function () {
     $("#see_profile").css("display", "none");
     $(".add-frnd,.follow-friend").css("display", "none");
     $(".ctgry-list-main").css("display", "none");
+    localStorage.setItem("MenuFlag", "up");
 });
 
 var userId = localStorage.getItem("userId");

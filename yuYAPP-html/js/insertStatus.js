@@ -44,6 +44,7 @@ function InsertStatus() {
         postedBy: userId, /*user who Post the status or the Post */
         postFileTitle: $("#InsertStatusTextBox").val(), /*This is for both Post and status*/
         allowedUser: "0",
+        description: "",
         deniedUser: "0",
         postType: "0",/*0 for Status, 1 for the Image,  2 for VIdeo*/
         positiveAnnotation: "hate",
