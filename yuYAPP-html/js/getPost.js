@@ -7,6 +7,9 @@ $("#WordWallOption").on("click", function () {
     });
     $(".top_heading").text("WORD");
     $(".ctgry-list-main").css("display", "block");
+
+  
+    localStorage.setItem("MenuFlag", "up");
 });
 
 

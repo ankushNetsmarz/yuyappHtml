@@ -1,4 +1,9 @@
-﻿
+﻿   $(document).on("click", "#plug", function () {
+               var friendId = $(this).attr("userId");
+               
+               AddFriend(friendId);
+
+           });
 
 
 $("#RequestOption").on("click", function () {
@@ -8,8 +13,10 @@ $("#RequestOption").on("click", function () {
     $("#edit_profile,#see_profile").css("display", "none");
     GetPeopleRandom();
     $(".ctgry-list-main,.follow-friend,.notification").css("display", "none");
+    $("#YAPP-Live").css("display", "none");
     $(".add-frnd").css("display", "block");
     $(".top_heading").text("FIND-FRIENDS");
+    localStorage.setItem("MenuFlag", "up");
 
 });
 

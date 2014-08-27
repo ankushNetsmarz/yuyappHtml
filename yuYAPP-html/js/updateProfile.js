@@ -8,6 +8,7 @@
     $("#edit_profile").css("display", "block");
     $(".top_heading").text("EDIT-PROFILE");
     $(".ctgry-list-main").css("display", "none");
+    localStorage.setItem("MenuFlag", "up");
 });
 
 

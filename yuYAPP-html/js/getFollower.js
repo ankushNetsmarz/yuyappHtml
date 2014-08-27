@@ -1,4 +1,15 @@
-﻿
+﻿    $("#accessButton").on("click", function () {
+             //  $(".checkbox-list").css("display", "block");
+             $(".checkbox-list").show();
+             $(".ctgry-list-main").css("display", "none");
+             $(".add-frnd").css("display", "none");
+             $(".follow-friend").css("display", "block");
+             $("#YAPP-Live").css("display", "none");
+        
+           
+         });
+
+
 $("#FriendsOption").on("click", function () {
     $('.inner-pages').animate({
         'top': "0px" //moves up
@@ -10,6 +21,7 @@ $("#FriendsOption").on("click", function () {
     $(".top_heading").text("FRIENDS");
 
     $(".ctgry-list-main").css("display", "none");
+    localStorage.setItem("MenuFlag", "up");
 });
 
 

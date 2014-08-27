@@ -167,7 +167,10 @@ input[placeholder], [placeholder], *[placeholder] {
 .menu-shadow img{width:100%; opacity:0.5;}
 
 .inner-pages {
-position: absolute; background:url("../images/body-bg.png") no-repeat fixed center bottom / 135% auto rgba(255, 255, 255, 1); top: 0px; width: 96%; padding: 0px 2%; margin:0; height:100%}
+position: absolute; background-color:#ffffff; top: 0px; width: 96%; padding: 0px 2%; margin:0; height:100%;}
+
+.inner-page-bg {
+background-image:url("../images/body-bg.png"); background-repeat: no-repeat; background-size:135% auto; background-position:center bottom; background-attachment:fixed; width:100%; padding:0px; margin:0; height:100%;}
 
 .wordwall-btns{width:100%; margin:0 auto;}
 .like-btn{padding:7px 15px; border-bottom-right-radius:7px; border-top-left-radius:7px; background:rgba(118, 185, 35, 0.7); border:none; color:#fff;text-shadow:0 1px 0 rgba(0, 0, 0, 0.7); margin:0 3px 0 0;}
