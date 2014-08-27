@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -134,8 +134,7 @@
 <div style="text-align: right;"><a href="#" class="profile-setting"><img src="images/profile-pic.jpg" width="39" height="39"></a></div>
 <div class="profile-menu" style="display:none;">
 <ul>
-<li id="SeeProfile">See Profile</li>
-<li id="EditProfile">Edit Profile</li>
+<li id="EditProfile">My Profile</li>
 <li id="logout">Logout</li>
 </ul>
 </div>
@@ -205,15 +204,31 @@
 <!-- the edit profile or see profile divs start from below -->
 
 <div id="edit_profile" style="display:none;">
-<div class="profile-pic"> <img src="images/user-profile-pic.png"><div class="change-pic">Change Your Pic</div> </div>
+<div class="profile-pic"> <img src="images/user-profile-pic.png"><div class="change-pic"><img src="images/camera-icon.png"></div> </div>
 <div class="edit_prof_inputs">
 <form>
-<div><input  id="editFirstname"  type="text" placeholder="First Name" class="edit_prof_box"></div>
-<div><input  id="editLastname" type="text" placeholder="Last Name" class="edit_prof_box"></div>
-<div><input  id="editUserName" type="text" placeholder="User Name" class="edit_prof_box"></div>
-<div><input id="editDOB" placeholder="DOB" class="edit_prof_box"></div>
-<div><input id="editGender"  placeholder="Gender" class="edit_prof_box"></div>
-<div><input type="button" id="updateButton" class="edit-prof-btn" value="UPDATE" /></div>
+<div class="single-edt-inpt">
+<input  id="editFirstname"  type="text" placeholder="First Name" class="edit_prof_box" disabled>
+<img src="images/Editing-Edit-icon.png">
+</div>
+<div class="single-edt-inpt">
+<input  id="editLastname" type="text" placeholder="Last Name" class="edit_prof_box" disabled>
+<img src="images/Editing-Edit-icon.png">
+</div>
+<div class="single-edt-inpt">
+<input  id="editUserName" type="text" placeholder="User Name" class="edit_prof_box" disabled>
+<img src="images/Editing-Edit-icon.png">
+</div>
+<div class="single-edt-inpt">
+<input id="editDOB" placeholder="DOB" class="edit_prof_box" disabled>
+<img src="images/Editing-Edit-icon.png">
+</div>
+<div class="single-edt-inpt">
+<input id="editGender"  placeholder="Gender" class="edit_prof_box" disabled>
+<img src="images/Editing-Edit-icon.png">
+</div>
+<div>
+<input type="button" id="updateButton" class="edit-prof-btn" value="UPDATE" /></div>
 </form>
 </div>
 </div>
