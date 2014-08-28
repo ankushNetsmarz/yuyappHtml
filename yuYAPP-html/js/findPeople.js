@@ -58,6 +58,7 @@ function GetPeopleRandom() {
          HTML += "<div  id='plug' class='plug-btn-div' userId=" + data.ResponseData[i].UserId + "><button type='button' class='plug-btn'>PLUG</button></div></div>"
             //console.log(data.ResponseData.length);
        }
+	   HTML+= "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
                 $(".add-frnd-list").html(HTML);
 }
           

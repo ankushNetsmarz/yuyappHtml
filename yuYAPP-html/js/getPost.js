@@ -80,7 +80,7 @@ var userId = localStorage.getItem("userId");
                 HTML+=  "</div>"
                     //alert("success..." + data);
                         }
-			HTML+= "<div style='width: 100%;'><input type='button' value='Load more...' style='width: 100%; padding: 2px 0px; border:none;'></div>"
+			HTML+= "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
                         $(".list-area").html(HTML);
                     }
 

@@ -108,7 +108,7 @@ input[placeholder], [placeholder], *[placeholder] {
  
  .navigation{}
  
-
+ .load-more-all{width: 100%; border: medium none; background: none repeat scroll 0% 0% rgb(0, 175, 191); color: rgb(255, 255, 255); padding: 4px 0px; margin:10px 0 0;}
  
  .white-strip{background:url(../images/ctgry-list-head-3.png) repeat-x center; height:53px; width:100%; text-align:center; color:#FFF; font-size:16px; font-family:'Open Sans', sans-serif; line-height:75px;}
  
@@ -124,10 +124,14 @@ input[placeholder], [placeholder], *[placeholder] {
 .user-list-pic img{width:49px;}
 .user-title{ padding:0 5px 5px 0; margin:0; text-align:left; font-size:12px;}
 
-.frnd-list-main{width: 100%; margin: 0px auto 10px; height:300px; overflow-y:scroll;}
-.single-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#76b923; font-weight: bold; width:48%; line-height:50px; float: left; margin: 15px 0px 0px 5px; background:#f3f3f3; border-top-left-radius:100%; border-bottom-left-radius:100%; position:relative;}
+.frnd-list-main{width: 100%; margin: 0px auto 10px; height:330px; overflow-y:scroll;}
+.single-frnd-main{width:48%; float: left; margin: 15px 0px 0px 5px; border-bottom:1px dotted;}
+.single-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#555; font-weight: bold; width:100%; line-height:50px; background:#e9e9e9; border-top-left-radius:100%; border-bottom-left-radius:100%; position:relative;}
 .single-frnd-imgarea{width:55px; height: 55px; border-radius: 50%; overflow: hidden; box-shadow:2px 2px 2px -1px rgba(0, 0, 0, 0.8); background:#FFF;}
 .single-frnd-imgarea img{width:100%;}
+
+.unplug-btn-div{width:100%;}
+.unplug-btn{float:right;background:url(../images/plug.png) no-repeat left 3px center / 11px auto rgba(118, 185, 35, 1); border: medium none; color: rgb(255, 255, 255); margin:0px; padding:3% 4% 3% 12%; cursor:pointer;}
 
 .profile-setting{}
 
@@ -156,7 +160,11 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .edit_prof_inputs{margin:7% 0 0;}
 
+.see-prof-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:fixed;}
+.see-prof-area{position: absolute; margin: 0px 4%; text-align: center; width: 92%; top:3%; background:none;}
+
 .see_prof{margin:0;}
+.see_prof_box{width:79%; background:#f0f0f0; border:none; padding:6px 10px; border-radius:4px; color:#333; margin:0 0 10px;}
 
 .see-status{margin:5% 0; font-size:14px; color:#76b923;}
 .see-status-title{color:#222222;}
@@ -254,7 +262,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .upload-popup-list{width:100%; height:375px; overflow-y:scroll;}
 .single-upload-popup{width:100%; margin:20px 0 0; padding:0; color:#FFF; background:rgba(255, 255, 255, 0.9);}
 .single-upload-popup label span{background:url("../images/user-icons.png") no-repeat scroll 0 2px / 24px auto rgba(0, 0, 0, 0); color: rgba(0, 0, 0, 1); margin: 0px 2px; padding:5px 3px 4px 26px;}
-.single-upload-popup label input{border:none; border-left:1px dotted #000; background:rgba(255, 255, 255, 0); padding: 3px 5px; margin:3px 0;}
+.single-upload-popup label input{border:none; border-left:1px dotted #000; background:rgba(255, 255, 255, 0); padding: 3px 5px; margin:3px 0; width:146px;}
 .upload-popup-by-user{width:40px; height:40px; overflow:hidden; margin:0 5px 5px 0;}
 .upload-popup-by-user img{width:40px;}
 
@@ -263,8 +271,8 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .upload-popup-msg-ago{color:#bbb; font-size:11px;font-weight:bold; text-align:left;}
 .upload-gall-btn{background:#00afbf; color:#FFF; padding:6px 0px; border:1px solid #fff; font-size:12px; margin:0; width:49%; }
 .cancel-btn{width:100%; margin:10px auto 0;}
-.display-pic{height: 130px; overflow: hidden; width: 100%; margin:0 0 10px;}
-.display-pic img{width: 100%;}
+.display-pic{height: 130px; overflow: hidden; width: 100%; margin:0 0 10px; background:#fff;}
+.display-pic img{width: 100%; background:url("../images/upload-img-bg.png") no-repeat scroll center 8px / 38% auto;}
 
 #map-canvas { height: 390px;}
 

@@ -35,14 +35,18 @@ function GetAllFollowing() {
             if (data.ResponseData.length > 0) {
 
                 for (var i = 0; i < data.ResponseData.length; i++) {
+					
+					HTML += "<div class='single-frnd-main'>"
                     HTML += "<div class='single-frnd'>"
                     HTML += "<div class='fl single-frnd-imgarea'><img src='images/Syra-yousaf-profile-pictures.jpg'></div>"
                     HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
                     HTML += "<div class='checkbox-list'><input Userid=" +data.ResponseData[i].UserId+ " class='checks'  type='checkbox' alt='access list'></div>"
                     HTML += "</div>"
+                    HTML += "<div  id='' class='unplug-btn-div' userId=" + data.ResponseData[i].UserId + "><button type='button' class='unplug-btn'>UNPLUG</button></div></div>"
 
                     //console.log(data.ResponseData.length);
                 }
+				HTML+= "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
                 $("#getfollowingLists").html(HTML);
             }
           
