@@ -47,21 +47,21 @@
                 <div class="single-full-annotate">
                     <label>
                         <span class="fl">First Annotate</span>
-                        <input type="text" class="fr" placeholder="Enter your status" id="">
+                        <input type="text" class="fr" placeholder="Enter your status" id="Text1">
                         <div class="clr"></div>
                     </label>
                 </div>
                 <div class="single-full-annotate">
                     <label>
                         <span class="fl">Second Annotate</span>
-                        <input type="text" class="fr" placeholder="Enter your status" id="">
+                        <input type="text" class="fr" placeholder="Enter your status" id="Text2">
                         <div class="clr"></div>
                     </label>
                 </div>
             </div>
             <div class="cancel-btn">
-                <input type="button" id="" class="like-btn" value="Cancel">
-                <input type="button" id="" class="like-btn" value="Add Annotate">
+                <input type="button" id="Button1" class="like-btn" value="Cancel">
+                <input type="button" id="Button2" class="like-btn" value="Add Annotate">
             </div>
         </div>
     </div>
@@ -85,28 +85,28 @@
 </div>
 <div class="single-upload-popup">
 <label>
-<span class="fl">Add Title</span>
+<span class="fl">Title</span>
 <input type="text" class="fr" placeholder="" id="UploadTitle">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
-<span class="fl">Add Discription</span>
+<span class="fl">Discription</span>
 <input type="text" class="fr" placeholder="" id="UploadDescription">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
-<span class="fl">Add First Annotate</span>
+<span class="fl">First Annotate</span>
 <input type="text" class="fr" placeholder="" id="Upload1Annotate">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
-<span class="fl">Add Second Annotate</span>
+<span class="fl">Second Annotate</span>
 <input type="text" class="fr" placeholder="" id="Upload2Annotate">
   <div class="clr"></div>
 </label>
@@ -133,6 +133,7 @@
 </div>
 <div class="clr"></div>
     
+</div>
 </div>
 
 
@@ -173,9 +174,10 @@
 </div>
 
 
-<div class="inner-pages">
-<!-- after the click on single menu show this div -->
-<div  class="ctgry-list-main" style="display:block;">
+        <div class="inner-pages">
+            <div class="inner-page-bg">
+                <!-- after the click on single menu show this div -->
+                <div  class="ctgry-list-main" style="display:block;">
 
 <div class="post-status">
 
@@ -195,12 +197,14 @@
 <div class="clr"></div>
 </div>
 
-<!-- the edit profile or see profile divs start from below -->
+                <!-- the edit profile or see profile divs start from below -->
 
-<div id="edit_profile" style="display:none;">
-<div class="profile-pic"> <img src="images/user-profile-pic.png"><div class="change-pic"><img src="images/camera-icon.png"></div> </div>
-<div class="edit_prof_inputs">
-<form>
+                <div id="edit_profile" style="display: none;">
+                 
+                    <div class="profile-pic"  onclick="getPhoto(pictureSource.PHOTOLIBRARY);"> <img  id="profile" src=""><div class="change-pic"><img src="images/camera-icon.png"></div>
+                    </div>
+                    <div class="edit_prof_inputs">
+                        <form>
 <div class="single-edt-inpt">
 <input  id="editFirstname"  type="text" placeholder="First Name" class="edit_prof_box" disabled>
 <img src="images/Editing-Edit-icon.png">
@@ -224,132 +228,11 @@
 <div>
 <input type="button" id="updateButton" class="edit-prof-btn" value="UPDATE" /></div>
 </form>
-</div>
-</div>
-
-
-<div id="see_profile" style="display:none;">
-<div class="profile-pic"> <img  id="profilePicture" src=""></div>
-<div id="seeStatus" class="see-status"></div>
-<div class="see_prof">
-<form>
-<div><input  id="SeefullName"  type="text" placeholder="Full Name" class="edit_prof_box" disabled></div>
-<div><input  id="SeeUserName" type="text" placeholder="User Name" class="edit_prof_box" disabled></div>
-<div><input  id="SeeEmail" type="email" placeholder="Email Address" class="edit_prof_box" disabled></div>
-<div><input id="SeeDOB" placeholder="DOB" class="edit_prof_box" disabled></div>
-<div><input id="SeeGender"  placeholder="Gender" class="edit_prof_box" disabled></div>
-
-</form>
-</div>
-</div>
-<!-- the edit profile or see profile divs ends here -->
-
-
-<div class="follow-friend" style="display:none;">
-<div id="TabbedPanels1" class="TabbedPanels">
-    <ul class="TabbedPanelsTabGroup">
-      <li id="getFollowers" class="TabbedPanelsTab" tabindex="0">Your Followers</li>
-      <li  id="GetFollowingList" class="TabbedPanelsTab" tabindex="0">Who You Following</li>
-    </ul>
-    <div class="TabbedPanelsContentGroup">
-      <div class="TabbedPanelsContent">
-      <div class="swiper-nav swiper-container">
-		<div class="swiper-wrapper">
-			<div class="swiper-slide" id="recentFollower"><span>Recent</span></div>
-			<div class="swiper-slide" id="allFollower"><span>All</span></div>
-		
-		</div>
-	</div>
-    <div id="getfollowerList" class="frnd-list-main">
-         </div>
-          <div><input type="button" id="Button1" class="load-more" value="Load More" />
-          <input type="button" id="doneButton" class="load-more" value="Done" style="display:none;" />
-          </div>
-      </div>
-      <div class="TabbedPanelsContent">
-   <div class="swiper-nav swiper-container">
-		<div class="swiper-wrapper">
-			<div class="swiper-slide" id="recentFollowing"><span>Recent</span></div>
-			<div class="swiper-slide" id="allFollowing"><span>All</span></div>
-		
-		</div>
-	</div>
-    <div  id="getfollowingLists" class="frnd-list-main">
-
-     
-      
-       
-         </div>
-          <div><input type="button" id="loadMore" class="load-more" value="Load More" />
-          <input type="button" id="doneButtons" class="load-more" value="Done" style="display:none;" />
-          </div>
-      </div>
-                </div>
-                <div id="FriendsOption" class="unselect right_box">Friends</div>
-                <div class="clr"></div>
-            </div>
-
-            <div class="ctgry-row-3">
-                <div id="ShhhOption" class="unselect left_box">Shhh..</div>
-                <div id="YappOption" class="unselect right_box">YAPP</div>
-                <div class="clr"></div>
-            </div>
-
-            <div class="menu-shadow">
-                <img src="images/menu-shadow.png"></div>
-
-        </div>
-
-
-        <div class="inner-pages">
-            <div class="inner-page-bg">
-                <!-- after the click on single menu show this div -->
-                <div class="ctgry-list-main" style="display: block;">
-
-                    <div class="post-status">
-
-                        <input id="accessButton" type="button" class="post-btn">
-                        <input type="text" id="InsertStatusTextBox" placeholder="Enter your status" class="post-input">
-                        <input type="button" id="postStatus" class="post-text-btn" value="POST">
-                        <div class="add-annotation"><a href="#">Add your own Annotation</a></div>
-                    </div>
-
-                    <div class="list-area">
-
-
-
-                        <div class="clr"></div>
-                    </div>
-
-                    <div class="clr"></div>
-                </div>
-
-                <!-- the edit profile or see profile divs start from below -->
-
-                <div id="edit_profile" style="display: none;">
-                 
-                    <div class="profile-pic"  onclick="getPhoto(pictureSource.PHOTOLIBRARY);"> <img  id="profile" src=""><div class="change-pic">Change Your Pic</div>
-                    </div>
-                    <div class="edit_prof_inputs">
-                        <form>
-                            <div>
-                                <input id="editFirstname" type="text" placeholder="First Name" class="edit_prof_box"></div>
-                            <div>
-                                <input id="editLastname" type="text" placeholder="Last Name" class="edit_prof_box"></div>
-                            <div>
-                                <input id="editUserName" type="text" placeholder="User Name" class="edit_prof_box"></div>
-                            <div>
-                                <input id="editDOB" placeholder="DOB" class="edit_prof_box"></div>
-                            <div>
-                                <input id="editGender" placeholder="Gender" class="edit_prof_box"></div>
-                            <div>
-                                <input type="button" id="updateButton" class="edit-prof-btn" value="UPDATE" /></div>
-                        </form>
                     </div>
                 </div>
 
 
-                <div id="see_profile" style="display: none;">
+                <!--<div id="see_profile" style="display: none;">
                     <div class="profile-pic">
                         <img id="profilePicture" src=""></div>
                     <div id="seeStatus" class="see-status"></div>
@@ -368,7 +251,7 @@
 
                         </form>
                     </div>
-                </div>
+                </div>-->
                 <!-- the edit profile or see profile divs ends here -->
 
 
@@ -390,7 +273,7 @@
                                 <div id="getfollowerList" class="frnd-list-main">
                                 </div>
                                 <div>
-                                    <input type="button" id="Button1" class="load-more" value="Load More" />
+                                    <input type="button" id="Button3" class="load-more" value="Load More" />
                                     <input type="button" id="doneButton" class="load-more" value="Done" style="display: none;" />
                                 </div>
                             </div>
@@ -415,10 +298,10 @@
 
                 <div class="notification" style="display: none;">
                     <div class="notify-area">
-                        <div id="" class="notify-list">
+                        <div id="Div1" class="notify-list">
                         </div>
                         <div>
-                            <input type="button" id="Button3" class="load-more" value="Load More" /></div>
+                            <input type="button" id="Button4" class="load-more" value="Load More" /></div>
                     </div>
                 </div>
 

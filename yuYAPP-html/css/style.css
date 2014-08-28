@@ -93,7 +93,7 @@ input[placeholder], [placeholder], *[placeholder] {
  .menu_btn_top{ background:url(../images/menu-icon.png) no-repeat 0px 0px rgba(0, 0, 0, 0); height:25px; width:34px; margin:15px 0 0 10px; padding:0; border:none; background-size:28px;}
  .map_btn_top{ background:url(../img/top_tick_icons.png) no-repeat -39px 9px rgba(0, 0, 0, 0); height:59px; width:59px; margin:0; padding:0; border:none;}
  
- .top_head_bg{padding: 17px 0 0; margin:0 auto; text-align:center;}
+ .top_head_bg{padding: 16px 0 0; margin:0 auto; text-align:center;}
  .top_heading{text-align:center; color:#FFF; font-family:'Open Sans', sans-serif; font-weight:normal; font-size:14px;}
  
  .unselect{background:url(../images/unselect-ctgry-3.png) no-repeat center; background-size:86px; width:86px; height:86px; margin:0 auto; text-align:center; color:#fff; font-size:12px; line-height:86px; cursor:pointer; text-shadow:0 1px 0 rgba(0, 0, 0, 0.7); font-weight:bold;}
