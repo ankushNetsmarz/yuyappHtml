@@ -242,7 +242,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .upload-user-pic{width:49px; height:49px; overflow:hidden; box-shadow:2px 2px 4px -2px rgba(0, 0, 0, 0.7); margin:0 5px 5px 0;}
 .upload-user-pic img{width:49px;}
 .upload-title{ padding:0; margin:0; text-align:left; font-size:12px;}
-.uploaded-pic{height:300px; overflow: hidden; width: 100%;}
+.uploaded-pic{max-height:300px; overflow: hidden; width: 100%;}
 .uploaded-pic img{width: 100%;}
 .select-ctgry{background:#fff;border:none; box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7); padding: 7px 10px; width: 45%; margin:0 10px;}
 .Upload-text-btn{padding:0; border:none; background:url(../images/upload.png) no-repeat center center rgba(0, 0, 0, 0); background-size:100%; width:30px; height:30px;}

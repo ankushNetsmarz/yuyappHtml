@@ -51,28 +51,28 @@ var userId = localStorage.getItem("userId");
                 HTML+= "<div class='clr'></div>"
                 HTML += "<p>"+ data.ResponseData[i].Status+"</p></div>"
                 
-                HTML += "<div class='like-cmnt-no'><span>" + data.ResponseData[i].TotalLike + "</span> Likes, <span>" + data.ResponseData[i].TotalComment + "</span> Comments, <span>"+ data.ResponseData[i].TotalDisLike +"</span> Dislikes</div>"
+                HTML += "<div class='like-cmnt-no'><span>" + data.ResponseData[i].TotalLike + "</span>" + " " + positiveAnnotations + ", <span>" + data.ResponseData[i].TotalComment + "</span> Comments, <span>" + data.ResponseData[i].TotalDisLike + "</span>" + " " + negativeAnnotations + "</div>"
 
                 HTML += "<div postId=" + data.ResponseData[i].PostId + " class='wordwall-btns'>"
 
               if (liked == true) {
 
-                    HTML += "<input id='likeButton' type='button' class='clicked-like-btn' value="+positiveAnnotations+">"
-                    HTML += "<input id='commentButton' type='button' class='like-btn' value='Comment'>"
-                    HTML += "<input id='dislikeButton'type='button' class='like-btn' value="+negativeAnnotations+">"
+                  HTML += "<input  type='button' class='clicked-like-btn like' value=" + positiveAnnotations + ">"
+                    HTML += "<input  type='button' class='like-btn commentButton' value='Comment'>"
+                    HTML += "<input type='button' class='like-btn dislike' value=" + negativeAnnotations + ">"
                }
 
               else if (negativeLiked == false) {
 
-                    HTML += "<input id='likeButton' type='button' class='like-btn' value=" + positiveAnnotations + ">"
-                   HTML += "<input id='commentButton' type='button' class='like-btn' value='Comment'>"
-                   HTML += "<input id='dislikeButton'type='button' class='clicked-like-btn' value=" + negativeAnnotations + ">"
+                  HTML +=  "<input type='button' class='like-btn like' value=" + positiveAnnotations + ">"
+                    HTML += "<input  type='button' class='like-btn commentButton' value='Comment'>"
+                    HTML += "<input  type='button' class='clicked-like-btn dislike' value=" + negativeAnnotations + ">"
                 }
 
                 else {
-                    HTML += "<input id='likeButton' type='button' class='like-btn' value=" + positiveAnnotations + ">"
-                    HTML += "<input id='commentButton' type='button' class='like-btn' value='Comment'>"
-                    HTML += "<input id='dislikeButton'type='button' class='like-btn' value=" + negativeAnnotations + ">"
+                    HTML += "<input  type='button' class='like-btn like' value=" + positiveAnnotations + ">"
+                    HTML += "<input  type='button' class='like-btn commentButton' value='Comment'>"
+                    HTML += "<input  type='button' class='like-btn dislike' value=" + negativeAnnotations + ">"
                 }
 
                 HTML+=  "</div>"
@@ -146,14 +146,16 @@ var userId = localStorage.getItem("userId");
         });
 
 
-        $(document).on("click", "#likeButton", function () {
-           var postId= $(this).parent().attr('postId');
+        $(document).on("click", ".like", function () {
+       
+            var postId = $(this).parent().attr('postId');
+         
            localStorage.setItem("like", "1");
            localStorage.setItem("click", "1");
            addLikes(postId);
         });
 
-        $(document).on("click", "#dislikeButton", function () {
+        $(document).on("click", ".dislike", function () {
             var postId = $(this).parent().attr('postId');
             localStorage.setItem("click", "2");
             localStorage.setItem("like", "0");          
@@ -161,7 +163,7 @@ var userId = localStorage.getItem("userId");
 
         });
 
-        $(document).on("click", "#commentButton", function () {
+        $(document).on("click", ".commentButton", function () {
             var postId = $(this).parent().attr('postId');
             localStorage.setItem("postId", postId);
             $("#commentPopup").css("display", "block");
