@@ -499,26 +499,13 @@
                   quality: 50,
                   destinationType: destinationType.DATA_URL,
 
-<<<<<<< HEAD
                   encodingType: Camera.EncodingType.PNG,
-=======
-            $(".right-top-btn").on("click", function () {
-                if (flag == 0) {
-
-                    $(".profile-menu").css("display", "block");
-                    flag = 1;
-                }
-                else {
-                    $(".profile-menu").css("display", "none");
-                    flag = 0;
-                }
-            });
->>>>>>> 1621857ca7705a54da58770a4f70ef11c30ae154
 
                   sourceType: source
 
               });
           }
+       
           function onPhotoURISuccessUpload(imageURI) {
 
               var Image = document.getElementById('UploadPreview');
