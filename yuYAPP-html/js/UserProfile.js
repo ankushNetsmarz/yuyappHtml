@@ -39,15 +39,17 @@ function GetUserProfile() {
 
             var PicUrl = "http://174.141.233.6/YuY/" + data.ResponseData.PicUrl;
             localStorage.setItem("ProfilePicUrl", PicUrl);
-
+          var Gender= data.ResponseData.Gender;
+       
+        
             $("#seeStatus").text(data.ResponseData.Post);
-            $("#SeeUserName,#editUserName").val(data.ResponseData.UserName);
-            $("#SeefullName").val(data.ResponseData.FirstName + " " + data.ResponseData.LastName);
+            $("#editUserName").val(data.ResponseData.UserName);
+          
             $("#editLastname").val(data.ResponseData.LastName);
             $("#editFirstname").val(data.ResponseData.FirstName);
-            $("#SeeGender,#editGender").val(data.ResponseData.Gender);
-            $("#SeeEmail").val(data.ResponseData.Email);
-            $("#SeeDOB,#editDOB").val(data.ResponseData.DOB);
+            $("#editGender").val(Gender);
+          
+            $("#editDOB").val(data.ResponseData.DOB);
 
 
         },

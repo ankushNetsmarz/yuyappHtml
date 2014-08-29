@@ -77,7 +77,7 @@
 <div class="display-pic"><img id="UploadPreview" src=""></div>
 <div>
 <input type="button"  id="UploadImageButton" onclick="getUploadPhoto(pictureSource.PHOTOLIBRARY);" class="upload-gall-btn" value="Images">
-<input type="button"  id="UploadVideoButton" class="upload-gall-btn" value="Videos">
+<input type="button"  id="UploadVideoButton" onclick="getVideo()" class="upload-gall-btn" value="Videos">
 </div>
 </div>
 <div class="single-upload-popup">
@@ -148,13 +148,7 @@
 <div style="text-align:right;"><a href="#" class="profile-setting" id="EditProfile"><img src="images/profile-pic.jpg" width="39" height="39"></a>
 <button type="button" class="logout_btn" id="logout"></button>
 </div>
-<div class="profile-menu" style="display:none;">
-<ul>
-<li>My Profile</li>
-<li>Logout</li>
-</ul>
-</div>
-<div class="clr"></div>
+
     
 </div>
 </div>
@@ -230,23 +224,27 @@
                         <form>
 <div class="single-edt-inpt">
 <input  id="editFirstname"  type="text" placeholder="First Name" class="edit_prof_box" disabled>
-<img src="images/Editing-Edit-icon.png">
+<img  id="Ficon" src="images/Editing-Edit-icon.png">
 </div>
 <div class="single-edt-inpt">
 <input  id="editLastname" type="text" placeholder="Last Name" class="edit_prof_box" disabled>
-<img src="images/Editing-Edit-icon.png">
+<img id="Licon" src="images/Editing-Edit-icon.png">
 </div>
 <div class="single-edt-inpt">
 <input  id="editUserName" type="text" placeholder="User Name" class="edit_prof_box" disabled>
-<img src="images/Editing-Edit-icon.png">
+<img  id="Uicon"  src="images/Editing-Edit-icon.png">
 </div>
 <div class="single-edt-inpt">
 <input id="editDOB" placeholder="DOB" class="edit_prof_box" disabled>
-<img src="images/Editing-Edit-icon.png">
+<img id="DOBicon" src="images/Editing-Edit-icon.png">
 </div>
 <div class="single-edt-inpt">
-<input id="editGender"  placeholder="Gender" class="edit_prof_box" disabled>
-<img src="images/Editing-Edit-icon.png">
+
+        <select id="selector" class="edit_prof_box" disabled>
+                                    <option id="male" value="Male">Male</option>
+                                    <option id="female" value="Female">Female</option>                              
+                                </select>
+<img id="Gicon"  src="images/Editing-Edit-icon.png">
 </div>
 <div>
 <input type="button" id="updateButton" class="edit-prof-btn" value="UPDATE" /></div>
@@ -379,7 +377,7 @@
         <div class="clr"></div>
 
     </div>
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+   <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="js/jquery-2.0.2.js"></script>
 
     <script src="js/like.js"></script>
@@ -399,6 +397,7 @@
     <script src="js/getImageVideoPost.js"></script>
     <script src="js/InsertImageVideo.js"></script>
     <script src="js/getPost.js"></script>
+       <script src="js/ProfilePicture.js"></script>
     <script src="cordova.js"></script>
 
 
@@ -417,6 +416,24 @@
           }
 
 
+        
+
+          $("#updateButton").on("click", function () {
+              var editFirstname = $("#editFirstname").val();
+              var editLastname = $("#editLastname").val();
+              var editUserName = $("#editUserName").val();
+              var editDOB = $("#editDOB").val();
+              var editGender = localStorage.getItem("gender");
+             
+              if (flagProfile == 1) {
+                  AddProfilePicture(imageURL);
+              }
+              else {
+                  UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editGender);
+              }
+              //   return false;
+          });
+
           var captureSuccess = function (mediaFiles) {
 
               for (i = 0, len = mediaFiles.length; i < len; i += 1) {
@@ -434,7 +451,7 @@
 
 
           function uploadPhoto(path) {
-
+              showLoader();
               var title = $("#UploadTitle").val();
               var description = $("#UploadDescription").val();
               var a1 = $("#Upload1Annotate").val();
@@ -476,6 +493,12 @@
               console.log("Response = " + r.response);
               console.log("Sent = " + r.bytesSent);
 
+
+              hideLoader();
+              $("#UploadTitle").val('');
+              $("#UploadDescription").val('');
+              $("#Upload1Annotate").val('');
+              $("#Upload2Annotate").val('');
           }
 
           function fail(error) {
@@ -505,7 +528,7 @@
 
               });
           }
-       
+
           function onPhotoURISuccessUpload(imageURI) {
 
               var Image = document.getElementById('UploadPreview');
@@ -562,7 +585,10 @@
 
 
               $("#uploadButtonVideoImages").on("click", function () {
-
+                  $("#UploadTitle").val('');
+                  $("#UploadDescription").val('');
+                  $("#Upload1Annotate").val('Like');
+                  $("#Upload2Annotate").val('Dislike');
                   $("#uploadScreen").css("display", "block");
 
               });
@@ -750,3 +776,4 @@
 
 <script src="js/jquery.min.js"></script>
 </html>
+

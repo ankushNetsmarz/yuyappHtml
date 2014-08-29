@@ -1,4 +1,35 @@
-﻿$("#EditProfile").on("click", function () {
+﻿
+$("#Ficon").on("click", function () {
+    $("#editFirstname").prop("disabled", false);
+    $("#editFirstname").focus();
+
+});
+$("#Licon").on("click", function () {
+    $("#editLastname").prop("disabled", false);
+    $("#editLastname").focus();
+
+});
+$("#Uicon").on("click", function () {
+    $("#editUserName").prop("disabled", false);
+    $("#editUserName").focus();
+
+});
+$("#Gicon").on("click", function () {
+    $("#selector").prop("disabled", false);
+    $("#selector").focus();
+
+});
+
+$("#selector").on("click", function () {
+    var select = $(this).val();
+   
+    localStorage.setItem("gender", select);
+});
+
+
+
+
+$("#EditProfile").on("click", function () {
     $('.inner-pages').animate({
         'top': "0px" //moves up
     });
@@ -11,18 +42,6 @@
     localStorage.setItem("MenuFlag", "up");
 });
 
-
-
-$("#updateButton").on("click", function () {
-    var editFirstname = $("#editFirstname").val();
-    var editLastname = $("#editLastname").val();
-    var editUserName = $("#editUserName").val();
-    var editDOB = $("#editDOB").val();
-    var editGender = $("#editGender").val();
-
-    UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editGender);
-    //   return false;
-});
 
 
 function UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editGender) {
@@ -46,6 +65,8 @@ function UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editG
         success: function (data) {
            
             console.log(data);
+            window.plugins.toast.show('Profile updated!', 'long', 'center', function (a) { }, function (b) { });
+            
             //alert("success..." + data);
         },
         error: function (xhr) {

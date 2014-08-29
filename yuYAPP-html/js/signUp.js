@@ -77,9 +77,11 @@ function Signup(SignUpFirstName, SignUpLastName, SignUpUserName, SignUpUserName,
             if (data.ResponseData != 0)
             {
                 var userId = data.ResponseData;
-                alert(userId);
+               
                 localStorage.setItem("userId", userId);
                 window.location.replace("home.html");
+                window.plugins.toast.show('Registered Successfully!', 'long', 'center', function (a) { }, function (b) { });
+                
             //alert("success..." + data);
             }
         },
@@ -108,7 +110,8 @@ function ValidateEmail() {
         success: function (data) {
 
             if (data.ResponseData != 1) {
-
+            	//window.plugins.toast.show('Email is valid!', 'short', 'center', function (a) { }, function (b) { });
+                
             }
             else {
                 alert("already registered");

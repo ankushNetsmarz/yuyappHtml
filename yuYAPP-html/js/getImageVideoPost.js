@@ -42,10 +42,10 @@ function GetPostAnonymousList() {
 /*get GetPostNonAnonymousList for Shhh */
 function GetPostNonAnonymousList() {
     var postData = {
-        userId: 1,
+        userId: userId,
         start: 1,
         end: 10,
-        isall: false
+        isall: true
     }
     $.ajax({
         type: "GET",
