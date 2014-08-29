@@ -403,6 +403,7 @@
 
 
       <script>
+          var UploadFileFlag;
           var pictureSource;   // picture source
           var destinationType; // sets the format of returned value 
           var imageURL, imageURLs;
@@ -510,6 +511,7 @@
               var Image = document.getElementById('UploadPreview');
               Image.src = "data:image/png;base64," + imageURI;
               imageURLs = imageURI;
+              UploadFileFlag = "image";
 
           }
 
@@ -565,10 +567,13 @@
 
               });
               $("#nextUpload").on("click", function () {
+                  if (UploadFileFlag == "image") {
+                      InsertPostImage(imageURLs);
+                  }
+                  else {
 
-                  //InsertPostImage(imageURLs);
-                  uploadPhoto(path);
-
+                      uploadPhoto(path);
+                  }
               });
 
 
