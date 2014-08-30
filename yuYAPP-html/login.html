@@ -65,7 +65,12 @@
 <div><input  id="SignUpEmail" type="email" placeholder="Email Address" class="signup_box"></div>
 <div><input id="SignUpPassword" type="password" placeholder="Pasword" class="signup_box"></div>
 <div><input id="SignUpDOB" placeholder="mm/dd/yyyy" class="signup_box"></div>
-<div><input id="SignUpgender"  placeholder="gender" class="gender signup_box"></div>
+<div>
+ <select class="signup_box" id="selectors" class="edit_prof_box" >
+                                    <option id="male" value="Male">Male</option>
+                                    <option id="female" value="Female">Female</option>                              
+                                </select>
+</div>
 
 </form>
 </div>
@@ -97,21 +102,12 @@
     <script src="js/jquery-2.0.2.js"></script>
     <script src="js/SignIn.js"></script>
     <script src="js/signUp.js"></script>
-       <!--<script src="js/signUp.js"></script>-->
+      <script src="cordova.js"></script>
     <script>
         document.addEventListener("deviceready", onDeviceReady, false);
         function onDeviceReady() {
 
-            function alertDismissed() {
-
-            }
-
-            navigator.notification.alert(
-			    'You are the winner!',  // message
-			    alertDismissed,         // callback
-			    'Game Over',            // title
-			    'Done'                  // buttonName
-			);
+          
 
         }
         $(document).ready(function () {
@@ -132,6 +128,7 @@
                 SignIn(LoginName, loginPassword);
             }
         });
+
 
     </script>
 </body>

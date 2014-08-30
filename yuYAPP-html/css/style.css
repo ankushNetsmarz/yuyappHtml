@@ -610,8 +610,6 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	}
 	
 @media screen and (width: 320px) and (height:496px){
-	.logo{margin:2% 0;}
-	.logo img{width:25%;}
 	.login_inputs .user_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 4px; background-size:7%;}
 	.login_inputs .pass_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 2px; background-size:7%;}
 	.loginpage_btns{margin:0 auto;}

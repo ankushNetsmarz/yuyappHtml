@@ -88,7 +88,10 @@ function AddFriend(friendId) {
         success: function (data) {
           
             console.log(data);
-           GetPeopleRandom();
+            GetPeopleRandom();
+            window.plugins.toast.show('Friend added!', 'long', 'center', function (a) { }, function (b) { });
+            
+           
             //alert("success..." + data);
         },
         error: function (xhr) {

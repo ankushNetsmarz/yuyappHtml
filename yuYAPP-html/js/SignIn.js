@@ -4,13 +4,43 @@ $("#loginButton").on("click", function () {
     var userLoginEmailId = $("#userLoginEmailId").val();
     var loginPassword = $("#userLoginPassword").val();
 
-    if (userLoginEmailId != '' || loginPassword != '')
+    if(userLoginEmailId == '' ) 
+        
     {
-        SignIn(userLoginEmailId, loginPassword);
+    	  function alertDismissed() {
+
+          }
+
+          navigator.notification.alert(
+			    'Username cant be empty!',  // message
+			    alertDismissed,         // callback
+			    'YuYAPP',            // title
+			    'OK'                  // buttonName
+			);
     }
-    else {
-        alert("fields cant be empty");
+    
+    else if (loginPassword == '' )
+    {
+    	  function alertDismissed() {
+
+          }
+
+          navigator.notification.alert(
+			    'Password cant be empty!',  // message
+			    alertDismissed,         // callback
+			    'YuYAPP',           // title
+			    'OK'                  // buttonName
+			);
     }
+  
+    else
+        
+    {
+    	 SignIn(userLoginEmailId, loginPassword);
+    	
+    }
+    
+    
 });
 
 

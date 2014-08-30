@@ -64,7 +64,7 @@ function GetNotification() {
                     HTML += "<div class='clr'></div>"
                     HTML += "</div>"
                 }
-                    HTML+= "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
+
                 $(".notify-list").html(HTML);
             }
         },

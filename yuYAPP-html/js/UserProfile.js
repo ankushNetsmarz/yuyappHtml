@@ -3,8 +3,11 @@
 
   var GetProfilePicture = localStorage.getItem("ProfilePicUrl");
             var profilePicture = $("#profilePicture");
+            
             var profile = $("#profile");
+           var mainProfile= $("#mainProfile");
             profile.prop('src', GetProfilePicture);
+            mainProfile.prop('src', GetProfilePicture);
             profilePicture.prop('src', GetProfilePicture);
             
             

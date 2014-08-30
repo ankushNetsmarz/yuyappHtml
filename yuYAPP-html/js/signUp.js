@@ -1,7 +1,8 @@
 ﻿
 $('#SignUpEmail').blur(function () {
 
-    if ($(this).val() == "") {
+    if ($(this).val() == "")
+    {
 
     }
     else
@@ -20,6 +21,11 @@ $("#signUpButton").on("click", function () {
     $("#signUpDiv").css("display", "block");
 });
 
+$("#selectors").on("click", function () {
+    var select = $(this).val();
+   
+    localStorage.setItem("genderSignUp", select);
+});
 
 $("#backButtonRegister").on("click", function () {
     $("#SignUpFullName, #SignUpPassword, #SignUpDOB, #SignUpgender, #SignUpUserName, #SignUpEmail").val('');
@@ -37,6 +43,15 @@ $("#backButtonRegister").on("click", function () {
 
 
 $("#RegisterButton").on("click", function () {
+	
+	
+	 
+	var Gender= localStorage.getItem("genderSignUp");
+	if(Gender == null)
+		{
+		Gender = "Male";
+		}
+	
     var SignUpFullName = $("#SignUpFullName").val();
     var res = SignUpFullName.split(" ");
     var SignUpFirstName = res[0];
@@ -45,9 +60,76 @@ $("#RegisterButton").on("click", function () {
     var SignUpEmail = $("#SignUpEmail").val();
     var SignUpPassword = $("#SignUpPassword").val();
     var SignUpDOB = $("#SignUpDOB").val();
-    var SignUpgender = $("#SignUpgender").val();
+    var SignUpgender = Gender;
+    
+    
+ if(SignUpFullName == '' ) 
+        
+    {
+    	  function alertDismissed() {
 
-    Signup(SignUpFirstName, SignUpLastName, SignUpUserName, SignUpUserName, SignUpEmail, SignUpPassword, SignUpDOB, SignUpgender);
+          }
+
+          navigator.notification.alert(
+			    'First name cant be empty!',  // message
+			    alertDismissed,         // callback
+			    'YuYAPP',            // title
+			    'OK'                  // buttonName
+			);
+          e.preventDefault();
+    }
+ 
+ if(SignUpUserName == '' ) 
+     
+ {
+ 	  function alertDismissed() {
+
+       }
+
+       navigator.notification.alert(
+			    'User name cant be empty!',  // message
+			    alertDismissed,         // callback
+			    'YuYAPP',            // title
+			    'OK'                  // buttonName
+			);
+       e.preventDefault();
+ }
+
+ if(SignUpEmail == '' ) 
+     
+ {
+ 	  function alertDismissed() {
+
+       }
+
+       navigator.notification.alert(
+			    'Email address cant be empty!',  // message
+			    alertDismissed,         // callback
+			    'YuYAPP',            // title
+			    'OK'                  // buttonName
+			);
+       e.preventDefault();
+ }
+
+ if(SignUpPassword == '' ) 
+     
+ {
+ 	  function alertDismissed() {
+
+       }
+
+       navigator.notification.alert(
+			    'Password cant be empty!',  // message
+			    alertDismissed,         // callback
+			    'YuYAPP',            // title
+			    'OK'                  // buttonName
+			);
+       e.preventDefault();
+ }
+
+    
+
+  Signup(SignUpFirstName, SignUpLastName, SignUpUserName, SignUpUserName, SignUpEmail, SignUpPassword, SignUpDOB, SignUpgender);
 });
 
 
@@ -114,7 +196,18 @@ function ValidateEmail() {
                 
             }
             else {
-                alert("already registered");
+            	  function alertDismissed() {
+
+                  }
+
+                  navigator.notification.alert(
+        			    'User already exist!',  // message
+        			    alertDismissed,         // callback
+        			    'YuYAPP',            // title
+        			    'OK'                  // buttonName
+        			);
+                  $("#SignUpEmail").val('');
+                  $("#SignUpEmail").focus();
             }
             console.log(data);
             //alert("success..." + data);
