@@ -296,7 +296,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .title-span{background-image:url("../images/Editing-Edit-icon.png"); background-repeat:no-repeat; background-position:3px 5px; background-size:18px auto; background-color:rgba(0, 0, 0, 0);}
 .desc-span{background-image:url("../images/dscr-icon.png"); background-repeat:no-repeat; background-position:3px 5px; background-size:18px auto; background-color:rgba(0, 0, 0, 0);}
 .annotate1-span{background-image:url("../images/thumbs-down.png"); background-repeat:no-repeat; background-position:3px 5px; background-size:18px auto; background-color:rgba(0, 0, 0, 0);}
-.annotate2-span{background-image:url("../images/thumbs-up.png"); background-repeat:no-repeat; background-position:3px 5px background-size:18px auto; background-color:rgba(0, 0, 0, 0);}
+.annotate2-span{background-image:url("../images/thumbs-up.png"); background-repeat:no-repeat; background-position:3px 5px; background-size:18px auto; background-color:rgba(0, 0, 0, 0);}
 
 .single-upload-popup label input{border:none; /*border-left:1px dotted #000;*/ background:rgba(255, 255, 255, 0); padding: 3px 5px; margin:3px 0; width:146px;}
 .upload-popup-by-user{width:40px; height:40px; overflow:hidden; margin:0 5px 5px 0;}
