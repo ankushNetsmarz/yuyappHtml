@@ -133,7 +133,39 @@
                     <div class="profile-pic">
                         <img id="profilePicture" src=""></div>
                     <div id="seeStatus" class="see-status"></div>
-                    <div class="see_prof">
+                    
+                    <div class="see_prof"><form>
+
+<div class="see-pro-field"><label>
+<span class="fl first-span">Full Name</span><input id="SeefullName" type="text" class="fr" disabled>
+<div class="clr"></div>
+</label></div>
+
+<div class="see-pro-field"><label>
+<span class="fl scnd-span">User Name</span><input id="SeeUserName" type="text" class="fr" disabled>
+<div class="clr"></div>
+</label></div>
+
+<div class="see-pro-field"><label>
+<span class="fl email-span">Email</span><input id="SeeEmail" type="email" class="fr" disabled>
+<div class="clr"></div>
+</label></div>
+
+<div class="see-pro-field"><label>
+<span class="fl DOB-span">DOB</span><input id="seeDOB" type="text" class="fr" disabled>
+<div class="clr"></div>
+</label></div>
+
+<div class="see-pro-field"><label>
+<span class="fl gender-span">Gender</span><input id="SeeGender" class="see_popup_box" type="text" disabled>
+<div class="clr"></div>
+</label></div>
+
+<div> 
+</div>
+</form></div>
+                    
+                    <!--<div class="see_prof">
             <form>
             <div><input id="SeefullName" type="text" placeholder="Full Name" class="see_popup_box" disabled></div>
             <div><input id="SeeUserName" type="text" placeholder="User Name" class="see_popup_box" disabled></div>
@@ -141,7 +173,7 @@
             <div><input id="SeeDOB" placeholder="DOB" class="see_popup_box" disabled></div>
             <div><input id="SeeGender" placeholder="Gender" class="see_popup_box" disabled></div>
             </form>
-                    </div>
+                    </div>-->
             
         </div>
     </div>
@@ -228,7 +260,43 @@
                  
                     <div class="profile-pic"  onclick="getPhoto(pictureSource.PHOTOLIBRARY);"> <img  id="profile" src=""><div class="change-pic"><img src="images/camera-icon.png"></div>
                     </div>
-                    <div class="edit_prof_inputs">
+                    
+<div class="edit_prof_inputs"><form>
+
+<div class="edit-pro-field"><label>
+<span class="fl first-span">Full Name</span><input id="editFirstname" type="text" class="fr">
+<div class="clr"></div>
+</label></div>
+
+<div class="edit-pro-field"><label>
+<span class="fl first-span">Last Name</span><input id="editLastname" type="text" class="fr">
+<div class="clr"></div>
+</label></div>
+
+<div class="edit-pro-field"><label>
+<span class="fl scnd-span">User Name</span><input id="editUserName" type="text" class="fr">
+<div class="clr"></div>
+</label></div>
+
+<div class="edit-pro-field"><label>
+<span class="fl DOB-span">DOB</span><input id="editDOB" type="text" class="fr">
+<div class="clr"></div>
+</label></div>
+
+<div class="edit-pro-field"><label>
+<span class="fl gender-span">Gender</span>
+<select id="selector">
+<option id="male" value="Male">Male</option>
+<option id="female" value="Female">Female</option>                              
+</select>
+<div class="clr"></div>
+</label></div>
+
+<div> 
+</div>
+</form></div>
+                    
+                    <!--<div class="edit_prof_inputs">
                         <form>
 
 <div class="single-edt-inpt"><input  id="editFirstname"  type="text" placeholder="First Name" class="edit_prof_box" disabled></div>
@@ -239,9 +307,8 @@
                                     <option id="male" value="Male">Male</option>
                                     <option id="female" value="Female">Female</option>                              
                                 </select>
-<!--<img src="images/Editing-Edit-icon.png">-->
 </form>
-</div>
+</div>-->
 <div>
 <input type="button" id="updateButton" class="edit-prof-btn" value="UPDATE" /></div>
 
