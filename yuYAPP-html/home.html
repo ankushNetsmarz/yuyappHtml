@@ -25,14 +25,14 @@
     <!-- when click on comment button in word wall screen then this div will display -->
     <div id="commentPopup" class="comment-bg" style="display: none; z-index: 49">
         <div class="comment-area">
+        <div class="cross-main-btn">
+                <input type="button" id="cancelCommentBox" class="cross-btn" value=""></div>
             <div class="comment-head">
                 <input type="text" id="InsertStatusTextBoxComments" placeholder="Enter your status" class="post-input">
                 <input type="button" id="postComments" class="like-btn" value="Comment">
             </div>
             <div class="comment-list">
             </div>
-            <div class="cancel-btn">
-                <input type="button" id="cancelCommentBox" class="like-btn" value="Cancel"></div>
         </div>
     </div>
     <!-- comment screen end -->
@@ -40,27 +40,28 @@
     <!-- add annotation screen -->
     <div id="" class="full-annotate-bg" style="display: none; z-index: 49">
         <div class="full-annotate-area">
+        <div class="cross-main-btn">
+                <input type="button" id="Button1" class="cross-btn" value=""></div>
             <div class="full-annotate-head">
                 <h3>Fill Your Own Annotations</h3>
             </div>
             <div class="full-annotate-list">
                 <div class="single-full-annotate">
                     <label>
-                        <span class="fl">First Annotate</span>
+                        <span class="fl annotate2-span">First Annotate</span>
                         <input type="text" class="fr" placeholder="Enter your status" id="Text1">
                         <div class="clr"></div>
                     </label>
                 </div>
                 <div class="single-full-annotate">
                     <label>
-                        <span class="fl">Second Annotate</span>
+                        <span class="fl annotate1-span">Second Annotate</span>
                         <input type="text" class="fr" placeholder="Enter your status" id="Text2">
                         <div class="clr"></div>
                     </label>
                 </div>
             </div>
             <div class="cancel-btn">
-                <input type="button" id="Button1" class="like-btn" value="Cancel">
                 <input type="button" id="Button2" class="like-btn" value="Add Annotate">
             </div>
         </div>
@@ -69,6 +70,9 @@
 
   <div id="uploadScreen" class="upload-popup-bg" style="display:none; z-index:49">
 <div class="upload-popup-area">
+
+<div class="cross-main-btn">
+                <input type="button" id="cancelUpload" class="cross-btn" value=""></div>
 <div class="upload-popup-head">
 <h3>Upload Gallery</h3>
 </div>
@@ -82,36 +86,35 @@
 </div>
 <div class="single-upload-popup">
 <label>
-<span class="fl">Title</span>
+<span class="fl title-span">Title</span>
 <input type="text" class="fr" placeholder="" id="UploadTitle">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
-<span class="fl">Discription</span>
+<span class="fl desc-span">Discription</span>
 <input type="text" class="fr" placeholder="" id="UploadDescription">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
-<span class="fl">First Annotate</span>
+<span class="fl annotate2-span">First Annotate</span>
 <input type="text" class="fr" placeholder="" id="Upload1Annotate">
   <div class="clr"></div>
 </label>
 </div>
 <div class="single-upload-popup">
 <label>
-<span class="fl">Second Annotate</span>
+<span class="fl annotate1-span">Second Annotate</span>
 <input type="text" class="fr" placeholder="" id="Upload2Annotate">
   <div class="clr"></div>
 </label>
 </div>
 </div>
 <div class="cancel-btn">
-<input type="button"  id="nextUpload" class="like-btn" value="Next">
-<input type="button"  id="cancelUpload" class="like-btn" value="Cancel"></div>
+<input type="button"  id="nextUpload" class="like-btn" value="Next"></div>
 </div>
 </div>
 <!-- upload gallery popup end -->
@@ -119,24 +122,21 @@
 <!-- see other user profile in popup screen -->
     <div id="" class="see-prof-bg" style="display:none; z-index: 49">
         <div class="see-prof-area">
-            
+            <div class="cross-main-btn">
+                <input type="button" id="Button5" class="cross-btn" value=""></div>
                     <div class="profile-pic">
                         <img id="profilePicture" src=""></div>
                     <div id="seeStatus" class="see-status"></div>
                     <div class="see_prof">
             <form>
-            <div><input id="SeefullName" type="text" placeholder="Full Name" class="see_prof_box" disabled></div>
-            <div><input id="SeeUserName" type="text" placeholder="User Name" class="see_prof_box" disabled></div>
-            <div><input id="SeeEmail" type="email" placeholder="Email Address" class="see_prof_box" disabled></div>
-            <div><input id="SeeDOB" placeholder="DOB" class="see_prof_box" disabled></div>
-            <div><input id="SeeGender" placeholder="Gender" class="see_prof_box" disabled></div>
+            <div><input id="SeefullName" type="text" placeholder="Full Name" class="see_popup_box" disabled></div>
+            <div><input id="SeeUserName" type="text" placeholder="User Name" class="see_popup_box" disabled></div>
+            <div><input id="SeeEmail" type="email" placeholder="Email Address" class="see_popup_box" disabled></div>
+            <div><input id="SeeDOB" placeholder="DOB" class="see_popup_box" disabled></div>
+            <div><input id="SeeGender" placeholder="Gender" class="see_popup_box" disabled></div>
             </form>
                     </div>
-               
             
-            <div class="cancel-btn">
-                <input type="button" id="Button1" class="like-btn" value="Back">
-            </div>
         </div>
     </div>
     <!-- see other user profile in popup end -->
@@ -148,7 +148,11 @@
 <div style="text-align:right;"><a href="#" class="profile-setting" id="EditProfile"><img src="images/profile-pic.jpg" width="39" height="39"></a>
 <button type="button" class="logout_btn" id="logout"></button>
 </div>
+<<<<<<< HEAD
 
+=======
+<div class="clr"></div>
+>>>>>>> origin/master
     
 </div>
 </div>
@@ -222,6 +226,7 @@
                     </div>
                     <div class="edit_prof_inputs">
                         <form>
+<<<<<<< HEAD
 <div class="single-edt-inpt">
 <input  id="editFirstname"  type="text" placeholder="First Name" class="edit_prof_box" disabled>
 <img  id="Ficon" src="images/Editing-Edit-icon.png">
@@ -245,6 +250,14 @@
                                     <option id="female" value="Female">Female</option>                              
                                 </select>
 <img id="Gicon"  src="images/Editing-Edit-icon.png">
+=======
+<div class="single-edt-inpt"><input  id="editFirstname"  type="text" placeholder="First Name" class="edit_prof_box" disabled></div>
+<div class="single-edt-inpt"><input  id="editLastname" type="text" placeholder="Last Name" class="edit_prof_box" disabled></div>
+<div class="single-edt-inpt"><input  id="editUserName" type="text" placeholder="User Name" class="edit_prof_box" disabled></div>
+<div class="single-edt-inpt"><input id="editDOB" placeholder="DOB" class="edit_prof_box" disabled></div>
+<div class="single-edt-inpt"><input id="editGender"  placeholder="Gender" class="edit_prof_box" disabled>
+<!--<img src="images/Editing-Edit-icon.png">-->
+>>>>>>> origin/master
 </div>
 <div>
 <input type="button" id="updateButton" class="edit-prof-btn" value="UPDATE" /></div>
@@ -294,8 +307,8 @@
                     <div class="notify-area">
                         <div id="Div1" class="notify-list">
                         </div>
-                        <div>
-                            <input type="button" id="Button4" class="load-more" value="Load More" /></div>
+                        <!--<div>
+                            <input type="button" id="Button4" class="load-more" value="Load More" /></div>-->
                     </div>
                 </div>
 
@@ -305,11 +318,19 @@
                 <div id="YAPP-Live" class="YAPP-Live" style="display: none;">
 
                     <div class="post-status">
-                        <select class="select-ctgry">
+                        <!--<select class="select-ctgry">
                             <option>All</option>
                             <option>Images</option>
                             <option>Videos</option>
-                        </select>
+                        </select>-->
+                        <div class="swiper-nav swiper-container swip-width">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide" id=""><span>All</span></div>
+                                        <div class="swiper-slide" id=""><span>Images</span></div>
+                                        <div class="swiper-slide" id=""><span>Videos</span></div>
+
+                                    </div>
+                                </div>
                         <input id="uploadButtonVideoImages" type="button" class="Upload-text-btn">
                     </div>
 
