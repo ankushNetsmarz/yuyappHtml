@@ -46,7 +46,7 @@ $("#loginButton").on("click", function () {
 
 
 function SignIn(userLoginEmailId, loginPassword) {
-
+	// checkConnection();
     var userData = {
 
         email: userLoginEmailId,
@@ -68,14 +68,17 @@ function SignIn(userLoginEmailId, loginPassword) {
                 localStorage.setItem("userId", userId);
                 localStorage.setItem("LoginName", userLoginEmailId);
                 localStorage.setItem("loginPassword", loginPassword);
-              window.location.replace("home.html");
+                window.location.replace("home.html");
             }
             else {
-                alert("wrong user");
+            	   window.plugins.toast.show('Wrong user!', 'long', 'center', function (a) { }, function (b) { });
+                   
             }
         },
         error: function (xhr) {
-            alert(xhr.responseText);
+        	 checkConnection();
+        	  hideLoader();
+           // alert(xhr.responseText);
         }
     }).done(function () {
         hideLoader();

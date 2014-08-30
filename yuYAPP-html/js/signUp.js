@@ -136,7 +136,7 @@ $("#RegisterButton").on("click", function () {
 
 /*Signup the user*/
 function Signup(SignUpFirstName, SignUpLastName, SignUpUserName, SignUpUserName, SignUpEmail, SignUpPassword, SignUpDOB, SignUpgender) {
-    
+	// checkConnection();
     var userData = {
         userName: SignUpUserName,
         email: SignUpEmail,
@@ -168,8 +168,9 @@ function Signup(SignUpFirstName, SignUpLastName, SignUpUserName, SignUpUserName,
             }
         },
         error: function (xhr) {
-         
-            alert(xhr.responseText);
+        	checkConnection();
+        	  hideLoader();
+              // alert(xhr.responseText);
         }
     }).done(function () {
         hideLoader();
@@ -180,7 +181,7 @@ function Signup(SignUpFirstName, SignUpLastName, SignUpUserName, SignUpUserName,
 
 
 function ValidateEmail() {
-
+	 checkConnection();
     var postData = {
         email: $("#SignUpEmail").val()
     };
@@ -214,7 +215,8 @@ function ValidateEmail() {
         },
         error: function (xhr) {
 
-            alert(xhr.responseText);
+        	 hideLoader();
+             // alert(xhr.responseText);
         }
     }).done(function () {
         hideLoader();

@@ -23,13 +23,13 @@ function GetNotificationCount() {
         url: "http://174.141.233.6/YuY/posts/GetNotificationCount",
         data: postData,
         success: function (data) {
-            debugger;
+       
             console.log(data);
             //alert("success..." + data);
         },
         error: function (xhr) {
-            debugger;
-            alert(xhr.responseText);
+        	checkConnection();
+           // alert(xhr.responseText);
         }
     });
 }
@@ -37,6 +37,7 @@ function GetNotificationCount() {
 
 var userId = localStorage.getItem("userId");
 function GetNotification() {
+	//checkConnection();
     var postData = {
         userId: userId,
         page: 1,
@@ -45,6 +46,7 @@ function GetNotification() {
     }
     $.ajax({
         type: "GET",
+        beforeSend: showLoader(),
         //url: "http://localhost:6269/posts/GetNotification",
         url: "http://174.141.233.6/YuY/posts/GetNotification",
         data: postData,
@@ -69,8 +71,11 @@ function GetNotification() {
             }
         },
         error: function (xhr) {
-            debugger;
-            alert(xhr.responseText);
+        	checkConnection();
+       	 hideLoader();
+         // alert(xhr.responseText);
         }
+    }).done(function () {
+        hideLoader();
     });
 }

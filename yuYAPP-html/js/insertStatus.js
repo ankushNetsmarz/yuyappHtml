@@ -11,7 +11,7 @@ $("#postStatus").on("click", function () {
 var userId= localStorage.getItem("userId");
 
 function InsertStatus() {
-    
+ 	checkConnection();
     var postData = {
         postedBy: userId, /*user who Post the status or the Post */
         postFileTitle: $("#InsertStatusTextBox").val(), /*This is for both Post and status*/
@@ -39,7 +39,8 @@ function InsertStatus() {
         },
         error: function (xhr) {
           
-            alert(xhr.responseText);
+        	 hideLoader();
+             // alert(xhr.responseText);
         }
     }).done(function () {
         hideLoader();
@@ -51,6 +52,7 @@ function InsertStatus() {
 
 /*Add comment on the post*/
 function InsertPostComment(postIdForComment) {
+	//checkConnection();
     var commentMessage = $("#InsertStatusTextBoxComments").val();
 
     var postData = {
@@ -68,11 +70,13 @@ function InsertPostComment(postIdForComment) {
        
             console.log(data);
             GetPostComments(postIdForComment);
+            GetUserPost();
             //alert("success..." + data);
         },
         error: function (xhr) {
-          
-            alert(xhr.responseText);
+        	 checkConnection();
+        	 hideLoader();
+             // alert(xhr.responseText);
         }
     }).done(function () {
         hideLoader();

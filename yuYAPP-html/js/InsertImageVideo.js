@@ -2,7 +2,7 @@
 
 /*Insert user post*/
 function InsertPostImage(imageURLs) {
-	
+ 	//checkConnection();
    
 	var title= $("#UploadTitle").val();
 	var description= $("#UploadDescription").val();
@@ -40,8 +40,9 @@ function InsertPostImage(imageURLs) {
             //alert("success..." + data);
         },
         error: function (xhr) {
-            debugger;
-            alert(xhr.responseText);
+        	checkConnection();
+       	 hideLoader();
+         // alert(xhr.responseText);
         }
     }).done(function () {
         hideLoader();

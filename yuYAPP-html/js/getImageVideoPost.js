@@ -16,6 +16,7 @@
 var userId = localStorage.getItem("userId");
 
 function GetPostAnonymousList() {
+	//checkConnection();
     var postData = {
         userId: userId,
         start: 1,
@@ -33,14 +34,15 @@ function GetPostAnonymousList() {
             //alert("success..." + data);
         },
         error: function (xhr) {
-            debugger;
-            alert(xhr.responseText);
+       	 hideLoader();
+         // alert(xhr.responseText);
         }
     });
 }
 
 /*get GetPostNonAnonymousList for Shhh */
 function GetPostNonAnonymousList() {
+	//checkConnection();
     var postData = {
         userId: userId,
         start: 1,
@@ -124,8 +126,10 @@ function GetPostNonAnonymousList() {
                 }
         },
         error: function (xhr) {
-            debugger;
-            alert(xhr.responseText);
+        	checkConnection();
+       	 hideLoader();
+     
+         // alert(xhr.responseText);
         }
     }).done(function () {
         hideLoader();
@@ -134,6 +138,7 @@ function GetPostNonAnonymousList() {
 
 /*Set Unfriend*/
 function SetUnFriend() {
+	//checkConnection();
     var postData = {
         userId: userId,
         friendId: 2
@@ -149,8 +154,9 @@ function SetUnFriend() {
             //alert("success..." + data);
         },
         error: function (xhr) {
-            debugger;
-            alert(xhr.responseText);
+        	checkConnection();
+       	 hideLoader();
+         // alert(xhr.responseText);
         }
     });
 }

@@ -1,13 +1,13 @@
-﻿    $("#accessButton").on("click", function () {
-             //  $(".checkbox-list").css("display", "block");
-             $(".checkbox-list").show();
-             $(".ctgry-list-main").css("display", "none");
-             $(".add-frnd").css("display", "none");
-             $(".follow-friend").css("display", "block");
-             $("#YAPP-Live").css("display", "none");
-        
-           
-         });
+﻿$("#accessButton").on("click", function () {
+    //  $(".checkbox-list").css("display", "block");
+    $(".checkbox-list").show();
+    $(".ctgry-list-main").css("display", "none");
+    $(".add-frnd").css("display", "none");
+    $(".follow-friend").css("display", "block");
+    $("#YAPP-Live").css("display", "none");
+
+
+});
 
 
 $("#FriendsOption").on("click", function () {
@@ -27,6 +27,7 @@ $("#FriendsOption").on("click", function () {
 
 
 $("#recentFollower").on("click", function () {
+   
     GetRecentFollowerList();
 });
 $("#allFollower").on("click", function () {
@@ -41,104 +42,107 @@ $("#getFollowers").on("click", function () {
     GetAllFollowerList();
 });
 
-var userId= localStorage.getItem("userId");
-function GetAllFollowerList()
-{
-    var inputdata = {
-        "userId": userId,
-        "start": 1,
-        "end": 10
-    };
-    $.ajax({
-        type: "GET",
-        // url: "http://localhost:6269/Users/GetFollower",
-        beforeSend: showLoader(),
-        url: "http://174.141.233.6/YuY/Users/GetAllFollower",
-       
-        data: inputdata,
-        dataType: "json",
+var userId = localStorage.getItem("userId");
+function GetAllFollowerList() {
+   
+        var inputdata = {
+            "userId": userId,
+            "start": 1,
+            "end": 10
+        };
+        $.ajax({
+            type: "GET",
+            // url: "http://localhost:6269/Users/GetFollower",
+            beforeSend: showLoader(),
+            url: "http://174.141.233.6/YuY/Users/GetAllFollower",
 
-        success: function (data) {
-            var HTML="";
-          
-            if (data.ResponseData.length > 0) {
-               
-                for (var i = 0; i < data.ResponseData.length; i++) {
+            data: inputdata,
+            dataType: "json",
 
-                    HTML += "<div class='single-frnd-main'>"
-                    HTML += "<div class='single-frnd'>"
-                    HTML += "<div class='fl single-frnd-imgarea'><img src='images/Syra-yousaf-profile-pictures.jpg'></div>"
-                    HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
-					HTML += "<div class='checkbox-list'><input type='checkbox' alt='access list'></div>"
-                    HTML += "</div>"
-                    HTML += "<div  id='' class='unplug-btn-div' userId=" + data.ResponseData[i].UserId + "><button type='button' class='unplug-btn'>UNPLUG</button></div></div>"
-                    //console.log(data.ResponseData.length);
+            success: function (data) {
+                var HTML = "";
+
+                if (data.ResponseData.length > 0) {
+                  
+
+                    for (var i = 0; i < data.ResponseData.length; i++) {
+                        var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
+                        HTML += "<div class='single-frnd-main'>"
+                        HTML += "<div class='single-frnd'>"
+                        HTML += "<div class='fl single-frnd-imgarea'><img src=" + ProfilePicURL + "></div>"
+                        HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
+                        HTML += "<div class='checkbox-list'><input type='checkbox' alt='access list'></div>"
+                        HTML += "</div>"
+                        HTML += "<div  id='' class='unplug-btn-div' userId=" + data.ResponseData[i].UserId + "><button type='button' class='unplug-btn'>UNPLUG</button></div></div>"
+                        //console.log(data.ResponseData.length);
+                    }
+                    HTML += "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
+                    $("#getfollowerList").html(HTML);
                 }
-				HTML+= "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
-                $("#getfollowerList").html(HTML);
-            }
-            if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
-                $('.checkbox-list').show();
-            }
-          
+                if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
+                    $('.checkbox-list').show();
+                }
+
             },
-        error: function (xhr) {
-            alert(xhr.responseText);
-        }
-    }).done(function () {
-        hideLoader();
-    });
-}
+            error: function (xhr) {
+                checkConnection();
+                hideLoader();
+                // alert(xhr.responseText);
+            }
+        }).done(function () {
+            hideLoader();
+        });
+    }
 
 
 
-function GetRecentFollowerList() {
-    var inputdata = {
-        "userId": userId,
-        "start": 1,
-        "end": 10
-    };
-    $.ajax({
-        type: "GET",
-        // url: "http://localhost:6269/Users/GetRecentFollower",
-        beforeSend: showLoader(),
-        url: "http://174.141.233.6/YuY/Users/GetRecentFollower",
-        
-        data: inputdata,
-        dataType: "json",
+function GetRecentFollowerList() 
+{
+      
+        var inputdata = {
+            "userId": userId,
+            "start": 1,
+            "end": 10
+        };
+        $.ajax({
+            type: "GET",
+            // url: "http://localhost:6269/Users/GetRecentFollower",
+            beforeSend: showLoader(),
+            url: "http://174.141.233.6/YuY/Users/GetRecentFollower",
 
-        success: function (data) {
-            var HTML = "";
+            data: inputdata,
+            dataType: "json",
 
-            if (data.ResponseData.length > 0) {
+            success: function (data) {
+                var HTML = "";
 
-                for (var i = 0; i < data.ResponseData.length; i++) {
+                if (data.ResponseData.length > 0) {
+
+                    for (var i = 0; i < data.ResponseData.length; i++) {
+                        var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
 
 
-                    HTML += "<div class='single-frnd'>"
-                    HTML += "<div class='fl single-frnd-imgarea'><img src='images/Syra-yousaf-profile-pictures.jpg'></div>"
-                    HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
-                    HTML += "<div class='checkbox-list'><input type='checkbox' alt='access list'></div>"
-                    HTML += "</div>"
+                        HTML += "<div class='single-frnd'>"
+                        HTML += "<div class='fl single-frnd-imgarea'><img src=" + ProfilePicURL + "></div>"
+                        HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
+                        HTML += "<div class='checkbox-list'><input type='checkbox' alt='access list'></div>"
+                        HTML += "</div>"
 
-                    //console.log(data.ResponseData.length);
+                        //console.log(data.ResponseData.length);
+                    }
+                    $("#getfollowerList").html(HTML);
                 }
-                $("#getfollowerList").html(HTML);
+                if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
+
+                    $('.checkbox-list').show();
+                }
+            },
+            error: function (xhr) {
+                checkConnection();
+                hideLoader();
+                // alert(xhr.responseText);
             }
-            if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
-            
-                $('.checkbox-list').show();
-            }
-
-            console.log(data);
-            //console.log(data.ResponseData.length);
-        },
-        error: function (xhr) {
-            alert(xhr.responseText);
-        }
-    }).done(function () {
-        hideLoader();
-    });
-}
-
-
+        }).done(function () {
+            hideLoader();
+        });
+    }

@@ -15,8 +15,8 @@ function GetNotificationCount() {
             //alert("success..." + data);
         },
         error: function (xhr) {
-            
-            alert(xhr.responseText);
+        	checkConnection();
+            //alert(xhr.responseText);
         }
     });
 }
@@ -37,8 +37,8 @@ function UpdateNotification() {
             //alert("success..." + data);
         },
         error: function (xhr) {
-            debugger;
-            alert(xhr.responseText);
+        	checkConnection();
+          //  alert(xhr.responseText);
         }
     });
 }

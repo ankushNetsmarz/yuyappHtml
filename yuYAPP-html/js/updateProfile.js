@@ -45,6 +45,7 @@ $("#EditProfile").on("click", function () {
 
 
 function UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editGender) {
+	//checkConnection();
     var userId = localStorage.getItem("userId");
 
     var userData = {
@@ -70,8 +71,9 @@ function UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editG
             //alert("success..." + data);
         },
         error: function (xhr) {
-          
-            alert(xhr.responseText);
+        	checkConnection();
+       	 hideLoader();
+         // alert(xhr.responseText);
         }
     }).done(function () {
         hideLoader();

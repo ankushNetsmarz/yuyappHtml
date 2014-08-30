@@ -17,6 +17,7 @@ $("#WordWallOption").on("click", function () {
 var userId = localStorage.getItem("userId");
         /*get user post*/
         function GetUserPost() {
+        //	checkConnection();
             var postData = {
             	userId: userId,
                 postType: 0,/*0 for status, 1 for Image, 2 for Videos*/
@@ -34,10 +35,11 @@ var userId = localStorage.getItem("userId");
                     console.log(data);
                     var HTML = "";
            
-                    if (data.ResponseData.length > 0) {
+                    if (data.ResponseData.length > 0) 
+                    {
 
                         for (var i = 0; i < data.ResponseData.length; i++) {
-
+                            var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
                             var positiveAnnotations = data.ResponseData[i].PositiveAnnotation;
                             var negativeAnnotations = data.ResponseData[i].NegativeAnnotation;
                             
@@ -46,7 +48,7 @@ var userId = localStorage.getItem("userId");
                 HTML+= "<div class='single-user'>"
 
                 HTML += "<div class='user-title'> "
-                HTML+= "<div class='fl user-list-pic'><img src='images/user-pic-list.jpg' /></div>"
+                HTML+= "<div class='fl user-list-pic'><img src="+ ProfilePicURL + "></div>"
                 HTML += "<div class='fl user-name-title'>" + data.ResponseData[i].UserName + "<br><span>(" + data.ResponseData[i].TimeSpan + ")</span></div>"
                 HTML+= "<div class='clr'></div>"
                 HTML += "<p>"+ data.ResponseData[i].Status+"</p></div>"
@@ -78,7 +80,7 @@ var userId = localStorage.getItem("userId");
                 HTML+=  "</div>"
                 HTML+=  "<div class='clr'></div>"
                 HTML+=  "</div>"
-                    //alert("success..." + data);
+                   
                         }
 			HTML+= "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
                         $(".list-area").html(HTML);
@@ -87,8 +89,9 @@ var userId = localStorage.getItem("userId");
                     //console.log(data.ResponseData.length);
                 },
                 error: function (xhr) {
-                   
-                    alert(xhr.responseText);
+                	checkConnection();
+               	 hideLoader();
+                 // alert(xhr.responseText);
                 }
             }).done(function () {
                 hideLoader();
@@ -97,7 +100,7 @@ var userId = localStorage.getItem("userId");
 
         /get user Comments/
         function GetPostComments(postId) {
-       
+        	//checkConnection();
             var postData = {
                 postId: postId,
                 start: 1,
@@ -105,7 +108,7 @@ var userId = localStorage.getItem("userId");
             }
             $.ajax({
                 type: "GET",
-                //url: "http://localhost:6269/posts/GetPostComments",
+                beforeSend: showLoader(),
                 url: "http://174.141.233.6/YuY/posts/GetPostComments",
                 data: postData,
                 success: function (data) {
@@ -130,10 +133,15 @@ var userId = localStorage.getItem("userId");
                     console.log(data);
                     //alert("success..." + data);
                 },
-                error: function (xhr) {
-                 
-                    alert(xhr.responseText);
+                error: function (xhr)
+                {
+                	 checkConnection();
+                	 hideLoader();
+               	 
+                
                 }
+            }).done(function () {
+                hideLoader();
             });
         }
 
@@ -172,6 +180,12 @@ var userId = localStorage.getItem("userId");
 
         });
         $(document).on("click", "#postComments", function () {
-            var postIdForComment= localStorage.getItem("postId");
-            InsertPostComment(postIdForComment);
+            if ($("#InsertStatusTextBoxComments").val() == '') {
+              
+                window.plugins.toast.show('Enter a comment', 'short', 'center', function (a) { }, function (b) { });
+            }
+            else {
+                var postIdForComment = localStorage.getItem("postId");
+                InsertPostComment(postIdForComment);
+            }
         });

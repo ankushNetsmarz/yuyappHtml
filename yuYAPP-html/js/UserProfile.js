@@ -27,6 +27,7 @@ $("#SeeProfile").on("click", function () {
 });
 var userId = localStorage.getItem("userId");
 function GetUserProfile() {
+	//checkConnection();
     var userData = {
         userId: userId
     };
@@ -57,8 +58,9 @@ function GetUserProfile() {
 
         },
         error: function (xhr) {
-       
-            alert(xhr.responseText);
+        	checkConnection();
+       	 hideLoader();
+         // alert(xhr.responseText);
         }
     }).done(function () {
         hideLoader();

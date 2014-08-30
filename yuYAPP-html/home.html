@@ -28,7 +28,7 @@
         <div class="cross-main-btn">
                 <input type="button" id="cancelCommentBox" class="cross-btn" value=""></div>
             <div class="comment-head">
-                <input type="text" id="InsertStatusTextBoxComments" placeholder="Enter your status" class="post-input">
+                <input type="text" id="InsertStatusTextBoxComments" placeholder="Write a Comment" class="post-input">
                 <input type="button" id="postComments" class="like-btn" value="Comment">
             </div>
             <div class="comment-list">
@@ -78,7 +78,13 @@
 </div>
 <div class="upload-popup-list">
 <div class="pic-btn">
-<div class="display-pic"><img id="UploadPreview" src=""></div>
+<div class="display-pic"><img id="UploadPreview" src="">
+    <div class="video" style="display:none">
+                        <video width="298" height="140" controls>
+                            <source id="video" src="" type="video/mp4">
+                        </video>
+                    </div>
+</div>
 <div>
 <input type="button"  id="UploadImageButton" onclick="getUploadPhoto(pictureSource.PHOTOLIBRARY);" class="upload-gall-btn" value="Images">
 <input type="button"  id="UploadVideoButton" onclick="getVideo()" class="upload-gall-btn" value="Videos">
@@ -375,12 +381,14 @@
 </div>
     
    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script src="js/jquery-2.0.2.js"></script>
-
+    <script src="js/jquery-2.0.2.js"></script> 
+    <script src="cordova.js"></script>
+     <script src="js/ajaxWebService.js"></script>
+    <script src="js/connection.js"></script>
     <script src="js/like.js"></script>
 
     <script src="js/getNotification.js"></script>
-    <script src="js/ajaxWebService.js"></script>
+   
     <script src="js/idangerous.swiper-2.0.min.js"></script>
     <script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
     <script src="js/resolution.js"></script>
@@ -395,7 +403,7 @@
     <script src="js/InsertImageVideo.js"></script>
     <script src="js/getPost.js"></script>
        <script src="js/ProfilePicture.js"></script>
-    <script src="cordova.js"></script>
+       
 
 
       <script>
@@ -408,6 +416,8 @@
           document.addEventListener("deviceready", onDeviceReady, false);
 
           function onDeviceReady() {
+
+        	  checkConnection();
               pictureSource = navigator.camera.PictureSourceType;
               destinationType = navigator.camera.DestinationType;
           }
@@ -439,7 +449,10 @@
               for (i = 0, len = mediaFiles.length; i < len; i += 1) {
                   path = mediaFiles[i].fullPath;
                 
-
+                  UploadFileFlag = "video";
+                  $("#UploadPreview").hide();
+                  $(".video").css("display","block");
+                  $("#video").parent().prop('src', path);
               }
           };
 
@@ -534,7 +547,8 @@
               Image.src = "data:image/png;base64," + imageURI;
               imageURLs = imageURI;
               UploadFileFlag = "image";
-
+              $("#UploadPreview").show();
+              $(".video").css("display","none");
           }
 
           / * opens default gallery of native system, i.e android or iphone */
@@ -589,23 +603,34 @@
                   $("#Upload1Annotate").val('Like');
                   $("#Upload2Annotate").val('Dislike');
                   $("#uploadScreen").css("display", "block");
+                //  $(".video").css("display","none");
 
               });
               $("#nextUpload").on("click", function () {
-                  if (UploadFileFlag == "image") {
-                      InsertPostImage(imageURLs);
+                  if ($("#UploadTitle").val() == '') {
+                	
+                    window.plugins.toast.show('Enter title for a feed!', 'long', 'center', function (a) { }, function (b) { });
                   }
-                  else {
 
-                      uploadPhoto(path);
+                  else if (UploadFileFlag == "image") {
+                    InsertPostImage(imageURLs);
                   }
+                  else if(UploadFileFlag == "video") {
+
+                    uploadPhoto(path);
+                  }
+                  else
+                	  {
+                	  window.plugins.toast.show('Select image or video!', 'long', 'center', function (a) { }, function (b) { });
+                      
+                	  }
               });
 
 
               $("#cancelUpload").on("click", function () {
 
                   $("#uploadScreen").css("display", "none");
-
+                  GetPostNonAnonymousList();
               });
 
 

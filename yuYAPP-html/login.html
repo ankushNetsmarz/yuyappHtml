@@ -138,6 +138,7 @@
 
     <script src="js/ajaxWebService.js"></script>
     <script src="js/jquery-2.0.2.js"></script>
+     <script src="js/connection.js"></script>
     <script src="js/SignIn.js"></script>
     <script src="js/signUp.js"></script>
       <script src="cordova.js"></script>
@@ -145,9 +146,12 @@
         document.addEventListener("deviceready", onDeviceReady, false);
         function onDeviceReady() {
 
+
+checkConnection();
           
 
         }
+     
         $(document).ready(function () {
             //  var options = {
             //	  date: new Date(),
