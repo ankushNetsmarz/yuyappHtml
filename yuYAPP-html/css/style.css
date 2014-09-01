@@ -672,6 +672,8 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.single-upload-popup label input{width:146px;}
 	.notify-badge{margin:0 30% 0 59%;}
 	.single-upload-popup{margin:15px 0 0;}
+	.edit-pro-field label select{width:198px;}
+	.edit-pro-field label input{width:165px;}
 	}
 	
 @media screen and (width: 600px) and (height: 960px){
