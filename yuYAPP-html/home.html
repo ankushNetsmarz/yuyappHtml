@@ -213,7 +213,7 @@
                 <div id="NotificationOption" class="unselect mid_box">
                     Notification
 
- <span class="notify-badge">5</span>
+ <span class="notify-badge"></span>
 
 
 </div>
@@ -242,7 +242,7 @@
 <input id="accessButton" type="button" class="post-btn">
 <input type="text" id="InsertStatusTextBox" placeholder="Enter your status" class="post-input">
 <input type="button"  id="postStatus" class="post-text-btn" value="POST">
-<div class="add-annotation"><a href="#">Add your own Annotation</a></div>
+
 </div>
 
 <div class="list-area">
@@ -706,8 +706,25 @@
 
 
               $("#logout").on("click", function () {
-                  localStorage.clear();
-                  window.location.replace("login.html");
+                 
+                  function onConfirm(buttonIndex) {
+                	  if(buttonIndex==1)
+                		  {
+                		  
+                		  localStorage.clear();
+                    	  window.location.replace("login.html");
+                		  }
+                	
+                	}
+
+                	navigator.notification.confirm(
+                	    'Do you want to logout? ', // message
+                	     onConfirm,            // callback to invoke with index of button pressed
+                	    'YUYApp',           // title
+                	    ['ok','cancel']     // buttonLabels
+                	);
+                	
+                
               });
 
 
@@ -836,20 +853,24 @@
                       {
                           top = '485px';
                       }
-                      else if (currentWindowWidth == 480)
-                      {
-                          top = '485px'
+                      else {
+                          top = '440px';       //360*640
                       }
+<<<<<<< HEAD
 					  else if (currentWindowWidth == 615)
                       {
                           top = '485px'
                       }
                       else
+=======
+                      break;
+                  case 360:
+                      if (currentWindowWidth == 480)   //360*480
+>>>>>>> origin/master
                       {
-                          top = '440px';       //360*640
+                          top = '485px'
                       }
                       break;
-               
                   default:
                       {
                           top = '390px';

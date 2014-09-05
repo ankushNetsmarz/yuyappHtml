@@ -17,5 +17,8 @@
     	  window.plugins.toast.show('No network connection!', 'long', 'center', function (a) { }, function (b) { });
             	
     	}
+   
+    	 
+    
     hideLoader();
 }

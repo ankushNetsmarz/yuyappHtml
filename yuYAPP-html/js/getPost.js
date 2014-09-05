@@ -118,14 +118,14 @@ var userId = localStorage.getItem("userId");
                     if (data.ResponseData.length > 0) {
 
                         for (var i = 0; i < data.ResponseData.length; i++) {
-                     
-                            HTML+=   "<div class='single-comment'>"
-                            HTML += "<div class='fl comment-by-user'><img src='images/user-pic-list.jpg' /></div>"
-                            HTML += "<div class='fl comment-text'><span class='comment-user'> "+data.ResponseData[i].UserName+" </span> "+ data.ResponseData[i].Comment + "<div class='comment-msg-ago'>"+ data.ResponseData[i].TimeSpan+"</div></div>"
-                            HTML+=   "<div class='clr'></div>"
-                            HTML+=   "</div>"
+                        	 var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
+                                 HTML += "<div class='single-comment'>"
+                                 HTML += "<div class='fl comment-by-user'><img src=" + ProfilePicURL + " /></div>"
+                                 HTML += "<div class='fl comment-text'><span class='comment-user fl'> " + data.ResponseData[i].UserName + " </span><div class='comment-msg-ago fl'>" + data.ResponseData[i].TimeSpan + "</div> <div style='width:100%;'>" + data.ResponseData[i].Comment + "</div></div>"
+                                 HTML += "<div class='clr'></div>"
+                                 HTML += "</div>"
                         }
-						HTML+= "<div style='width: 100%;'><input type='button' value='Load more...' style='width: 100%; padding: 2px 0px; margin: 10px 0px 0px;'></div>"
+						//HTML+= "<div style='width: 100%;'><input type='button' value='Load more...' style='width: 100%; padding: 2px 0px; margin: 10px 0px 0px;'></div>"
                         $(".comment-list").html(HTML);
                         }
                     
@@ -149,7 +149,10 @@ var userId = localStorage.getItem("userId");
 
 
         $(document).on("click", "#cancelCommentBox", function () {
+        	
             $("#commentPopup").css("display", "none");
+            GetUserPost();
+            GetPostNonAnonymousList();
 
         });
 
@@ -172,6 +175,7 @@ var userId = localStorage.getItem("userId");
         });
 
         $(document).on("click", ".commentButton", function () {
+        	$("#InsertStatusTextBoxComments").val('');
             var postId = $(this).parent().attr('postId');
             localStorage.setItem("postId", postId);
             $("#commentPopup").css("display", "block");

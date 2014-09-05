@@ -52,7 +52,7 @@ function GetUserProfile() {
             $("#editLastname").val(data.ResponseData.LastName);
             $("#editFirstname").val(data.ResponseData.FirstName);
             $("#editGender").val(Gender);
-          
+         
             $("#editDOB").val(data.ResponseData.DOB);
 
 

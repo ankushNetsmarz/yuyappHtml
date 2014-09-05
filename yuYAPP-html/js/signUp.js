@@ -11,8 +11,36 @@ $('#SignUpEmail').blur(function () {
     }
 });
 $("#SignUpDOB").on("click", function () {
-    alert("hii");
+	var date;
+    var options = {    		
+  	date: new Date(),
+    mode: 'date',
+   
+    	 };			
+       datePicker.show(options, function(date){
+   	  //  alert("date result " + date);  
+    	 
+   		 date= (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear(); 
+   		 localStorage.setItem("date",date);
+     
+      });
+      		
+           
 });
+
+$( "#SignUpDOB" ).focus(function() {
+	 var dates= localStorage.getItem("date");
+ 
+   if(dates=="NaN/NaN/NaN")
+	   {
+	   $(this).val(''); 
+	   }
+   else
+	   {
+    $(this).val(dates); 
+	   }
+});
+
 
 $("#signUpButton").on("click", function () {
     //  $(".signup_inputs, .registerpage_btns, .signup-logo").css("display", "block");
@@ -50,6 +78,11 @@ $("#RegisterButton").on("click", function () {
 	
 	 
 	var Gender= localStorage.getItem("genderSignUp");
+	var date=   localStorage.getItem("date");
+	if(date == null)
+	{
+		date = "";
+	}
 	if(Gender == null)
 		{
 		Gender = "Male";
@@ -62,7 +95,7 @@ $("#RegisterButton").on("click", function () {
     var SignUpUserName = $("#SignUpUserName").val();
     var SignUpEmail = $("#SignUpEmail").val();
     var SignUpPassword = $("#SignUpPassword").val();
-    var SignUpDOB = $("#SignUpDOB").val();
+    var SignUpDOB = date;
     var SignUpgender = Gender;
     
     

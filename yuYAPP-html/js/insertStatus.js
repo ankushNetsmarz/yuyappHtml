@@ -1,7 +1,16 @@
 ﻿
 
 $("#postStatus").on("click", function () {
+	var post= $("#InsertStatusTextBox").val();
+
+	if(post != "")
+	{
     InsertStatus();
+	}
+   else
+	{
+	 window.plugins.toast.show('Enter your status!', 'long', 'center', function (a) { }, function (b) { });     	
+	}
   
 });
 

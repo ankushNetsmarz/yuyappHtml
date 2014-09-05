@@ -6,9 +6,10 @@ $("#NotificationOption").on("click", function () {
         'top': "0px" //moves up
     });
     $(".notification").css("display", "block");
-    $("#see_profile").css("display", "none");
+    $("#edit_profile").css("display", "none");
     $(".add-frnd,.follow-friend").css("display", "none");
     $(".ctgry-list-main").css("display", "none");
+    $(".top_heading").text("NOTIFICATIONS");
     localStorage.setItem("MenuFlag", "up");
 });
 
@@ -58,9 +59,11 @@ function GetNotification() {
             if (data.ResponseData.length > 0) {
 
                 for (var i = 0; i < data.ResponseData.length; i++) {
+                	   var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
+                       
                     HTML += "<div class='single-notifi'>"
-                    HTML += "<div class='fl notifi-by-user'><img src='images/user-pic-list.jpg' /></div>"
-                    HTML += "<div class='fl notifi-text'><span>" + data.ResponseData[i].UserName + " " + "</span>" + data.ResponseData[i].Type + "ed on your post"
+                    HTML += "<div class='fl notifi-by-user'><img src="+ ProfilePicURL+ "/></div>"
+                    HTML += "<div class='fl notifi-text'><span>" + data.ResponseData[i].UserName + " " + "</span>" + data.ResponseData[i].Type + "d your post"
                     HTML += "<div class='notifi-msg-ago'>" + data.ResponseData[i].TimeSpan + "</div>"
                     HTML += "</div>"
                     HTML += "<div class='clr'></div>"
