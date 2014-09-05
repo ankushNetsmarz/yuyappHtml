@@ -73,7 +73,10 @@
 <div class="upload-popup-area">
 
 <div class="cross-main-btn">
-                <input type="button" id="cancelUpload" class="cross-btn" value=""></div>
+                <input type="button" id="cancelUpload" class="cross-btn fl" value="">
+                <input type="button"  id="nextUpload" class="like-btn fr" value="Next">
+                <div class="clr"></div>
+                </div>
 <div class="upload-popup-head">
 <h3>Upload Gallery</h3>
 </div>
@@ -121,7 +124,7 @@
 </div>
 </div>
 <div class="cancel-btn">
-<input type="button"  id="nextUpload" class="like-btn" value="Next"></div>
+</div>
 </div>
 </div>
 <!-- upload gallery popup end -->
@@ -853,22 +856,16 @@
                       {
                           top = '485px';
                       }
-                      else {
-                          top = '440px';       //360*640
-                      }
-<<<<<<< HEAD
+                      else if (currentWindowWidth == 480)   //360*480
+					  {
+                          top = '485px'
+                      }          
 					  else if (currentWindowWidth == 615)
                       {
                           top = '485px'
                       }
-                      else
-=======
-                      break;
-                  case 360:
-                      if (currentWindowWidth == 480)   //360*480
->>>>>>> origin/master
-                      {
-                          top = '485px'
+                     else {
+                          top = '440px';       //360*640
                       }
                       break;
                   default:
