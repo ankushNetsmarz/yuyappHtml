@@ -47,7 +47,7 @@ input[placeholder], [placeholder], *[placeholder] {
 .login_inputs .pass_input{width:72%; background:url(../images/pswd-icons.png) no-repeat rgba(255, 255, 255, 0.7); border:none; padding:6px 10px 6px 25px; margin:0 0 15px; background-position:2px 3px; background-size:8%; border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
 */
 .login-field{width:90%; margin:20px auto 0; padding:0; color:#FFF; background:rgba(255, 255, 255, 0.7);border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
-.login-field label span{color: rgba(0, 0, 0, 1); margin:2px; padding:5px 3px 4px 26px;}
+.login-field label span{color: rgba(0, 0, 0, 0.3); margin:2px; padding:5px 3px 4px 26px;}
 
 .user-span{background-image:url("../images/user-icons.png"); background-repeat:no-repeat; background-position:2px 4px; background-size:21%; background-color:rgba(0, 0, 0, 0);}
 
@@ -63,12 +63,12 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .email-span{background-image:url("../images/email-icon.png"); background-repeat:no-repeat; background-position:2px 7px; background-size:31%; background-color:rgba(0, 0, 0, 0);}
 
-.login-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px 5px 25px; margin:2px 0; width:146px;}
+.login-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px 5px 25px; margin:2px 0; width:147px;}
 
 .signup-field{width:90%; margin:3px auto 0; padding:0; color:#FFF; background:rgba(255, 255, 255, 0.7);border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
 .signup-field label span{color: rgba(0, 0, 0, 0.3); margin:2px; padding:5px 3px 4px 26px;}
-.signup-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px; margin:2px 0; width:167px;}
-.signup-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px 5px 25px; margin:2px 0; width:199px;}
+.signup-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px; margin:2px 0; width:165px;}
+.signup-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px 5px 25px; margin:2px 0; width:198px; float:right;}
 
 .forgot{width:50%;}
 .forgot a{text-decoration:none; color:#333;}
@@ -157,7 +157,7 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .profile-setting{height:39px; float:left;}
 
-.cross-main-btn{width:100%; margin:0 auto 20px; text-align:right;}
+.cross-main-btn{width:100%; margin:0 auto 20px; text-align:left;}
 
 .cross-btn{background-image:url(../images/cross-icon.png); background-repeat:no-repeat; background-color:transparent; background-position:0 0; background-size:100%; border:none; height:30px; width:28px; margin:0; padding:0;}
 
@@ -186,8 +186,8 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .edit-pro-field{margin:3px auto 0; padding:0;width:90%; background:#f0f0f0; border:none; border-radius:4px; color:#333; box-shadow:0px 2px 2px -1px rgba(0, 0, 0, 0.8);}
 .edit-pro-field label span{color: rgba(0, 0, 0, 0.3); margin:2px; padding:5px 3px 4px 26px;}
-.edit-pro-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px; margin:2px 0; width:167px;}
-.edit-pro-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px 5px 25px; margin:2px 0; width:199px;}
+.edit-pro-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px; margin:2px 0; width:165px;}
+.edit-pro-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px 5px 25px; margin:2px 0; width:222px; float:right;}
 
 .see-pro-field{margin:3px auto 0; padding:0;width:90%; background:#f0f0f0; border:none; border-radius:4px; color:#333; box-shadow:0px 2px 2px -1px rgba(0, 0, 0, 0.8);}
 .see-pro-field label span{color: rgba(0, 0, 0, 0.3); margin:2px; padding:5px 3px 4px 26px;}
@@ -195,7 +195,7 @@ input[placeholder], [placeholder], *[placeholder] {
 .see-pro-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px 5px 25px; margin:2px 0; width:199px;}
 
 
-.edit_prof_inputs{margin:7% 0 0;}
+.edit_prof_inputs{margin:5% 0 0;}
 
 .see-prof-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:fixed; margin:0; padding:0; top:0; left:0;}
 .see-prof-area{position: absolute; margin: 0px 4%; text-align: center; width: 92%; top:3%; background:none;}
@@ -205,7 +205,7 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .see_popup_box{width:79%; background:#f0f0f0; border:none; padding:6px 10px; border-radius:4px; color:#333; margin:0 0 10px;}
 
-.see-status{margin:5% 0; font-size:14px; color:#76b923;}
+.see-status{margin:0 0 5%; font-size:14px; color:#76b923;}
 .see-status-title{color:#222222;}
 
 .add-frnd-list{width: 100%; margin: 0px auto 10px; height:369px; overflow-y:scroll;}
@@ -242,9 +242,10 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .comment-area{position: absolute; margin: 0px 2%; text-align: center; width: 96%; top:5%; background:none;}
 .comment-head{width:100%; margin:0 auto 15px;background:none; padding:10px 0;}
 .comment-list{width:100%; height:335px; overflow-y:scroll;}
+.comment-list img{width:70%; margin:30% auto;}
 .single-comment{width:100%; margin:7px 0 0; padding:0 0 4px; border-bottom:1px dashed #CCC; color:#FFF;}
 .comment-by-user{width:40px; height:40px; overflow:hidden; margin:0 5px 5px 0;}
-.comment-by-user img{width:40px;background-image:url("../images/no-pic.png"); background-repeat:no-repeat; background-position:0 0; background-size:100% auto; background-color:rgba(0, 0, 0, 0);}
+.comment-by-user img{width:40px;background-image:url("../images/no-pic.png"); background-repeat:no-repeat; background-position:0 0; background-size:100% auto; background-color:rgba(0, 0, 0, 0); margin:0;}
 
 .comment-text{font-size:12px; color:#FFF; white-space:pre-wrap; width:85%; text-align:left;}
 .comment-user{color:#00afbf; font-weight:bold; text-transform:capitalize;}
@@ -377,7 +378,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.see-status{margin:6% 0;}
 	#see_profile{height:510px; overflow:scroll;}
 	#edit_profile{height:510px; overflow:scroll;}
-	.edit_prof_inputs{margin:10% 0 0;}
+	.edit_prof_inputs{margin:5% 0 0;}
 	.edit_prof_box{margin:0 0 15px;}
 	.TabbedPanels{margin:2% 0 0;}
 	.upload-list-main{height:413px;}
@@ -390,6 +391,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.single-upload-popup label input{width:146px;}
 	.notify-badge{margin:0 30% 0 56%;}
 	.display-pic{height:200px;}
+	.edit-pro-field{margin:15px auto 0;}
 	}
 	
 @media screen and (width: 568px) and (height: 320px){
@@ -442,7 +444,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.see-status{margin:2% 0;}
 	#see_profile{height:585px; overflow:scroll;}
 	#edit_profile{height:585px; overflow:scroll;}
-	.edit_prof_inputs{margin:10% 0 0;}
+	.edit_prof_inputs{margin:5% 0 0;}
 	.TabbedPanels{margin:2% 0 0;}
 	.upload-list-main{height:488px;}
 	.upload-area{height:482px;}
@@ -457,6 +459,9 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.display-pic{height:200px; margin:0 0 20px;}
 	.upload-gall-btn{width:49.4%;}
 	.single-upload-popup label input{width:183px;}
+	.edit-pro-field{margin:15px auto 0;}
+	.edit-pro-field label input{width:190px;}
+	.edit-pro-field label select{width:190px;}
 	}
 
 @media screen and (width: 640px) and (height: 360px){
@@ -531,6 +536,8 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.login_inputs .user_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:3px 6px; background-size:7%;}
 	.login_inputs .pass_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 5px; background-size:7%;}
 	.loginpage_btns{margin:15px auto;}
+	.signup_btn_div{width:39%;}
+	.login_btn_div{width:38%;}
 	.need_help{margin:30px 0 0;}
 	.signup-logo{margin:30% 0 10%;}
 	.list-area{height:516px;}
@@ -544,7 +551,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.see-status{margin:6% 0;}
 	#see_profile{height:584px; overflow:scroll;}
 	#edit_profile{height:584px; overflow:scroll;}
-	.edit_prof_inputs{margin:10% 0 0;}
+	.edit_prof_inputs{margin:5% 0 0;}
 	.edit_prof_box{margin:0 0 15px;}
 	.TabbedPanels{margin:2% 0 0;}
 	.upload-list-main{height:488px;}
@@ -562,6 +569,9 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.single-upload-popup label input{width:205px;}
 	.notify-badge{margin:0 30% 0 58%;}
 	.single-full-annotate label input{width:205px;}
+	.signup-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px; margin:2px 0; width:221px;}
+.signup-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px; margin:2px 0; width:240px; float:right;}
+.login-field label input{width:202px;}
 	}
 
 @media screen and (width: 640px) and (height: 384px){
@@ -617,7 +627,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.see-status{margin:2% 0;}
 	#see_profile{height:585px; overflow:scroll;}
 	#edit_profile{height:585px; overflow:scroll;}
-	.edit_prof_inputs{margin:10% 0 0;}
+	.edit_prof_inputs{margin:5% 0 0;}
 	.TabbedPanels{margin:2% 0 0;}
 	.upload-list-main{height:464px;}
 	.upload-area{height:464px;}
@@ -638,6 +648,12 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.single-full-annotate label input{width:183px;}
 	.see_popup_box{margin:0 0 20px;}
 	.see-status{margin:7% 0;}
+	.signup-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px; margin:2px 0; width:200px;}
+.signup-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px; margin:2px 0; width:220px; float:right;}
+.login-field label input{width:181px;}
+.edit-pro-field label input{width:186px;}
+.edit-pro-field label select{width:220px;}
+.edit-pro-field{margin:15px auto 0;}
 	}
 	
 @media screen and (width: 320px) and (height:496px){

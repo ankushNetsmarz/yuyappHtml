@@ -32,6 +32,7 @@
                 <input type="button" id="postComments" class="like-btn" value="Comment">
             </div>
             <div class="comment-list">
+            <img src="images/no-comment.png">
             </div>
         </div>
     </div>
@@ -262,6 +263,8 @@
                     </div>
                     
 <div class="edit_prof_inputs"><form>
+
+<div id="seeStatus" class="see-status"></div>
 
 <div class="edit-pro-field"><label>
 <span class="fl first-span">Full Name</span><input id="editFirstname" type="text" class="fr">
@@ -834,6 +837,10 @@
                           top = '485px';
                       }
                       else if (currentWindowWidth == 480)
+                      {
+                          top = '485px'
+                      }
+					  else if (currentWindowWidth == 615)
                       {
                           top = '485px'
                       }
