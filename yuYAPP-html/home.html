@@ -833,16 +833,16 @@
                       {
                           top = '485px';
                       }
-                      else {
-                          top = '440px';       //360*640
-                      }
-                      break;
-                  case 360:
-                      if (currentWindowWidth == 480)   //360*480
+                      else if (currentWindowWidth == 480)
                       {
                           top = '485px'
                       }
+                      else
+                      {
+                          top = '440px';       //360*640
+                      }
                       break;
+               
                   default:
                       {
                           top = '390px';
