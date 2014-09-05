@@ -1,31 +1,47 @@
 ﻿
-$("#Ficon").on("click", function () {
-    $("#editFirstname").prop("disabled", false);
-    $("#editFirstname").focus();
-
-});
-$("#Licon").on("click", function () {
-    $("#editLastname").prop("disabled", false);
-    $("#editLastname").focus();
-
-});
-$("#Uicon").on("click", function () {
-    $("#editUserName").prop("disabled", false);
-    $("#editUserName").focus();
-
-});
-$("#Gicon").on("click", function () {
-    $("#selector").prop("disabled", false);
-    $("#selector").focus();
-
-});
 
 $("#selector").on("click", function () {
     var select = $(this).val();
-   
+
     localStorage.setItem("gender", select);
 });
 
+
+
+
+
+$("#editDOB").on("click", function () {
+    var options = {
+        date: new Date(),
+        mode: 'date'
+    };
+    datePicker.show(options, function (date) {
+        //  alert("date result " + date);  
+        var date = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
+        if(date=="NaN/NaN/NaN")
+ 	   {
+ 	  
+ 	   }
+        else
+        	{
+        localStorage.setItem("date", date);
+        	}
+    });
+
+});
+$( "#editDOB" ).focus(function() {
+
+	 var dates= localStorage.getItem("date");
+
+  if(dates=="NaN/NaN/NaN")
+	   {
+	   $(this).val(''); 
+	   }
+  else
+	   {
+   $(this).val(dates); 
+	   }
+});
 
 
 
@@ -45,14 +61,21 @@ $("#EditProfile").on("click", function () {
 
 
 function UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editGender) {
-	//checkConnection();
+    //checkConnection();
     var userId = localStorage.getItem("userId");
+    var dates= localStorage.getItem("date");
+    if (dates == null) {
+        dates = "";
+    }
+    if (editGender == null) {
+        editGender = "Male";
+    }
 
     var userData = {
         userId: userId,
         userName: editUserName,
-        password:'',
-        DOB: editDOB,
+        password: '',
+        DOB: dates,
         firstName: editFirstname,
         lastName: editLastname,
         gender: editGender,
@@ -61,19 +84,19 @@ function UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editG
     $.ajax({
         type: "Post",
         beforeSend: showLoader(),
-       url: "http://174.141.233.6/YuY/Users/UpdateProfile",
+        url: "http://174.141.233.6/YuY/Users/UpdateProfile",
         data: userData,
         success: function (data) {
-           
+
             console.log(data);
             window.plugins.toast.show('Profile updated!', 'long', 'center', function (a) { }, function (b) { });
-            
+
             //alert("success..." + data);
         },
         error: function (xhr) {
-        	checkConnection();
-       	 hideLoader();
-         // alert(xhr.responseText);
+            checkConnection();
+            hideLoader();
+            // alert(xhr.responseText);
         }
     }).done(function () {
         hideLoader();

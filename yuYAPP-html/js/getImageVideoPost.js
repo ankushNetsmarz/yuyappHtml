@@ -9,6 +9,7 @@
              $("#edit_profile").css("display", "none");
              $(".follow-friend,.notification").css("display", "none");
              $("#YAPP-Live").css("display", "block");
+             $(".top_heading").text("YAPP-LIVE");
              GetPostNonAnonymousList();
              localStorage.setItem("MenuFlag", "up");
          });
@@ -137,11 +138,11 @@ function GetPostNonAnonymousList() {
 }
 
 /*Set Unfriend*/
-function SetUnFriend() {
+function SetUnFriend(friendId) {
 	//checkConnection();
     var postData = {
         userId: userId,
-        friendId: 2
+        friendId: friendId
     }
     $.ajax({
         type: "GET",
@@ -150,6 +151,10 @@ function SetUnFriend() {
         data: postData,
         success: function (data) {
             //debugger;
+        	GetAllFollowing();
+        	GetRecentFollowingList();
+        	GetAllFollowerList();
+        	GetRecentFollowerList();
             console.log(data);
             //alert("success..." + data);
         },

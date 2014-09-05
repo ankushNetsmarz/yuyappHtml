@@ -8,14 +8,14 @@
 
 </head>
 
-<body class="green-gredient">
+<body class="green-gredient" style="display:none" >
 
 <div class="loader-bg" style="display:none">
 <div class="loader-area"><img src="images/482.GIF"></div>
 </div>
 
 
-<div class="login_main_div" id="LoginDiv">
+<div class="login_main_div" id="LoginDiv" style="display:none">
 
 
 <!-- In this page show login or Register screens -->
@@ -59,7 +59,7 @@
 </div>
 
 <div class="fr need_help">
-<a href="#" class="fl">Need Help&nbsp;&nbsp;<img src="images/help.png" class="fr" style="width:28px;"></a>
+<a href="#" class="fl">Need Help&nbsp;&nbsp;<img  id="help" src="images/help.png" class="fr" style="width:28px;"></a>
 <div class="clr"></div>
 </div>
 <div class="clr"></div>
@@ -149,22 +149,28 @@
         }
      
         $(document).ready(function () {
-            //  var options = {
-            //	  date: new Date(),
-            //	  mode: 'date'
-            //	 };			
-            //	      datePicker.show(options, function(date){
-            //		  alert("date result " + date);  
-            //    }); 
-
+      
 
 
             var LoginName = localStorage.getItem("LoginName");
             var loginPassword = localStorage.getItem("loginPassword");
 
-            if (LoginName && loginPassword != null) {
+            if (LoginName && loginPassword != null)
+             {
+            
                 SignIn(LoginName, loginPassword);
             }
+
+            else {
+              $(".green-gredient").css("display", "block");
+                $("#LoginDiv").css("display", "block");
+               
+            }
+             $("#help").on("click", function () {
+             window.plugins.toast.show('For more information login to www.yuyapp.com !', 'long', 'center', function (a) { }, function (b) { });
+          
+            });
+           
         });
 
 
