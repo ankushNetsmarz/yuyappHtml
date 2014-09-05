@@ -10,6 +10,9 @@ $('#SignUpEmail').blur(function () {
         ValidateEmail();
     }
 });
+$("#SignUpDOB").on("click", function () {
+    alert("hii");
+});
 
 $("#signUpButton").on("click", function () {
     //  $(".signup_inputs, .registerpage_btns, .signup-logo").css("display", "block");
