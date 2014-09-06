@@ -109,7 +109,7 @@ input[placeholder], [placeholder], *[placeholder] {
 .interest-topbar{background:#76b923; height:50px; width:100%;}
  .left-top-btn{ position:absolute; left:0; top:0; z-index:1;}
  .right-top-btn{ position:absolute; right:10px; top:5px; z-index:2;}
- .right-top-btn img{background-image:url("../images/no-pic.png"); background-repeat:no-repeat; background-position:0 0; background-size:100% auto; background-color:rgba(255, 255, 255, 1);}
+ .right-top-btn img{background-image:url("../images/no-pic-white.png"); background-repeat:no-repeat; background-position:0 0; background-size:100% auto; background-color:rgba(255, 255, 255, 0); border:none;}
  .menu_btn_top{ background:url(../images/menu-icon.png) no-repeat 0px 0px rgba(0, 0, 0, 0); height:25px; width:34px; margin:15px 0 0 10px; padding:0; border:none; background-size:28px;}
  .map_btn_top{ background:url(../img/top_tick_icons.png) no-repeat -39px 9px rgba(0, 0, 0, 0); height:59px; width:59px; margin:0; padding:0; border:none;}
  
@@ -219,10 +219,10 @@ input[placeholder], [placeholder], *[placeholder] {
 .menu-shadow img{width:100%; opacity:0.5;}
 
 .inner-pages {
-position: absolute; background-color:#ffffff; top: 0px; width: 96%; padding: 0px; margin:0; height:100%;}
+position: absolute; background-color:#ffffff; top: 0px; width:100%; padding: 0px; margin:0; height:100%;}
 
 .inner-page-bg {
-background-image:url("../images/body-bg.png"); background-repeat: no-repeat; background-size:135% auto; background-position:center bottom; background-attachment:fixed; width:100%; padding:0px 2%; margin:0; height:100%;}
+background-image:url("../images/body-bg.png"); background-repeat: no-repeat; background-size:135% auto; background-position:center bottom; background-attachment:fixed; width:96%; padding:0px 2%; margin:0; height:100%;}
 
 .wordwall-btns{width:100%; margin:0 auto;}
 .like-btn{padding:7px 15px; border-bottom-right-radius:7px; border-top-left-radius:7px; background:rgba(118, 185, 35, 0.7); border:none; color:#fff;text-shadow:0 1px 0 rgba(0, 0, 0, 0.7); margin:0 3px 0 0;}
@@ -284,7 +284,8 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .add-annotation a{ color: rgb(118, 185, 35); text-decoration:none;}
 
 .Upload-btn{padding:0; border:none; background:url(../images/add-status.png) no-repeat center center rgba(0, 0, 0, 0); background-size:100%; width:30px; height:30px;}
-.upload-list-main{height:315px; margin:1.2% 0 0;}
+.upload-list-main{margin:1.2% 0 0;}
+.secret-list-area{padding:0; width:100%; height:301px; overflow-y:scroll;}
 .upload-area{padding:0; width:100%; height:331px; overflow-y:scroll;}
 .single-upload{ width:100%; margin:0 0 20px; background:url(../images/menu-shadow.png) no-repeat bottom center;}
 .upload-user-pic{width:49px; height:49px; overflow:hidden; box-shadow:2px 2px 4px -2px rgba(0, 0, 0, 0.7); margin:0 5px 5px 0;}
@@ -293,7 +294,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .uploaded-pic{max-height:300px; overflow: hidden; width: 100%;}
 .uploaded-pic img{width: 100%;}
 .select-ctgry{background:#fff;border:none; box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7); padding: 7px 10px; width: 45%; margin:0 10px;}
-.Upload-text-btn{padding:0; border:none; background-image:url(../images/upload.png); background-repeat:no-repeat; background-position:center center; background-color:#00afbf; background-size:26px auto; width:68px; height:35px;}
+.Upload-text-btn{padding:0; border:none; background-image:url(../images/upload.png); background-repeat:no-repeat; background-position:center center; background-color:#00afbf; background-size:26px auto; width:60px; height:35px;}
 
 .upload-popup-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:absolute; margin:0; padding:0; top:0; left:0;}
 .upload-popup-area{position: absolute; margin: 0px 4%; text-align: center; width: 92%; top:0%; background:none;}
@@ -326,6 +327,10 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 
 .swip-width{width:80% !important; height:35px !important; float:left !important;}
 .swiper-nav span{ line-height:35px !important;}
+
+.generateKey{width:100%; margin:7px auto 0;}
+.generateKey a{text-decoration: none; padding: 0px; text-align: center; margin: 0px auto; display: inline-flex;}
+.generateKey a img{width:21px;}
 
 /*-- This css for Mobile's different resolutions --*/
 
@@ -364,7 +369,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.login_inputs .pass_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 2px; background-size:7%;}
 	.loginpage_btns{margin:30px auto;}
 	.list-area{height:445px;}
-	.main_div{height:518px; overflow:scroll;}
+	.main_div{height:518px;}
 	.ctgry-row{margin:13% auto 0;}
 	.ctgry-row-2{margin:13% auto 0;}
 	.ctgry-row-3{margin:13% auto 0;}
@@ -381,7 +386,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.edit_prof_inputs{margin:5% 0 0;}
 	.edit_prof_box{margin:0 0 15px;}
 	.TabbedPanels{margin:2% 0 0;}
-	.upload-list-main{height:413px;}
+	/*.upload-list-main{height:413px;}*/
 	.upload-area{height:413px;}
 	.comment-head{margin:0 auto;}
 	.comment-list{height:190px;}
@@ -392,6 +397,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.notify-badge{margin:0 30% 0 56%;}
 	.display-pic{height:200px;}
 	.edit-pro-field{margin:15px auto 0;}
+	.secret-list-area{height:389px;}
 	}
 	
 @media screen and (width: 568px) and (height: 320px){
@@ -446,7 +452,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	#edit_profile{height:585px; overflow:scroll;}
 	.edit_prof_inputs{margin:5% 0 0;}
 	.TabbedPanels{margin:2% 0 0;}
-	.upload-list-main{height:488px;}
+	/*.upload-list-main{height:488px;}*/
 	.upload-area{height:482px;}
 	.ctgry-row{margin:15% 0 0;}
 	.ctgry-row-2{margin:15% 0 0;}
@@ -462,6 +468,8 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.edit-pro-field{margin:15px auto 0;}
 	.edit-pro-field label input{width:190px;}
 	.edit-pro-field label select{width:190px;}
+	.Upload-text-btn{width:67px;}
+	.secret-list-area{height:460px;}
 	}
 
 @media screen and (width: 640px) and (height: 360px){
@@ -554,7 +562,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.edit_prof_inputs{margin:5% 0 0;}
 	.edit_prof_box{margin:0 0 15px;}
 	.TabbedPanels{margin:2% 0 0;}
-	.upload-list-main{height:488px;}
+	/*.upload-list-main{height:488px;}*/
 	.upload-area{height:482px;}
 	.ctgry-row{margin:15% 0 0;}
 	.ctgry-row-2{margin:15% 0 0;}
@@ -572,6 +580,8 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.signup-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px; margin:2px 0; width:221px;}
 .signup-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px; margin:2px 0; width:240px; float:right;}
 .login-field label input{width:202px;}
+.Upload-text-btn{width:70px;}
+.secret-list-area{height:459px;}
 	}
 
 @media screen and (width: 640px) and (height: 384px){
@@ -629,7 +639,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	#edit_profile{height:585px; overflow:scroll;}
 	.edit_prof_inputs{margin:5% 0 0;}
 	.TabbedPanels{margin:2% 0 0;}
-	.upload-list-main{height:464px;}
+	/*.upload-list-main{height:464px;}*/
 	.upload-area{height:464px;}
 	.ctgry-row{margin:15% 0 0;}
 	.ctgry-row-2{margin:15% 0 0;}
@@ -654,6 +664,8 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .edit-pro-field label input{width:186px;}
 .edit-pro-field label select{width:220px;}
 .edit-pro-field{margin:15px auto 0;}
+.Upload-text-btn{width:68px;}
+.secret-list-area{height:435px;}
 	}
 	
 @media screen and (width: 320px) and (height:496px){
@@ -690,6 +702,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.single-upload-popup{margin:15px 0 0;}
 	.edit-pro-field label select{width:198px;}
 	.edit-pro-field label input{width:165px;}
+	.secret-list-area{height:317px;}
 	}
 	
 @media screen and (width: 600px) and (height: 960px){

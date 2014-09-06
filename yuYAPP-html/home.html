@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -238,7 +238,7 @@
         <div class="inner-pages">
             <div class="inner-page-bg">
                 <!-- after the click on single menu show this div -->
-                <div  class="ctgry-list-main" style="display:block;">
+                <div  class="ctgry-list-main" style="display:none;">
 
 <div class="post-status">
 
@@ -420,6 +420,80 @@
 
                 </div>
                 <!-- YAPP Live screen ends here -->
+                
+                 <!-- Shh... screen start here -->
+
+                <div class="shh-screen" style="display: block;">
+                  
+                  <div class="generateKey"><a href="#"><img src="images/key-icon.png">&nbsp;Generate Key</a></div>
+                  
+                    <div class="post-status">
+                        <div class="swiper-nav swiper-container swip-width">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide" id=""><span>All</span></div>
+                                        <div class="swiper-slide" id=""><span>Images</span></div>
+                                        <div class="swiper-slide" id=""><span>Videos</span></div>
+
+                                    </div>
+                                </div>
+                        <input id="uploadButtonVideoImages" type="button" class="Upload-text-btn">
+                    </div>
+
+                    <div id="TabbedPanels4" class="TabbedPanels">
+                        <ul class="TabbedPanelsTabGroup">
+                            <li class="TabbedPanelsTab" tabindex="0">Worldwide</li>
+                            <li class="TabbedPanelsTab" tabindex="0">Near You</li>
+                        </ul>
+                        <div class="TabbedPanelsContentGroup">
+                            <div class="TabbedPanelsContent">
+
+                                <div class="upload-list-main">
+                                    <div class="secret-list-area">
+                                    
+                                    <div class="single-upload">
+                                    <div class="upload-title">
+                                    <div class="fl upload-user-pic">
+                                    <img src="images/user-pic-list.jpg"></div>
+                                    <div class="fl user-name-title">Dinesh<br><span>(11 days ago)</span></div>
+                                    <div class="clr"></div>
+                                    <div>
+                                    <div class="uploaded-pic">
+                                    <img src="images/user-profile-pic.png"></div>
+                                    <p><strong>This is My New Image</strong></p>
+                                    <p>deep</p> 
+                                    </div>
+                                    </div>
+                                    <div class="like-cmnt-no">
+                                    <span>0</span> Good, <span>0</span> Comments, <span>0</span> Bad</div>
+                                    <div class="wordwall-btns" postid="152">
+                                    <input type="button" value="Good" class="like-btn like">
+                                    <input type="button" value="Comment" class="like-btn commentButton">
+                                    <input type="button" value="Bad" class="like-btn dislike">
+                                    </div>
+                                    <div class="clr"></div>
+                                    </div>
+                                    
+                                    </div>
+
+                                    <div class="clr"></div>
+                                </div>
+                            </div>
+                            <div class="TabbedPanelsContent">
+                                <div class="upload-list-main">
+                                    <div class="upload-area">
+
+
+                                        <div class="clr"></div>
+                                    </div>
+
+                                    <div class="clr"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Shh..... screen ends here -->
 
                 <!-- add new frends screen start here -->
 
@@ -875,7 +949,9 @@
                       topFlag = 1;
               }
           });
-
+    </script>
+    <script type="text/javascript">
+        var TabbedPanels4 = new Spry.Widget.TabbedPanels("TabbedPanels4");
     </script>
     <script type="text/javascript">
         var TabbedPanels3 = new Spry.Widget.TabbedPanels("TabbedPanels3");
