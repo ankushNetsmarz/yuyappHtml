@@ -598,6 +598,7 @@
 
       <script>
           var webservicesiteurl = "http://174.141.233.6/YuY/";
+          var userId = localStorage.getItem("userId");
           var UploadFileFlag;
           var pictureSource;   // picture source
           var destinationType; // sets the format of returned value 
@@ -608,7 +609,7 @@
 
           function onDeviceReady() {
 
-        	  checkConnection();
+        	  //checkConnection();
               pictureSource = navigator.camera.PictureSourceType;
               destinationType = navigator.camera.DestinationType;
           }
@@ -670,7 +671,7 @@
               options.mimeType = "video/mp4";
 
               var params = {};
-              params.postedBy = 1;
+              params.postedBy = userId;
 
               params.description = description;
               params.postFileTitle = title;
@@ -700,8 +701,7 @@
               hideLoader();
               $("#UploadTitle").val('');
               $("#UploadDescription").val('');
-              $("#Upload1Annotate").val('');
-              $("#Upload2Annotate").val('');
+        
           }
 
           function fail(error) {

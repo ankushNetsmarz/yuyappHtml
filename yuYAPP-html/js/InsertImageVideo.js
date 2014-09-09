@@ -17,6 +17,7 @@ function InsertPostImage(imageURLs) {
         allowedUser: "",
         deniedUser: "",
         postType: "1", /*0 for Status, 1 for the Image,  2 for VIdeo*/
+        isanonymous:0,
         file: imageURLs,
         positiveAnnotation: a1,
         negativeAnnotation: a2,
@@ -33,8 +34,7 @@ function InsertPostImage(imageURLs) {
             console.log(data);
         	 $("#UploadTitle").val('');
         	 $("#UploadDescription").val('');
-        	 $("#Upload1Annotate").val('');
-        	$("#Upload2Annotate").val('');
+        	
             window.plugins.toast.show('Feed Added!', 'long', 'center', function (a) { }, function (b) { });
             
             //alert("success..." + data);

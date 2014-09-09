@@ -59,6 +59,8 @@ $("#selectors").on("click", function () {
 });
 
 $("#backButtonRegister").on("click", function () {
+	$("#userLoginEmailId").val('');
+	$("#userLoginPassword").val('');
     $("#SignUpFullName, #SignUpPassword, #SignUpDOB, #SignUpgender, #SignUpUserName, #SignUpEmail").val('');
    
  

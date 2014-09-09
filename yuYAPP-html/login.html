@@ -46,13 +46,13 @@
 
 
 <div class="fl login_btn_div" id="loginButtonDiv" >
-<div class="left_btn fl"><button type="submit" id="loginButton" class="but"><img src="images/login-icon.png" class="fl" style="margin:9px 0 0; width:17px;"> Login</button></div>
+<div class="left_btn fl"><button type="submit" id="loginButton" class="but"><img src="images/login-icon.png" class="fl" style="margin:6px 0 0 10px; width:17px;"> Login</button></div>
 <div class="clr"></div>
 </div>
 
 
 <div class="fr signup_btn_div" id="signUpButtonDiv">
-<div class="left_btn fr"><button type="submit" id="signUpButton" class="but">Signup <img src="images/signup-icon.png" class="fr" style="margin:9px 0 0; width:17px;"></button></div>
+<div class="left_btn fr"><button type="submit" id="signUpButton" class="but">Signup <img src="images/signup-icon.png" class="fr" style="margin:6px 10px 0 0; width:17px;"></button></div>
 
 <div class="clr"></div>
 </div>
@@ -118,12 +118,12 @@
 <div class="registerpage_btns">
 
 <div class="fl login_btn_div">
-<div class="left_btn fl"><button type="submit" id="backButtonRegister" class="but"><img src="images/back-icon.png" class="fl" style="margin:11px 0 0;"> Back</button></div>
+<div class="left_btn fl"><button type="submit" id="backButtonRegister" class="but"><img src="images/back-icon.png" class="fl" style="margin:7px 0 0 10px;"> Back</button></div>
 <div class="clr"></div>
 </div>
 
 <div class="fr signup_btn_div">
-<div class="left_btn fr"><button type="submit" id="RegisterButton" class="but">Register <img src="images/register-icon.png" class="fr" style="margin:11px 0 0;"></button></div>
+<div class="left_btn fr"><button type="submit" id="RegisterButton" class="but">Register <img src="images/register-icon.png" class="fr" style="margin:7px 10px 0 0;"></button></div>
 
 <div class="clr"></div>
 </div>
@@ -144,7 +144,7 @@
     <script>
         document.addEventListener("deviceready", onDeviceReady, false);
         function onDeviceReady() {
-           checkConnection();       
+          // checkConnection();       
         }
      
         $(document).ready(function () {
@@ -161,7 +161,8 @@
             }
 
             else {
-              $(".green-gredient").css("display", "block");
+              $(".green-gredient").css("display", "table");
+              
                 $("#LoginDiv").css("display", "block");
                
             }
