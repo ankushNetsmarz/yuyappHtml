@@ -214,6 +214,16 @@ input[placeholder], [placeholder], *[placeholder] {
 .generate-key-main .add-key{background:#fff;border:none; box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7); padding: 7px 10px; width: 93%;}
 .add-key-btn{margin:15px auto !important;}
 
+.post-user-list{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:absolute; margin:0; padding:0; top:0; left:0;}
+.post-user-area{position: absolute; margin: 0px 2%; text-align: center; width: 96%; top:3%; background:none;}
+.post-user-list-main{width:100%; height:400px; overflow:scroll;}
+
+.post-user-frnd-main{width:48.5%; float: left; margin: 15px 0px 0px 5px; border-bottom:1px dotted #aaa;}
+.post-user-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#555; font-weight: bold; width:100%; line-height:50px; background:#f3f3f3; border-top-left-radius:100%; border-bottom-left-radius:100%; position:relative;}
+
+post-user-btn-div{width:100%;}
+.post-user-btn{float:right;background-image:url(../images/plug.png); background-repeat:no-repeat; background-position:3px center; background-size:13px auto; background-color:rgba(118, 185, 35, 1); border: medium none; color: rgb(255, 255, 255); margin:0px; padding:3% 4% 3% 12%; cursor:pointer;}
+
 .add-frnd-list{width: 100%; margin: 0px auto 10px; height:369px; overflow-y:scroll;}
 .plug-frnd-main{width:48%; float: left; margin: 15px 0px 0px 5px; border-bottom:1px dotted;}
 .plug-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#555; font-weight: bold; width:100%; line-height:50px; background:#f3f3f3; border-top-left-radius:100%; border-bottom-left-radius:100%;}
@@ -269,7 +279,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 
 .like-cmnt-no{margin: 0px 0px 10px; text-align: left; font-size: 11px; color: rgb(170, 170, 170); width:100%;}
 .like-cmnt-no span{color: rgb(0, 175, 191);}
-.checkbox-list{display:none; position:absolute; top:0; right:0; line-height:0;}
+.checkbox-list{display:none; position:absolute; top:3px; right:3px; line-height:0;}
 
 .full-annotate-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:absolute; margin:0; padding:0; top:0; left:0;}
 .full-annotate-area{position: absolute; margin: 0px 4%; text-align: center; width: 92%; top:5%; background:none;}
@@ -405,6 +415,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.display-pic{height:200px;}
 	.edit-pro-field{margin:15px auto 0;}
 	.secret-list-area{height:389px;}
+	.post-user-list-main{height:490px;}
 	}
 	
 @media screen and (width: 568px) and (height: 320px){
@@ -477,6 +488,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.edit-pro-field label select{width:190px;}
 	.Upload-text-btn{width:67px;}
 	.secret-list-area{height:460px;}
+	.post-user-list-main{height:560px;}
 	}
 
 @media screen and (width: 640px) and (height: 360px){
@@ -589,6 +601,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .login-field label input{width:202px;}
 .Upload-text-btn{width:70px;}
 .secret-list-area{height:459px;}
+.post-user-list-main{height:560px;}
 	}
 
 @media screen and (width: 640px) and (height: 384px){
@@ -673,6 +686,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .edit-pro-field{margin:15px auto 0;}
 .Upload-text-btn{width:68px;}
 .secret-list-area{height:435px;}
+.post-user-list-main{height:540px;}
 	}
 	
 @media screen and (width: 320px) and (height:496px){
@@ -710,6 +724,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.edit-pro-field label select{width:198px;}
 	.edit-pro-field label input{width:165px;}
 	.secret-list-area{height:317px;}
+	.post-user-list-main{height:420px;}
 	}
 	
 @media screen and (width: 600px) and (height: 960px){
