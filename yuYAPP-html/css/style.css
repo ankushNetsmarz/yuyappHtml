@@ -724,12 +724,10 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.edit-pro-field label select{width:198px;}
 	.edit-pro-field label input{width:165px;}
 	.secret-list-area{height:317px;}
-<<<<<<< HEAD
 	.post-user-list-main{height:420px;}
-=======
 	.signup-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px; margin:2px 0; width:164px;}
 .signup-field label select{border:none; background:rgba(255, 255, 255, 0); padding:0; margin:0; width:173px; float:right; height:22px;}
->>>>>>> origin/master
+
 	}
 	
 @media screen and (width: 600px) and (height: 960px){
