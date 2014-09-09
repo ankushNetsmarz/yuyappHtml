@@ -20,7 +20,7 @@ html{width:100%; height:100%; margin:0; padding:0;}
 
 a img{border:none;}
 
-body{background:#FFF; width:100%; height:100%; margin:0; padding:0; display:table !important; font-family: 'Open Sans'; font-size:13px;}
+body{background:#FFF; width:100%; height:100%; margin:0; padding:0; display:table; font-family: 'Open Sans'; font-size:13px;}
 
 .green-gredient{background: #dbff9a; /* Old browsers */
 background: -moz-radial-gradient(center, ellipse cover,  #dbff9a 0%, #428a00 100%); /* FF3.6+ */
@@ -79,11 +79,11 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .login_btn_div{width:45%; height:36px; }
 .login_btn{background:url(../images/login-icon.png), url(../images/login-btn-bg1.png); background-position:5px 10px, 0 0; background-repeat:no-repeat, repeat-x; width:100%; height:36px; border:none; cursor:pointer; color:#FFF; text-shadow:0 0 0 #000; font-size:16px; margin-left:14px;}
-.but{background:none; border:0; line-height:32px; color:#fff; font-size:17px; text-align:center; width:100%;}
+.but{background:none; border:0; line-height:28px; color:#fff; font-size:17px; text-align:center; width:100%;}
 
 .login_btn_div .left_btn{ width:101%; background:url(../images/login-clck-btn.png); height:36px; background-repeat:no-repeat; background-position:0 0;color:#fff;}
 
-.signup_btn_div{width:45%; height:36px;}
+.signup_btn_div{width:46%; height:36px;}
 .signup_btn_div .left_btn{ width:102%; background:url(../images/signup-clck-btn.png); height:36px; background-repeat:no-repeat; background-position:0 0;color:#fff;}
 .signup_btn_div .left_btn button{color:#333;}
 .signup_btn_div .right_btn{ width:14px; background:url(../images/signup-btn-bg2.png) 1px 0px no-repeat; height:36px;}
@@ -710,6 +710,8 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.edit-pro-field label select{width:198px;}
 	.edit-pro-field label input{width:165px;}
 	.secret-list-area{height:317px;}
+	.signup-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px; margin:2px 0; width:164px;}
+.signup-field label select{border:none; background:rgba(255, 255, 255, 0); padding:0; margin:0; width:173px; float:right; height:22px;}
 	}
 	
 @media screen and (width: 600px) and (height: 960px){

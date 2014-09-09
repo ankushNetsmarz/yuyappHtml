@@ -1,6 +1,6 @@
 ﻿var mainUrl = "http://174.141.233.6/YuY/users/";
 var webservicesiteurl = "http://174.141.233.6/YuY/";
-var demoUrl = "http://174.141.233.6/YuY_Demo/";
+//var webservicesiteurl = "http://174.141.233.6/YuY_Demo/";
 //<!--http://174.141.233.6/YuY/UserData/ProfilePic/-->
 
 function hideLoader() {
