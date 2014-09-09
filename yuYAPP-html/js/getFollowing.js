@@ -24,7 +24,7 @@ function GetAllFollowing() {
         type: "GET",
         beforeSend: showLoader(),
 
-        url: "http://174.141.233.6/YuY/Users/GetAllFollowing",
+        url: webservicesiteurl + "Users/GetAllFollowing",
         data: inputdata,
         dataType: "json",
 
@@ -36,7 +36,7 @@ function GetAllFollowing() {
             if (data.ResponseData.length > 0) {
                
                 for (var i = 0; i < data.ResponseData.length; i++) {
-                    var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
+                    var ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic;
 
                     HTML += "<div class='single-frnd-main'>"
                     HTML += "<div class='single-frnd'>"
@@ -79,7 +79,7 @@ function GetRecentFollowingList() {
         type: "GET",
         beforeSend: showLoader(),
         //url: "http://localhost:6269/Users/GetRecentFollowing",
-        url: "http://174.141.233.6/YuY/Users/GetRecentFollowing",
+        url: webservicesiteurl + "Users/GetRecentFollowing",
         data: inputdata,
         dataType: "json",
 
@@ -89,7 +89,7 @@ function GetRecentFollowingList() {
             if (data.ResponseData.length > 0) {
              
             	for (var i = 0; i < data.ResponseData.length; i++) {
-                    var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
+            	    var ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic;
 
                     HTML += "<div class='single-frnd-main'>"
                     HTML += "<div class='single-frnd'>"

@@ -55,7 +55,7 @@ function SignIn(userLoginEmailId, loginPassword) {
     $.ajax({
         type: "GET",
         beforeSend: showLoader(),
-        url: mainUrl + "login",
+        url: webservicesiteurl + "Users/login",
         data: userData,
         success: function (data) {
 

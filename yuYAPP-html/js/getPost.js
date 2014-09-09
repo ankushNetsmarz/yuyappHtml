@@ -7,8 +7,8 @@ $("#WordWallOption").on("click", function () {
     });
     $(".top_heading").text("WORD");
     $(".ctgry-list-main").css("display", "block");
-
-  
+    GetUserPost();
+    $(".shh-screen").css("display", "none");
     localStorage.setItem("MenuFlag", "up");
 });
 
@@ -28,7 +28,7 @@ var userId = localStorage.getItem("userId");
                 type: "GET",
                 beforeSend: showLoader(),
               //  url: "http://localhost:6269/posts/GetPosts",
-                url: "http://174.141.233.6/YuY/posts/GetPosts",
+                url: webservicesiteurl + "posts/GetPosts",
                 data: postData,
                 success: function (data) {
                   
@@ -39,8 +39,16 @@ var userId = localStorage.getItem("userId");
                     {
 
                         for (var i = 0; i < data.ResponseData.length; i++) {
-                            var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
-                            var positiveAnnotations = data.ResponseData[i].PositiveAnnotation;
+                            var ProfilePicURL = data.ResponseData[i].ProfilePic;
+                            if (ProfilePicURL == "") {
+                              
+                                ProfilePicURL = "images/no-pic.png";
+                            }
+                            else
+                            {
+                                ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic;
+                            }
+                             var positiveAnnotations = data.ResponseData[i].PositiveAnnotation;
                             var negativeAnnotations = data.ResponseData[i].NegativeAnnotation;
                             
                             var liked = data.ResponseData[i].PositiveLike;
@@ -109,7 +117,7 @@ var userId = localStorage.getItem("userId");
             $.ajax({
                 type: "GET",
                 beforeSend: showLoader(),
-                url: "http://174.141.233.6/YuY/posts/GetPostComments",
+                url: webservicesiteurl + "posts/GetPostComments",
                 data: postData,
                 success: function (data) {
 
@@ -118,7 +126,7 @@ var userId = localStorage.getItem("userId");
                     if (data.ResponseData.length > 0) {
 
                         for (var i = 0; i < data.ResponseData.length; i++) {
-                        	 var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
+                            var ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic;
                                  HTML += "<div class='single-comment'>"
                                  HTML += "<div class='fl comment-by-user'><img src=" + ProfilePicURL + " /></div>"
                                  HTML += "<div class='fl comment-text'><span class='comment-user fl'> " + data.ResponseData[i].UserName + " </span><div class='comment-msg-ago fl'>" + data.ResponseData[i].TimeSpan + "</div> <div style='width:100%;'>" + data.ResponseData[i].Comment + "</div></div>"

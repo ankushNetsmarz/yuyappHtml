@@ -13,6 +13,7 @@ $("#RequestOption").on("click", function () {
     $("#edit_profile,#see_profile").css("display", "none");
     GetPeopleRandom();
     $(".ctgry-list-main,.follow-friend,.notification").css("display", "none");
+    $(".shh-screen").css("display", "none");
     $("#YAPP-Live").css("display", "none");
     $(".add-frnd").css("display", "block");
     $(".top_heading").text("FIND-FRIENDS");
@@ -33,7 +34,7 @@ function GetPeopleRandom() {
     $.ajax({
         type: "GET",
         //   url: "http://localhost:6269/Users/GetPeopleRandom",
-        url: "http://174.141.233.6/YuY/Users/GetPeopleRandom",
+        url: webservicesiteurl +"Users/GetPeopleRandom",
         beforeSend: showLoader(),
         data: inputdata,
         dataType: "json",
@@ -46,7 +47,7 @@ function GetPeopleRandom() {
             if (data.ResponseData.length > 0) {
 
                 for (var i = 0; i < data.ResponseData.length; i++) {
-                    var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].PicUrl;
+                    var ProfilePicURL = webservicesiteurl + data.ResponseData[i].PicUrl;
 
 
                     var UserId = data.ResponseData[i].UserId;
@@ -86,7 +87,7 @@ function AddFriend(friendId) {
         type: "POST",
         beforeSend: showLoader(),
         // url: "http://localhost:6269/users/AddFriend",
-        url: "http://174.141.233.6/YuY/users/AddFriend",
+        url: webservicesiteurl + "users/AddFriend",
         data: postData,
         success: function (data) {
 

@@ -6,7 +6,7 @@ function GetNotificationCount() {
     $.ajax({
         type: "GET",
         //url: "http://localhost:6269/posts/GetNotificationCount",
-        url: "http://174.141.233.6/YuY/posts/GetNotificationCount",
+        url: webservicesiteurl + "posts/GetNotificationCount",
         data: postData,
         success: function (data) {
             UpdateNotification()
@@ -29,7 +29,7 @@ function UpdateNotification() {
     $.ajax({
         type: "GET",
        // url: "http://localhost:6269/posts/UpdateNotification",
-       url: "http://174.141.233.6/YuY/posts/UpdateNotification",
+        url: webservicesiteurl + "posts/UpdateNotification",
         data: postData,
         success: function (data) {
             //GetNotificationCount();

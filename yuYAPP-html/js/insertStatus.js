@@ -35,7 +35,7 @@ function InsertStatus() {
         type: "POST",
         beforeSend: showLoader(),
     //    url: "http://localhost:6269/posts/add",
-        url: "http://174.141.233.6/YuY/posts/add",
+        url: webservicesiteurl + "posts/add",
         data: postData,
         success: function (data) {
             GetUserPost();
@@ -73,7 +73,7 @@ function InsertPostComment(postIdForComment) {
         type: "Post",
         beforeSend: showLoader(),
        // url: "http://localhost:6269/posts/addcomments",
-        url: "http://174.141.233.6/YuY/posts/AddComments",
+        url: webservicesiteurl + "posts/AddComments",
         data: postData,
         success: function (data) {
        

@@ -187,7 +187,7 @@ function Signup(SignUpFirstName, SignUpLastName, SignUpUserName, SignUpUserName,
         type: "POST",
         // url: "http://localhost:6269/users/signup",
         beforeSend: showLoader(),
-        url: mainUrl + "signup",    
+        url: webservicesiteurl + "Users/signup",
         data: userData,
         success: function (data) {
           
@@ -224,7 +224,7 @@ function ValidateEmail() {
     $.ajax({
         type: "GET",
         beforeSend: showLoader(),
-        url: mainUrl + "checkemail",
+        url: webservicesiteurl + "Users/checkemail",
         data: postData,
         success: function (data) {
 

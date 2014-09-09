@@ -3,6 +3,7 @@
              $('.inner-pages').animate({
                  'top': "0px" //moves up
              });
+             $(".shh-screen").css("display", "none");
              $("#see_profile").css("display", "none");
              $(".ctgry-list-main").css("display", "none");
              $(".add-frnd").css("display", "none");
@@ -10,51 +11,83 @@
              $(".follow-friend,.notification").css("display", "none");
              $("#YAPP-Live").css("display", "block");
              $(".top_heading").text("YAPP-LIVE");
-             GetPostNonAnonymousList();
+             var isall = "true";
+             var posttype = 0;
+             window.localStorage.setItem("Myuploads", "all");
+             GetPostNonAnonymousList(isall, posttype);
              localStorage.setItem("MenuFlag", "up");
          });
   
+  $("#AllPosts").on("click", function () {
+      var isall;
+      var check = window.localStorage.getItem("Myuploads");
+      if (check == "my") {
+          isall = "false";
+      }
+      else
+      {
+          isall = "true";
+      }
+      var posttype = 0;
+      GetPostNonAnonymousList(isall, posttype)
+  });
+  $("#ImagePost").on("click", function () {
+      var isall;
+      var check = window.localStorage.getItem("Myuploads");
+      if (check == "my") {
+          isall = "false";
+      }
+      else {
+          isall = "true";
+      }
+      var posttype =1;
+      GetPostNonAnonymousList(isall, posttype)
+  });
+  $("#VideoPost").on("click", function () {
+      var isall;
+      var check = window.localStorage.getItem("Myuploads");
+      if (check == "my") {
+          isall = "false";
+      }
+      else {
+          isall = "true";
+      }
+      var posttype = 2;
+      GetPostNonAnonymousList(isall, posttype)
+  });
+  $("#MyUploads").on("click", function () {
+      window.localStorage.setItem("Myuploads", "my");
+      var isall = "false";
+      var posttype = 0;
+      GetPostNonAnonymousList(isall, posttype)
+  });
+  $("#AllUploads").on("click", function () {
+
+      var isall = "true";
+      var posttype = 0;
+      GetPostNonAnonymousList(isall, posttype)
+      window.localStorage.setItem("Myuploads", "all");
+  });
+  
 var userId = localStorage.getItem("userId");
 
-function GetPostAnonymousList() {
-	//checkConnection();
-    var postData = {
-        userId: userId,
-        start: 1,
-        end: 10,
-        isall: false
-    }
-    $.ajax({
-        type: "GET",
-        //url: "http://localhost:6269/posts/GetPostAnonymousList",
-       url: "http://174.141.233.6/YuY/posts/GetPostAnonymousList",
-        data: postData,
-        success: function (data) {
-            //debugger;
-            console.log(data);
-            //alert("success..." + data);
-        },
-        error: function (xhr) {
-       	 hideLoader();
-         // alert(xhr.responseText);
-        }
-    });
-}
+
 
 /*get GetPostNonAnonymousList for Shhh */
-function GetPostNonAnonymousList() {
+function GetPostNonAnonymousList(isall,posttype) {
 	//checkConnection();
     var postData = {
         userId: userId,
         start: 1,
         end: 10,
-        isall: true
+        posttype: posttype, // 0 for all, 1 for images, 2 for videos 
+        isall: isall
     }
     $.ajax({
         type: "GET",
         beforeSend: showLoader(),
         //url: "http://localhost:6269/posts/GetPostNonAnonymousList",
-        url: "http://174.141.233.6/YuY/posts/GetPostNonAnonymousList",
+        url: webservicesiteurl + "posts/GetPostNonAnonymousList",
         data: postData,
         success: function (data) {
             var HTML = "";
@@ -64,14 +97,16 @@ function GetPostNonAnonymousList() {
                 for (var i = 0; i < data.ResponseData.length; i++) {
 
 
-                	   var PostFileURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].PostFileURL;
-                	   var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
+                    var PostFileURL = webservicesiteurl + data.ResponseData[i].PostFileURL;
+                    var ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic;
                 	   var positiveAnnotations = data.ResponseData[i].PositiveAnnotation;
                 	   var negativeAnnotations = data.ResponseData[i].NegativeAnnotation;
 
-                       var POsttype = data.ResponseData[i].POsttype;
+                	   var POsttype = data.ResponseData[i].POsttype; //1 for image, 2 for videos
+                       
                        var liked = data.ResponseData[i].PositiveLike;
                        var negativeLiked = data.ResponseData[i].NegativeLike;
+
                        HTML += "<div class='single-upload'>"
                        HTML += "<div class='upload-title'>"
                        HTML += "<div class='fl upload-user-pic'>"
@@ -147,7 +182,7 @@ function SetUnFriend(friendId) {
     $.ajax({
         type: "GET",
         //url: "http://localhost:6269/posts/SetUnFriend",
-        url: "http://174.141.233.6/YuY/posts/SetUnFriend",
+        url: webservicesiteurl + "posts/SetUnFriend",
         data: postData,
         success: function (data) {
             //debugger;

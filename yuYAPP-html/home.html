@@ -238,7 +238,7 @@
         <div class="inner-pages">
             <div class="inner-page-bg">
                 <!-- after the click on single menu show this div -->
-                <div  class="ctgry-list-main" style="display:none;">
+                <div  class="ctgry-list-main" style="display:block;">
 
 <div class="post-status">
 
@@ -380,9 +380,9 @@
                         </select>-->
                         <div class="swiper-nav swiper-container swip-width">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide" id=""><span>All</span></div>
-                                        <div class="swiper-slide" id=""><span>Images</span></div>
-                                        <div class="swiper-slide" id=""><span>Videos</span></div>
+                                        <div class="swiper-slide" id="AllPosts"><span>All</span></div>
+                                        <div class="swiper-slide" id="ImagePost"><span>Images</span></div>
+                                        <div class="swiper-slide" id="VideoPost"><span>Videos</span></div>
 
                                     </div>
                                 </div>
@@ -391,8 +391,8 @@
 
                     <div id="TabbedPanels3" class="TabbedPanels">
                         <ul class="TabbedPanelsTabGroup">
-                            <li class="TabbedPanelsTab" tabindex="0">All Uploads</li>
-                            <li class="TabbedPanelsTab" tabindex="0">My Uploads</li>
+                            <li class="TabbedPanelsTab" tabindex="0" id="AllUploads">All Uploads</li>
+                            <li class="TabbedPanelsTab" tabindex="0" id="MyUploads">My Uploads</li>
                         </ul>
                         <div class="TabbedPanelsContentGroup">
                             <div class="TabbedPanelsContent">
@@ -423,16 +423,16 @@
                 
                  <!-- Shh... screen start here -->
 
-                <div class="shh-screen" style="display: block;">
+                <div class="shh-screen" style="display: none;">
                   
                   <div class="generateKey"><a href="#"><img src="images/key-icon.png">&nbsp;Generate Key</a></div>
                   
                     <div class="post-status">
                         <div class="swiper-nav swiper-container swip-width">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide" id=""><span>All</span></div>
-                                        <div class="swiper-slide" id=""><span>Images</span></div>
-                                        <div class="swiper-slide" id=""><span>Videos</span></div>
+                                        <div class="swiper-slide" id="allAnony"><span>All</span></div>
+                                        <div class="swiper-slide" id="ImageAnony"><span>Images</span></div>
+                                        <div class="swiper-slide" id="VideoAnony"><span>Videos</span></div>
 
                                     </div>
                                 </div>
@@ -441,8 +441,8 @@
 
                     <div id="TabbedPanels4" class="TabbedPanels">
                         <ul class="TabbedPanelsTabGroup">
-                            <li class="TabbedPanelsTab" tabindex="0">Worldwide</li>
-                            <li class="TabbedPanelsTab" tabindex="0">Near You</li>
+                            <li class="TabbedPanelsTab" tabindex="0" id="worldwide">Worldwide</li>
+                            <li class="TabbedPanelsTab" tabindex="0" id="nearYou">Near You</li>
                         </ul>
                         <div class="TabbedPanelsContentGroup">
                             <div class="TabbedPanelsContent">
@@ -533,7 +533,7 @@
      <script src="js/ajaxWebService.js"></script>
     <script src="js/connection.js"></script>
     <script src="js/like.js"></script>
-
+    <script src="js/shh.js"></script>
     <script src="js/getNotification.js"></script>
    
     <script src="js/idangerous.swiper-2.0.min.js"></script>
@@ -554,6 +554,7 @@
 
 
       <script>
+          var webservicesiteurl = "http://174.141.233.6/YuY/";
           var UploadFileFlag;
           var pictureSource;   // picture source
           var destinationType; // sets the format of returned value 
@@ -642,7 +643,7 @@
 
               var ft = new FileTransfer();
 
-              ft.upload(path, encodeURI("http://174.141.233.6/YuY/posts/add"), win, fail, options);
+              ft.upload(path, encodeURI(webservicesiteurl+"posts/add"), win, fail, options);
           }
 
           function win(r) {
@@ -745,6 +746,7 @@
 
 
               $("#uploadButtonVideoImages").on("click", function () {
+
                   $("#UploadTitle").val('');
                   $("#UploadDescription").val('');
                   $("#Upload1Annotate").val('Like');
@@ -783,23 +785,24 @@
 
 
               $("#logout").on("click", function () {
-                 
-                  function onConfirm(buttonIndex) {
-                	  if(buttonIndex==1)
-                		  {
+                  localStorage.clear();
+                  window.location.replace("login.html");
+                  //function onConfirm(buttonIndex) {
+                  //    if(buttonIndex==1)
+                  //  	  {
                 		  
-                		  localStorage.clear();
-                    	  window.location.replace("login.html");
-                		  }
+                  //  	  localStorage.clear();
+                  //  	  window.location.replace("login.html");
+                  //  	  }
                 	
-                	}
+                  //  }
 
-                	navigator.notification.confirm(
-                	    'Do you want to logout? ', // message
-                	     onConfirm,            // callback to invoke with index of button pressed
-                	    'YUYApp',           // title
-                	    ['ok','cancel']     // buttonLabels
-                	);
+                  //  navigator.notification.confirm(
+                  //      'Do you want to logout? ', // message
+                  //       onConfirm,            // callback to invoke with index of button pressed
+                  //      'YUYApp',           // title
+                  //      ['ok','cancel']     // buttonLabels
+                  //  );
                 	
                 
               });

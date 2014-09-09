@@ -49,7 +49,7 @@ $("#EditProfile").on("click", function () {
     $('.inner-pages').animate({
         'top': "0px" //moves up
     });
-
+    $(".shh-screen").css("display", "none");
     $("#see_profile").css("display", "none");
     $(".add-frnd").css("display", "none");
     $("#edit_profile").css("display", "block");
@@ -84,7 +84,7 @@ function UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editG
     $.ajax({
         type: "Post",
         beforeSend: showLoader(),
-        url: "http://174.141.233.6/YuY/Users/UpdateProfile",
+        url: webservicesiteurl + "Users/UpdateProfile",
         data: userData,
         success: function (data) {
 

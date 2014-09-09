@@ -12,7 +12,7 @@ function AddProfilePicture(imageURL) {
     $.ajax({
         type: "POST",
         beforeSend: showLoader(),
-       url: "http://174.141.233.6/YuY/Users/addprofilepic",
+        url: webservicesiteurl + "Users/addprofilepic",
         //contentType: false,
         //processData: false,
         data: inputdata,

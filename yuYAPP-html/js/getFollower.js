@@ -19,7 +19,7 @@ $("#FriendsOption").on("click", function () {
     $(".add-frnd").css("display", "none");
     $(".follow-friend").css("display", "block");
     $(".top_heading").text("FRIENDS");
-
+    $(".shh-screen").css("display", "none");
     $(".ctgry-list-main").css("display", "none");
     localStorage.setItem("MenuFlag", "up");
 });
@@ -54,7 +54,7 @@ function GetAllFollowerList() {
             type: "GET",
             // url: "http://localhost:6269/Users/GetFollower",
             beforeSend: showLoader(),
-            url: "http://174.141.233.6/YuY/Users/GetAllFollower",
+            url: webservicesiteurl + "Users/GetAllFollower",
 
             data: inputdata,
             dataType: "json",
@@ -66,7 +66,7 @@ function GetAllFollowerList() {
                   
 
                     for (var i = 0; i < data.ResponseData.length; i++) {
-                        var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
+                        var ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic;
                         HTML += "<div class='single-frnd-main'>"
                         HTML += "<div class='single-frnd'>"
                         HTML += "<div class='fl single-frnd-imgarea'><img src=" + ProfilePicURL + "></div>"
@@ -108,7 +108,7 @@ function GetRecentFollowerList()
             type: "GET",
             // url: "http://localhost:6269/Users/GetRecentFollower",
             beforeSend: showLoader(),
-            url: "http://174.141.233.6/YuY/Users/GetRecentFollower",
+            url: webservicesiteurl + "Users/GetRecentFollower",
 
             data: inputdata,
             dataType: "json",
@@ -119,7 +119,7 @@ function GetRecentFollowerList()
                 if (data.ResponseData.length > 0) {
 
                 	  for (var i = 0; i < data.ResponseData.length; i++) {
-                          var ProfilePicURL = "http://174.141.233.6/YuY/" + data.ResponseData[i].ProfilePic;
+                	      var ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic;
                           HTML += "<div class='single-frnd-main'>"
                           HTML += "<div class='single-frnd'>"
                           HTML += "<div class='fl single-frnd-imgarea'><img src=" + ProfilePicURL + "></div>"

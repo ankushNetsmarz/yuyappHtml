@@ -35,13 +35,13 @@ function GetUserProfile() {
         type: "GET",
         beforeSend: showLoader(),
         //url: "http://localhost:6269/users/GetProfile",
-        url: "http://174.141.233.6/YuY/users/GetProfile",
+        url: webservicesiteurl + "users/GetProfile",
         data: userData,
         success: function (data) {
           
             console.log(data);
 
-            var PicUrl = "http://174.141.233.6/YuY/" + data.ResponseData.PicUrl;
+            var PicUrl = webservicesiteurl + data.ResponseData.PicUrl;
             localStorage.setItem("ProfilePicUrl", PicUrl);
           var Gender= data.ResponseData.Gender;
        

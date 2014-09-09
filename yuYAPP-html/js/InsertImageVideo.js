@@ -26,7 +26,7 @@ function InsertPostImage(imageURLs) {
         type: "POST",
         beforeSend: showLoader(),
         //url: "http://localhost:6269/posts/add",
-        url: "http://174.141.233.6/YuY/posts/add",
+        url: webservicesiteurl + "posts/add",
         data: postData,
         success: function (data) {
             debugger;

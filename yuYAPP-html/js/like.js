@@ -17,7 +17,7 @@ function addLikes(postId) {
         type: "Post",
         beforeSend: showLoader(),
      //   url: "http://localhost:6269/posts/addlikes",
-        url: "http://174.141.233.6/YuY/posts/addlikes",
+        url: webservicesiteurl + "posts/addlikes",
         data: postData,
         success: function (data) {
         
