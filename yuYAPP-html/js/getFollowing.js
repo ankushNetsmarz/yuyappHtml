@@ -1,24 +1,36 @@
 ﻿
 
 $("#recentFollowing").on("click", function () {
-    GetRecentFollowingList();
+    newcall();
+    var start = localStorage.getItem("start");
+    var end = localStorage.getItem("end");
+    localStorage.setItem("page", "recentfollowing");
+    GetRecentFollowingList(start,end);
 });
 $("#allFollowing").on("click", function () {
-    GetAllFollowing();
+    newcall();
+    var start = localStorage.getItem("start");
+    var end = localStorage.getItem("end");
+    localStorage.setItem("page", "allfollowing");
+    GetAllFollowing(start, end);
 });
 
 
 $("#GetFollowingList").on("click", function () {
-    GetAllFollowing();
+    newcall();
+    var start = localStorage.getItem("start");
+    var end = localStorage.getItem("end");
+    localStorage.setItem("page", "allfollowing");
+    GetAllFollowing(start, end);
 });
 
 var userId = localStorage.getItem("userId");
-function GetAllFollowing() {
+function GetAllFollowing(start,end) {
     //checkConnection();
     var inputdata = {
         "userId": userId,
-        "start": 1,
-        "end": 10
+        "start": start,
+        "end": end
     };
     $.ajax({
         type: "GET",
@@ -34,7 +46,7 @@ function GetAllFollowing() {
             var HTML = "";
 
             if (data.ResponseData.length > 0) {
-               
+                var content = localStorage.getItem("htmlcontent");
                 for (var i = 0; i < data.ResponseData.length; i++) {
                     var ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic;
 
@@ -48,8 +60,15 @@ function GetAllFollowing() {
 
                     //console.log(data.ResponseData.length);
                 }
-                HTML += "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
-                $("#getfollowingLists").html(HTML);
+                if (data.ResponseData.length >= 10) {
+                    HTML += "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
+                }
+                if (content == "new") {
+                    $("#getfollowingLists").html(HTML);
+                }
+                else
+                    $("#getfollowingLists").append(HTML);
+
             }
 
             if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
@@ -68,12 +87,12 @@ function GetAllFollowing() {
 }
 
 //Get Recent following users
-function GetRecentFollowingList() {
+function GetRecentFollowingList(start,end) {
     //checkConnection();
     var inputdata = {
         "userId": userId,
-        "start": 1,
-        "end": 10
+        "start": start,
+        "end": end
     };
     $.ajax({
         type: "GET",
@@ -87,7 +106,7 @@ function GetRecentFollowingList() {
             var HTML = "";
 
             if (data.ResponseData.length > 0) {
-             
+                var content = localStorage.getItem("htmlcontent");
             	for (var i = 0; i < data.ResponseData.length; i++) {
             	    var ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic;
 
@@ -100,8 +119,15 @@ function GetRecentFollowingList() {
                     HTML += "<div  id='unplug' class='unplug-btn-div' userId=" + data.ResponseData[i].UserId + "><button type='button' class='unplug-btn'>UNPLUG</button></div></div>"
 
                     //console.log(data.ResponseData.length);
-                }
-                $("#getfollowingLists").html(HTML);
+            	}
+            	if (data.ResponseData.length >= 10) {
+            	    HTML += "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
+            	}
+            	if (content == "new") {
+            	    $("#getfollowingLists").html(HTML);
+            	}
+            	else
+            	    $("#getfollowingLists").append(HTML);
             }
 
             if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {

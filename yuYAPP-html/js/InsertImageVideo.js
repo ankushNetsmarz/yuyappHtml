@@ -8,6 +8,7 @@ function InsertPostImage(imageURLs) {
 	var description= $("#UploadDescription").val();
 	var a1= $("#Upload1Annotate").val();
 	var a2= $("#Upload2Annotate").val();
+	var anony=  localStorage.getItem("isAnonymous");
 	
     var postData = {
     		
@@ -17,7 +18,7 @@ function InsertPostImage(imageURLs) {
         allowedUser: "",
         deniedUser: "",
         postType: "1", /*0 for Status, 1 for the Image,  2 for VIdeo*/
-        isanonymous:0,
+        isanonymous:anony,
         file: imageURLs,
         positiveAnnotation: a1,
         negativeAnnotation: a2,

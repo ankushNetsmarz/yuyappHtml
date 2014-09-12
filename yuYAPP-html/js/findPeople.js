@@ -11,7 +11,13 @@ $("#RequestOption").on("click", function () {
         'top': "0px" //moves up
     });
     $("#edit_profile,#see_profile").css("display", "none");
-    GetPeopleRandom();
+
+    newcall();
+    var start = localStorage.getItem("start");
+    var end = localStorage.getItem("end");
+     GetPeopleRandom(start,end);
+    localStorage.setItem("page","request");
+
     $(".ctgry-list-main,.follow-friend,.notification").css("display", "none");
     $(".shh-screen").css("display", "none");
     $("#YAPP-Live").css("display", "none");
@@ -20,16 +26,83 @@ $("#RequestOption").on("click", function () {
     localStorage.setItem("MenuFlag", "up");
 
 });
+$(document).on("click", ".load-more-all", function () {
+    $(this).hide();
 
+    var start = localStorage.getItem("start");
+    var end = localStorage.getItem("end");
+    var posttype = localStorage.getItem("posttype");
+    var isall = localStorage.getItem("isallload");
+
+    localStorage.setItem("htmlcontent", "append");
+    start = parseInt(end) + 1;
+
+    end = parseInt(start) + 9;
+    var page = localStorage.getItem("page");
+    if (page == "request")
+    {
+        GetPeopleRandom(start, end);
+    }
+    else if (page == "allfollower") {
+        GetAllFollowerList(start, end);
+    }
+    else if (page == "recentfollower") {
+        GetRecentFollowerList(start, end);
+    }
+    else if (page == "allfollowing") {
+        GetAllFollowing(start, end);
+    }
+    else if (page == "recentfollowing") {
+        GetRecentFollowingList(start, end);
+    }
+    else if (page == "wordWall") {
+        GetUserPost(start, end);
+    }
+    else if (page == "yappLive") {
+    
+        GetPostNonAnonymousList(isall, posttype, start, end);
+    }
+    else if (page == "yappLiveimage") {
+        GetPostNonAnonymousList(isall, posttype, start, end);
+    }
+    else if (page == "yappLivevideo") {
+        GetPostNonAnonymousList(isall, posttype, start, end);
+    }
+    else if (page == "MyappLive") {
+        GetPostNonAnonymousList(isall, posttype, start, end);
+    }
+    else if (page == "shhappLive") {
+        GetPostAnonymousList(isall, posttype, start, end)
+    }
+    else if (page == "shhappimage") {
+        GetPostAnonymousList(isall, posttype, start, end)
+    }
+    else if (page == "shhappvideo") {
+        GetPostAnonymousList(isall, posttype, start, end)
+    }
+    
+    else if (page == "comment") {
+        var postId = localStorage.getItem("postId");
+        GetPostComments(postId, start, end);
+    }
+    else  {
+
+    }
+
+    localStorage.setItem("start", start);
+    localStorage.setItem("end", end);
+
+
+});
 
 var userId = localStorage.getItem("userId");
 
-function GetPeopleRandom() {
+function GetPeopleRandom(start,end) {
     // checkConnection();
     var inputdata = {
         "userId": userId,
-        "start": 1,
-        "end": 100
+        "start": start,
+        "end": end
     };
     $.ajax({
         type: "GET",
@@ -43,7 +116,7 @@ function GetPeopleRandom() {
 
             console.log(data);
             var HTML = "";
-
+             var content=   localStorage.getItem("htmlcontent");
             if (data.ResponseData.length > 0) {
 
                 for (var i = 0; i < data.ResponseData.length; i++) {
@@ -60,8 +133,18 @@ function GetPeopleRandom() {
                     HTML += "<div  id='plug' class='plug-btn-div' userId=" + data.ResponseData[i].UserId + "><button type='button' class='plug-btn'>PLUG</button></div></div>"
                     //console.log(data.ResponseData.length);
                 }
-                HTML += "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
-                $(".add-frnd-list").html(HTML);
+                if (data.ResponseData.length >= 10)
+                {
+                HTML += "<div style='width: 100%;'><input id='findLoad' type='button' value='Load more...' class='load-more-all'></div>"
+                }
+                if(content=="new")
+                {
+                  $(".add-frnd-list").html(HTML);
+                  }
+                  else
+                  {
+                $(".add-frnd-list").append(HTML);
+                }
             }
 
         },
@@ -92,7 +175,10 @@ function AddFriend(friendId) {
         success: function (data) {
 
             console.log(data);
-            GetPeopleRandom();
+            newcall();
+            var start = localStorage.getItem("start");
+            var end = localStorage.getItem("end");
+            GetPeopleRandom(start, end);
             window.plugins.toast.show('Friend added!', 'long', 'center', function (a) { }, function (b) { });
 
 

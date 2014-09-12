@@ -24,7 +24,7 @@
 <form>
 <div class="login-field">
 <label>
-<span class="fl user-span">username</span>
+<span class="fl user-span">Email</span>
 <input id="userLoginEmailId" type="text" class="fr">
   <div class="clr"></div>
 </label>
@@ -32,7 +32,7 @@
 
 <div class="login-field">
 <label>
-<span class="fl pswd-span">password</span>
+<span class="fl pswd-span">Password</span>
 <input id="userLoginPassword" type="password" class="fr">
   <div class="clr"></div>
 </label>
@@ -79,7 +79,7 @@
 </label></div>
 
 <div class="signup-field"><label>
-<span class="fl scnd-span">User Name</span><input id="SignUpUserName" type="text" class="fr">
+<span class="fl scnd-span">Username</span><input id="SignUpUserName" type="text" class="fr">
 <div class="clr"></div>
 </label></div>
 
@@ -118,7 +118,7 @@
 <div class="registerpage_btns">
 
 <div class="fl login_btn_div">
-<div class="left_btn fl"><button type="submit" id="backButtonRegister" class="but"><img src="images/back-icon.png" class="fl" style="margin:7px 0 0 10px;"> Back</button></div>
+<div class="left_btn fl"><button type="submit" id="backButtonRegister" class="but"><img src="images/back-icon.png" class="fl" style="margin:7px 0 0 10px;"> Cancel</button></div>
 <div class="clr"></div>
 </div>
 
@@ -149,7 +149,7 @@
      
         $(document).ready(function () {
       
-
+checkConnection();
 
             var LoginName = localStorage.getItem("LoginName");
             var loginPassword = localStorage.getItem("loginPassword");

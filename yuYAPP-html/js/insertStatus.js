@@ -1,11 +1,15 @@
 ﻿
 
 $("#postStatus").on("click", function () {
-	var post= $("#InsertStatusTextBox").val();
+	
 
-	if(post != "")
-	{
-    InsertStatus();
+	
+	    var post = $("#InsertStatusTextBox").val();
+	    if (post != "") {
+	        $("#firstAnnotate").val("like");
+	        $("#SecondAnnotate").val("dislike");
+	    $("#postStatusPopup").css("display", "block");
+	    $("#popupInsertTextBox").val(post);
 	}
    else
 	{
@@ -15,21 +19,31 @@ $("#postStatus").on("click", function () {
 });
 
 
+$("#postNext").on("click", function () {
+  
+    InsertStatus();
+});
+
+$("#crossStatus").on("click", function () {
+    $("#InsertStatusTextBox").val('');
+    $("#postStatusPopup").css("display", "none");
+
+});
 
 /*Insert user post*/
 var userId= localStorage.getItem("userId");
 
 function InsertStatus() {
- 	checkConnection();
+    alert($("#firstAnnotate").val());
     var postData = {
         postedBy: userId, /*user who Post the status or the Post */
-        postFileTitle: $("#InsertStatusTextBox").val(), /*This is for both Post and status*/
+        postFileTitle: $("#popupInsertTextBox").val(), /*This is for both Post and status*/
         allowedUser: "0",
         description: "",
         deniedUser: "0",
         postType: "0",/*0 for Status, 1 for the Image,  2 for VIdeo*/
-        positiveAnnotation: "hate",
-        negativeAnnotation: "love"
+        positiveAnnotation: $("#firstAnnotate").val(),
+        negativeAnnotation: $("#SecondAnnotate").val()
     };
     $.ajax({
         type: "POST",
@@ -38,7 +52,11 @@ function InsertStatus() {
         url: webservicesiteurl + "posts/add",
         data: postData,
         success: function (data) {
-            GetUserPost();
+            newcall();
+            var start = localStorage.getItem("start");
+            var end = localStorage.getItem("end");
+            GetUserPost(start, end);
+        
 
             $("#InsertStatusTextBox").val('');
             window.plugins.toast.show('Feed Added!', 'long', 'center', function (a) { }, function (b) { });
@@ -78,8 +96,14 @@ function InsertPostComment(postIdForComment) {
         success: function (data) {
        
             console.log(data);
-            GetPostComments(postIdForComment);
-            GetUserPost();
+            newcall();
+            var start = localStorage.getItem("start");
+            var end = localStorage.getItem("end");
+            var postId = localStorage.getItem("postId");
+            GetPostComments(postId, start, end);
+            
+          //  localStorage.setItem("span","comment")
+           
             //alert("success..." + data);
         },
         error: function (xhr) {

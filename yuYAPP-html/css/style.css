@@ -208,12 +208,6 @@ input[placeholder], [placeholder], *[placeholder] {
 .see-status{margin:0 0 5%; font-size:14px; color:#76b923;}
 .see-status-title{color:#222222;}
 
-.generate-key{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:absolute; margin:0; padding:0; top:0; left:0;}
-.generate-key-area{position: absolute; margin: 0px 4%; text-align: center; width: 92%; top:3%; background:none;}
-.generate-key-main{width:100%;}
-.generate-key-main .add-key{background:#fff;border:none; box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7); padding: 7px 10px; width: 93%;}
-.add-key-btn{margin:15px auto !important;}
-
 .add-frnd-list{width: 100%; margin: 0px auto 10px; height:369px; overflow-y:scroll;}
 .plug-frnd-main{width:48%; float: left; margin: 15px 0px 0px 5px; border-bottom:1px dotted;}
 .plug-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#555; font-weight: bold; width:100%; line-height:50px; background:#f3f3f3; border-top-left-radius:100%; border-bottom-left-radius:100%;}

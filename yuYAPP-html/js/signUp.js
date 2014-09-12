@@ -109,7 +109,7 @@ $("#RegisterButton").on("click", function () {
           }
 
           navigator.notification.alert(
-			    'First name cant be empty!',  // message
+			    'First name cannot be empty!',  // message
 			    alertDismissed,         // callback
 			    'YuYAPP',            // title
 			    'OK'                  // buttonName
@@ -125,7 +125,7 @@ $("#RegisterButton").on("click", function () {
        }
 
        navigator.notification.alert(
-			    'User name cant be empty!',  // message
+			    'User name cannot be empty!',  // message
 			    alertDismissed,         // callback
 			    'YuYAPP',            // title
 			    'OK'                  // buttonName
@@ -141,7 +141,7 @@ $("#RegisterButton").on("click", function () {
        }
 
        navigator.notification.alert(
-			    'Email address cant be empty!',  // message
+			    'Email address cannot be empty!',  // message
 			    alertDismissed,         // callback
 			    'YuYAPP',            // title
 			    'OK'                  // buttonName
@@ -157,7 +157,7 @@ $("#RegisterButton").on("click", function () {
        }
 
        navigator.notification.alert(
-			    'Password cant be empty!',  // message
+			    'Password cannot be empty!',  // message
 			    alertDismissed,         // callback
 			    'YuYAPP',            // title
 			    'OK'                  // buttonName

@@ -21,11 +21,7 @@ function addLikes(postId) {
         data: postData,
         success: function (data) {
         
-            console.log(data);
-
-            GetUserPost();
-            GetPostNonAnonymousList();
-            //alert("success..." + data);
+            console.log(data);                             
         },
         error: function (xhr) {
         	checkConnection();

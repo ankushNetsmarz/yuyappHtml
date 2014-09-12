@@ -19,8 +19,7 @@
 <body>
     <div class="loader-bg" style="display: none; z-index: 50">
         <div class="loader-area">
-            <img src="images/482.GIF"></div>
-    </div>
+            <img src="images/482.GIF"></div>    </div>
 
     <!-- when click on comment button in word wall screen then this div will display -->
     <div id="commentPopup" class="comment-bg" style="display: none; z-index: 49">
@@ -39,28 +38,29 @@
     <!-- comment screen end -->
 
     <!-- add annotation screen -->
-    <div id="" class="full-annotate-bg" style="display: none; z-index: 49">
+    <div id="postStatusPopup" class="full-annotate-bg" style="display: none; z-index: 49">
         <div class="full-annotate-area">
         <div class="cross-main-btn">
-                <input type="button" id="Button1" class="cross-btn fl" value="">
-                <input type="button" id="Button2" class="like-btn fr" value="Next">
+                <input type="button" id="crossStatus" class="cross-btn fl" value="">
+                <input type="button" id="postNext" class="like-btn fr" value="Next">
                 <div class="clr"></div>
                 </div>
             <div class="full-annotate-head">
-                <h3>pooja notification screen or friends screen are not working</h3>
+                <textarea cols="30" id="popupInsertTextBox" rows="4"></textarea>
+               <input type="text" class="fr" placeholder="Enter your status" style="display:none;">
             </div>
             <div class="full-annotate-list">
                 <div class="single-full-annotate">
                     <label>
                         <span class="fl annotate2-span">First Annotate</span>
-                        <input type="text" class="fr" placeholder="Enter your status" id="Text1">
+                        <input type="text" class="fr" placeholder="" id="firstAnnotate">
                         <div class="clr"></div>
                     </label>
                 </div>
                 <div class="single-full-annotate">
                     <label>
                         <span class="fl annotate1-span">Second Annotate</span>
-                        <input type="text" class="fr" placeholder="Enter your status" id="Text2">
+                        <input type="text" class="fr" placeholder="" id="SecondAnnotate">
                         <div class="clr"></div>
                     </label>
                 </div>
@@ -182,42 +182,12 @@
         </div>
     </div>
     <!-- see other user profile in popup end -->
-    
-<!-- when click on next button in add anotation popup then this div will display -->
-    <div id="" class="post-user-list" style="display: none; z-index: 49">
-        <div class="post-user-area">
-        <div class="cross-main-btn">
-                <input type="button" id="cancelCommentBox" class="cross-btn fl" value="">
-                <input type="button"  id="nextUpload" class="like-btn fr" value="Next">
-                <div class="clr"></div>
-                </div>
-            <div id="" class="post-user-list-main">
-            </div>
-        </div>
-    </div>
-    <!-- friend list for access or denied screen end -->
-    
-<!-- when click on next button in add anotation popup then this div will display -->
-    <div id="" class="generate-key" style="display: block; z-index: 49">
-        <div class="generate-key-area">
-        <div class="cross-main-btn">
-                <input type="button" id="cancelCommentBox" class="cross-btn fl" value="">
-                <div class="clr"></div>
-                </div>
-            <div id="" class="generate-key-main">
-                <input type="text" id="" placeholder="Fill genrate key" class="add-key">
-                <input type="button" id="" class="like-btn add-key-btn" value="Generate">
-            </div>
-        </div>
-    </div>
-    <!-- friend list for access or denied screen end -->
 
 <div class="interest-topbar">
 <div class="left-top-btn"><button type="button" class="menu_btn_top"></button></div>
 <div class="top_head_bg"><label class="top_heading">WORD</label></div>
 <div class="right-top-btn">
-<div style="text-align:right;">
-<a href="#" class="profile-setting" id="EditProfile"><img id="mainProfile" src="" width="39" height="39"></a>
+<div style="text-align:right;"><a href="#" class="profile-setting" id="EditProfile"><img id="mainProfile" src="" width="39" height="39"></a>
 <button type="button" class="logout_btn" id="logout"></button>
 </div>
 
@@ -479,30 +449,7 @@
 
                                 <div class="upload-list-main">
                                     <div class="secret-list-area">
-                                    
-                                    <div class="single-upload">
-                                    <div class="upload-title">
-                                    <div class="fl upload-user-pic">
-                                    <img src="images/user-pic-list.jpg"></div>
-                                    <div class="fl user-name-title">Dinesh<br><span>(11 days ago)</span></div>
-                                    <div class="clr"></div>
-                                    <div>
-                                    <div class="uploaded-pic">
-                                    <img src="images/user-profile-pic.png"></div>
-                                    <p><strong>This is My New Image</strong></p>
-                                    <p>deep</p> 
-                                    </div>
-                                    </div>
-                                    <div class="like-cmnt-no">
-                                    <span>0</span> Good, <span>0</span> Comments, <span>0</span> Bad</div>
-                                    <div class="wordwall-btns" postid="152">
-                                    <input type="button" value="Good" class="like-btn like">
-                                    <input type="button" value="Comment" class="like-btn commentButton">
-                                    <input type="button" value="Bad" class="like-btn dislike">
-                                    </div>
-                                    <div class="clr"></div>
-                                    </div>
-                                    
+                                   
                                     </div>
 
                                     <div class="clr"></div>
@@ -585,6 +532,7 @@
 
       <script>
           var webservicesiteurl = "http://174.141.233.6/YuY/";
+        // var webservicesiteurl = "http://174.141.233.6/YuY_Demo/";
           var userId = localStorage.getItem("userId");
           var UploadFileFlag;
           var pictureSource;   // picture source
@@ -602,7 +550,40 @@
           }
 
 
-        
+          function initialize() {
+              if (navigator.geolocation) {
+
+                  //Use HTML5 Geolocation API To Get Current Position
+                  navigator.geolocation.getCurrentPosition(function (position) {
+
+                      //Get Latitude From Geolocation API
+                      latitude = position.coords.latitude;
+
+                      //Get Longitude From Geolocation API
+                      longitude = position.coords.longitude;
+
+                      //Define New Google Map With Lat / Lon
+                      coords = new google.maps.LatLng(latitude, longitude);
+                      // setlocation(
+                      var mapOptions = {
+                          zoom: 16,
+                          center: coords
+                      }
+
+                      localStorage.setItem("latitude", latitude);
+                      localStorage.setItem("longitude", longitude);
+                      var map = new google.maps.Map(document.getElementById("map-canvas"),
+                    mapOptions);
+                      marker = new google.maps.Marker({
+                          position: coords,
+                          map: map
+                      });
+                      marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+                  });
+              }
+          }
+
+
 
           $("#updateButton").on("click", function () {
               var editFirstname = $("#editFirstname").val();
@@ -648,7 +629,8 @@
               var a1 = $("#Upload1Annotate").val();
               var a2 = $("#Upload2Annotate").val();
 
-
+              var anony=  localStorage.getItem("isAnonymous");
+          
               var options = new FileUploadOptions();
               options.fileKey = "file";
 
@@ -665,6 +647,7 @@
               params.allowedUser = "";
               params.deniedUser = "";
               params.postType = 2;
+              params.isanonymous = anony;
               params.positiveAnnotation = a1;
               params.negativeAnnotation = a2;
               params.extention = "";
@@ -763,19 +746,24 @@
 
           $(document).ready(function () {
               localStorage.setItem("MenuFlag", "up");
-
-
+              checkConnection();
+              initialize();
               var flag = 0;
               var top;
               var topFlag = 0;
-              GetUserPost();
+              newcall();
+              localStorage.setItem("page", "wordWall");
+              var start = localStorage.getItem("start");
+              var end = localStorage.getItem("end");
+              GetUserPost(start, end);
+            
               GetUserProfile();
               var currentWindowHeight = $(window).height();   // returns height of browser viewport
               var currentWindowWidth = $(window).width(); // returns height of HTML document
 
 
 
-              $("#uploadButtonVideoImages").on("click", function () {
+              $(".Upload-text-btn").on("click", function () {
 
                   $("#UploadTitle").val('');
                   $("#UploadDescription").val('');
@@ -817,15 +805,14 @@
               $("#logout").on("click", function () {
 
                  
-				   localStorage.clear();
-                    window.location.replace("login.html");
-                /*  function onConfirm(buttonIndex) {
+				
+                 function onConfirm(buttonIndex) {
                 	  if(buttonIndex==1)
                 		  {
                 		  
-                  //  	  localStorage.clear();
-                  //  	  window.location.replace("login.html");
-                  //  	  }
+                   	  localStorage.clear();
+                   	  window.location.replace("login.html");
+                    	  }
                 	
 
                 	}
@@ -835,7 +822,7 @@
                 	     onConfirm,            // callback to invoke with index of button pressed
                 	    'YUYApp',           // title
                 	    ['ok','cancel']     // buttonLabels
-                	);*/
+                	);
 
                 
               });

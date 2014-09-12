@@ -11,10 +11,16 @@ function hideLoader() {
 function showLoader() {
 
     $('.loader-bg').css("display", "block");
-  
+
 
 }
+function newcall() {
+    localStorage.setItem("start", 1);
+    localStorage.setItem("end", 10);
 
+    localStorage.setItem("htmlcontent", "new");
+
+}
 
 ///*Ajax Call Custom Made Plugin*/
 //(function ($) {

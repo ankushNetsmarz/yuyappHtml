@@ -1,25 +1,22 @@
-﻿$("#accessButton").on("click", function () {
-    //  $(".checkbox-list").css("display", "block");
-    $(".checkbox-list").show();
-    $(".ctgry-list-main").css("display", "none");
-    $(".add-frnd").css("display", "none");
-    $(".follow-friend").css("display", "block");
-    $("#YAPP-Live").css("display", "none");
-
-
-});
-
+﻿
 
 $("#FriendsOption").on("click", function () {
     $('.inner-pages').animate({
         'top': "0px" //moves up
     });
     $("#edit_profile,#see_profile").css("display", "none");
-    GetAllFollowerList();
+    newcall();
+    var start = localStorage.getItem("start");
+    var end = localStorage.getItem("end");
+ 
+    GetAllFollowerList(start, end);
     $(".add-frnd").css("display", "none");
     $(".follow-friend").css("display", "block");
     $(".top_heading").text("FRIENDS");
     $(".shh-screen").css("display", "none");
+
+    localStorage.setItem("page", "allfollower");
+
     $(".ctgry-list-main").css("display", "none");
     localStorage.setItem("MenuFlag", "up");
 });
@@ -27,28 +24,39 @@ $("#FriendsOption").on("click", function () {
 
 
 $("#recentFollower").on("click", function () {
-   
-    GetRecentFollowerList();
+    newcall();
+    var start = localStorage.getItem("start");
+    var end = localStorage.getItem("end");
+    localStorage.setItem("page", "recentfollower");
+    GetRecentFollowerList(start, end);
 });
 $("#allFollower").on("click", function () {
-    GetAllFollowerList();
+    newcall();
+    var start = localStorage.getItem("start");
+    var end = localStorage.getItem("end");
+    localStorage.setItem("page", "allfollower");
+    GetAllFollowerList(start, end);
 });
 
 
 
 
 $("#getFollowers").on("click", function () {
-
-    GetAllFollowerList();
+    newcall();
+    var start = localStorage.getItem("start");
+    var end = localStorage.getItem("end");
+    localStorage.setItem("page", "allfollower");
+    GetAllFollowerList(start, end);
 });
 
+
 var userId = localStorage.getItem("userId");
-function GetAllFollowerList() {
+function GetAllFollowerList(start,end) {
    
         var inputdata = {
             "userId": userId,
-            "start": 1,
-            "end": 10
+            "start": start,
+            "end": end
         };
         $.ajax({
             type: "GET",
@@ -61,7 +69,7 @@ function GetAllFollowerList() {
 
             success: function (data) {
                 var HTML = "";
-
+                var content = localStorage.getItem("htmlcontent");
                 if (data.ResponseData.length > 0) {
                   
 
@@ -76,8 +84,14 @@ function GetAllFollowerList() {
                         HTML += "<div  id='unplug' class='unplug-btn-div' userId=" + data.ResponseData[i].UserId + "><button type='button' class='unplug-btn'>UNPLUG</button></div></div>"
                         //console.log(data.ResponseData.length);
                     }
-                    HTML += "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
-                    $("#getfollowerList").html(HTML);
+                    if (data.ResponseData.length >= 10) {
+                        HTML += "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
+                    }
+                    if (content == "new") {
+                        $("#getfollowerList").html(HTML);
+                    }
+                    else
+                        $("#getfollowerList").append(HTML);
                 }
                 if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
                     $('.checkbox-list').show();
@@ -96,13 +110,13 @@ function GetAllFollowerList() {
 
 
 
-function GetRecentFollowerList() 
+function GetRecentFollowerList(start, end)
 {
       
         var inputdata = {
             "userId": userId,
-            "start": 1,
-            "end": 10
+            "start": start,
+            "end": end
         };
         $.ajax({
             type: "GET",
@@ -115,7 +129,7 @@ function GetRecentFollowerList()
 
             success: function (data) {
                 var HTML = "";
-
+                var content = localStorage.getItem("htmlcontent");
                 if (data.ResponseData.length > 0) {
 
                 	  for (var i = 0; i < data.ResponseData.length; i++) {
@@ -128,8 +142,16 @@ function GetRecentFollowerList()
                           HTML += "</div>"
                           HTML += "<div  id='' class='unplug-btn-div' userId=" + data.ResponseData[i].UserId + "><button type='button' class='unplug-btn'>UNPLUG</button></div></div>"
                           //console.log(data.ResponseData.length);
-                      }
-                    $("#getfollowerList").html(HTML);
+                	  }
+                	  if (data.ResponseData.length >= 10) {
+                	      HTML += "<div style='width: 100%;'><input type='button' value='Load more...' class='load-more-all'></div>"
+                	  }
+                	  if (content == "new") {
+                	      $("#getfollowerList").html(HTML);
+                	  }
+                	  else
+                	      $("#getfollowerList").append(HTML);
+
                 }
                 if ($.trim($('.interest-topbar .top_heading').text()) == "WORD") {
 

@@ -1,13 +1,17 @@
 ﻿
 $("#NotificationOption").on("click", function () {
 
-    GetNotification();
     $('.inner-pages').animate({
         'top': "0px" //moves up
     });
     $(".shh-screen").css("display", "none");
     $(".notification").css("display", "block");
     $("#edit_profile").css("display", "none");
+     newcall();
+    var start = localStorage.getItem("start");
+    var end = localStorage.getItem("end");
+
+    GetNotification(start, end);
     $(".add-frnd,.follow-friend").css("display", "none");
     $(".ctgry-list-main").css("display", "none");
     $(".top_heading").text("NOTIFICATIONS");
@@ -35,15 +39,29 @@ function GetNotificationCount() {
         }
     });
 }
+$(document).on("click", "#notiLoad", function () {
+    $(this).hide();
 
+    var start = localStorage.getItem("start");
+    var end = localStorage.getItem("end");
+    localStorage.setItem("htmlcontent", "append");
+    start = parseInt(start) + 1;
+
+    end = parseInt(end) + 10;
+    GetNotification(start, end);
+    localStorage.setItem("start", start);
+    localStorage.setItem("end", end);
+
+
+});
 
 var userId = localStorage.getItem("userId");
-function GetNotification() {
+function GetNotification(start, end) {
 	//checkConnection();
     var postData = {
         userId: userId,
-        page: 1,
-        RecsPerPage: 10
+        page: start,
+        RecsPerPage: end
     
     }
     $.ajax({
@@ -54,30 +72,37 @@ function GetNotification() {
         data: postData,
         success: function (data) {
 
-            
-            var HTML = "";
 
+            var HTML = "";
+            var content = localStorage.getItem("htmlcontent");
             if (data.ResponseData.length > 0) {
 
                 for (var i = 0; i < data.ResponseData.length; i++) {
                     var ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic;
-                	  
+
                     HTML += "<div class='single-notifi'>"
-                    HTML += "<div class='fl notifi-by-user'><img src="+ ProfilePicURL+ "></div>"
+                    HTML += "<div class='fl notifi-by-user'><img src=" + ProfilePicURL + "></div>"
                     HTML += "<div class='fl notifi-text'><span>" + data.ResponseData[i].UserName + " " + "</span>" + data.ResponseData[i].Type + "d your post"
                     HTML += "<div class='notifi-msg-ago'>" + data.ResponseData[i].TimeSpan + "</div>"
                     HTML += "</div>"
                     HTML += "<div class='clr'></div>"
                     HTML += "</div>"
                 }
-
-                $(".notify-list").html(HTML);
+                if (data.ResponseData.length >= 10) {
+                    HTML += "<div style='width: 100%;'><input id='notiLoad' type='button' value='Load more...' class='load-more-all'></div>"
+                }
+                if (content == "new") {
+                    $(".notify-list").html(HTML);
+                }
+                else {
+                    $(".notify-list").append(HTML);
+                }
             }
         },
         error: function (xhr) {
-        	checkConnection();
-       	 hideLoader();
-         // alert(xhr.responseText);
+            checkConnection();
+            hideLoader();
+            // alert(xhr.responseText);
         }
     }).done(function () {
         hideLoader();

@@ -12,7 +12,7 @@ $("#loginButton").on("click", function () {
           }
 
           navigator.notification.alert(
-			    'Username cant be empty!',  // message
+			    'Email cannot be empty!',  // message
 			    alertDismissed,         // callback
 			    'YuYAPP',            // title
 			    'OK'                  // buttonName
@@ -26,7 +26,7 @@ $("#loginButton").on("click", function () {
           }
 
           navigator.notification.alert(
-			    'Password cant be empty!',  // message
+			    'Password cannot be empty!',  // message
 			    alertDismissed,         // callback
 			    'YuYAPP',           // title
 			    'OK'                  // buttonName
