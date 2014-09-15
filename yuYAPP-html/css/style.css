@@ -138,10 +138,12 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .ctgry-list-main{/*background:url(../images/ctgry-list-bg.jpg) no-repeat; background-size:cover; */margin:1.2% 0 0;}
 
+.arrow-main{position: absolute; width: 100%; margin: 0px; padding: 0px; top: 0px; text-align: right; right:10px;}
+.arrow-main img{width:6%;}
 
-.list-area{padding:0; width:100%; height:343px; overflow-y:scroll;}
+.list-area{padding:0; width:100%; height:372px; overflow-y:scroll;}
 
-.single-user{ width:100%; margin:0 0 20px; background:url(../images/menu-shadow.png) no-repeat bottom center;}
+.single-user{ width:100%; margin:0 0 20px; background:url(../images/menu-shadow.png) no-repeat bottom center; position:relative;}
 .user-list-pic{width:49px; height:49px; overflow:hidden; box-shadow:2px 2px 4px -2px rgba(0, 0, 0, 0.7); margin:0 5px 5px 0;}
 .user-list-pic img{width:49px;background-image:url("../images/no-pic.png"); background-repeat:no-repeat; background-position:0 0; background-size:100% auto; background-color:rgba(0, 0, 0, 0);}
 .user-title{ padding:0 5px 5px 0; margin:0; text-align:left; font-size:12px;}
@@ -225,7 +227,7 @@ input[placeholder], [placeholder], *[placeholder] {
 post-user-btn-div{width:100%;}
 .post-user-btn{float:right;background-image:url(../images/plug.png); background-repeat:no-repeat; background-position:3px center; background-size:13px auto; background-color:rgba(118, 185, 35, 1); border: medium none; color: rgb(255, 255, 255); margin:0px; padding:3% 4% 3% 12%; cursor:pointer;}
 
-.add-frnd-list{width: 100%; margin: 0px auto 10px; height:369px; overflow-y:scroll;}
+.add-frnd-list{width: 100%; margin: 0px auto 10px; height:420px; overflow-y:scroll;}
 .plug-frnd-main{width:48%; float: left; margin: 15px 0px 0px 5px; border-bottom:1px dotted;}
 .plug-frnd{padding: 0px; font-size: 12px; font-family:sans-serif; color:#555; font-weight: bold; width:100%; line-height:50px; background:#f3f3f3; border-top-left-radius:100%; border-bottom-left-radius:100%;}
 
@@ -255,7 +257,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .user-title p{margin:5px 0;}
 .swipe-top{top:345px;}
 
-.comment-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:absolute; margin:0; padding:0; top:0; left:0;}
+.comment-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:fixed; margin:0; padding:0; top:0; left:0;}
 .comment-area{position: absolute; margin: 0px 2%; text-align: center; width: 96%; top:5%; background:none;}
 .comment-head{width:100%; margin:0 auto 15px;background:none; padding:10px 0;}
 .comment-list{width:100%; height:335px; overflow-y:scroll;}
@@ -282,7 +284,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .like-cmnt-no span{color: rgb(0, 175, 191);}
 .checkbox-list{display:none; position:absolute; top:3px; right:3px; line-height:0;}
 
-.full-annotate-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:absolute; margin:0; padding:0; top:0; left:0;}
+.full-annotate-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:fixed; margin:0; padding:0; top:0; left:0;}
 .full-annotate-area{position: absolute; margin: 0px 4%; text-align: center; width: 92%; top:5%; background:none;}
 .full-annotate-head{width:100%; margin:0 auto 15px;background:none; padding:10px 0; text-align:center; color:#00afbf;}
 .full-annotate-list{width:100%; height:130px; overflow-y:scroll;}
@@ -313,8 +315,8 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .select-ctgry{background:#fff;border:none; box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7); padding: 7px 10px; width: 45%; margin:0 10px;}
 .Upload-text-btn{padding:0; border:none; background-image:url(../images/upload.png); background-repeat:no-repeat; background-position:center center; background-color:#00afbf; background-size:26px auto; width:60px; height:35px;}
 
-.upload-popup-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:absolute; margin:0; padding:0; top:0; left:0;}
-.upload-popup-area{position: absolute; margin: 0px 4%; text-align: center; width: 92%; top:0%; background:none;}
+.upload-popup-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:fixed; margin:0; padding:0; top:0; left:0;}
+.upload-popup-area{position: absolute; margin: 0px 4%; text-align: center; width: 92%; top:0%; background:none; overflow:scroll;}
 .upload-popup-head{width:100%; margin:15px auto;background:none; padding:0; text-align:center; color:#00afbf;}
 .upload-popup-head h3{margin:0;}
 .upload-popup-list{width:100%; height:335px; overflow-y:scroll;}
@@ -386,13 +388,13 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.login_inputs .user_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 4px; background-size:7%;}
 	.login_inputs .pass_input{margin:0 0 24px; padding:8px 10px 8px 32px; width:72%; background-position:2px 2px; background-size:7%;}
 	.loginpage_btns{margin:30px auto;}
-	.list-area{height:445px;}
+	.list-area{height:460px;}
 	.main_div{height:518px;}
 	.ctgry-row{margin:13% auto 0;}
 	.ctgry-row-2{margin:13% auto 0;}
 	.ctgry-row-3{margin:13% auto 0;}
 	.menu-shadow{margin:20px 0 0;}
-	.add-frnd-list{height:458px;}
+	.add-frnd-list{height:506px;}
 	#map-canvas{height:463px;}
 	.plug-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
 	.single-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
@@ -458,7 +460,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.signup_btn_div .left_btn{width:93%;}
 	.need_help{margin:30px 0 0;}
 	.signup-logo{margin:30% 0 10%;}
-	.list-area{height:516px;}
+	.list-area{height:535px;}
 	.main_div{height:590px;}
 	.add-frnd-list{height:528px;}
 	#map-canvas{height:535px;}
@@ -568,7 +570,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.login_btn_div{width:38%;}
 	.need_help{margin:30px 0 0;}
 	.signup-logo{margin:30% 0 10%;}
-	.list-area{height:516px;}
+	.list-area{height:535px;}
 	.main_div{height:590px;}
 	.add-frnd-list{height:528px;}
 	#map-canvas{height:535px;}
@@ -647,9 +649,9 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.signup_btn_div .left_btn{width:93%;}
 	.need_help{margin:30px 0 0;}
 	.signup-logo{margin:30% 0 10%;}
-	.list-area{height:492px;}
+	.list-area{height:510px;}
 	.main_div{height:565px;}
-	.add-frnd-list{height:505px;}
+	.add-frnd-list{height:553px;}
 	#map-canvas{height:510px;}
 	.plug-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
 	.single-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
@@ -700,7 +702,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 	.ctgry-row-2{margin:7% auto 0;}
 	.ctgry-row-3{margin:7% auto 0;}
 	.menu-shadow{margin:30px 0 0;}
-	.add-frnd-list{height:386px;}
+	.add-frnd-list{height:433px;}
 	#map-canvas{height:390px;}
 	.plug-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}
 	.single-frnd{border-top-left-radius:60%; border-bottom-left-radius:60%;}

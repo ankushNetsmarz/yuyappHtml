@@ -57,7 +57,7 @@ function GetUserPost(start, end) {
                     var liked = data.ResponseData[i].PositiveLike;
                     var negativeLiked = data.ResponseData[i].NegativeLike;
                     HTML += "<div class='single-user'>"
-
+                    HTML += "<div class='arrow-main'><img src='images/arrow.png'></div>"
                     HTML += "<div class='user-title'> "
                     HTML += "<div class='fl user-list-pic'><img src=" + ProfilePicURL + "></div>"
                     HTML += "<div class='fl user-name-title'>" + data.ResponseData[i].UserName + "<br><span>(" + data.ResponseData[i].TimeSpan + ")</span></div>"
