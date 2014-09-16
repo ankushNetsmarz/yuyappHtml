@@ -42,10 +42,11 @@
         <div class="full-annotate-area">
         <div class="cross-main-btn">
                 <input type="button" id="crossStatus" class="cross-btn fl" value="">
-                <input type="button" id="postNext" class="like-btn fr" value="Next">
+                <input type="button" id="postNext" class="like-btn fr" value="Post">
                 <div class="clr"></div>
                 </div>
             <div class="full-annotate-head">
+            <h3>Upload Status</h3>
                 <textarea cols="30" id="popupInsertTextBox" rows="4"></textarea>
                <input type="text" class="fr" placeholder="Enter your status" style="display:none;">
             </div>
@@ -74,7 +75,7 @@
 
 <div class="cross-main-btn">
                 <input type="button" id="cancelUpload" class="cross-btn fl" value="">
-                <input type="button"  id="nextUpload" class="like-btn fr" value="Next">
+                <input type="button"  id="nextUpload" class="like-btn fr" value="post">
                 <div class="clr"></div>
                 </div>
 <div class="upload-popup-head">
@@ -130,12 +131,12 @@
 <!-- upload gallery popup end -->
 
 <!-- see other user profile in popup screen -->
-    <div id="" class="see-prof-bg" style="display:none; z-index: 49">
+    <div id="seeUserProfile" class="see-prof-bg" style="display:none; z-index: 49">
         <div class="see-prof-area">
             <div class="cross-main-btn">
-                <input type="button" id="Button5" class="cross-btn" value=""></div>
+                <input type="button" id="crossUserProfile" class="cross-btn" value=""></div>
                     <div class="profile-pic">
-                        <img id="profilePicture" src=""></div>
+                        <img id="" src=""></div>
                     <div id="seeStatus" class="see-status"></div>
                     
                     <div class="see_prof"><form>
@@ -168,16 +169,7 @@
 <div> 
 </div>
 </form></div>
-                    
-                    <!--<div class="see_prof">
-            <form>
-            <div><input id="SeefullName" type="text" placeholder="Full Name" class="see_popup_box" disabled></div>
-            <div><input id="SeeUserName" type="text" placeholder="User Name" class="see_popup_box" disabled></div>
-            <div><input id="SeeEmail" type="email" placeholder="Email Address" class="see_popup_box" disabled></div>
-            <div><input id="SeeDOB" placeholder="DOB" class="see_popup_box" disabled></div>
-            <div><input id="SeeGender" placeholder="Gender" class="see_popup_box" disabled></div>
-            </form>
-                    </div>-->
+                
             
         </div>
     </div>
@@ -293,7 +285,7 @@
 
 <div class="list-area">
 
-<img src="images/no-data.png" style="width: 70%; margin: 50px auto 0px;">
+<!-- <img src="images/no-data.png" style="width: 70%; margin: 50px auto 0px;"> -->
 
 <div class="clr"></div>
 </div>
@@ -557,7 +549,7 @@
     <script src="js/like.js"></script>
     <script src="js/shh.js"></script>
     <script src="js/getNotification.js"></script>
-   
+    <script src="js/seeuser.js"></script>
     <script src="js/idangerous.swiper-2.0.min.js"></script>
     <script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
     <script src="js/resolution.js"></script>
@@ -588,47 +580,14 @@
           document.addEventListener("deviceready", onDeviceReady, false);
 
           function onDeviceReady() {
-
+             
         	  //checkConnection();
               pictureSource = navigator.camera.PictureSourceType;
               destinationType = navigator.camera.DestinationType;
           }
 
 
-          function initialize() {
-              if (navigator.geolocation) {
-
-                  //Use HTML5 Geolocation API To Get Current Position
-                  navigator.geolocation.getCurrentPosition(function (position) {
-
-                      //Get Latitude From Geolocation API
-                      latitude = position.coords.latitude;
-
-                      //Get Longitude From Geolocation API
-                      longitude = position.coords.longitude;
-
-                      //Define New Google Map With Lat / Lon
-                      coords = new google.maps.LatLng(latitude, longitude);
-                      // setlocation(
-                      var mapOptions = {
-                          zoom: 16,
-                          center: coords
-                      }
-
-                      localStorage.setItem("latitude", latitude);
-                      localStorage.setItem("longitude", longitude);
-                      var map = new google.maps.Map(document.getElementById("map-canvas"),
-                    mapOptions);
-                      marker = new google.maps.Marker({
-                          position: coords,
-                          map: map
-                      });
-                      marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
-                  });
-              }
-          }
-
-
+      
 
           $("#updateButton").on("click", function () {
               var editFirstname = $("#editFirstname").val();
@@ -703,6 +662,7 @@
               var ft = new FileTransfer();
 
               ft.upload(path, encodeURI(webservicesiteurl+"posts/add"), win, fail, options);
+             
           }
 
           function win(r) {
@@ -716,7 +676,12 @@
               hideLoader();
               $("#UploadTitle").val('');
               $("#UploadDescription").val('');
-        
+              var isall=true;
+          	 var  posttype= 0;
+          	 var start=1;
+          	 var end=10;
+          	 $("#uploadScreen").css("display","none");
+          	GetPostNonAnonymousList(isall, posttype, start, end);
           }
 
           function fail(error) {
@@ -792,7 +757,7 @@
           $(document).ready(function () {
               localStorage.setItem("MenuFlag", "up");
               checkConnection();
-              initialize();
+            
               var flag = 0;
               var top;
               var topFlag = 0;
@@ -801,7 +766,7 @@
               var start = localStorage.getItem("start");
               var end = localStorage.getItem("end");
               GetUserPost(start, end);
-            
+              GetNotificationCount();
               GetUserProfile();
               var currentWindowHeight = $(window).height();   // returns height of browser viewport
               var currentWindowWidth = $(window).width(); // returns height of HTML document
@@ -815,7 +780,9 @@
                   $("#Upload1Annotate").val('Like');
                   $("#Upload2Annotate").val('Dislike');
                   $("#uploadScreen").css("display", "block");
-                //  $(".video").css("display","none");
+                  $("#UploadPreview").prop("src","images/upload-img-bg.png");
+                  $(".video").css("display","none");
+                  $("#UploadPreview").css("display", "block");
 
               });
               $("#nextUpload").on("click", function () {
@@ -1001,15 +968,17 @@
                       else if (currentWindowWidth == 480)   //360*480
 					  {
                           top = '485px'
-                      }          
-					  else if (currentWindowWidth == 615)
-                      {
-                          top = '485px'
                       }
                      else {
                           top = '440px';       //360*640
                       }
                       break;
+                  case 615:
+                	  if (currentWindowWidth == 360)     //360*615
+                      {
+                          top = '485px';
+                      }
+                  break;
                   default:
                       {
                           top = '390px';

@@ -35,7 +35,12 @@ function InsertPostImage(imageURLs) {
             console.log(data);
         	 $("#UploadTitle").val('');
         	 $("#UploadDescription").val('');
-        	
+        	 $("#uploadScreen").css("display","none");
+        	 var isall=true;
+        	 var  posttype= 0;
+        	 var start=1;
+        	 var end=10;
+        	GetPostNonAnonymousList(isall, posttype, start, end);
             window.plugins.toast.show('Feed Added!', 'long', 'center', function (a) { }, function (b) { });
             
             //alert("success..." + data);

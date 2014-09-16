@@ -72,17 +72,23 @@ function GetNotification(start, end) {
         data: postData,
         success: function (data) {
 
-
+            UpdateNotification();
             var HTML = "";
             var content = localStorage.getItem("htmlcontent");
             if (data.ResponseData.length > 0) {
 
                 for (var i = 0; i < data.ResponseData.length; i++) {
                     var ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic;
-
+                    var annotation = data.ResponseData[i].Annotation;
+                 
                     HTML += "<div class='single-notifi'>"
                     HTML += "<div class='fl notifi-by-user'><img src=" + ProfilePicURL + "></div>"
-                    HTML += "<div class='fl notifi-text'><span>" + data.ResponseData[i].UserName + " " + "</span>" + data.ResponseData[i].Type + "d your post"
+                    if (annotation == "") {
+                        HTML += "<div class='fl notifi-text'><span>" + data.ResponseData[i].UserName + " " + "</span>" + " commented on your post"
+                    }
+                    else {
+                        HTML += "<div class='fl notifi-text'><span>" + data.ResponseData[i].UserName + " " + "</span>" + " says " + "'" + data.ResponseData[i].Annotation + "'" + " on your post"
+                    }
                     HTML += "<div class='notifi-msg-ago'>" + data.ResponseData[i].TimeSpan + "</div>"
                     HTML += "</div>"
                     HTML += "<div class='clr'></div>"

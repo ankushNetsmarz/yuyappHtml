@@ -350,11 +350,13 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .generateKey{width:100%; margin:7px auto 0;}
 .generateKey a{text-decoration: none; padding: 0px; text-align: center; margin: 0px auto; display: inline-flex;}
 .generateKey a img{width:21px;}
-.full-annotate-head h3{margin:0;}
+
+.full-annotate-head h3{margin:10px 0;}
 .pop-bg-main{position:relative; width:100%; display:none;}
 .pop-btn-edit{background: none repeat scroll 0% 0% rgb(255, 255, 255); margin: 0px auto; padding: 2% 0; border-top:1px solid #aaa; border-bottom:1px solid #aaa;}
 .pop-btn-delete{background: none repeat scroll 0% 0% rgb(255, 255, 255); margin: 0px auto; padding: 2% 0; border-top:none; border-bottom:1px solid #aaa;}
 .post-edit-btn{background: none repeat scroll 0% 0% transparent; border: medium none; text-align: center; width: 100%; padding: 0px; margin: 0px;}
+
 
 /*-- This css for Mobile's different resolutions --*/
 

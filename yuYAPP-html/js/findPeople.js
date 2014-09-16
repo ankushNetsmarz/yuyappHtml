@@ -6,6 +6,7 @@
 });
 
 
+
 $("#RequestOption").on("click", function () {
     $('.inner-pages').animate({
         'top': "0px" //moves up
@@ -127,7 +128,7 @@ function GetPeopleRandom(start,end) {
 
                     HTML += "<div class='plug-frnd-main'>"
                     HTML += "<div class='plug-frnd'>"
-                    HTML += "<div class='fl single-frnd-imgarea' ><img userId=" + UserId + " src=" + ProfilePicURL + "></div>"
+                    HTML += "<div class='fl single-frnd-imgarea'><img class='testImage' userId=" + UserId + " src=" + ProfilePicURL + "></div>"
                     HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
                     HTML += "</div>"
                     HTML += "<div  id='plug' class='plug-btn-div' userId=" + data.ResponseData[i].UserId + "><button type='button' class='plug-btn'>PLUG</button></div></div>"
