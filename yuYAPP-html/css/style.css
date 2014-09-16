@@ -350,7 +350,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .generateKey{width:100%; margin:7px auto 0;}
 .generateKey a{text-decoration: none; padding: 0px; text-align: center; margin: 0px auto; display: inline-flex;}
 .generateKey a img{width:21px;}
-.full-annotate-head h3{margin:0; font-size:12px;}
+.full-annotate-head h3{margin:10px 0;}
 
 /*-- This css for Mobile's different resolutions --*/
 

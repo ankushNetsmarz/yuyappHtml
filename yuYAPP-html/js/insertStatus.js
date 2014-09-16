@@ -55,6 +55,7 @@ function InsertStatus() {
             newcall();
             var start = localStorage.getItem("start");
             var end = localStorage.getItem("end");
+            $("#postStatusPopup").css("display","none");
             GetUserPost(start, end);
         
 
@@ -96,6 +97,8 @@ function InsertPostComment(postIdForComment) {
         success: function (data) {
        
             console.log(data);
+            $("#InsertStatusTextBoxComments").val('');
+         
             newcall();
             var start = localStorage.getItem("start");
             var end = localStorage.getItem("end");

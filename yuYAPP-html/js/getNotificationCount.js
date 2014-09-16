@@ -9,8 +9,13 @@ function GetNotificationCount() {
         url: webservicesiteurl + "posts/GetNotificationCount",
         data: postData,
         success: function (data) {
-            UpdateNotification()
-            console.log(data);
+            // UpdateNotification()
+          var value= data.ResponseData;
+          if(value!=0)
+        	  {
+            $(".notify-badge").text(data.ResponseData);
+        	  }
+            console.log(data.ResponseData);
           
             //alert("success..." + data);
         },
