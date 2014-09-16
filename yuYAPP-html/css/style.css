@@ -138,8 +138,8 @@ input[placeholder], [placeholder], *[placeholder] {
 
 .ctgry-list-main{/*background:url(../images/ctgry-list-bg.jpg) no-repeat; background-size:cover; */margin:1.2% 0 0;}
 
-.arrow-main{position: absolute; width: 100%; margin: 0px; padding: 0px; top: 0px; text-align: right; right:10px;}
-.arrow-main img{width:6%;}
+.arrow-main{position: absolute; display:none; width: 100%; margin: 0px; padding: 0px; top: 0px; text-align: right; right:10px;}
+.arrow-main img{width:6%;display:none;}
 
 .list-area{padding:0; width:100%; height:372px; overflow-y:scroll;}
 
@@ -316,7 +316,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .Upload-text-btn{padding:0; border:none; background-image:url(../images/upload.png); background-repeat:no-repeat; background-position:center center; background-color:#00afbf; background-size:26px auto; width:60px; height:35px;}
 
 .upload-popup-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:fixed; margin:0; padding:0; top:0; left:0;}
-.upload-popup-area{position: absolute; margin: 0px 4%; text-align: center; width: 92%; top:0%; background:none; overflow:scroll;}
+.upload-popup-area{position: absolute; margin: 0px 4%; text-align: center; width: 92%; top:0%; background:none; overflow-y:scroll; height:100%;}
 .upload-popup-head{width:100%; margin:15px auto;background:none; padding:0; text-align:center; color:#00afbf;}
 .upload-popup-head h3{margin:0;}
 .upload-popup-list{width:100%; height:335px; overflow-y:scroll;}
@@ -337,8 +337,8 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .upload-popup-msg-ago{color:#bbb; font-size:11px;font-weight:bold; text-align:left;}
 .upload-gall-btn{background:#00afbf; color:#FFF; padding:6px 0px; border:1px solid #fff; font-size:12px; margin:0; width:49%; }
 .cancel-btn{width:100%; margin:10px auto 0;}
-.display-pic{height: 130px; overflow: hidden; width: 100%; margin:0 0 10px; background:#fff;}
-.display-pic img{width: 100%; background-image:url("../images/upload-img-bg.png"); background-repeat:no-repeat; background-position:center 8px; background-size:38% auto; height:100%;}
+.display-pic{height: 130px; overflow: hidden; width: 100%; margin:0 0 10px; background-color:#fff;background-image:url("../images/upload-img-bg.png"); background-repeat:no-repeat; background-position:center 8px; background-size:38% auto;}
+.display-pic img{width: 100%;  height:100%;}
 
 #map-canvas { height: 390px;}
 

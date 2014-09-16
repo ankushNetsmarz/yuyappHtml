@@ -176,14 +176,14 @@
     <!-- see other user profile in popup end -->
 
 <!-- when click on next button in add anotation popup then this div will display -->
-    <div id="" class="post-user-list" style="display:none; z-index: 49">
+    <div id="Div1" class="post-user-list" style="display:none; z-index: 49">
         <div class="post-user-area">
         <div class="cross-main-btn">
-                <input type="button" id="cancelCommentBox" class="cross-btn fl" value="">
-                <input type="button"  id="nextUpload" class="like-btn fr" value="Post">
+                <input type="button" id="Button1" class="cross-btn fl" value="">
+                <input type="button"  id="Button2" class="like-btn fr" value="Post">
                 <div class="clr"></div>
                 </div>
-            <div id="" class="post-user-list-main">
+            <div id="Div2" class="post-user-list-main">
             <!-- single user -->
             <div class="post-user-frnd-main">
             <div class="post-user-frnd">
@@ -203,15 +203,15 @@
     <!-- friend list for access or denied screen end -->
     
 <!-- when click on next button in add anotation popup then this div will display -->
-    <div id="" class="generate-key" style="display: none; z-index: 49">
+    <div id="Div3" class="generate-key" style="display: none; z-index: 49">
         <div class="generate-key-area">
         <div class="cross-main-btn">
-                <input type="button" id="cancelCommentBox" class="cross-btn fl" value="">
+                <input type="button" id="Button3" class="cross-btn fl" value="">
                 <div class="clr"></div>
                 </div>
-            <div id="" class="generate-key-main">
-                <input type="text" id="" placeholder="Fill genrate key" class="add-key">
-                <input type="button" id="" class="like-btn add-key-btn" value="Generate">
+            <div id="Div4" class="generate-key-main">
+                <input type="text" id="Text1" placeholder="Fill genrate key" class="add-key">
+                <input type="button" id="Button4" class="like-btn add-key-btn" value="Generate">
             </div>
         </div>
     </div>
@@ -302,7 +302,7 @@
                     
 <div class="edit_prof_inputs"><form>
 
-<div id="" class="see-status"></div>
+<div id="Div5" class="see-status"></div>
 
 <div class="edit-pro-field"><label>
 <span class="fl first-span">Full Name</span><input id="editFirstname" type="text" class="fr">
@@ -395,7 +395,7 @@
 
                 <div class="notification" style="display: none;">
                     <div class="notify-area">
-                        <div id="Div1" class="notify-list">
+                        <div id="Div6" class="notify-list">
                         </div>
                         <!--<div>
                             <input type="button" id="Button4" class="load-more" value="Load More" /></div>-->
@@ -471,7 +471,7 @@
 
                                     </div>
                                 </div>
-                        <input id="" type="button" class="Upload-text-btn">
+                        <input id="Button5" type="button" class="Upload-text-btn">
                     </div>
 
                     <div id="TabbedPanels4" class="TabbedPanels">
@@ -569,7 +569,7 @@
 
       <script>
           var webservicesiteurl = "http://174.141.233.6/YuY/";
-        // var webservicesiteurl = "http://174.141.233.6/YuY_Demo/";
+          // var webservicesiteurl = "http://174.141.233.6/YuY_Demo/";
           var userId = localStorage.getItem("userId");
           var UploadFileFlag;
           var pictureSource;   // picture source
@@ -580,14 +580,14 @@
           document.addEventListener("deviceready", onDeviceReady, false);
 
           function onDeviceReady() {
-             
-        	  //checkConnection();
+
+              //checkConnection();
               pictureSource = navigator.camera.PictureSourceType;
               destinationType = navigator.camera.DestinationType;
           }
 
 
-      
+
 
           $("#updateButton").on("click", function () {
               var editFirstname = $("#editFirstname").val();
@@ -595,11 +595,11 @@
               var editUserName = $("#editUserName").val();
               var editDOB = $("#editDOB").val();
               var editGender = localStorage.getItem("gender");
-             
+
               if (flagProfile == 1) {
                   AddProfilePicture(imageURL);
-                   var GetProfilePicture = localStorage.getItem("ProfilePicUrl");
-                     var mainProfile= $("#mainProfile");
+                  var GetProfilePicture = localStorage.getItem("ProfilePicUrl");
+                  var mainProfile = $("#mainProfile");
                   mainProfile.prop('src', GetProfilePicture);
               }
               else {
@@ -612,10 +612,10 @@
 
               for (i = 0, len = mediaFiles.length; i < len; i += 1) {
                   path = mediaFiles[i].fullPath;
-                
+
                   UploadFileFlag = "video";
                   $("#UploadPreview").hide();
-                  $(".video").css("display","block");
+                  $(".video").css("display", "block");
                   $("#video").parent().prop('src', path);
               }
           };
@@ -625,7 +625,41 @@
               //navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
           };
 
+          function initialize() {
 
+              if (navigator.geolocation) {
+
+                  //Use HTML5 Geolocation API To Get Current Position
+                  navigator.geolocation.getCurrentPosition(function (position) {
+
+                      //Get Latitude From Geolocation API
+                      latitude = position.coords.latitude;
+
+                      //Get Longitude From Geolocation API
+                      longitude = position.coords.longitude;
+                      alert(latitude);
+
+                      //Define New Google Map With Lat / Lon
+                      coords = new google.maps.LatLng(latitude, longitude);
+                      alert(coords);
+                      // setlocation(
+                      var mapOptions = {
+                          zoom: 16,
+                          center: coords
+                      }
+
+                      localStorage.setItem("latitude", latitude);
+                      localStorage.setItem("longitude", longitude);
+                      var map = new google.maps.Map(document.getElementById("map-canvas"),
+                    mapOptions);
+                      marker = new google.maps.Marker({
+                          position: coords,
+                          map: map
+                      });
+                      marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+                  });
+              }
+          }
           function uploadPhoto(path) {
               showLoader();
               var title = $("#UploadTitle").val();
@@ -633,8 +667,8 @@
               var a1 = $("#Upload1Annotate").val();
               var a2 = $("#Upload2Annotate").val();
 
-              var anony=  localStorage.getItem("isAnonymous");
-          
+              var anony = localStorage.getItem("isAnonymous");
+
               var options = new FileUploadOptions();
               options.fileKey = "file";
 
@@ -661,8 +695,8 @@
 
               var ft = new FileTransfer();
 
-              ft.upload(path, encodeURI(webservicesiteurl+"posts/add"), win, fail, options);
-             
+              ft.upload(path, encodeURI(webservicesiteurl + "posts/add"), win, fail, options);
+
           }
 
           function win(r) {
@@ -676,12 +710,12 @@
               hideLoader();
               $("#UploadTitle").val('');
               $("#UploadDescription").val('');
-              var isall=true;
-          	 var  posttype= 0;
-          	 var start=1;
-          	 var end=10;
-          	 $("#uploadScreen").css("display","none");
-          	GetPostNonAnonymousList(isall, posttype, start, end);
+              var isall = true;
+              var posttype = 0;
+              var start = 1;
+              var end = 10;
+              $("#uploadScreen").css("display", "none");
+              GetPostNonAnonymousList(isall, posttype, start, end);
           }
 
           function fail(error) {
@@ -719,7 +753,7 @@
               imageURLs = imageURI;
               UploadFileFlag = "image";
               $("#UploadPreview").show();
-              $(".video").css("display","none");
+              $(".video").css("display", "none");
           }
 
           / * opens default gallery of native system, i.e android or iphone */
@@ -755,9 +789,10 @@
 
 
           $(document).ready(function () {
+              initialize();
               localStorage.setItem("MenuFlag", "up");
               checkConnection();
-            
+
               var flag = 0;
               var top;
               var topFlag = 0;
@@ -777,32 +812,41 @@
 
                   $("#UploadTitle").val('');
                   $("#UploadDescription").val('');
-                  $("#Upload1Annotate").val('Like');
-                  $("#Upload2Annotate").val('Dislike');
+                  $("#Upload1Annotate").val('');
+                  $("#Upload2Annotate").val('');
                   $("#uploadScreen").css("display", "block");
-                  $("#UploadPreview").prop("src","images/upload-img-bg.png");
-                  $(".video").css("display","none");
+                  $("#UploadPreview").prop("src", "");
+                  $(".video").css("display", "none");
                   $("#UploadPreview").css("display", "block");
 
               });
               $("#nextUpload").on("click", function () {
                   if ($("#UploadTitle").val() == '') {
-                	
-                    window.plugins.toast.show('Enter title for a feed!', 'long', 'center', function (a) { }, function (b) { });
+
+                      window.plugins.toast.show('Enter title for a feed!', 'long', 'center', function (a) { }, function (b) { });
                   }
+                  else if ($("#Upload1Annotate").val() == '') {
+                      window.plugins.toast.show('Enter Annotations for a feed!', 'long', 'center', function (a) { }, function (b) { });
+
+                  }
+
+                  else if ($("#Upload2Annotate").val() == '') {
+                      window.plugins.toast.show('Enter Annotations for a feed!', 'long', 'center', function (a) { }, function (b) { });
+
+                  }
+
 
                   else if (UploadFileFlag == "image") {
-                    InsertPostImage(imageURLs);
+                      InsertPostImage(imageURLs);
                   }
-                  else if(UploadFileFlag == "video") {
+                  else if (UploadFileFlag == "video") {
 
-                    uploadPhoto(path);
+                      uploadPhoto(path);
                   }
-                  else
-                	  {
-                	  window.plugins.toast.show('Select image or video!', 'long', 'center', function (a) { }, function (b) { });
-                      
-                	  }
+                  else {
+                      window.plugins.toast.show('Select image or video!', 'long', 'center', function (a) { }, function (b) { });
+
+                  }
               });
 
 
@@ -816,28 +860,29 @@
 
               $("#logout").on("click", function () {
 
-                 
-				
-                 function onConfirm(buttonIndex) {
-                	  if(buttonIndex==1)
-                		  {
-                		  
-                   	  localStorage.clear();
-                   	  window.location.replace("login.html");
-                    	  }
-                	
 
-                	}
 
-                	navigator.notification.confirm(
-                	    'Do you want to logout? ', // message
-                	     onConfirm,            // callback to invoke with index of button pressed
-                	    'YUYApp',           // title
-                	    ['ok','cancel']     // buttonLabels
-                	);
+                  function onConfirm(buttonIndex) {
+                      if (buttonIndex == 1) {
 
-                
+                          localStorage.clear();
+                          window.location.replace("login.html");
+                      }
+
+
+                  }
+
+                  navigator.notification.confirm(
+                      'Do you want to logout? ', // message
+                       onConfirm,            // callback to invoke with index of button pressed
+                      'YUYApp',           // title
+                      ['OK', 'CANCEL']     // buttonLabels
+                  );
+
+
               });
+
+
 
 
               $(".right-top-btn").on("click", function () {
@@ -966,19 +1011,19 @@
                           top = '485px';
                       }
                       else if (currentWindowWidth == 480)   //360*480
-					  {
+                      {
                           top = '485px'
                       }
-                     else {
+                      else {
                           top = '440px';       //360*640
                       }
                       break;
                   case 615:
-                	  if (currentWindowWidth == 360)     //360*615
+                      if (currentWindowWidth == 360)     //360*615
                       {
                           top = '485px';
                       }
-                  break;
+                      break;
                   default:
                       {
                           top = '390px';

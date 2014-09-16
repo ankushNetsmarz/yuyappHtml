@@ -41,6 +41,7 @@ function InsertPostImage(imageURLs) {
         	 var start=1;
         	 var end=10;
         	GetPostNonAnonymousList(isall, posttype, start, end);
+        	GetPostAnonymousList(isall, posttype, start, end);
             window.plugins.toast.show('Feed Added!', 'long', 'center', function (a) { }, function (b) { });
             
             //alert("success..." + data);

@@ -156,6 +156,7 @@ function GetPostNonAnonymousList(isall,posttype,start, end) {
                     var negativeLiked = data.ResponseData[i].NegativeLike;
 
                     HTML += "<div class='single-upload'>"
+                    HTML += "<div class='arrow-main'><img src='images/arrow.png'></div>"
                     HTML += "<div class='upload-title'>"
                     HTML += "<div class='fl upload-user-pic'>"
                     HTML += "<img src=" + ProfilePicURL + "></div>"
@@ -174,7 +175,7 @@ function GetPostNonAnonymousList(isall,posttype,start, end) {
 
                     HTML += "<p><strong>" + data.ResponseData[i].Status + "</strong></p>"
                     HTML += "<p>" + data.ResponseData[i].Description + "</p> </div></div>"
-                    HTML += "<div class='like-cmnt-no'><span class='firstButtonSpan'>" + data.ResponseData[i].TotalLike + "</span>" + " " + positiveAnnotations + ", <span >" + data.ResponseData[i].TotalComment + "</span> Comments, <span class='secondButtonSpan'>" + data.ResponseData[i].TotalDisLike + "</span>" + " " + negativeAnnotations + "</div>"
+                    HTML += "<div class='like-cmnt-no'><span class='firstButtonSpan'>" + data.ResponseData[i].TotalLike + "</span>" + " " + positiveAnnotations + ", <span class='commentButtonSpan'>" + data.ResponseData[i].TotalComment + "</span> Comments, <span class='secondButtonSpan'>" + data.ResponseData[i].TotalDisLike + "</span>" + " " + negativeAnnotations + "</div>"
 
                     HTML += "<div postId=" + data.ResponseData[i].PostId + " class='wordwall-btns'>"
                     if (liked == true) {

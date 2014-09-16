@@ -6,8 +6,8 @@ $("#postStatus").on("click", function () {
 	
 	    var post = $("#InsertStatusTextBox").val();
 	    if (post != "") {
-	        $("#firstAnnotate").val("like");
-	        $("#SecondAnnotate").val("dislike");
+	        $("#firstAnnotate").val('');
+	        $("#SecondAnnotate").val('');
 	    $("#postStatusPopup").css("display", "block");
 	    $("#popupInsertTextBox").val(post);
 	}
@@ -20,8 +20,19 @@ $("#postStatus").on("click", function () {
 
 
 $("#postNext").on("click", function () {
-  
+	   if ($("#firstAnnotate").val() == '') {
+    	  window.plugins.toast.show('Enter Annotations for a feed!', 'long', 'center', function (a) { }, function (b) { });
+          
+      }
+      	
+      else  if ($("#SecondAnnotate").val() == '') {
+    	  window.plugins.toast.show('Enter Annotations for a feed!', 'long', 'center', function (a) { }, function (b) { });
+          
+      }
+      else
+    	  {
     InsertStatus();
+    	  }
 });
 
 $("#crossStatus").on("click", function () {
@@ -34,7 +45,7 @@ $("#crossStatus").on("click", function () {
 var userId= localStorage.getItem("userId");
 
 function InsertStatus() {
-    alert($("#firstAnnotate").val());
+   
     var postData = {
         postedBy: userId, /*user who Post the status or the Post */
         postFileTitle: $("#popupInsertTextBox").val(), /*This is for both Post and status*/

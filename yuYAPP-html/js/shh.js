@@ -23,7 +23,7 @@ $("#ShhhOption").on("click", function () {
     $(".ctgry-list-main,.follow-friend,.notification,.add-frnd").css("display", "none");
     $("#YAPP-Live").css("display", "none");
     $(".shh-screen").css("display", "block");
-    $(".top_heading").text("shh..");
+    $(".top_heading").text("SHH..");
     localStorage.setItem("MenuFlag", "up");
 
 });
@@ -114,6 +114,7 @@ function GetPostAnonymousList(isall, posttype,start, end) {
                     var negativeLiked = data.ResponseData[i].NegativeLike;
                     var profile= webservicesiteurl+ "userdata/anonymouspic/male.jpg"
             HTML+= "<div class='single-upload'>"
+            HTML += "<div class='arrow-main'><img src='images/arrow.png'></div>"
             HTML+="<div class='upload-title'>"
             HTML+= "<div class='fl upload-user-pic'>"
             HTML+= "<img src="+profile+"></div>"
@@ -133,7 +134,7 @@ function GetPostAnonymousList(isall, posttype,start, end) {
             HTML += "<p>" + data.ResponseData[i].Description + "</p>"
             HTML+= "</div>"
             HTML+= "</div>"
-            HTML += "<div class='like-cmnt-no'><span class='firstButtonSpan'>" + data.ResponseData[i].TotalLike + "</span>" + " " + positiveAnnotations + ", <span >" + data.ResponseData[i].TotalComment + "</span> Comments, <span class='secondButtonSpan'>" + data.ResponseData[i].TotalDisLike + "</span>" + " " + negativeAnnotations + "</div>"
+            HTML += "<div class='like-cmnt-no'><span class='firstButtonSpan'>" + data.ResponseData[i].TotalLike + "</span>" + " " + positiveAnnotations + ", <span class='commentButtonSpan'>" + data.ResponseData[i].TotalComment + "</span> Comments, <span class='secondButtonSpan'>" + data.ResponseData[i].TotalDisLike + "</span>" + " " + negativeAnnotations + "</div>"
             HTML += "<div postId=" + data.ResponseData[i].PostId + " class='wordwall-btns'>"
 
             if (liked == true) {
@@ -199,6 +200,8 @@ function Gen_AnonymousId() {
         success: function (data) {
             //debugger;
             console.log(data);
+            window.plugins.toast.show('Key generated!', 'long', 'center', function (a) { }, function (b) { });
+            
             //alert("success..." + data);
         },
         error: function (xhr) {
