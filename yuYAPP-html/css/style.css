@@ -348,14 +348,19 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .swiper-nav span{ line-height:35px !important;}
 
 .generateKey{width:100%; margin:7px auto 0;}
-.generateKey a{text-decoration: none; padding: 0px; text-align: center; margin: 0px auto; display: inline-flex;}
+.generateKey a{text-decoration: none; padding:0px 10px; border-left:1px dotted #555; text-align: center; margin: 0px auto; display: inline-flex;}
 .generateKey a img{width:21px;}
+.generateKey h4{margin:0;}
+.generateKey h4 span{margin:0 0 0 10px; font-weight:normal;}
 
 .full-annotate-head h3{margin:10px 0;}
 .pop-bg-main{position:relative; width:100%; display:none;}
 .pop-btn-edit{background: none repeat scroll 0% 0% rgb(255, 255, 255); margin: 0px auto; padding: 2% 0; border-top:1px solid #aaa; border-bottom:1px solid #aaa;}
 .pop-btn-delete{background: none repeat scroll 0% 0% rgb(255, 255, 255); margin: 0px auto; padding: 2% 0; border-top:none; border-bottom:1px solid #aaa;}
 .post-edit-btn{background: none repeat scroll 0% 0% transparent; border: medium none; text-align: center; width: 100%; padding: 0px; margin: 0px;}
+
+.camera-bg-main{position:absolute; width:100%; top:40%; right:0; text-align:center; margin:0 auto;}
+.camera-btn{background:rgba(238, 238, 238, 0.9); border-radius:10px; margin: 0px auto; padding: 8% 5%; width:60%; box-shadow:0 0 7px 0 rgba(0, 0, 0, 0.6)}
 
 
 /*-- This css for Mobile's different resolutions --*/
