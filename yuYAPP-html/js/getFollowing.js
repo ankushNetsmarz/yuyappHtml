@@ -54,7 +54,6 @@ function GetAllFollowing(start,end) {
                     HTML += "<div class='single-frnd'>"
                     HTML += "<div class='fl single-frnd-imgarea'><img src=" + ProfilePicURL + "></div>"
                     HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
-                    HTML += "<div class='checkbox-list'><input Userid=" + data.ResponseData[i].UserId + " class='checks'  type='checkbox' alt='access list'></div>"
                     HTML += "</div>"
                     HTML += "<div  id='unplug' class='unplug-btn-div' userId=" + data.ResponseData[i].UserId + "><button type='button' class='unplug-btn'>UNPLUG</button></div></div>"
 
@@ -114,7 +113,6 @@ function GetRecentFollowingList(start,end) {
                     HTML += "<div class='single-frnd'>"
                     HTML += "<div class='fl single-frnd-imgarea'><img src=" + ProfilePicURL + "></div>"
                     HTML += "<div>" + data.ResponseData[i].UserName + "</div>"
-                    HTML += "<div class='checkbox-list'><input Userid=" + data.ResponseData[i].UserId + " class='checks'  type='checkbox' alt='access list'></div>"
                     HTML += "</div>"
                     HTML += "<div  id='unplug' class='unplug-btn-div' userId=" + data.ResponseData[i].UserId + "><button type='button' class='unplug-btn'>UNPLUG</button></div></div>"
 
