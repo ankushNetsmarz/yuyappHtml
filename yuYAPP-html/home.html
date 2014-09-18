@@ -124,7 +124,11 @@
 </label>
 </div>
 </div>
-<div class="cancel-btn">
+<div class="camera-bg-main">
+<div class="camera-btn">
+<input type="button"  id="" class="like-btn" value="Camera">
+<input type="button"  id="" class="like-btn" value="Gallery">
+</div>
 </div>
 </div>
 </div>
@@ -184,37 +188,11 @@
                 <div class="clr"></div>
                 </div>
             <div id="postAccess" class="post-user-list-main">
-            <!-- single user -->
-<!--             <div class="post-user-frnd-main"> -->
-<!--             <div class="post-user-frnd"> -->
-<!--             <div class="fl single-frnd-imgarea"> -->
-<!--             <img src="http://174.141.233.6/YuY/" userid="41"> -->
-<!--             </div> -->
-<!--             <div>dhani</div> -->
-<!--             <div class="checkbox-list" ><input type="checkbox" alt="access list"></div> -->
-<!--             </div> -->
-<!--           </div> -->
-            <!-- single user -->
             </div>
         </div>
     </div>
     <!-- friend list for access or denied screen end -->
     
-<!-- when click on next button in add anotation popup then this div will display -->
-    <div id="Div2" class="generate-key" style="display: none; z-index: 49">
-        <div class="generate-key-area">
-        <div class="cross-main-btn">
-                <input type="button" id="Button3" class="cross-btn fl" value="">
-                <div class="clr"></div>
-                </div>
-            <div id="Div3" class="generate-key-main">
-                <input type="text" id="Text1" placeholder="Fill genrate key" class="add-key">
-                <input type="button" id="Button4" class="like-btn add-key-btn" value="Generate">
-            </div>
-        </div>
-    </div>
-    <!-- friend list for access or denied screen end -->
-
 
 <div class="interest-topbar">
 <div class="left-top-btn"><button type="button" class="menu_btn_top"></button></div>
@@ -282,9 +260,10 @@
 </div>
 
 <div class="list-area">
-
-<!-- <img src="images/no-data.png" style="width: 70%; margin: 50px auto 0px;"> -->
-
+<!--<div class="no-data">
+ <img src="images/no-data.png" style="width: 70%; margin: 50px auto 0px;"> 
+ <h4>No any feed found here!</h4>
+</div>-->
 <div class="clr"></div>
 </div>
 
@@ -335,20 +314,7 @@
 <div> 
 </div>
 </form></div>
-                    
-                    <!--<div class="edit_prof_inputs">
-                        <form>
 
-<div class="single-edt-inpt"><input  id="editFirstname"  type="text" placeholder="First Name" class="edit_prof_box" disabled></div>
-<div class="single-edt-inpt"><input  id="editLastname" type="text" placeholder="Last Name" class="edit_prof_box" disabled></div>
-<div class="single-edt-inpt"><input  id="editUserName" type="text" placeholder="User Name" class="edit_prof_box" disabled></div>
-<div class="single-edt-inpt"><input id="editDOB" placeholder="DOB" class="edit_prof_box" disabled></div>
-     <select id="selector" class="edit_prof_box" disabled>
-                                    <option id="male" value="Male">Male</option>
-                                    <option id="female" value="Female">Female</option>                              
-                                </select>
-</form>
-</div>-->
 <div>
 <input type="button" id="updateButton" class="edit-prof-btn fr" value="UPDATE" />
 <div class="clr"></div>
@@ -409,11 +375,7 @@
                 <div id="YAPP-Live" class="YAPP-Live" style="display: none;">
 
                     <div class="post-status">
-                        <!--<select class="select-ctgry">
-                            <option>All</option>
-                            <option>Images</option>
-                            <option>Videos</option>
-                        </select>-->
+                       
                         <div class="swiper-nav swiper-container swip-width">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide" id="AllPosts"><span>All</span></div>
@@ -461,7 +423,11 @@
 
                 <div class="shh-screen" style="display: none;">
                   
-                  <div class="generateKey"><a href="#"><img src="images/key-icon.png">&nbsp;Generate Key</a></div>
+                  <div class="generateKey">
+                  <h4 class="fl">Welcome! <span>jgkj4654</span></h4>
+                  <a href="#" class="fr"><img src="images/key-icon.png">&nbsp;Generate Key</a>
+                  <div class="clr"></div>
+                  </div>
                   
                     <div class="post-status">
                         <div class="swiper-nav swiper-container swip-width">
@@ -514,26 +480,6 @@
                 
                 <div class="add-frnd-list"></div>
 
-                    <!--<div id="TabbedPanels2" class="TabbedPanels">
-                        <ul class="TabbedPanelsTabGroup">
-                            <li class="TabbedPanelsTab" tabindex="0">Plug List</li>
-
-                            <li class="TabbedPanelsTab" tabindex="0">People Map</li>
-
-                        </ul>
-                        <div class="TabbedPanelsContentGroup">
-                            <div class="TabbedPanelsContent">
-                                
-                            </div>
-                            <div class="TabbedPanelsContent">
-
-
-                                <div id="map-canvas"></div>
-
-
-                            </div>
-                        </div>
-                    </div>-->
 
                 </div>
                 <!-- add new frends screen ends here -->

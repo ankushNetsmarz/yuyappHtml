@@ -68,7 +68,7 @@ input[placeholder], [placeholder], *[placeholder] {
 .signup-field{width:90%; margin:3px auto 0; padding:0; color:#FFF; background:rgba(255, 255, 255, 0.7);border-radius:4px; -moz-border-radius:4px; -ms-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
 .signup-field label span{color: rgba(0, 0, 0, 0.3); margin:2px; padding:5px 3px 4px 26px;}
 .signup-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px; margin:2px 0; width:164px;}
-.signup-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px 5px 25px; margin:2px 0; width:197px; float:right;}
+.signup-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px 5px 25px; margin:2px 0; width:197px; float:right; height:27px;}
 
 .forgot{width:50%;}
 .forgot a{text-decoration:none; color:#333;}
@@ -162,7 +162,8 @@ input[placeholder], [placeholder], *[placeholder] {
 .cross-main-btn{width:100%; margin:0 auto 20px; text-align:left;}
 
 .cross-btn{background-image:url(../images/cross-icon.png); background-repeat:no-repeat; background-color:transparent; background-position:0 0; background-size:100%; border:none; height:30px; width:28px; margin:0; padding:0;}
-.back-btn{background-image:url(../images/back-icon.png); background-repeat:no-repeat; background-color:transparent; background-position:0 0; background-size:100%; border:none; height:30px; width:28px; margin:0; padding:0;}
+
+.back-btn{background-image:url(../images/back-icon.png); background-repeat:no-repeat; background-color:transparent; background-position:0 0; background-size:100%; border:none; height:30px; width:34px; margin:0; padding:0;}
 
 .profile-menu{background:#bbb; margin:-4px 0 0; text-align:center; box-shadow:0 2px 3px -1px rgba(0, 0, 0, 0.7);}
 .profile-menu ul{margin:0; padding:0;}
@@ -171,7 +172,7 @@ input[placeholder], [placeholder], *[placeholder] {
 .profile-pic{width:50%; height:154px; margin:20px auto 0; border-radius:0%;/* border:4px solid #efefef; */overflow:hidden; position:relative; box-shadow:2px 2px 2px -1px rgba(0, 0, 0, 0.8);}
 .profile-pic img {width:102%;background-image:url("../images/no-pic.png"); background-repeat:no-repeat; background-position:0 0; background-size:100% auto; background-color:rgba(0, 0, 0, 0);}
 .change-pic{bottom: 0px; background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.6); font-size: 12px; text-align: center; margin: 0px auto; position: absolute; padding:4px 5px 0; color:#FFF; right:0;}
-.change-pic img {width:26px;background-image:url("../images/no-pic.png"); background-repeat:no-repeat; background-position:0 0; background-size:100% auto; background-color:rgba(0, 0, 0, 0);}
+.change-pic img {width:26px;background-image:none; background-repeat:no-repeat; background-position:0 0; background-size:100% auto; background-color:rgba(0, 0, 0, 0);}
 
 .single-edt-inpt{ margin:0 0 10px; padding:0 5px;}
 
@@ -190,12 +191,12 @@ input[placeholder], [placeholder], *[placeholder] {
 .edit-pro-field{margin:3px auto 0; padding:0;width:95%; background:#f0f0f0; border:none; border-radius:4px; color:#333; box-shadow:0px 2px 2px -1px rgba(0, 0, 0, 0.8);}
 .edit-pro-field label span{color: rgba(0, 0, 0, 0.3); margin:2px; padding:5px 3px 4px 26px;}
 .edit-pro-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px; margin:2px 0; width:165px;}
-.edit-pro-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px 5px 25px; margin:2px 0; width:197px; float:right;}
+.edit-pro-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px 5px 25px; margin:2px 0; width:197px; float:right; height:27px;}
 
 .see-pro-field{margin:3px auto 0; padding:0;width:90%; background:#f0f0f0; border:none; border-radius:4px; color:#333; box-shadow:0px 2px 2px -1px rgba(0, 0, 0, 0.8);}
 .see-pro-field label span{color: rgba(0, 0, 0, 0.3); margin:2px; padding:5px 3px 4px 26px;}
-.see-pro-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px; margin:2px 0; width:155px;}
-.see-pro-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px 5px 25px; margin:2px 0; width:199px;}
+.see-pro-field label input{border:none; background:rgba(255, 255, 255, 0); padding:5px; margin:2px 0; width:153px;}
+.see-pro-field label select{border:none; background:rgba(255, 255, 255, 0); padding:5px 10px 5px 25px; margin:2px 0; width:199px; height:27px;}
 
 
 .edit_prof_inputs{margin:5% 0 0;}
@@ -283,6 +284,7 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 
 .like-cmnt-no{margin: 0px 0px 10px; text-align: left; font-size: 11px; color: rgb(170, 170, 170); width:100%;}
 .like-cmnt-no span{color: rgb(0, 175, 191);}
+
 .checkbox-list{ position:absolute; top:3px; right:3px; line-height:0;}
 
 .full-annotate-bg{background:rgba(0, 0, 0, 0.87); width:100%; height:100%; position:fixed; margin:0; padding:0; top:0; left:0;}
@@ -349,14 +351,19 @@ background-image:url("../images/body-bg.png"); background-repeat: no-repeat; bac
 .swiper-nav span{ line-height:35px !important;}
 
 .generateKey{width:100%; margin:7px auto 0;}
-.generateKey a{text-decoration: none; padding: 0px; text-align: center; margin: 0px auto; display: inline-flex;}
+.generateKey a{text-decoration: none; padding:0px 10px; border-left:1px dotted #555; text-align: center; margin: 0px auto; display: inline-flex;}
 .generateKey a img{width:21px;}
+.generateKey h4{margin:0;}
+.generateKey h4 span{margin:0 0 0 10px; font-weight:normal;}
 
 .full-annotate-head h3{margin:10px 0;}
 .pop-bg-main{position:relative; width:100%; display:none;}
 .pop-btn-edit{background: none repeat scroll 0% 0% rgb(255, 255, 255); margin: 0px auto; padding: 2% 0; border-top:1px solid #aaa; border-bottom:1px solid #aaa;}
 .pop-btn-delete{background: none repeat scroll 0% 0% rgb(255, 255, 255); margin: 0px auto; padding: 2% 0; border-top:none; border-bottom:1px solid #aaa;}
 .post-edit-btn{background: none repeat scroll 0% 0% transparent; border: medium none; text-align: center; width: 100%; padding: 0px; margin: 0px;}
+
+.camera-bg-main{position:absolute; width:100%; top:40%; right:0; text-align:center; margin:0 auto;}
+.camera-btn{background:rgba(238, 238, 238, 0.9); border-radius:10px; margin: 0px auto; padding: 8% 5%; width:60%; box-shadow:0 0 7px 0 rgba(0, 0, 0, 0.6)}
 
 
 /*-- This css for Mobile's different resolutions --*/
