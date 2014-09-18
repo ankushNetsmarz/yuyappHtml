@@ -41,19 +41,62 @@ function GetUserProfile() {
           
             console.log(data);
 
-            var PicUrl = webservicesiteurl + data.ResponseData.PicUrl;
-            localStorage.setItem("ProfilePicUrl", PicUrl);
-          var Gender= data.ResponseData.Gender;
-       
-        
-            $("#seeStatus").text(data.ResponseData.Post);
-            $("#editUserName").val(data.ResponseData.UserName);
+           // var PicUrl = webservicesiteurl + data.ResponseData.PicUrl;
+            var PicUrl;
+            var anonymousPassword = data.ResponseData.AnonymousUserPassword;
           
-            $("#editLastname").val(data.ResponseData.LastName);
-            $("#editFirstname").val(data.ResponseData.FirstName);
-            $("#editGender").val(Gender);
-         
-            $("#editDOB").val(data.ResponseData.DOB);
+            if(anonymousPassword == "" || anonymousPassword == null )
+            	{
+            	 localStorage.setItem("anonymousPassword", "notset");
+            	}
+            else{
+                       	
+            localStorage.setItem("anonymousPassword", anonymousPassword);
+            	}
+            
+            
+            
+            var AnonymousUserId = data.ResponseData.AnonymousUserId;
+            
+            if(AnonymousUserId == "" || AnonymousUserId == null )
+        	{
+        	 localStorage.setItem("AnonymousUserId", "notset");
+        	}
+          else{
+                   	
+             localStorage.setItem("AnonymousUserId", AnonymousUserId);
+        	}
+            
+            
+            if (data.ResponseData.PicUrl == "" || data.ResponseData.PicUrl == null) {
+                PicUrl = "images/no-pic-white.png";
+            } else {
+
+               PicUrl = webservicesiteurl + data.ResponseData.PicUrl;
+               localStorage.setItem("ProfilePicUrl", PicUrl+"?v="+(new Date().getTime()));
+             
+            }
+
+           
+            var Gender = data.ResponseData.Gender;
+          
+       if(Gender=="M")
+    	   {
+    	   Gender= "Male";
+    	   }
+       else
+    	   {
+    	   Gender="Female";
+    	   }
+      
+       $("#seeStatus").text(data.ResponseData.Post);
+       $("#editUserName").val(data.ResponseData.UserName);
+     
+       $("#editLastname").val(data.ResponseData.LastName);
+       $("#editFirstname").val(data.ResponseData.FirstName);
+       $("#selector").val(Gender);
+    
+       $("#editDOB").val(data.ResponseData.DOB);
 
 
         },

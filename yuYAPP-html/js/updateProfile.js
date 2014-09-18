@@ -1,12 +1,5 @@
 ﻿
 
-$("#selector").on("click", function () {
-    var select = $(this).val();
-
-    localStorage.setItem("gender", select);
-});
-
-
 
 
 
@@ -67,6 +60,8 @@ function UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editG
     if (dates == null) {
         dates = "";
     }
+    
+   
     if (editGender == null) {
         editGender = "Male";
     }

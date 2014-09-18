@@ -146,7 +146,15 @@ function GetPostNonAnonymousList(isall,posttype,start, end) {
 
 
                     var PostFileURL = webservicesiteurl + data.ResponseData[i].PostFileURL;
-                    var ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic;
+                     var ProfilePicURL = data.ResponseData[i].ProfilePic;
+                    if (ProfilePicURL == "") {
+
+                        ProfilePicURL = "images/no-pic.png";
+                    }
+                    else {
+                        ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic+"?v="+(new Date().getTime());
+                    
+                    }
                     var positiveAnnotations = data.ResponseData[i].PositiveAnnotation;
                     var negativeAnnotations = data.ResponseData[i].NegativeAnnotation;
 

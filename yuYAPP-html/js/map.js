@@ -1,4 +1,8 @@
-﻿function initialize() {
+﻿
+
+
+
+function initialize() {
     if (navigator.geolocation) {
 
         //Use HTML5 Geolocation API To Get Current Position

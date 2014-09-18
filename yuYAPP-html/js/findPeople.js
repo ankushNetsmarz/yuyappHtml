@@ -53,6 +53,9 @@ $(document).on("click", ".load-more-all", function () {
     else if (page == "allfollowing") {
         GetAllFollowing(start, end);
     }
+    else if (page == "allfollowings") {
+        GetAllFollowings(start, end);
+    }
     else if (page == "recentfollowing") {
         GetRecentFollowingList(start, end);
     }

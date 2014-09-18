@@ -2,32 +2,169 @@
 
 
 $(".generateKey").on("click", function () {
-    Gen_AnonymousId();
+	   function onConfirm(buttonIndex) {
+     	  if(buttonIndex==1)
+     		  {
+     		  
+     		 Gen_AnonymousId();
+         	  }
+     	
+
+     	}
+
+     	navigator.notification.confirm(
+     	    'Do you want to generate a key? ', // message
+     	     onConfirm,            // callback to invoke with index of button pressed
+     	    'YUYApp',           // title
+     	    ['OK','CANCEL']     // buttonLabels
+     	);
+   
 });
 $("#ShhhOption").on("click", function () {
-    $('.inner-pages').animate({
-        'top': "0px" //moves up
-    });
-    $("#edit_profile,#see_profile").css("display", "none");
-    var isall = "true";
-    var posttype = 0;
-    localStorage.setItem("posttype", posttype);
-    localStorage.setItem("isallload", isall);
-    localStorage.setItem("page", "shhappLive");
-    newcall();
-    var start = localStorage.getItem("start");
-    var end = localStorage.getItem("end");
+   
+    var password= localStorage.getItem("anonymousPassword");
+    
+    var anonyId= localStorage.getItem("AnonymousUserId");
+    
 
-    GetPostAnonymousList(isall, posttype, start, end)
-    localStorage.setItem("isAnonymous",1);
-    $(".ctgry-list-main,.follow-friend,.notification,.add-frnd").css("display", "none");
-    $("#YAPP-Live").css("display", "none");
-    $(".shh-screen").css("display", "block");
-    $(".top_heading").text("SHH..");
-    localStorage.setItem("MenuFlag", "up");
+if (password == "notset")
+{
+
+    navigator.notification.prompt(
+        'Please set password',  // message
+        onPrompt,                  // callback to invoke
+        'Registration',            // title
+        ['OK', 'CANCEL'],             // buttonLabels
+        '****'                 // defaultText
+    );
+}
+else
+{
+    navigator.notification.prompt(
+       'Enter your password',  // message
+       onPromptPassword,                  // callback to invoke
+       'Confirm',            // title
+       ['OK', 'CANCEL'],             // buttonLabels
+       '****'                 // defaultText
+   );
+}
+
+    function onPrompt(results)
+    {
+    	
+         var result= results.buttonIndex;
+         var passwordText = results.input1;
+
+         if(result==1)
+        	 {    	 
+        	 SetAnonymousPassWord(passwordText);
+        	 GetUserProfile();
+        	 }
+         else
+        	 {
+        	 
+        	 }
+    }
+    
+    function onPromptPassword(results)
+    {
+    	var result= results.buttonIndex;
+    	if(result==1)
+   	 { 
+    	if(password == results.input1)
+    	{
+    		 $('.inner-pages').animate({
+    		        'top': "0px" //moves up
+    		    });
+    		    $("#edit_profile,#see_profile").css("display", "none");
+    		    var isall = "true";
+    		    var posttype = 0;
+    		    localStorage.setItem("posttype", posttype);
+    		    localStorage.setItem("isallload", isall);
+    		    localStorage.setItem("page", "shhappLive");
+    		    newcall();
+    		    var start = localStorage.getItem("start");
+    		    var end = localStorage.getItem("end");
+    		 
+    		    GetPostAnonymousList(isall, posttype, start, end);
+    		    	
+    		    localStorage.setItem("isAnonymous",1);
+    		    $(".ctgry-list-main,.follow-friend,.notification,.add-frnd").css("display", "none");
+    		    $("#YAPP-Live").css("display", "none");
+    		    $(".shh-screen").css("display", "block");
+    		    $(".top_heading").text("SHH..");
+    		    localStorage.setItem("MenuFlag", "up");
+    	}
+    	
+    	else
+    		{
+    		
+    		window.plugins.toast.show('Please try again!', 'long', 'center', function (a) { }, function (b) { });
+       	 
+    		  $(".shh-screen").css("display", "none");
+    		}
+    		
+   	 }
+    	
+      
+    }
+
+
+    // Show a custom prompt dialog
+    //
+
 
 });
 
+
+//Get People By Distance
+function GetPeopleByDistance() {
+    var inputdata = {
+        "userId": userId,
+        "distance": 2,
+        "start": 1,
+        "end": 10
+    };
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:6269/Users/GetPeopleByDistance",
+        url: "http://174.141.233.6/YuY/Users/GetPeopleByDistance",
+        data: inputdata,
+        dataType: "json",
+        success: function (data) {
+            debugger;
+            console.log(data);
+            //console.log(data.ResponseData.length);
+        },
+        error: function (xhr) {
+            alert(xhr.responseText);
+        }
+    });
+} 
+/*Set anonymous password*/
+function SetAnonymousPassWord(passwordText) {
+    var postData = {
+        userid: userId,
+        anonymousUserPassword: passwordText
+    }
+    $.ajax({
+        type: "POST",
+        //url: "http://localhost:6269/Users/SetAnonymousPassWord",
+        url: "http://174.141.233.6/YuY/Users/SetAnonymousPassWord",
+        data: postData,
+        success: function (data) {
+            //debugger;
+        	 window.plugins.toast.show('Password set!', 'long', 'center', function (a) { }, function (b) { });
+        	    
+            console.log(data);
+            //alert("success..." + data);
+        },
+        error: function (xhr) {
+           
+            alert(xhr.responseText);
+        }
+    });
+}
 
 $("#allAnony").on("click", function () {
 	 var isall = "true";
@@ -66,7 +203,7 @@ $("#VideoAnony").on("click", function () {
 	   GetPostAnonymousList(isall, posttype, start, end)
 });
 $("#nearYou").on("click", function () {
-
+	GetPeopleByDistance();
    
 });
 $("#worldwide").on("click", function () {
@@ -201,7 +338,8 @@ function Gen_AnonymousId() {
             //debugger;
             console.log(data);
             window.plugins.toast.show('Key generated!', 'long', 'center', function (a) { }, function (b) { });
-            
+            GetUserProfile();
+        	
             //alert("success..." + data);
         },
         error: function (xhr) {

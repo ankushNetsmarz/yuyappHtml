@@ -19,6 +19,7 @@ function AddProfilePicture(imageURL) {
         success: function (results) {
             console.log(results);
             window.plugins.toast.show('Profile Updated!', 'long', 'center', function (a) { }, function (b) { });
+            $("#mainProfile,#profile").prop('src', GetProfilePicture+"?v="+(new Date().getTime()));
             
         },
         error: function (xhr) {

@@ -75,7 +75,7 @@
 
 <div class="cross-main-btn">
                 <input type="button" id="cancelUpload" class="cross-btn fl" value="">
-                <input type="button"  id="nextUpload" class="like-btn fr" value="post">
+                <input type="button"  id="nextUpload" class="like-btn fr" value="Next">
                 <div class="clr"></div>
                 </div>
 <div class="upload-popup-head">
@@ -176,26 +176,24 @@
     <!-- see other user profile in popup end -->
 
 <!-- when click on next button in add anotation popup then this div will display -->
-    <div id="Div1" class="post-user-list" style="display:none; z-index: 49">
+    <div id="denied" class="post-user-list" style="display:none; z-index: 49">
         <div class="post-user-area">
         <div class="cross-main-btn">
-                <input type="button" id="Button1" class="cross-btn fl" value="">
+                <input type="button" id="backAccess" class="back-btn fl" value="">
                 <input type="button"  id="Button2" class="like-btn fr" value="Post">
                 <div class="clr"></div>
                 </div>
-            <div id="Div2" class="post-user-list-main">
+            <div id="postAccess" class="post-user-list-main">
             <!-- single user -->
-            <div class="post-user-frnd-main">
-            <div class="post-user-frnd">
-            <div class="fl single-frnd-imgarea">
-            <img src="http://174.141.233.6/YuY/" userid="41">
-            </div>
-            <div>dhani</div>
-            <div class="checkbox-list"><input type="checkbox" alt="access list"></div>
-            </div>
-            <div userid="41" class="post-user-btn-div" id="plug">
-            <button class="post-user-btn" type="button">PLUG</button></div>
-            </div>
+<!--             <div class="post-user-frnd-main"> -->
+<!--             <div class="post-user-frnd"> -->
+<!--             <div class="fl single-frnd-imgarea"> -->
+<!--             <img src="http://174.141.233.6/YuY/" userid="41"> -->
+<!--             </div> -->
+<!--             <div>dhani</div> -->
+<!--             <div class="checkbox-list" ><input type="checkbox" alt="access list"></div> -->
+<!--             </div> -->
+<!--           </div> -->
             <!-- single user -->
             </div>
         </div>
@@ -203,13 +201,13 @@
     <!-- friend list for access or denied screen end -->
     
 <!-- when click on next button in add anotation popup then this div will display -->
-    <div id="Div3" class="generate-key" style="display: none; z-index: 49">
+    <div id="Div2" class="generate-key" style="display: none; z-index: 49">
         <div class="generate-key-area">
         <div class="cross-main-btn">
                 <input type="button" id="Button3" class="cross-btn fl" value="">
                 <div class="clr"></div>
                 </div>
-            <div id="Div4" class="generate-key-main">
+            <div id="Div3" class="generate-key-main">
                 <input type="text" id="Text1" placeholder="Fill genrate key" class="add-key">
                 <input type="button" id="Button4" class="like-btn add-key-btn" value="Generate">
             </div>
@@ -302,7 +300,7 @@
                     
 <div class="edit_prof_inputs"><form>
 
-<div id="Div5" class="see-status"></div>
+<div id="Div4" class="see-status"></div>
 
 <div class="edit-pro-field"><label>
 <span class="fl first-span">Full Name</span><input id="editFirstname" type="text" class="fr">
@@ -326,10 +324,11 @@
 
 <div class="edit-pro-field"><label>
 <span class="fl gender-span">Gender</span>
-<select id="selector">
-<option id="male" value="Male">Male</option>
-<option id="female" value="Female">Female</option>                              
-</select>
+
+<select id="selector"> 
+ <option value="Male">Male</option> 
+ <option  value="Female">Female</option>  
+ </select> 
 <div class="clr"></div>
 </label></div>
 
@@ -351,7 +350,9 @@
 </form>
 </div>-->
 <div>
-<input type="button" id="updateButton" class="edit-prof-btn" value="UPDATE" /></div>
+<input type="button" id="updateButton" class="edit-prof-btn fr" value="UPDATE" />
+<div class="clr"></div>
+</div>
 
                     </div>
 
@@ -395,7 +396,7 @@
 
                 <div class="notification" style="display: none;">
                     <div class="notify-area">
-                        <div id="Div6" class="notify-list">
+                        <div id="Div5" class="notify-list">
                         </div>
                         <!--<div>
                             <input type="button" id="Button4" class="load-more" value="Load More" /></div>-->
@@ -577,15 +578,48 @@
           var imageURL, imageURLs;
           var flagProfile = 0;
           var i, path, len, mediaFiles;
+
+
+
+
+
+
+
+
           document.addEventListener("deviceready", onDeviceReady, false);
 
           function onDeviceReady() {
 
+
+
               //checkConnection();
               pictureSource = navigator.camera.PictureSourceType;
               destinationType = navigator.camera.DestinationType;
+              navigator.geolocation.getCurrentPosition(onSuccess, onError);
           }
 
+
+          // onSuccess Callback
+          // This method accepts a Position object, which contains the
+          // current GPS coordinates
+          //
+          var onSuccess = function (position) {
+              alert('Latitude: ' + position.coords.latitude + '\n' +
+                    'Longitude: ' + position.coords.longitude + '\n' +
+                    'Altitude: ' + position.coords.altitude + '\n' +
+                    'Accuracy: ' + position.coords.accuracy + '\n' +
+                    'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '\n' +
+                    'Heading: ' + position.coords.heading + '\n' +
+                    'Speed: ' + position.coords.speed + '\n' +
+                    'Timestamp: ' + position.timestamp + '\n');
+          };
+
+          // onError Callback receives a PositionError object
+          //
+          function onError(error) {
+              alert('code: ' + error.code + '\n' +
+                    'message: ' + error.message + '\n');
+          }
 
 
 
@@ -594,13 +628,14 @@
               var editLastname = $("#editLastname").val();
               var editUserName = $("#editUserName").val();
               var editDOB = $("#editDOB").val();
-              var editGender = localStorage.getItem("gender");
+              // alert($("#selector").val());
+              var editGender = $("#selector").val()
 
               if (flagProfile == 1) {
                   AddProfilePicture(imageURL);
                   var GetProfilePicture = localStorage.getItem("ProfilePicUrl");
-                  var mainProfile = $("#mainProfile");
-                  mainProfile.prop('src', GetProfilePicture);
+
+                  $("#mainProfile,#profile").prop('src', GetProfilePicture + "?v=" + (new Date().getTime()));
               }
               else {
                   UpdateProfile(editFirstname, editLastname, editUserName, editDOB, editGender);
@@ -625,41 +660,7 @@
               //navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
           };
 
-          function initialize() {
 
-              if (navigator.geolocation) {
-
-                  //Use HTML5 Geolocation API To Get Current Position
-                  navigator.geolocation.getCurrentPosition(function (position) {
-
-                      //Get Latitude From Geolocation API
-                      latitude = position.coords.latitude;
-
-                      //Get Longitude From Geolocation API
-                      longitude = position.coords.longitude;
-                      alert(latitude);
-
-                      //Define New Google Map With Lat / Lon
-                      coords = new google.maps.LatLng(latitude, longitude);
-                      alert(coords);
-                      // setlocation(
-                      var mapOptions = {
-                          zoom: 16,
-                          center: coords
-                      }
-
-                      localStorage.setItem("latitude", latitude);
-                      localStorage.setItem("longitude", longitude);
-                      var map = new google.maps.Map(document.getElementById("map-canvas"),
-                    mapOptions);
-                      marker = new google.maps.Marker({
-                          position: coords,
-                          map: map
-                      });
-                      marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
-                  });
-              }
-          }
           function uploadPhoto(path) {
               showLoader();
               var title = $("#UploadTitle").val();
@@ -773,7 +774,8 @@
           function onPhotoURISuccess(imageURI) {
 
               var largeImage = document.getElementById('profile');
-              largeImage.src = "data:image/png;base64," + imageURI;
+
+              largeImage.src = "data:image/png;base64," + imageURI;//+"?v="+(new Date().getTime());
               imageURL = imageURI;
               flagProfile = 1;
           }
@@ -789,7 +791,6 @@
 
 
           $(document).ready(function () {
-              initialize();
               localStorage.setItem("MenuFlag", "up");
               checkConnection();
 
@@ -809,16 +810,26 @@
 
 
               $(".Upload-text-btn").on("click", function () {
-
-                  $("#UploadTitle").val('');
-                  $("#UploadDescription").val('');
-                  $("#Upload1Annotate").val('');
-                  $("#Upload2Annotate").val('');
-                  $("#uploadScreen").css("display", "block");
-                  $("#UploadPreview").prop("src", "");
-                  $(".video").css("display", "none");
-                  $("#UploadPreview").css("display", "block");
-
+                  var anony = localStorage.getItem("isAnonymous");
+                  if (anony == 1) {
+                      var anonyId = localStorage.getItem("AnonymousUserId");
+                      if (anonyId == "notset") {
+                          window.plugins.toast.show('Generate a key!', 'long', 'center', function (a) { }, function (b) { });
+                      }
+                      else {
+                          $("#uploadScreen").css("display", "block");
+                      }
+                  }
+                  else {
+                      $("#UploadTitle").val('');
+                      $("#UploadDescription").val('');
+                      $("#Upload1Annotate").val('');
+                      $("#Upload2Annotate").val('');
+                      $("#uploadScreen").css("display", "block");
+                      $("#UploadPreview").prop("src", "");
+                      $(".video").css("display", "none");
+                      $("#UploadPreview").css("display", "block");
+                  }
               });
               $("#nextUpload").on("click", function () {
                   if ($("#UploadTitle").val() == '') {
@@ -848,6 +859,15 @@
 
                   }
               });
+              $("#selector").on("click", function () {
+
+                  localStorage.removeItem("gender");
+                  var select = $(this).val();
+
+                  localStorage.setItem("gender", select);
+                  var selection = localStorage.getItem("gender");
+
+              });
 
 
               $("#cancelUpload").on("click", function () {
@@ -860,24 +880,24 @@
 
               $("#logout").on("click", function () {
 
+                  localStorage.clear();
+                  window.location.replace("login.html");
+                  //function onConfirm(buttonIndex) {
+                  //    if (buttonIndex == 1) {
+
+                  //        localStorage.clear();
+                  //        window.location.replace("login.html");
+                  //    }
 
 
-                  function onConfirm(buttonIndex) {
-                      if (buttonIndex == 1) {
+                  //}
 
-                          localStorage.clear();
-                          window.location.replace("login.html");
-                      }
-
-
-                  }
-
-                  navigator.notification.confirm(
-                      'Do you want to logout? ', // message
-                       onConfirm,            // callback to invoke with index of button pressed
-                      'YUYApp',           // title
-                      ['OK', 'CANCEL']     // buttonLabels
-                  );
+                  //navigator.notification.confirm(
+                  //    'Do you want to logout? ', // message
+                  //     onConfirm,            // callback to invoke with index of button pressed
+                  //    'YUYApp',           // title
+                  //    ['OK', 'CANCEL']     // buttonLabels
+                  //);
 
 
               });

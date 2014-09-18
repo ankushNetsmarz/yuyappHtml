@@ -30,7 +30,7 @@ $("#SignUpDOB").on("click", function () {
 
 $( "#SignUpDOB" ).focus(function() {
 	 var dates= localStorage.getItem("date");
- 
+
    if(dates=="NaN/NaN/NaN")
 	   {
 	   $(this).val(''); 
@@ -79,12 +79,14 @@ $("#RegisterButton").on("click", function () {
 	
 	
 	 
-	var Gender= localStorage.getItem("genderSignUp");
+	var Gender= $("#selectors").val();
+	
 	var date=   localStorage.getItem("date");
 	if(date == null)
 	{
 		date = "";
 	}
+	
 	if(Gender == null)
 		{
 		Gender = "Male";

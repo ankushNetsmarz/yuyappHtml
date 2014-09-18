@@ -49,7 +49,8 @@ function GetUserPost(start, end) {
                         ProfilePicURL = "images/no-pic.png";
                     }
                     else {
-                        ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic;
+                        ProfilePicURL = webservicesiteurl + data.ResponseData[i].ProfilePic+"?v="+(new Date().getTime());
+                    
                     }
                     var positiveAnnotations = data.ResponseData[i].PositiveAnnotation;
                     var negativeAnnotations = data.ResponseData[i].NegativeAnnotation;
@@ -57,7 +58,11 @@ function GetUserPost(start, end) {
                     var liked = data.ResponseData[i].PositiveLike;
                     var negativeLiked = data.ResponseData[i].NegativeLike;
                     HTML += "<div class='single-user'>"
-                    HTML += "<div class='arrow-main'><img src='images/arrow.png'></div>"
+                    	HTML += "<div class='arrow-main'><img src='images/arrow.png'>"
+                    		HTML += "<div class='pop-bg-main'>"
+                    		HTML += "<div class='pop-btn-edit'><input type='button' id='' value='Edit' class='post-edit-btn'></div>"
+                    		HTML += "<div class='pop-btn-delete'><input type='button' id='' value='Delete' class='post-edit-btn'></div>"
+                    		HTML += "</div></div>"
                     HTML += "<div class='user-title'> "
                     HTML += "<div class='fl user-list-pic'><img src=" + ProfilePicURL + "></div>"
                     HTML += "<div class='fl user-name-title'>" + data.ResponseData[i].UserName + "<br><span>(" + data.ResponseData[i].TimeSpan + ")</span></div>"
